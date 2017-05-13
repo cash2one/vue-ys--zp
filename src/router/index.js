@@ -3,8 +3,6 @@ import Router from 'vue-router';
 
 /* layout*/
 import Layout from '../views/layout/Layout';
-import LayoutFull from '../views/layout/LayoutFull.vue';
-
 
 /* error page*/
 const Err404 = resolve => require(['../views/error/404'], resolve);
@@ -15,6 +13,12 @@ import Login from '../views/login/';
 import authRedirect from '../views/login/authredirect';
 import sendPWD from '../views/login/sendpwd';
 import reset from '../views/login/reset';
+
+
+// dashboard
+import dashboard from '../views/dashboard/index';
+
+const overview = resolve => require(['../views/reports/overview'],resolve);
 
 Vue.use(Router);
 
@@ -37,8 +41,32 @@ export default new Router({
     { path: '/401', component: Err401, hidden: true },
     {
       path: '/',
-      component: Err401,
+      component: dashboard,
       name: '首页',
+      hidden: true,
+    },
+    {
+      path: '/dashboard',
+      component: dashboard,
+      name: '总览',
+      hidden: true,
+      meta: { role: true }
+    },
+    {
+      path: '/reports',
+      component: Layout,
+      redirect: '/reports/index',
+      name: '数据日报',
+      icon: 'zujian',
+      children: [
+        { path: 'overview', component: overview, name: '概览 ' },
+        { path: 'campaign', component: overview, name: '计划' },
+        { path: 'adgroup', component: overview, name: '单元' },
+        { path: 'keyword', component: overview, name: '关键词' },
+        { path: 'qudao', component: overview, name: '渠道' },
+        { path: 'hour', component: overview, name: 'SplitPane' },
+        { path: 'landpage', component: overview, name: '头像上传' },
+      ]
     },
 
     { path: '*', redirect: '/404', hidden: true }

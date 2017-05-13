@@ -85,7 +85,7 @@
               this.loading = true;
               this.$store.dispatch('LoginByEmail', this.loginForm).then(() => {
                 this.loading = false;
-                this.$router.push({ path: '/' });
+                this.$router.push({ path: '/dashboard' });
                 // this.showDialog = true;
               }).catch(err => {
                 this.$message.error(err);
