@@ -1,0 +1,122 @@
+const accountList = [ {
+  "name": "省呗",
+  "appid": "yetnalv9w9w6wdjzvinukgldirtdpywy",
+  "id": 242,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-萨摩耶a2170751",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "挖财系-原生",
+  "appid": "ugyf1bgz7rcq58kawjzepzaorhtusnql",
+  "id": 239,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-友和bb2170650",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "省呗",
+  "appid": "yj7t7xlsqevqsk007gaw6ogvi17c3z97",
+  "id": 241,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-萨摩耶2170199",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "婚礼纪",
+  "appid": "lzBKAAwcaymdFuBIdAfOQIaxPlOTBUUg",
+  "id": 4080,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-火烧云2164837",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "埃克伦斯",
+  "appid": "jkgodtZBFUxQrbxrmOHicFqDxMNuGITT",
+  "id": 4084,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-天聚力合2165371",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "功夫贷",
+  "appid": "TQgFAniCpBYPCxHEKCVklATIYyEhtemp",
+  "id": 4081,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-杭州大树2164888",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "懂球帝-原生",
+  "appid": "yFmHBknbDnrDvxeQrvRdLMoOtzDYcFhV",
+  "id": 4070,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-多格2164764",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "数码",
+  "appid": "mifnmrv42hjkrzmzma5jqbyb9divs68i",
+  "id": 263,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-谋士t2170721",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+}, {
+  "name": "乾程泰",
+  "appid": "qykkqqe0wua0zcy9eqwr8uxr1loqnzwj",
+  "id": 260,
+  "type": 110102,
+  "account_status": 1,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg",
+  "account_name": "原生-智道未来q2170652",
+  "auto": "off",
+  "mobileBalance": 0,
+  "yesterdayCost": 0,
+  "monthCost": 0
+} ];
+
+export default {
+  getAccountsByUser: config => {
+    const userId = config.params;
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([ 200, {
+            data: accountList
+          } ]);
+        }, 500);
+    })
+  }
+};

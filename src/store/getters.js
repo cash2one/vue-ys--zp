@@ -10,6 +10,8 @@ const getters = {
   auth_type: state => state.user.auth_type,
   status: state => state.user.status,
   roles: state => state.user.roles,
-  setting: state => state.user.setting
+  setting: state => state.user.setting,
+
+  accountList: state => state.account.accounts
 };
 export default getters
