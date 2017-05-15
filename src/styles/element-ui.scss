@@ -2,7 +2,9 @@
 .block-checkbox {
   display: block;
 }
-
+.el-col {
+  padding:0 15px;
+}
 .operation-container {
   .cell {
     padding: 10px !important;
@@ -17,7 +19,6 @@
     }
   }
 }
-
 .el-upload {
   input[type="file"] {
     display: none !important;
