@@ -19,6 +19,7 @@ import reset from '../views/login/reset';
 import dashboard from '../views/dashboard/index';
 
 const overview = resolve => require(['../views/reports/overview'],resolve);
+const jihua = resolve => require(['../views/reports/jihua'],resolve);
 
 Vue.use(Router);
 
@@ -60,7 +61,7 @@ export default new Router({
       icon: 'zujian',
       children: [
         { path: 'overview', component: overview, name: '概览 ' },
-        { path: 'campaign', component: overview, name: '计划' },
+        { path: 'campaign', component: jihua, name: '计划' },
         { path: 'adgroup', component: overview, name: '单元' },
         { path: 'keyword', component: overview, name: '关键词' },
         { path: 'qudao', component: overview, name: '渠道' },

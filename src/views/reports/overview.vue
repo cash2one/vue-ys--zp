@@ -45,6 +45,7 @@
                                     <!--</a>-->
                                 </div>
                                 <div class="apie1" style="font-size: 16px;color: #00b7ee;font-family: 500;margin-top: 10px;">
+
                                     Loading...
                                 </div>
                             </div>

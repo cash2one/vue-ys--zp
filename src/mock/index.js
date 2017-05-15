@@ -10,6 +10,7 @@ mock.onPost('/login/logout').reply(loginAPI.logout);
 mock.onGet('/user/info').reply(loginAPI.getInfo);
 
 mock.onGet('/account/userid').reply(accountApi.getAccountsByUser);
+mock.onGet('/plan/rate').reply(accountApi.plantable);
 
 // // 文章相关
 // mock.onGet('/article/list').reply(articleAPI.getList);

@@ -8,3 +8,11 @@ export function getAccountsByUserId(userId) {
   });
 }
 
+export function getPlanTable(userId) {
+  return fetch({
+    url: '/plan/rate',
+    method: 'get',
+    params: { userId }
+  });
+}
+
