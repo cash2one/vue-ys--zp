@@ -205,205 +205,182 @@
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
-    html{
-        background:#f5f7f9;
-    }
-    .el-table__body-wrapper {
-        overflow: auto;
-        overflow-x: hidden;
-        position: relative;
-    }
-    #page-wrapper{
-        background:#f5f7f9;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    table .iconfont{
-        font-family:"iconfont" !important;
-        font-size:12px;font-style:normal;
-        -webkit-transform: scale(.6);
-        -webkit-font-smoothing: antialiased;
-        -webkit-text-stroke-width: 0.2px;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    .iconfont{
-        font-family:"iconfont" !important;
-        font-size:16px;font-style:normal;
-        -webkit-font-smoothing: antialiased;
-        -webkit-text-stroke-width: 0.2px;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    .gailan{
-        padding: 0;
-        box-shadow: 0px 0px 6px #d9d9d9;
-    }
-    .gailan-toubiao{
-        border-bottom: 1px solid #ebebeb;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background: #fafbfc;
-        font-size: 14px;
-        color: #3b4161;
-        font-family: 'Microsoft YaHei';
-    }
-    .gailan-zhi{
-        padding:0;
-        background: #fff;
-        padding-bottom: 30px;
-    }
-    .li1,.la1{
-        display: inline-block;
-        width: 110px;
-        text-align: center;
-        color: #00b7ee;
-        height: 30px;
-        line-height: 30px;
-        cursor: pointer;
-        border-top: 1px solid #00b7ee;
-        border-left: 1px solid #00b7ee;
-        border-bottom: 1px solid #00b7ee;
-        border-bottom-left-radius: 5px;
-        border-top-left-radius: 5px;
-    }
-    .li2,.la2{
-        display: inline-block;
-        width: 110px;
-        text-align: center;
-        height: 30px;
-        line-height: 30px;
-        color: #00b7ee;
-        cursor: pointer;
-        border: 1px solid #00b7ee;
-        border-bottom-right-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-    .clink{
-        color: #fff;
-        background: #01b7ee;
-    }
-    .search{
-        margin-left: 30px;
-        height: 30px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        padding-left: 15px;
-        padding-right: 40px;
-        line-height: 30px;
-        width: 220px;
-    }
-    .glyphicon {
-        left: -30px;
-        position: relative;
-        top: 1px;
-        display: inline-block;
-        font-family: Glyphicons Halflings;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    .calendar .glyphicon {
-        left: 0px;
-        position: relative;
-        top: 1px;
-        display: inline-block;
-        font-family: Glyphicons Halflings;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    .trim{
-        border: solid 1px #dfe1e4;
-        /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
-        padding-right: 14px;
-        width:150px;
-        padding-left: 10px;
-        border-radius: 3px;
-        height:30px;
-        line-height:30px;
-    }
-    .daterangepicker table {
-        background: #fff;
-        width: 100%;
-        margin: 0;
-    }
-    /*////////////////////////////////////*/
-    /*#tb table thead tr{
-        background: #dfe1e4;
-    }
-    #tb table th,#tb table td{
-        font-size: 14px;
-        padding-top:7px;
-        padding-bottom:7px;
-        color: #3b4e61;
-    }
-    #tb table th{
 
-        font-weight: 500 !important;
+
+    /*===================================================*/
+    .box {
+        width:100%;
+        height:880px;
+        background: white;
     }
-    #tb table td{
-        border:solid #ddd 1px !important;
-        !*border-bottom:0 !important;*!
-        border-top:0 !important;
+    .qudao_title {
+        width:100%;
+        height:39px;
+        line-height: 40px;
+        font-size: 16px;
+        border-bottom:1px solid #e8e8e8;
+        text-indent: 30px;
+        margin-bottom: 30px;
+        background: #fbfbfb;
     }
-    #tb table{
+    .qudao_infor {
+        width:100%;
+        padding:0 30px;
+    }
+    .qudao_tongji {
+        width:100%;
+        height:115px;
+        border:1px solid #f0f0f0;
+        font-size: 14px;
+    }
+    .tongji_num {
+        color: #00b9f1;
+    }
+    .qudao_tongji_infor {
+        width:20%;
+        height:115px;
+        text-align: center;
+        float: left;
+        position: relative;
+    }
+    .qudao_tongji_infor i {
+        width: 1px;
+        height: 60px;
+        background: #e0e1e5;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .qudao_tongji_infor:last-child i {
+        width: 0px;
+    }
+    .tongji_name {
+        margin-top:34px;
+        margin-bottom:17px;
+    }
+    .qudao_time {
+        width:100%;
+        height:90px;
+        line-height: 90px;
+        font-size: 14px;
+        position: relative;
+    }
+    .qudao_select {
+        height:50px;
+        width:100%;
+        position: relative;
+    }
+    .qudao_select_all {
+        height: 27px;
+        position: absolute;
+        right:0;
+        top:0;
+    }
+    .qudao_select_all a:hover {
+        text-decoration: none;
+    }
+    .select_click {
+        width:17px;
+        height:17px;
+        display: inline-block;
+        border:1px solid #cbcfd8;
+        margin: 0 6px;
+        position: relative;
+    }
+    .select_yuan {
+        display: inline-block;
+        width:8px;
+        height:8px;
+        background: #02b7ee;
+        position: absolute;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        margin:auto;
+    }
+    .select_name {
+        margin-right:30px;
+    }
+    input {
+        height: 30px;
+        margin:0 20px!important;
         border-radius: 5px;
-        border-collapse:collapse;
-        border:none;
+        outline:none;
+        border:1px solid #e0e1e5;
     }
-    #tb table tbody tr:nth-child(odd){
-        background: #fff;
+    .qudao_btn,.qudao_out,.qudao_fenri {
+        height: 30px;
+        width: 90px;
+        background: #02b7ee;
+        color: white;
+        box-shadow: 0px 0px 8px #9ae2f8;
+        outline:none;
+        display: inline-block;
+        padding: 6px 12px;
+        line-height: 17px;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
     }
-    #tb table tbody tr:nth-child(even){
-        background: #f5f7f9;
+    .qudao_out {
+        position: absolute;
+        top: 31px;
+        right: 0;
     }
-    #tb table thead,#tb tbody tr{
+    .qudao_fenri {
+        position: absolute;
+        top: 31px;
+        right: 120px;
+    }
+    .col-tr-2 th,.col-th {
+        border-bottom:none!important;
+    }
+    .qudao_table {
+        width:100%;
+        border:1px solid #e0e1e5;
+        border-radius: 5px;
+    }
+    .qudao_table tr th {
+        height:40px;
+        text-indent: 10px;
+        vertical-align:middle!important;
+        background: #e0e1e5;
+        border-right:1px solid #ffffff;
+    }
+    .qudao_table tr th:last-child {
+        border-right: none;
+    }
+    .qudao_table tbody {
+        display: block;
+        height:450px;
+        overflow-x: hidden;
+    }
+    .qudao_table tbody tr td {
+        height:60px;
+        text-indent: 10px;
+        vertical-align:middle!important;
+        border-right: 1px solid #e0e1e5;
+        border-top:none!important;
+    }
+    .qudao_table thead,.qudao_table tbody tr {
         display:table;
         width:100%;
         table-layout:fixed;
     }
-    #tb tbody{
-        display:block;
-        max-height: 500px;
-        overflow-y: scroll;
-    }
-    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-        vertical-align: middle;
-    }*/
-    /*////////////////////////////////////////////////*/
-   /* #tb table.tablesorter thead tr .tablesorter-header-inner{
-        background-image: url(./images/bg1.png);
-        background-size: 6px;
-        background-repeat: no-repeat;
-        background-position: center right;
-        cursor: pointer;
-    }
-    #tb table.tablesorter thead tr .tablesorter-headerAsc .tablesorter-header-inner{
-        background-image: url(./images/asc1.png);
-    }
-    #tb table.tablesorter thead tr .tablesorter-headerDesc .tablesorter-header-inner{
-        background-image: url(./images/desc1.png);
-    }*/
-    /*/////////////////////////////////////////////////*/
-   /* #tb .col-xs-12,#tb .col-xs-7,#tb .col-xs-5{
-        padding: 0;
-    }*/
-    .form-control {
-        width: 100%;
-        height: 30px;
-        padding: 6px 12px;
-        background-color: #fff !important;
-        background-image: none;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    .qudao_table tbody tr:nth-child(even) {
+        background: #f6f7f9;
     }
 
 

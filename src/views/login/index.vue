@@ -28,7 +28,7 @@
                             <el-input type="password" id="showPwd" class="password" @keyup.enter.native="handleLogin" v-model="loginForm.password" placeholder="请输入密码" />
                          </el-col>
                          </el-form-item>
-                          <el-col :span="24" style="margin-top: 20px;">
+                          <el-col :span="24" style="margin-top: 10px;">
                              <el-col :span="12" style="padding-left: 0;">
                                  <el-checkbox v-model="loginForm.checked">自动登录</el-checkbox>
                                  <!--<label>-->
@@ -41,7 +41,7 @@
                                  <label>忘记密码 ？</label>
                              </el-col>
                         </el-col>
-                        <el-col :span="24" style="margin-top:40px;">
+                        <el-col :span="24" style="margin-top:30px;">
                             <el-input type="submit" class="load" :loading="loading" @click.native.prevent="handleLogin"   value="登录"/>
                           </el-col>
                          <el-col :span="24" style="margin-top: 10px;">
@@ -174,12 +174,19 @@
 }
 .login1{
     width: 350px;
-    height: 370px;
+    height:390px;
     border-radius: 5px;
     background: #fff;
     box-shadow: 0px 0px 6px #d9d9d9;
     font-family: "Microsoft Yahei";
     padding: 0 15px;
+}
+.el-form-item__content {
+    margin-bottom: 20px;
+}
+.el-form-item__error {
+    padding-top: 6px;
+    padding-left: 22px;
 }
 .denglu{
     line-height: 40px;

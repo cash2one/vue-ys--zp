@@ -20,7 +20,7 @@ import dashboard from '../views/dashboard/index';
 
 const overview = resolve => require(['../views/reports/overview'],resolve);
 const jihua = resolve => require(['../views/reports/jihua'],resolve);
-
+const qudao = resolve => require(['../views/reports/qudao'],resolve);
 Vue.use(Router);
 
  /**
@@ -64,7 +64,7 @@ export default new Router({
         { path: 'campaign', component: jihua, name: '计划' },
         { path: 'adgroup', component: overview, name: '单元' },
         { path: 'keyword', component: overview, name: '关键词' },
-        { path: 'qudao', component: overview, name: '渠道' },
+        { path: 'qudao', component: qudao, name: '渠道' },
         { path: 'hour', component: overview, name: 'SplitPane' },
         { path: 'landpage', component: overview, name: '头像上传' },
       ]

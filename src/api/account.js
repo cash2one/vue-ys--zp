@@ -15,4 +15,11 @@ export function getPlanTable(userId) {
     params: { userId }
   });
 }
+export function getlandpageAll(userId) {
+  return fetch({
+    url: '/landpage/all',
+    method: 'get',
+    params: { userId }
+  });
+}
 
