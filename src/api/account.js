@@ -22,4 +22,18 @@ export function getlandpageAll(userId) {
     params: { userId }
   });
 }
+export function getillegalAll(userId) {
+  return fetch({
+    url: '/black/zhcheck',
+    method: 'get',
+    params: { userId }
+  });
+}
+export function keyAll(userId) {
+  return fetch({
+    url: '/keywords/allwords',
+    method: 'get',
+    params: { userId }
+  });
+}
 

@@ -5,6 +5,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
+import $ from 'jquery'
 import 'element-ui/lib/theme-default/index.css';
 import 'assets/custom-theme/index.css'; // https://github.com/PanJiaChen/custom-element-theme
 import NProgress from 'nprogress';
@@ -23,7 +24,8 @@ import errLog from 'store/errLog';
 import './mock/index.js';  // 使用api请求时请将此行注释，不然将被mock拦截!!
 // import './styles/mixin.scss';
 import permission from 'store/permission';
-
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 // register globally
 Vue.component('multiselect', Multiselect);
 Vue.component('Sticky', Sticky);

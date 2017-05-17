@@ -21,6 +21,10 @@ import dashboard from '../views/dashboard/index';
 const overview = resolve => require(['../views/reports/overview'],resolve);
 const jihua = resolve => require(['../views/reports/jihua'],resolve);
 const qudao = resolve => require(['../views/reports/qudao'],resolve);
+const danyuan= resolve => require(['../views/reports/danyuan'],resolve);
+const illegal= resolve => require(['../views/reports/illegal'],resolve);
+const keyword= resolve => require(['../views/reports/keyword'],resolve);
+const account= resolve => require(['../views/reports/accountgl'],resolve);
 Vue.use(Router);
 
  /**
@@ -62,10 +66,11 @@ export default new Router({
       children: [
         { path: 'overview', component: overview, name: '概览 ' },
         { path: 'campaign', component: jihua, name: '计划' },
-        { path: 'adgroup', component: overview, name: '单元' },
-        { path: 'keyword', component: overview, name: '关键词' },
+        { path: 'adgroup', component: danyuan, name: '单元' },
+        { path: 'keyword', component: keyword, name: '关键词' },
         { path: 'qudao', component: qudao, name: '渠道' },
-        { path: 'hour', component: overview, name: 'SplitPane' },
+        { path: 'illegal', component: illegal, name: '违规查询' },
+        { path: 'account', component: account, name: '账户管理' },
         { path: 'landpage', component: overview, name: '头像上传' },
       ]
     },

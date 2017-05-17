@@ -12,6 +12,8 @@ mock.onGet('/user/info').reply(loginAPI.getInfo);
 mock.onGet('/account/userid').reply(accountApi.getAccountsByUser);
 mock.onGet('/plan/rate').reply(accountApi.plantable);
 mock.onGet('/landpage/all').reply(accountApi.landpageAll);
+mock.onGet('/black/zhcheck').reply(accountApi.illegalAll);
+mock.onGet('/keywords/allwords').reply(accountApi.keywordAll);
 // // 文章相关
 // mock.onGet('/article/list').reply(articleAPI.getList);
 // mock.onGet('/article/detail').reply(articleAPI.getArticle);

@@ -1,5 +1,5 @@
 <template>
-    <el-row>
+    <el-row id="app">
         <el-col :span="24" class="gailan">
             <el-col :span='24' class="gailan-toubiao">
                 各计划消费占比
@@ -7,9 +7,13 @@
             <el-col :span='24' class="gailan-zhi">
                 <el-col :span='24' style="margin-top: 30px;">
                     <div style="float: left">
-                        <div class="lav-li" style="display: inline-block">
+                        <el-radio-group v-model="radio3">
+                            <el-radio-button label="消费占比"></el-radio-button>
+                            <el-radio-button label="计划分布"></el-radio-button>
+                        </el-radio-group>
+                        <!--<div class="lav-li" style="display: inline-block">
                             <span class="la1 clink">消费占比</span><span class="la2">计划分布</span>
-                        </div>
+                        </div>-->
                     </div>
                     <div style="float: right;margin-right: 50px;">
                         <el-select v-model="value"  placeholder="请选择" style="display: none">
@@ -45,13 +49,17 @@
             </el-col>
             <el-col :span='24' class="gailan-zhi" id="users">
                 <el-col :span='24' style="margin-top: 30px;">
-                    <div class="nav-li" style="display: inline-block">
+                    <el-radio-group v-model="radio2">
+                        <el-radio-button label="下载"></el-radio-button>
+                        <el-radio-button label="激活"></el-radio-button>
+                    </el-radio-group>
+                   <!-- <div class="nav-li" style="display: inline-block">
                         <span class="li1 clink">下载</span><span class="li2">激活</span>
-                    </div>
-                    <div class="searchs" style="display: inline-block;">
+                    </div>-->
+                    <!--<div class="searchs" style="display: inline-block;">
                         <input type="text" placeholder="Search" class="search"/>
                         <span class="glyphicon glyphicon-search" style="color:#666;"></span>
-                    </div>
+                    </div>-->
                 </el-col>
                 <el-col :span='24' style="margin-top: 30px;" id="tb">
                     <el-table
@@ -70,7 +78,12 @@
                                 sortable
                                 label="消费变动">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.cost }}</span>
+                                <el-col :span='24' class="cost1" style="font-weight:bold;">
+                                    {{ scope.row.cost }}
+                                </el-col>
+                                <el-col :span='24' class="cost2" style="font-size: 12px;">
+                                    {{ scope.row.cost_change }}
+                                </el-col>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -78,7 +91,10 @@
                                 sortable
                                 label="展示变动">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <el-col :span='24' class="cost1" style="font-weight:bold;">{{ scope.row.view }}
+                                </el-col>
+                                <el-col :span='24' class="view2" style="font-size: 12px;" v-html="scope.row.view_change">
+                                </el-col>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -86,7 +102,14 @@
                                 sortable
                                 label="点击变动">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <el-col :span='12' class="" style="padding: 0;">
+                                      <p class="col-xs-12 cost1" style="font-weight:bold;"v-html="scope.row.pv"></p>
+                                      <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_change"></p>
+                                </el-col>
+                                <el-col :span='12' class=""  style="padding: 0;">
+                                     <p class="col-xs-12 pv1" style="font-weight:bold;" > <span v-html="scope.row.pv_rate"></span>%</p>
+                                    <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_rate_change"></p>
+                                </el-col>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -106,6 +129,7 @@
                             </template>
                         </el-table-column>
                         <el-table-column
+                                style="display: none"
                                 class="a2"
                                 sortable
                                 label="激活变动">
@@ -115,6 +139,7 @@
                         </el-table-column>
                         <el-table-column
                                 class="a2"
+                                style="display: none"
                                 sortable
                                 label="激活成本变动">
                             <template scope="scope">
@@ -152,13 +177,27 @@
         </el-row>
 </template>
 <script>
-
   import { mapGetters } from 'vuex';
+  import Vue from 'vue';
   import { getPlanTable } from 'api/account';
-
+  function getDateStr(AddDayCount){
+    var dd = new Date();
+    dd.setDate(dd.getDate()+AddDayCount);
+    var y = dd.getFullYear();
+    var m = dd.getMonth()+1;
+    var d = dd.getDate();
+    if (m < 10) {
+      m = "0" + m;
+    }
+    if (d < 10) {
+      d = "0" + d;
+    }
+    return y+"-"+m+"-"+d;
+  }
     export default {
         data() {
             return {
+
               options: [{
                 value: '0',
                 label: '展现 消费'
@@ -172,6 +211,8 @@
                 value: '3',
                 label: '消费 下载'
               }],
+              radio3: '消费占比',
+              radio2: '下载',
               pickerOptions0: {
                 disabledDate(time) {
                   return time.getTime() > Date.now() ;//不算今天往后禁止
@@ -179,25 +220,29 @@
 //                  return time.getTime() < Date.now()- 8.64e7 ;不算今天往前禁止
                 }
               },
-              tableData3: [{"name":"呼和浩特_iOS_社保查询","cost":"4.23","cost_change":"-0","pv":7,"pv_change":-1,"change_rate":"-12.5","chengben":"4.23","chengben_change":"1.88","button_cost":"0.00","button_cost_change":"0.000","view":94,"view_change":-11,"pv_rate":"7","pv_rate_change":"-0","h5_down":1,"h5_down_change":"-1","h5_down_rate":"1","h5_down_rate_change":"-1","activity":0,"activity_change":0,"activity_rate":"0.00","activity_rate_change":"0.00","activity_chengben":"Infinity","activity_chengben_change":"NaN","click_button":0,"click_button_change":0,"view_button":6,"view_button_change":-2}],
+              tableData3:[],
               value: '0',
-              value1:''
+              value1:getDateStr(-1),
             }
-        },
-      created:function(){
-        var _self=this;
+        } ,
+      mounted(){
         getPlanTable({uid:111}).then(response => {
           console.log(response);
-          _self.tableData3=response.data;
+          this.tableData3=response.data;
+          let myChart = this.$echarts.init(document.getElementById('myChart'))
             /*   _self.loading = false;
-                              ;*/
+             ;*/
 
         }).catch(err => {
-          _self.$message.error(err);
+          this.$message.error(err);
 //                  _self.loading = false;
         });
+      },
+    /*  created:function(){
+        var _self=this;
 
-      }
+
+      }*/
     }
 
 </script>
@@ -207,182 +252,207 @@
     @import "src/styles/rest.scss";
 
 
-    /*===================================================*/
-    .box {
-        width:100%;
-        height:880px;
-        background: white;
+    html{
+        background:#f5f7f9;
     }
-    .qudao_title {
-        width:100%;
-        height:39px;
-        line-height: 40px;
-        font-size: 16px;
-        border-bottom:1px solid #e8e8e8;
-        text-indent: 30px;
-        margin-bottom: 30px;
-        background: #fbfbfb;
+    .el-radio-button__inner{
+        width:120px;
     }
-    .qudao_infor {
-        width:100%;
-        padding:0 30px;
+    #page-wrapper{
+        background:#f5f7f9;
+        padding-left: 30px;
+        padding-right: 30px;
     }
-    .qudao_tongji {
-        width:100%;
-        height:115px;
-        border:1px solid #f0f0f0;
+    table .iconfont{
+        font-family:"iconfont" !important;
+        font-size:12px;font-style:normal;
+        -webkit-transform: scale(.6);
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .iconfont{
+        font-family:"iconfont" !important;
+        font-size:16px;font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .gailan{
+        padding: 0;
+        box-shadow: 0px 0px 6px #d9d9d9;
+    }
+    .gailan-toubiao{
+        border-bottom: 1px solid #ebebeb;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #fafbfc;
         font-size: 14px;
+        color: #3b4161;
+        font-family: 'Microsoft YaHei';
     }
-    .tongji_num {
-        color: #00b9f1;
+    .gailan-zhi{
+        padding:0;
+        background: #fff;
+        padding-bottom: 30px;
     }
-    .qudao_tongji_infor {
-        width:20%;
-        height:115px;
+    .li1,.la1{
+        display: inline-block;
+        width: 110px;
         text-align: center;
-        float: left;
-        position: relative;
-    }
-    .qudao_tongji_infor i {
-        width: 1px;
-        height: 60px;
-        background: #e0e1e5;
-        display: inline-block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-    }
-    .qudao_tongji_infor:last-child i {
-        width: 0px;
-    }
-    .tongji_name {
-        margin-top:34px;
-        margin-bottom:17px;
-    }
-    .qudao_time {
-        width:100%;
-        height:90px;
-        line-height: 90px;
-        font-size: 14px;
-        position: relative;
-    }
-    .qudao_select {
-        height:50px;
-        width:100%;
-        position: relative;
-    }
-    .qudao_select_all {
-        height: 27px;
-        position: absolute;
-        right:0;
-        top:0;
-    }
-    .qudao_select_all a:hover {
-        text-decoration: none;
-    }
-    .select_click {
-        width:17px;
-        height:17px;
-        display: inline-block;
-        border:1px solid #cbcfd8;
-        margin: 0 6px;
-        position: relative;
-    }
-    .select_yuan {
-        display: inline-block;
-        width:8px;
-        height:8px;
-        background: #02b7ee;
-        position: absolute;
-        top:0;
-        right:0;
-        left:0;
-        bottom:0;
-        margin:auto;
-    }
-    .select_name {
-        margin-right:30px;
-    }
-    input {
+        color: #00b7ee;
         height: 30px;
-        margin:0 20px!important;
-        border-radius: 5px;
-        outline:none;
-        border:1px solid #e0e1e5;
-    }
-    .qudao_btn,.qudao_out,.qudao_fenri {
-        height: 30px;
-        width: 90px;
-        background: #02b7ee;
-        color: white;
-        box-shadow: 0px 0px 8px #9ae2f8;
-        outline:none;
-        display: inline-block;
-        padding: 6px 12px;
-        line-height: 17px;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
+        line-height: 30px;
         cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-image: none;
-        border: 1px solid transparent;
-        border-radius: 4px;
+        border-top: 1px solid #00b7ee;
+        border-left: 1px solid #00b7ee;
+        border-bottom: 1px solid #00b7ee;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
     }
-    .qudao_out {
-        position: absolute;
-        top: 31px;
-        right: 0;
+    .li2,.la2{
+        display: inline-block;
+        width: 110px;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        color: #00b7ee;
+        cursor: pointer;
+        border: 1px solid #00b7ee;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
     }
-    .qudao_fenri {
-        position: absolute;
-        top: 31px;
-        right: 120px;
+    .clink{
+        color: #fff;
+        background: #01b7ee;
     }
-    .col-tr-2 th,.col-th {
-        border-bottom:none!important;
-    }
-    .qudao_table {
-        width:100%;
-        border:1px solid #e0e1e5;
+    .search{
+        margin-left: 30px;
+        height: 30px;
         border-radius: 5px;
+        border: 1px solid #ddd;
+        padding-left: 15px;
+        padding-right: 40px;
+        line-height: 30px;
+        width: 220px;
     }
-    .qudao_table tr th {
-        height:40px;
-        text-indent: 10px;
-        vertical-align:middle!important;
-        background: #e0e1e5;
-        border-right:1px solid #ffffff;
+    .glyphicon {
+        left: -30px;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: Glyphicons Halflings;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    .qudao_table tr th:last-child {
-        border-right: none;
+    .calendar .glyphicon {
+        left: 0px;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: Glyphicons Halflings;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    .qudao_table tbody {
-        display: block;
-        height:450px;
-        overflow-x: hidden;
+    .trim{
+        border: solid 1px #dfe1e4;
+        /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+        padding-right: 14px;
+        width:150px;
+        padding-left: 10px;
+        border-radius: 3px;
+        height:30px;
+        line-height:30px;
     }
-    .qudao_table tbody tr td {
-        height:60px;
-        text-indent: 10px;
-        vertical-align:middle!important;
-        border-right: 1px solid #e0e1e5;
-        border-top:none!important;
+    .daterangepicker table {
+        background: #fff;
+        width: 100%;
+        margin: 0;
     }
-    .qudao_table thead,.qudao_table tbody tr {
+/*    !*!//////////////////////////////////!*!
+    #tb table thead tr{
+        background: #dfe1e4;
+    }
+    #tb table th,#tb table td{
+        font-size: 14px;
+        padding-top:7px;
+        padding-bottom:7px;
+        color: #3b4e61;
+    }
+    #tb table th{
+
+        font-weight: 500 !important;
+    }
+    #tb table td{
+        border:solid #ddd 1px !important;
+        !*border-bottom:0 !important;*!
+        border-top:0 !important;
+    }
+    #tb table{
+        border-radius: 5px;
+        border-collapse:collapse;
+        border:none;
+    }
+    #tb table tbody tr:nth-child(odd){
+        background: #fff;
+    }
+    #tb table tbody tr:nth-child(even){
+        background: #f5f7f9;
+    }
+    #tb table thead,#tb tbody tr{
         display:table;
         width:100%;
         table-layout:fixed;
     }
-    .qudao_table tbody tr:nth-child(even) {
-        background: #f6f7f9;
+    #tb tbody{
+        display:block;
+        max-height: 500px;
+        overflow-y: scroll;
     }
-
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+        vertical-align: middle;
+    }
+    !*!//////////////////////////////////////////////!*!
+    #tb table.tablesorter thead tr .tablesorter-header-inner{
+        background-image: url(./images/bg1.png);
+        background-size: 6px;
+        background-repeat: no-repeat;
+        background-position: center right;
+        cursor: pointer;
+    }
+    #tb table.tablesorter thead tr .tablesorter-headerAsc .tablesorter-header-inner{
+        background-image: url(./images/asc1.png);
+    }
+    #tb table.tablesorter thead tr .tablesorter-headerDesc .tablesorter-header-inner{
+        background-image: url(./images/desc1.png);
+    }
+    !*!///////////////////////////////////////////////!*!
+    #tb .col-xs-12,#tb .col-xs-7,#tb .col-xs-5{
+        padding: 0;
+    }*/
+    .form-control {
+        width: 100%;
+        height: 30px;
+        padding: 6px 12px;
+        background-color: #fff !important;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .el-table .cell, .el-table th>div{
+        padding: 0 !important;
+    }
 
 </style>
 
