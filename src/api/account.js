@@ -36,4 +36,11 @@ export function keyAll(userId) {
     params: { userId }
   });
 }
+export function getHu(userId) {
+  return fetch({
+    url: '/sem/getallhu',
+    method: 'get',
+    params: { userId }
+  });
+}
 
