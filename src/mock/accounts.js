@@ -1208,7 +1208,787 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      }]
+      }];
+const hun= [{
+  "huid": 642,
+  "name": "耽美小说",
+  "appid": "odvdoh6o1hz827kbjuxh1714im5qtoca",
+  "account_type": 110201,
+  "account_name": "bjznaao",
+  "account_password": "QAZqaz123",
+  "account_appid": "undefined",
+  "account_status": 2,
+  "fd_rate": 0.47,
+  "view_type": 120001,
+  "api_count": 0,
+  "auto": "off",
+  "userid": 3360,
+  "semname": "许恩楼",
+  "type": 100001,
+  "icon": "http://test.yushan.mobi//icon/icon.jpg"
+},
+  {
+    "huid": 326,
+    "name": "有妖气漫画-神马",
+    "appid": "ur70qvsdzxm8h2t4eposnstt9mqz0klo",
+    "account_type": 110201,
+    "account_name": "youyaoqi",
+    "account_password": "QAZqaz123",
+    "account_appid": "c080a49a-33a2-47f9-b575-dc920caf1a9d",
+    "account_status": 2,
+    "fd_rate": 0.1,
+    "view_type": 120001,
+    "api_count": 499885,
+    "auto": "off",
+    "userid": 3359,
+    "semname": "张莉",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 640,
+    "name": "蜻蜓fm",
+    "appid": "x2z4w86qydghtx4fb79pgy14i7wmi6dx",
+    "account_type": 110201,
+    "account_name": "蜻蜓-神马",
+    "account_password": "qingting123",
+    "account_appid": "b1ca677bb8dde098d1a04ee1a713f6c2",
+    "account_status": 2,
+    "fd_rate": 0,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3309,
+    "semname": "张瑞雪",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 297,
+    "name": "秀吧",
+    "appid": "a87jg7kchylp8z38ipiq3q5mij4zdba7",
+    "account_type": 110201,
+    "account_name": "bjznaac",
+    "account_password": "QAZwsx123",
+    "account_appid": "79757746-7b07-4240-ab2c-7874b13aafaa",
+    "account_status": 2,
+    "fd_rate": 0.47,
+    "view_type": 120001,
+    "api_count": 499875,
+    "auto": "off",
+    "userid": 3360,
+    "semname": "许恩楼",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 282,
+    "name": "欢乐书客-神马",
+    "appid": "ae6h7wm6fwlvxnlynnxchgds4i57f23a",
+    "account_type": 110201,
+    "account_name": "bjznaag",
+    "account_password": "QAZqaz123",
+    "account_appid": "f16c427d-e0b2-4835-87ac-084c735fb8df",
+    "account_status": 2,
+    "fd_rate": 0.25,
+    "view_type": 120001,
+    "api_count": 499885,
+    "auto": "off",
+    "userid": 3359,
+    "semname": "张莉",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 3851,
+    "name": "蜻蜓2",
+    "appid": "2d5012514a7f4698955a07cb5cef9951",
+    "account_type": 110101,
+    "account_name": "sh倾听-vip",
+    "account_password": "QingTing@12.com",
+    "account_appid": "fbd5fcef394db91abf23f83375a74af3",
+    "account_status": 2,
+    "fd_rate": 0.41,
+    "view_type": 120001,
+    "api_count": 1715758,
+    "auto": "on",
+    "userid": 3309,
+    "semname": "张瑞雪",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi/Fvf1qIVgeBnAi6j3doqdXTGLMpEx"
+  },
+  {
+    "huid": 1007,
+    "name": "嗨起",
+    "appid": "6fj7tlj39pswogmemxl16h6w29r4k5n8",
+    "account_type": 110201,
+    "account_name": "bjznbbo",
+    "account_password": "QAZqaz123",
+    "account_appid": "undefined",
+    "account_status": 2,
+    "fd_rate": 0.15,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3359,
+    "semname": "张莉",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 553,
+    "name": "玖珺",
+    "appid": "b44i5a12jmf1igy4tnemnp14i9d96wnv",
+    "account_type": 110107,
+    "account_name": "Baidu-无线-玖珺Ff2165396",
+    "account_password": "AAbb001",
+    "account_appid": "notoken",
+    "account_status": 2,
+    "fd_rate": 0.055,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3228,
+    "semname": "陈岩",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 298,
+    "name": "畅读书城-神马",
+    "appid": "cy5hp16m2jmw2rt78vu545cditbhhzrj",
+    "account_type": 110201,
+    "account_name": "changdusc",
+    "account_password": "QAZqaz123",
+    "account_appid": "b1718341-7205-4ae3-ae9e-b6b7fe05a9ff",
+    "account_status": 2,
+    "fd_rate": 0.29,
+    "view_type": 120001,
+    "api_count": 499885,
+    "auto": "on",
+    "userid": 3360,
+    "semname": "许恩楼",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 3790,
+    "name": "单身交友",
+    "appid": "9bf95ca025b140ca95782e98d0bcd36d",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道av2162292",
+    "account_password": "QAZqaz1234",
+    "account_appid": "432c013ad48b70f0e0c11022f5ca6e9c",
+    "account_status": 2,
+    "fd_rate": 0.5,
+    "view_type": 120001,
+    "api_count": 34138,
+    "auto": "off",
+    "userid": 3228,
+    "semname": "陈岩",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 3930,
+    "name": "美团2",
+    "appid": "c5b781a3230c4b0d81e9024533a76bc9",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bd-智道gu2162292",
+    "account_password": "Qa1234  ",
+    "account_appid": "",
+    "account_status": 2,
+    "fd_rate": 0.31,
+    "view_type": 120001,
+    "api_count": 34528,
+    "auto": "off",
+    "userid": 3924,
+    "semname": "胡冰霞",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 864,
+    "name": "简单借款",
+    "appid": "cx2hegfpnr6odns7h8r5rvn29j9vcti7",
+    "account_type": 110201,
+    "account_name": "心向076",
+    "account_password": "1q2w3e4r",
+    "account_appid": "undefined",
+    "account_status": 2,
+    "fd_rate": 0.3,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3360,
+    "semname": "许恩楼",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 879,
+    "name": "美团备用",
+    "appid": "f58iukunmp13cbo9sknd7eewmi8cmlp2",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智投aq2160884",
+    "account_password": "QAZqaz123",
+    "account_appid": "9ccfd7d14094596c7cbd7f99d203d723",
+    "account_status": 2,
+    "fd_rate": 0,
+    "view_type": 120001,
+    "api_count": 34997,
+    "auto": "off",
+    "userid": 3924,
+    "semname": "胡冰霞",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 4036,
+    "name": "联泓",
+    "appid": "ZhlCDhegteWBMUtrVLVuqLHvsOHkbNWj",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-联泓2165235",
+    "account_password": "Qa1234",
+    "account_appid": "",
+    "account_status": 2,
+    "fd_rate": 0,
+    "view_type": 120001,
+    "api_count": null,
+    "auto": "off",
+    "userid": 3102,
+    "semname": "刘鹏举",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 370,
+    "name": "北京服务您",
+    "appid": "rtreqi1gn9rgrkapip4hiwwmiuz8kf5n",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道hq2162292 ",
+    "account_password": "Qa1234",
+    "account_appid": "undefined",
+    "account_status": 2,
+    "fd_rate": 0.41,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 451,
+    "semname": "张玉杰",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 4005,
+    "name": "百度外卖",
+    "appid": "gwfZacWoPtehGwlhQMUoieddSibinnxP",
+    "account_type": 110101,
+    "account_name": "Baidu-DSP智道m2162577",
+    "account_password": "QAZqaz1234",
+    "account_appid": "",
+    "account_status": 2,
+    "fd_rate": 0,
+    "view_type": 120001,
+    "api_count": null,
+    "auto": "off",
+    "userid": 3102,
+    "semname": "刘鹏举",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 3939,
+    "name": "搜狗地图",
+    "appid": "YAcrOAOCdtJMlgwPxClOUeqZwgkYkhkT",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道u2162292",
+    "account_password": "Hzld2017fff",
+    "account_appid": "",
+    "account_status": 2,
+    "fd_rate": 0.41,
+    "view_type": 120001,
+    "api_count": null,
+    "auto": "off",
+    "userid": 3102,
+    "semname": "刘鹏举",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 882,
+    "name": "水晶直播",
+    "appid": "dnb61i6t73e79n3r31nnhlg14it7m67i",
+    "account_type": 110201,
+    "account_name": "bjznbba",
+    "account_password": "QAZqaz123",
+    "account_appid": "undefined",
+    "account_status": 2,
+    "fd_rate": 0,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3360,
+    "semname": "许恩楼",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 554,
+    "name": "玖珺",
+    "appid": "xnt6fs42jt89l9vuijw6ogvi9s9r50by",
+    "account_type": 110107,
+    "account_name": "Baidu-无线-玖珺Fg2165396",
+    "account_password": "AAbb001",
+    "account_appid": "notoken",
+    "account_status": 2,
+    "fd_rate": 0.055,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3102,
+    "semname": "刘鹏举",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  },
+  {
+    "huid": 3768,
+    "name": "同城聊",
+    "appid": "7ecae9c1828e4dd68e59069167e8c270",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道cl2162292",
+    "account_password": "QAZqaz1234",
+    "account_appid": "e379d6e30357234138989208de840f50",
+    "account_status": 2,
+    "fd_rate": 0.3,
+    "view_type": 120001,
+    "api_count": 34440,
+    "auto": "off",
+    "userid": 3221,
+    "semname": "周雷雨",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+  }]
+const wudan=[{
+  "adgroupName": "20170423_个人住房公积金查询",
+  "campaignName": "昆明_iOS_公积金查询",
+  "view_total": 172,
+  "click_total": 18,
+  "cost_total": 13.35
+},
+  {
+    "adgroupName": "20170423_住房基金查询",
+    "campaignName": "成都_android_公积金查询",
+    "view_total": 3,
+    "click_total": 2,
+    "cost_total": 1.09
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "南京_android_公积金查询",
+    "view_total": 21,
+    "click_total": 1,
+    "cost_total": 0.33
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "南京_android_公积金查询",
+    "view_total": 31,
+    "click_total": 3,
+    "cost_total": 1.67
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "南昌_android_公积金查询",
+    "view_total": 16,
+    "click_total": 1,
+    "cost_total": 0.57
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "佛山_android_公积金查询",
+    "view_total": 160,
+    "click_total": 13,
+    "cost_total": 7.11
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "佛山_android_公积金查询",
+    "view_total": 4,
+    "click_total": 1,
+    "cost_total": 0.56
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "南昌_iOS_公积金查询",
+    "view_total": 6,
+    "click_total": 1,
+    "cost_total": 0.86
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "西安_iOS_公积金查询",
+    "view_total": 103,
+    "click_total": 24,
+    "cost_total": 17.98
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "九江_android_公积金查询",
+    "view_total": 108,
+    "click_total": 10,
+    "cost_total": 5.46
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "吉林_iOS_公积金查询",
+    "view_total": 376,
+    "click_total": 32,
+    "cost_total": 24.19
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "济南_android_公积金查询",
+    "view_total": 22,
+    "click_total": 5,
+    "cost_total": 2.83
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "青岛_iOS_公积金查询",
+    "view_total": 20,
+    "click_total": 3,
+    "cost_total": 2.14
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "郑州_android_公积金查询",
+    "view_total": 66,
+    "click_total": 7,
+    "cost_total": 3.74
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "常德_iOS_公积金查询",
+    "view_total": 95,
+    "click_total": 18,
+    "cost_total": 14.32
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "宁波_iOS_公积金查询",
+    "view_total": 159,
+    "click_total": 25,
+    "cost_total": 18.81
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "北京_iOS_公积金查询",
+    "view_total": 295,
+    "click_total": 38,
+    "cost_total": 28.12
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "南通_iOS_公积金查询",
+    "view_total": 64,
+    "click_total": 12,
+    "cost_total": 8.69
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "桂林_iOS_公积金查询",
+    "view_total": 27,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人住房公积金",
+    "campaignName": "南京_android_公积金查询",
+    "view_total": 1,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "临沂_android_公积金查询",
+    "view_total": 1,
+    "click_total": 1,
+    "cost_total": 0.58
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "东莞_android_公积金查询",
+    "view_total": 2,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "济宁_iOS_公积金查询",
+    "view_total": 138,
+    "click_total": 34,
+    "cost_total": 23.82
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "南京_iOS_公积金查询",
+    "view_total": 4,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "福州_android_公积金查询",
+    "view_total": 2,
+    "click_total": 1,
+    "cost_total": 0.49
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "德州_android_公积金查询",
+    "view_total": 23,
+    "click_total": 7,
+    "cost_total": 3.55
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "昆明_android_公积金查询",
+    "view_total": 1,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "吉林_iOS_公积金查询",
+    "view_total": 522,
+    "click_total": 61,
+    "cost_total": 43.46
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "南宁_android_公积金查询",
+    "view_total": 39,
+    "click_total": 7,
+    "cost_total": 3.7
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "上海_iOS_公积金查询",
+    "view_total": 690,
+    "click_total": 132,
+    "cost_total": 93.17
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "哈尔滨_iOS_公积金查询",
+    "view_total": 3,
+    "click_total": 2,
+    "cost_total": 1.24
+  },
+  {
+    "adgroupName": "20170423_住房基金查询",
+    "campaignName": "上海_iOS_公积金查询",
+    "view_total": 3,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "昆明_iOS_公积金查询",
+    "view_total": 6,
+    "click_total": 3,
+    "cost_total": 2.39
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "无锡_android_公积金查询",
+    "view_total": 164,
+    "click_total": 5,
+    "cost_total": 2.66
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "朝阳_iOS_公积金查询",
+    "view_total": 75,
+    "click_total": 11,
+    "cost_total": 8.75
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "东营_iOS_公积金查询",
+    "view_total": 16,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "合肥_iOS_公积金查询",
+    "view_total": 250,
+    "click_total": 38,
+    "cost_total": 28.8
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "东营_iOS_公积金查询",
+    "view_total": 141,
+    "click_total": 12,
+    "cost_total": 8.33
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "东莞_android_公积金查询",
+    "view_total": 95,
+    "click_total": 5,
+    "cost_total": 2.89
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "其他_android_公积金查询",
+    "view_total": 7888,
+    "click_total": 1237,
+    "cost_total": 654.56
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "广州_android_公积金查询",
+    "view_total": 264,
+    "click_total": 33,
+    "cost_total": 18.49
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "福州_android_公积金查询",
+    "view_total": 36,
+    "click_total": 4,
+    "cost_total": 2.24
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "郑州_android_公积金查询",
+    "view_total": 168,
+    "click_total": 32,
+    "cost_total": 15.37
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "北京_iOS_公积金查询",
+    "view_total": 105,
+    "click_total": 19,
+    "cost_total": 14.71
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "无锡_iOS_公积金查询",
+    "view_total": 8,
+    "click_total": 1,
+    "cost_total": 0.85
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "南宁_iOS_公积金查询",
+    "view_total": 128,
+    "click_total": 27,
+    "cost_total": 19.98
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "济宁_iOS_公积金查询",
+    "view_total": 88,
+    "click_total": 28,
+    "cost_total": 21.1
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "南通_android_公积金查询",
+    "view_total": 108,
+    "click_total": 25,
+    "cost_total": 13.29
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "宁波_iOS_公积金查询",
+    "view_total": 44,
+    "click_total": 3,
+    "cost_total": 2.66
+  },
+  {
+    "adgroupName": "20170423_住房基金查询",
+    "campaignName": "惠州_iOS_公积金查询",
+    "view_total": 4,
+    "click_total": 1,
+    "cost_total": 0.76
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "邯郸_iOS_公积金查询",
+    "view_total": 44,
+    "click_total": 5,
+    "cost_total": 3.88
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "吉林_android_公积金查询",
+    "view_total": 32,
+    "click_total": 1,
+    "cost_total": 0.62
+  },
+  {
+    "adgroupName": "个人住房公积金",
+    "campaignName": "大连_iOS_公积金查询",
+    "view_total": 8,
+    "click_total": 1,
+    "cost_total": 0.76
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "哈尔滨_android_公积金查询",
+    "view_total": 348,
+    "click_total": 19,
+    "cost_total": 10.19
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "南通_android_公积金查询",
+    "view_total": 2,
+    "click_total": 1,
+    "cost_total": 0.55
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "长春_android_公积金查询",
+    "view_total": 6,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人住房公积金",
+    "campaignName": "深圳_iOS_公积金查询",
+    "view_total": 51,
+    "click_total": 5,
+    "cost_total": 4.32
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "武汉_iOS_公积金查询",
+    "view_total": 9,
+    "click_total": 1,
+    "cost_total": 0.79
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "沈阳_iOS_公积金查询",
+    "view_total": 70,
+    "click_total": 3,
+    "cost_total": 2.13
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "朝阳_android_公积金查询",
+    "view_total": 5,
+    "click_total": 3,
+    "cost_total": 1.73
+  }]
     export default {
     getAccountsByUser: config => {
         const userId = config.params;
@@ -1250,6 +2030,16 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
             }, 500);
         })
     },
+      hu: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve([200, {
+              data: hun
+            }]);
+          }, 500);
+        })
+      },
   illegalAll: config => {
     const userId = config.params;
     return new Promise((resolve, reject) => {
@@ -1260,5 +2050,15 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
       }, 500);
     })
   },
+      danyuan: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve([200, {
+              data:wudan
+            }]);
+          }, 500);
+        })
+      },
 };
 

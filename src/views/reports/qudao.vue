@@ -193,7 +193,6 @@
                 value: '',
                 value1:'',
                 radio: 5,
-
             }
         },
         created:function(){
@@ -208,12 +207,10 @@
                 _self.$message.error(err);
 //                  _self.loading = false;
         });
-
         }
     }
-
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style scoped  rel="stylesheet/scss" lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";

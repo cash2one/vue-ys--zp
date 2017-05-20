@@ -1,16 +1,27 @@
 <template>
-    <div id="app" style="padding-left: 15px;padding-right: 15px;">
+    <div class="app" style="padding-left: 15px;padding-right: 15px;">
+        <el-dialog  title="提示" :visible.sync="dialogTableVisible">
+            <P style="color: red;text-indent: 20px">提交后不可更改</P>
+            <span slot="footer" class="dialog-footer">
+             <el-button type="primary" @click="dialogFormVisible = true">我知道了</el-button>
+            </span>
+        </el-dialog>
         <div>
             <div class="col-xs-12 gailan">
                 <div class="col-xs-12 gailan-toubiao">
                     管理 > 账户管理
                 </div>
-                <div class="col-xs-12 gailan-zhi" id="users">
-                    <div class="col-xs-12" style="margin-top: 30px;">
-                        <a href="/v2/fenpeizhanghu/page.html"><button class="keep">分配账户</button></a>
-                        <!--<button class="xinjian add_ant" data-toggle="modal" data-target="#myModal">新建账户</button>-->
-                        <el-button class="xinjian add_ant" style="margin-left: 30px;"  @click="dialogTableVisible = true">新建账户</el-button>
-                    </div>
+                <div class="col-xs-12 gailan-zhi1" id="users">
+                    <el-row>
+                        <el-col :span="24" class="col-xs-12" style="margin-top: 30px;">
+                            <a href="/v2/fenpeizhanghu/page.html"><el-button class="keep">分配账户</el-button></a>
+                            <!--<button class="xinjian add_ant" data-toggle="modal" data-target="#myModal">新建账户</button>-->
+                            <el-button type="text" class="xinjian add_ant" style="margin-left: 30px;"  @click="dialogTableVisible = true">新建账户</el-button>
+                        </el-col>
+
+                      </span>
+                    </el-row>
+
                     <el-row class="col-xs-12 clear" style="margin-top: 30px;">
                         <el-col :span="10" class="col-xs-5" style="padding-left: 0;">
                             <div class="searchs">
@@ -26,22 +37,117 @@
                             </div>
                         </el-col>
                     </el-row>
-                    <div class="col-xs-12 contain" style="margin-top: 30px;" id="tb">
+                    <el-row>
+                        <el-col :span="24" class="col-xs-12 contain" style="margin-top: 30px;" id="tb">
+                            <el-table
+                                    :data="tableData3"
+                                    height="400"
+                                    stripe
+                                    border
+                                    :default-sort = "{prop: 'name', order: 'descending'}"
+                                    style="width: 100%">
+                                <el-table-column
+                                        sortable
+                                        width="50"
+                                        style="text-align: center;padding-left: 0 !important;"
+                                        label="全选">
+                                    <template scope="scope">
+                                        <div style="text-align: center">
+                                            <i class="statu-start">
+                                                <i :data-id='scope.row.huid'></i>
+                                            </i>
+                                            <span style="display: none">1</span>
+                                        </div>
 
-                    </div>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        prop="jihua_name"
+                                        label="账户名称">
+                                    <template scope="scope">
+                                        <div  :data-id="scope.row.huid" :data-userid="scope.row.userid" :data-semname="scope.row.semname" :data-type="scope.row.account_type" :data-name="scope.row.name " :data-appid="scope.row.appid ">
+                                            {{ scope.row.name }}
+                                        </div>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        prop="danyuan_name"
+                                        label="状态">
+                                    <template scope="scope">
+                                        <el-tag class="label label-default" v-if="scope.row.account_status ==0" style="background: #EC5A55;">停投</el-tag>
+                                        <el-tag class="label label-default"  v-else-if="scope.row.account_status ==1" style="background: #64cd64;">在投</el-tag>
+                                        <el-tag class="label label-default" v-else-if="scope.row.account_status ==2" style="background: #faaa3a;">暂停</el-tag>
+
+                                        <el-tag class="label label-default" v-if="scope.row.auto=='on'" style="background: #fff;color: #64cd64;border: 1px solid #64cd64;">AUTO</el-tag>
+                                        <el-tag class="label label-default disabled" v-else style="background: #fff;color: #ddd;border: 1px solid #ddd;">AUTO</el-tag>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column
+                                        prop="semname"
+                                        class="a2"
+                                        sortable
+                                        label="优化师">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="account_name"
+                                        class="a2"
+                                        sortable
+                                        label="户名">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        prop="appid"
+                                        sortable
+                                        label="APP ID">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        prop="type1"
+                                        sortable
+                                        label="账户来源">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        sortable
+                                        prop="fd_rate"
+                                        label="返点">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        sortable
+                                        prop="api_count"
+                                        label="API余额">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        sortable
+                                        label="操作">
+                                    <template scope="scope">
+                                        <div v-if="scope.row.account_status ==0" >
+                                            <i class="iconfont wen1" :data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #64cd64;">&#xe68a;</i>
+                                            <i class="iconfont wen2" :data-status="2" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #faaa3a;">&#xe644;</i>
+                                            <i class="iconfont wen3 disabled" :data-status="0" :data-id=scope.row.huid  style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                        </div>
+                                        <div v-else-if="scope.row.account_status ==1" >
+                                            <i class="iconfont wen1 disabled"  :data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #64cd64;">&#xe68a;</i>
+                                            <i class="iconfont wen2" :data-status="2" :data-id=scope.row.huid  style="cursor: pointer;margin-right: 5px;color: #faaa3a;">&#xe644;</i>
+                                            <i class="iconfont wen3" :data-status="0" :data-id=scope.row.huid style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                        </div>
+                                        <div v-else-if="scope.row.account_status ==2">
+                                            <i class="iconfont wen1" :data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right: 5px;color: #64cd64;">&#xe68a;</i>
+                                            <i class="iconfont wen2 disabled" :data-status="2" :data-id=scope.row.huid style="cursor: pointer;margin-right: 5px;color: #faaa3a;">&#xe644;</i>
+                                            <i class="iconfont wen3" :data-status="0" :data-id=scope.row.huid  style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                        </div>
+                                    </template>
+                                </el-table-column>
+                            </el-table>
+                        </el-col>
+                    </el-row>
+
                     <!--提示-->
-                    <el-dialog  :visible.sync="dialogTableVisible">
-                            <div class="foot">
-                                <div class="tishi">
-                                    <p>提示信息</p>
-                                    <P style="color: red;text-indent: 20px">提交后不可更改</P>
-                                </div>
-                                <div class="foot_btn">
-                                    <el-button type="primary" @click="dialogTableVisible = false;dialogFormVisible = true">我知道了</el-button>
-                                </div>
-                            </div>
 
-                    </el-dialog>
                     <el-dialog  :visible.sync="dialogFormVisible">
                         <div class="foot">
                             <form id="Form" >
@@ -144,55 +250,16 @@
 <script>
 
     import { mapGetters } from 'vuex';
-//    import Vue from 'vue';
+    import Vue from 'vue';
 //    import $ from 'jquery'
-    import { getillegalAll } from 'api/account';
-    function dateFormat(date,format) {
-      if (typeof date === "string") {
-        var mts = date.match(/(\/Date\((\d+)\)\/)/);
-        if (mts && mts.length >= 3) {
-          date = parseInt(mts[2]);
-        }
-      }
-      date = new Date(date);
-      if (!date || date.toUTCString() == "Invalid Date") {
-        return "";
-      }
+    import { getHu } from 'api/account';
 
-      var map = {
-        "M": date.getMonth() + 1, //月份
-        "d": date.getDate(), //日
-        "h": date.getHours(), //小时
-        "m": date.getMinutes(), //分
-        "s": date.getSeconds(), //秒
-        "q": Math.floor((date.getMonth() + 3) / 3), //季度
-        "S": date.getMilliseconds() //毫秒
-      };
-
-      format = format.replace(/([yMdhmsqS])+/g, function(all, t){
-        var v = map[t];
-        if(v !== undefined){
-          if(all.length > 1){
-            v = '0' + v;
-            v = v.substr(v.length-2);
-          }
-          return v;
-        }
-        else if(t === 'y'){
-          return (date.getFullYear() + '').substr(4 - all.length);
-        }
-        return all;
-      });
-      return format;
-    }
     export default {
         data() {
             return {
               dialogTableVisible: false,
               dialogFormVisible: false,
-              goodsList:[],
-              tableData:[]
-
+              tableData3:[]
             }
         },
       methods: {
@@ -233,12 +300,12 @@
           }).done(function (data) {
 
             for(let i=0;i<data.keyword.length;i++){
-              // data[i].date=data[i].date.Format("yyyy-MM-dd HH:mm");
+              // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
               data.keyword[i].date=utils.dateFormat(data.keyword[i].date,'yyyy-MM-dd hh:mm')
             }
             geet1=data.keyword;
             for(let i=0;i<data.chuangyi.length;i++){
-              // data[i].date=data[i].date.Format("yyyy-MM-dd HH:mm");
+              // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
               data.chuangyi[i].date=utils.dateFormat(data.chuangyi[i].date,'yyyy-MM-dd hh:mm')
             }
             geet2=data.chuangyi;
@@ -251,17 +318,45 @@
           });*/
         },
       },
+      mounted(){
+        let n1=1;
+        $('.statu-start1').eq(0).click(function () {
+          $(this).find('i').addClass('statu-end1');
+          $('.statu-start1').eq(1).find('i').removeClass('statu-end1');
+          $('.statu-start1').eq(2).find('i').removeClass('statu-end1');
+          qudao();
+          $('.youqudao').show();
+          n1=1;
+        });
+        $('.statu-start1').eq(1).click(function () {
+          $(this).find('i').addClass('statu-end1');
+          $('.statu-start1').eq(0).find('i').removeClass('statu-end1');
+          $('.statu-start1').eq(2).find('i').removeClass('statu-end1');
+          $("#qudao").find("option").remove();
+          $('.youqudao').hide();
+          n1=2;
+        });
+        $(document).on('click','.statu-start',function () {
+          if($(this).siblings('span').text()==1){
+            $(this).find('i').addClass('statu-end');
+            $(this).siblings('span').text('0');
+          }else if($(this).siblings('span').text()==0){
+            $(this).find('i').removeClass('statu-end');
+            $(this).siblings('span').text('1');
+          }
+        });
+      },
       created:function(){
         var _self=this;
-        getillegalAll({uid:111}).then(response => {
+        getHu({uid:111}).then(response => {
           console.log(response);
-//          this.tableData3=response.data;
+          this.tableData3=response.data;
 
-          for(let i=0;i<response.data.keyword.length;i++){
-            // data[i].date=data[i].date.Format("yyyy-MM-dd HH:mm");
+          /*for(let i=0;i<response.data.keyword.length;i++){
+            // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
             response.data.keyword[i].date=dateFormat(response.data.keyword[i].date,'yyyy-MM-dd hh:mm')
           }
-          _self.tableData=response.data.keyword;
+          _self.tableData=response.data.keyword;*/
 //          let myChart = this.$echarts.init(document.getElementById('myChart'))
             /*   _self.loading = false;
              ;*/
@@ -286,12 +381,12 @@
         }).done(function (data) {
 
           for(let i=0;i<data.keyword.length;i++){
-            // data[i].date=data[i].date.Format("yyyy-MM-dd HH:mm");
+            // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
             data.keyword[i].date=utils.dateFormat(data.keyword[i].date,'yyyy-MM-dd hh:mm')
           }
           geet1=data.keyword;
           for(let i=0;i<data.chuangyi.length;i++){
-            // data[i].date=data[i].date.Format("yyyy-MM-dd HH:mm");
+            // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
             data.chuangyi[i].date=utils.dateFormat(data.chuangyi[i].date,'yyyy-MM-dd hh:mm')
           }
           geet2=data.chuangyi;
@@ -301,7 +396,7 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" lang="scss" scoped>
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -314,6 +409,9 @@
     }
     .el-table__body-wrapper{
         overflow-x: hidden;
+    }
+    .el-table .cell, .el-table th>div{
+        padding: 0;
     }
     .box-left {
         display: none;
@@ -348,12 +446,11 @@
         color: #3b4161;
         font-family: 'Microsoft YaHei';
     }
-    .gailan-zhi{
+    .gailan-zhi1{
         padding:0;
         background: #fff;
         padding-bottom: 30px;
     }
-
     .search{
         height: 30px;
         border-radius: 5px;
@@ -685,14 +782,14 @@
         background: #01b7ee;
         margin: auto;
     }
-    .label{
+/*    .label{
         display: inline-block;
         width: 40px;
         text-align: center;
         padding: 0;
         padding-top: .3em;
         padding-bottom: .3em;
-    }
+    }*/
 
     .disabled { pointer-events: none;color: #ddd !important; }
     /*//////////////////////////////////////*/

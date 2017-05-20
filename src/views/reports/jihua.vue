@@ -4,42 +4,46 @@
             <el-col :span='24' class="gailan-toubiao">
                 各计划消费占比
             </el-col>
-            <el-col :span='24' class="gailan-zhi">
+            <el-col :span='24' class="gailan-zhi1">
                 <el-col :span='24' style="margin-top: 30px;">
                     <div style="float: left">
-                        <el-radio-group v-model="radio3">
-                            <el-radio-button label="消费占比"></el-radio-button>
-                            <el-radio-button label="计划分布"></el-radio-button>
+                        <el-radio-group v-model="radio3" @change="g">
+                            <el-radio-button  class='g1' label="消费占比"></el-radio-button>
+                            <el-radio-button  class='g2' label="计划分布"></el-radio-button>
                         </el-radio-group>
                         <!--<div class="lav-li" style="display: inline-block">
                             <span class="la1 clink">消费占比</span><span class="la2">计划分布</span>
                         </div>-->
                     </div>
                     <div style="float: right;margin-right: 50px;">
-                        <el-select v-model="value"  placeholder="请选择" style="display: none">
+                        <!--<el-select v-model="value"  placeholder="请选择" style="display: none">
                             <el-option
                                     v-for="item in options"
                                     :key="item.value"
                                     :label="item.label"
                                     :value="item.value">
                             </el-option>
-                        </el-select>
-                        <!--<select class="trim" style="display: none;">
+                        </el-select>-->
+                        <select class="trim">
                             <option value="0">展现 消费</option>
                             <option value="1">展现 点击</option>
                             <option value="2">展现 下载</option>
                             <option value="3">消费 下载</option>
-                        </select>-->
-                        <el-date-picker
-                                v-model="value1"
-                                type="date"
-                                placeholder="选择日期"
-                                :picker-options="pickerOptions0">
-                        </el-date-picker>
-                        <input type="text" readonly style="display:none;width: 150px;" name="birthday" class="birthday form-control" />
+                        </select>
+                        <span class="bir">
+                            <el-date-picker
+                                    v-model="value1"
+                                    type="date"
+                                    placeholder="选择日期"
+                                    @change="daten"
+                                    :picker-options="pickerOptions0">
+                            </el-date-picker>
+                        </span>
+
+                        <!--<input type="text" readonly style="width: 150px;" name="birthday" class="birthday form-control" />-->
                     </div>
                 </el-col>
-                <div class="col-xs-12 tol1" id="main"  style="height:300px;"></div>
+                <el-col :span="24" class="col-xs-12 tol1" id="main"  style="height:400px;"></el-col>
                 <!--<div class="col-xs-12 tol2" id="main1"  style="height:300px;"></div>-->
             </el-col>
         </el-col>
@@ -47,9 +51,9 @@
             <el-col :span='24' class="gailan-toubiao">
                 各计划数据统计
             </el-col>
-            <el-col :span='24' class="gailan-zhi" id="users">
+            <el-col :span='24' class="gailan-zhi1" id="users">
                 <el-col :span='24' style="margin-top: 30px;">
-                    <el-radio-group v-model="radio2">
+                    <el-radio-group v-model="radio2" @change="gnd">
                         <el-radio-button label="下载"></el-radio-button>
                         <el-radio-button label="激活"></el-radio-button>
                     </el-radio-group>
@@ -64,7 +68,7 @@
                 <el-col :span='24' style="margin-top: 30px;" id="tb">
                     <el-table
                             :data="tableData3"
-                            height="250"
+                            height="350"
                             border
                             :default-sort = "{prop: 'name', order: 'descending'}"
                             style="width: 100%">
@@ -81,8 +85,7 @@
                                 <el-col :span='24' class="cost1" style="font-weight:bold;">
                                     {{ scope.row.cost }}
                                 </el-col>
-                                <el-col :span='24' class="cost2" style="font-size: 12px;">
-                                    {{ scope.row.cost_change }}
+                                <el-col :span='24' class="cost2" style="font-size: 12px;" v-html="scope.row.cost_change">
                                 </el-col>
                             </template>
                         </el-table-column>
@@ -117,7 +120,14 @@
                                 sortable
                                 label="下载变动">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <el-col :span='12' class="" style="padding: 0;">
+                                    <p class="col-xs-12 cost1" style="font-weight:bold;" v-html="scope.row.h5_down"></p>
+                                    <p class="col-xs-12 down2" style="font-size: 12px;" v-html="scope.row.h5_down_change"></p>
+                                </el-col>
+                                <el-col :span='12' class=""  style="padding: 0;">
+                                    <p class="col-xs-12 pv1" style="font-weight:bold;" > <span v-html="scope.row.h5_down_rate"></span>%</p>
+                                    <p class="col-xs-12 down2" style="font-size: 12px;" v-html="scope.row.h5_down_rate_change"></p>
+                                </el-col>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -125,25 +135,10 @@
                                 sortable
                                 label="下载成本变动">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                            </template>
-                        </el-table-column>
-                        <el-table-column
-                                style="display: none"
-                                class="a2"
-                                sortable
-                                label="激活变动">
-                            <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                            </template>
-                        </el-table-column>
-                        <el-table-column
-                                class="a2"
-                                style="display: none"
-                                sortable
-                                label="激活成本变动">
-                            <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.chengben }}
+                                </p>
+                                <p class="col-xs-12 down1" v-html="scope.row.chengben_change" style="font-size: 12px;">
+                                </p>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -151,7 +146,10 @@
                                 sortable
                                 label="按钮消费">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.button_cost }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.button_cost_change" style="font-size: 12px;">
+                                </p>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -159,7 +157,10 @@
                                 sortable
                                 label="按钮展现">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.view_button }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.view_button_change" style="font-size: 12px;">
+                                </p>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -167,11 +168,128 @@
                                 sortable
                                 label="按钮下载">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.pv }}</span>
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.click_button }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.click_button_change" style="font-size: 12px;">
+                                </p>
                             </template>
                         </el-table-column>
                     </el-table>
+
                 </el-col>
+                <el-col :span='24' style="margin-top: 30px;" id="weishen" >
+                    <el-table
+                            :data="tableData2"
+                            height="350"
+                            border
+                            :default-sort = "{prop: 'name', order: 'descending'}"
+                            style="width: 100%">
+                        <el-table-column
+                                prop="name"
+                                sortable
+                                label="计划">
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="消费变动">
+                            <template scope="scope">
+                                <el-col :span='24' class="cost1" style="font-weight:bold;">
+                                    {{ scope.row.cost }}
+                                </el-col>
+                                <el-col :span='24' class="cost2" style="font-size: 12px;" v-html="scope.row.cost_change">
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="展示变动">
+                            <template scope="scope">
+                                <el-col :span='24' class="cost1" style="font-weight:bold;">{{ scope.row.view }}
+                                </el-col>
+                                <el-col :span='24' class="view2" style="font-size: 12px;" v-html="scope.row.view_change">
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="点击变动">
+                            <template scope="scope">
+                                <el-col :span='12' class="" style="padding: 0;">
+                                    <p class="col-xs-12 cost1" style="font-weight:bold;"v-html="scope.row.pv"></p>
+                                    <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_change"></p>
+                                </el-col>
+                                <el-col :span='12' class=""  style="padding: 0;">
+                                    <p class="col-xs-12 pv1" style="font-weight:bold;" > <span v-html="scope.row.pv_rate"></span>%</p>
+                                    <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_rate_change"></p>
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="激活变动">
+                            <template scope="scope">
+                                <el-col :span='12' class="" style="padding: 0;">
+                                    <p class="col-xs-12 cost1" style="font-weight:bold;" v-html="scope.row.activity"></p>
+                                    <p class="col-xs-12 active2" style="font-size: 12px;" v-html="scope.row.activity_change"></p>
+                                </el-col>
+                                <el-col :span='12' class=""  style="padding: 0;">
+                                    <p class="col-xs-12 pv1" style="font-weight:bold;" > <span v-html="scope.row.activity_rate"></span>%</p>
+                                    <p class="col-xs-12 active2" style="font-size: 12px;" v-html="scope.row.activity_rate_change"></p>
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="激活成本变动">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.activity_chengben }}
+                                </p>
+                                <p class="col-xs-12 active1" v-html="scope.row.activity_chengben_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="按钮消费">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.button_cost }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.button_cost_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="按钮展现">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.view_button }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.view_button_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="按钮下载">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.click_button }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.click_button_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+
+                </el-col>
+
             </el-col>
         </el-col>
         </el-row>
@@ -181,6 +299,286 @@
   import { mapGetters } from 'vuex';
   import Vue from 'vue';
   import { getPlanTable } from 'api/account';
+  const echarts = require('echarts/lib/echarts');
+  require('echarts/lib/chart/pie');
+  require('echarts/lib/chart/line');
+  require('echarts/lib/chart/scatter')
+  // 引入提示框和标题组件
+  require('echarts/lib/component/tooltip');
+  require('echarts/lib/component/title');
+  require('echarts/lib/component/legend');
+
+  let tit;
+  let all;
+  let arr_legend = [];
+  let arr_cost = [];
+
+  function renderSinglePie(legend, cost) {
+    var lin = [];
+    var total = 0;
+    for (var j in cost) {
+      total += parseFloat(cost[j]);
+    }
+    var total1 = parseInt(total * 0.1);
+    for (var i = 0; i < cost.length; i++) {
+      if (cost[i] < 20) {
+        lin[i] = {
+          value: cost[i],
+          name: '其他'
+        }
+      } else if (cost[i] < total1) {
+        lin[i] = {
+          value: cost[i],
+          name: legend[i],
+        }
+      } else {
+        lin[i] = {
+          value: cost[i],
+          name: legend[i],
+          itemStyle: {
+            normal: {
+              label: {
+                show: true,
+                formatter: '{d}%',
+                position: 'outer',
+              },
+              labelLine: {
+                show: true,
+              }
+            }
+          }
+        }
+      }
+
+    }
+    return lin;
+  }
+  function renderPie(tit, legend, cost) {
+    console.log(legend)
+    var legends = [];
+    var a = [];
+    var datas =renderSinglePie(legend, cost);
+    var date = 0;
+    for (let i = 0; i < datas.length; i++) {
+      if (datas[i].name == '其他') {
+        date += parseFloat(datas[i].value);
+        continue;
+      } else {
+        a.push(datas[i])
+      }
+    }
+    if (date != 0) {
+      var l = {
+        value: date,
+        name: '其他',
+      };
+      a.push(l)
+    }
+    for (let j = 0; j < a.length; j++) {
+      legends.push(a[j].name)
+    }
+    console.log(legends)
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+      },
+      grid:{
+        left:10,
+        bottom:20,
+      },
+      legend: {
+        orient: 'vertical',
+        data: legends,
+        x: 'right',
+        y: 'top'
+      },
+      series: [
+        {
+          name: '面积模式',
+          type: 'pie',
+          radius: '40%',
+          center: ['30%', '40%'],
+          data: a,
+          itemStyle: {
+            normal: {
+              label: {
+                show: false,
+                formatter: "{d}%",
+                position: 'inner'
+              },
+              labelLine: {
+                show: false
+              }
+            },
+            emphasis: {
+              label: {
+                show: true,
+                formatter: "{d}%",
+                position: 'inner'
+              },
+//                                            radius : '40%',
+              labelLine: {
+                show: false
+              },
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
+    };
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+      myChart.resize();
+    },false);
+  }
+  function renderS(data,who) {
+    console.log(data);
+    let scatter=[];
+    let x;
+    let y;
+    if(who==0){
+      for(let i=0;i<data.length;i++){
+        scatter[i]=[];
+        scatter[i].push(data[i].cost);
+        scatter[i].push(data[i].view);
+        scatter[i].push(data[i].name);
+      }
+      x='消费';
+      y='展现';
+    }else if(who==1){
+      for(let i=0;i<data.length;i++){
+        scatter[i]=[];
+        scatter[i].push(data[i].pv);
+        scatter[i].push(data[i].view);
+        scatter[i].push(data[i].name);
+      }
+      x='点击';
+      y='展现';
+    }else if(who==2){
+      for(let i=0;i<data.length;i++){
+        scatter[i]=[];
+        scatter[i].push(data[i].h5_down);
+        scatter[i].push(data[i].view);
+        scatter[i].push(data[i].name);
+      }
+      x='下载';
+      y='展现';
+    }else if(who==3){
+      for(let i=0;i<data.length;i++){
+        scatter[i]=[];
+        scatter[i].push(data[i].h5_down);
+        scatter[i].push(data[i].cost);
+        scatter[i].push(data[i].name);
+      }
+      x='下载';
+      y='消费';
+    }
+
+    console.log(scatter);
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+      grid: {
+        left: '3%',
+        right: '7%',
+        bottom: '3%',
+        containLabel: true
+      },
+      tooltip : {
+        trigger: 'item',
+        showDelay : 0,
+        formatter : function (params) {
+          if (params.value.length > 1) {
+            return params.value[2] + ' :<br/>（'
+              + params.value[0] + '， '
+              + params.value[1] + '） ';
+          }else {
+            return params.value[2] + ' :<br/>'
+              + params.name + ' : '
+              + params.value ;
+          }
+        },
+
+      },
+
+      brush: {
+      },
+      legend: {
+        data: ['计划'],
+        left: 'center'
+      },
+      xAxis : [
+        {
+          name:x,
+          type : 'value',
+          scale:true,
+            /*axisLabel : {
+             formatter: '{value} 元'
+             },*/
+          splitLine:{
+            show:false,
+          },
+          axisLine:{
+            show:false,
+          },
+          axisTick:{
+            show:false,
+          },
+          axisLabel:{
+            textStyle:{
+              color:'#3b4e61',
+              fontSize:14,
+            },
+          }
+        }
+      ],
+      yAxis : [
+        {
+          name:y,
+          type : 'value',
+          scale:true,
+          axisLine:{
+            show:false,
+          },
+          axisTick:{
+            show:false,
+          },
+          axisLabel:{
+            textStyle:{
+              color:'#3b4e61',
+              fontSize:14,
+            },
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#dfe1e4',
+              type: 'solid',
+              width: 1,
+            },
+          },
+        }
+      ],
+      series : [
+        {
+          name:'对比',
+          type:'scatter',
+          data: scatter,
+
+        },
+
+      ]
+    };
+
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+      myChart.resize();
+    },false);
+  }
+
   function getDateStr(AddDayCount){
     var dd = new Date();
     dd.setDate(dd.getDate()+AddDayCount);
@@ -222,11 +620,13 @@
                 }
               },
               tableData3:[],
+              tableData2:[],
               value: '0',
               value1:getDateStr(-1),
             }
         } ,
       mounted(){
+
         getPlanTable({uid:111}).then(response => {
           console.log(response);
           this.tableData3=response.data;
@@ -236,7 +636,225 @@
         }).catch(err => {
           this.$message.error(err);
 //                  _self.loading = false;
+
+        $('.trim').change(function () {
+          renderS(all,$(this).val());
         });
+      },
+      methods:{
+        daten:function () {
+//          alert(this.value1);
+          getPlanTable({uid:111}).then(response => {
+            console.log(response);
+            all=response.data
+            tit='各计划消费占比';
+            arr_legend=[];
+            arr_cost=[];
+            for (var i = 0; i < response.data.length; i++) {
+              arr_legend.push(response.data[i].name);
+
+              arr_cost.push(response.data[i].cost);
+              if (response.data[i].cost_change < 0) {
+                response.data[i].cost_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].cost_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].cost_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].cost_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].view_change < 0) {
+                response.data[i].view_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].view_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].view_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].view_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].pv_change < 0) {
+                response.data[i].pv_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].pv_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].pv_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].pv_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].chengben_change < 0) {
+                response.data[i].chengben_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].chengben_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].chengben_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].chengben_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].button_cost_change < 0) {
+                response.data[i].button_cost_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].button_cost_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].button_cost_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].button_cost_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].pv_rate_change < 0) {
+                response.data[i].pv_rate_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].pv_rate_change) + '%<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].pv_rate_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].pv_rate_change) + '%<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].h5_down_change < 0) {
+                response.data[i].h5_down_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].h5_down_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].h5_down_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].h5_down_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].h5_down_rate_change < 0) {
+                response.data[i].h5_down_rate_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].h5_down_rate_change) + '%<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].h5_down_rate_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].h5_down_rate_change) + '%<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].activity_change < 0) {
+                response.data[i].activity_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].activity_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].activity_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].activity_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].activity_chengben_change < 0) {
+                response.data[i].activity_chengben_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].activity_chengben_change) + '<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].activity_chengben_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].activity_chengben_change) + '<i class="iconfont">&#xe680;</i></span>';
+              }
+              if (response.data[i].activity_rate_change < 0) {
+                response.data[i].activity_rate_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].activity_rate_change) + '%<i class="iconfont">&#xe681;</i></span>';
+              } else {
+                response.data[i].activity_rate_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].activity_rate_change) + '%<i class="iconfont">&#xe680;</i></span>';
+              }
+              if(response.data[i].click_button_change<0){
+                response.data[i].click_button_change='<span style="color: #48c9b0 !important;">'+Math.abs(response.data[i].baidu_click_button_change)+'<i class="iconfont">&#xe681;</i></span>';
+              }else{
+                response.data[i].click_button_change='<span style="color: #EC5A55 !important;">'+Math.abs(response.data[i].baidu_click_button_change)+'<i class="iconfont">&#xe680;</i></span>';
+              }
+              if(response.data[i].view_button_change<0){
+                response.data[i].view_button_change='<span style="color: #48c9b0 !important;">'+Math.abs(response.data[i].baidu_view_button_change)+'<i class="iconfont">&#xe681;</i></span>';
+              }else{
+                response.data[i].view_button_change='<span style="color: #EC5A55 !important;">'+Math.abs(response.data[i].baidu_view_button_change)+'<i class="iconfont">&#xe680;</i></span>';
+              }
+            }
+//          console.log(arr_legend)
+//          console.log(arr_cost)
+            this.tableData3=response.data;
+            this.tableData2=response.data;
+            renderPie(tit, arr_legend, arr_cost);
+//          let myChart = this.$echarts.init(document.getElementById('myChart'))
+              /*   _self.loading = false;
+               ;*/
+
+          }).catch(err => {
+            this.$message.error(err);
+//                  _self.loading = false;
+          });
+        },
+       /* g1:function(event) {
+
+
+        },
+        g2:function (event) {
+
+        },*/
+        g:function (event) {
+          console.log(event);
+          if(event=='消费占比'){
+            renderPie(tit, arr_legend, arr_cost);
+            $('.bir').show();
+            $('.trim').hide();
+          }else{
+            renderS(all,$('.trim').val());
+            $('.trim').show();
+            $('.bir').hide()
+          }
+        },
+        gnd:function (event) {
+          console.log(event);
+          if(event=='下载'){
+
+            $('#weishen').css('display','none');
+            $('#tb').show();
+          }else{
+            $('#tb').hide();
+            $('#weishen').css('display','block');
+          }
+        }
+      },
+     created(){
+       getPlanTable({uid:111}).then(response => {
+         console.log(response);
+         all=response.data
+         tit='各计划消费占比';
+         arr_legend=[];
+         arr_cost=[];
+         for (var i = 0; i < response.data.length; i++) {
+           arr_legend.push(response.data[i].name);
+
+           arr_cost.push(response.data[i].cost);
+           if (response.data[i].cost_change < 0) {
+             response.data[i].cost_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].cost_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].cost_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].cost_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].view_change < 0) {
+             response.data[i].view_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].view_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].view_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].view_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].pv_change < 0) {
+             response.data[i].pv_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].pv_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].pv_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].pv_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].chengben_change < 0) {
+             response.data[i].chengben_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].chengben_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].chengben_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].chengben_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].button_cost_change < 0) {
+             response.data[i].button_cost_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].button_cost_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].button_cost_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].button_cost_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].pv_rate_change < 0) {
+             response.data[i].pv_rate_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].pv_rate_change) + '%<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].pv_rate_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].pv_rate_change) + '%<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].h5_down_change < 0) {
+             response.data[i].h5_down_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].h5_down_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].h5_down_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].h5_down_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].h5_down_rate_change < 0) {
+             response.data[i].h5_down_rate_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].h5_down_rate_change) + '%<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].h5_down_rate_change = '<span style="color: #EC5A55 !important;">' + Math.abs(response.data[i].h5_down_rate_change) + '%<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].activity_change < 0) {
+             response.data[i].activity_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].activity_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].activity_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].activity_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].activity_chengben_change < 0) {
+             response.data[i].activity_chengben_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].activity_chengben_change) + '<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].activity_chengben_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].activity_chengben_change) + '<i class="iconfont">&#xe680;</i></span>';
+           }
+           if (response.data[i].activity_rate_change < 0) {
+             response.data[i].activity_rate_change = '<span style="color: #48c9b0 !important;">' + Math.abs(response.data[i].activity_rate_change) + '%<i class="iconfont">&#xe681;</i></span>';
+           } else {
+             response.data[i].activity_rate_change = '<span style="color: #EC5A55 !important;">' +Math.abs(response.data[i].activity_rate_change) + '%<i class="iconfont">&#xe680;</i></span>';
+           }
+           if(response.data[i].click_button_change<0){
+             response.data[i].click_button_change='<span style="color: #48c9b0 !important;">'+Math.abs(response.data[i].baidu_click_button_change)+'<i class="iconfont">&#xe681;</i></span>';
+           }else{
+             response.data[i].click_button_change='<span style="color: #EC5A55 !important;">'+Math.abs(response.data[i].baidu_click_button_change)+'<i class="iconfont">&#xe680;</i></span>';
+           }
+           if(response.data[i].view_button_change<0){
+             response.data[i].view_button_change='<span style="color: #48c9b0 !important;">'+Math.abs(response.data[i].baidu_view_button_change)+'<i class="iconfont">&#xe681;</i></span>';
+           }else{
+             response.data[i].view_button_change='<span style="color: #EC5A55 !important;">'+Math.abs(response.data[i].baidu_view_button_change)+'<i class="iconfont">&#xe680;</i></span>';
+           }
+         }
+//          console.log(arr_legend)
+//          console.log(arr_cost)
+         this.tableData3=response.data;
+         this.tableData2=response.data;
+         renderPie(tit, arr_legend, arr_cost);
+//          let myChart = this.$echarts.init(document.getElementById('myChart'))
+           /*   _self.loading = false;
+            ;*/
+
+       }).catch(err => {
+         this.$message.error(err);
+//                  _self.loading = false;
+       });
       },
     /*  created:function(){
         var _self=this;
@@ -246,7 +864,7 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped  lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -257,6 +875,15 @@
     }
     .el-radio-button__inner{
         width:120px;
+    }
+    .trim{
+        display: none;
+    }
+    .bir{
+        display: inline-block;
+    }
+    #weishen{
+        display: none;
     }
     #page-wrapper{
         background:#f5f7f9;
@@ -291,7 +918,7 @@
         color: #3b4161;
         font-family: 'Microsoft YaHei';
     }
-    .gailan-zhi{
+    .gailan-zhi1{
         padding:0;
         background: #fff;
         padding-bottom: 30px;

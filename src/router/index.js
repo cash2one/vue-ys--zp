@@ -22,9 +22,31 @@ const overview = resolve => require(['../views/reports/overview'],resolve);
 const jihua = resolve => require(['../views/reports/jihua'],resolve);
 const qudao = resolve => require(['../views/reports/qudao'],resolve);
 const danyuan= resolve => require(['../views/reports/danyuan'],resolve);
-const illegal= resolve => require(['../views/reports/illegal'],resolve);
 const keyword= resolve => require(['../views/reports/keyword'],resolve);
-const account= resolve => require(['../views/reports/accountgl'],resolve);
+const datarate = resolve => require(['../views/reports/datarate'],resolve);
+const account= resolve => require(['../views/manager/accountgl'],resolve);
+
+/* 推广管理 */
+const blacklist = resolve => require(['../views/adtools/blacklist'],resolve);
+
+/* 智能调价 */
+const planset = resolve => require(['../views/ai/planset'],resolve);
+
+/* 异常监控 */
+const illegal = resolve => require(['../views/monitor/illegal'],resolve);
+const taskDay = resolve => require(['../views/monitor/task_day'],resolve);
+
+/* 用户设置 */
+const passwordSet = resolve => require(['../views/user/password'],resolve);
+
+/* 管理 */
+const accountgl = resolve => require(['../views/manager/accountgl'],resolve);
+
+/* 数据分析 */
+const dailyAnalysis = resolve => require(['../views/data/analysis/daily'],resolve);
+const compareAnalysis = resolve => require(['../views/data/analysis/compare'],resolve);
+
+
 Vue.use(Router);
 
  /**
@@ -72,6 +94,38 @@ export default new Router({
         { path: 'illegal', component: illegal, name: '违规查询' },
         { path: 'account', component: account, name: '账户管理' },
         { path: 'landpage', component: overview, name: '头像上传' },
+      ]
+    },
+    {
+      path: '/adtools',
+      component: Layout,
+      redirect: '/adtools/index',
+      name: '推广管理',
+      icon: 'zujian',
+      children: [
+        { path: 'blacklist', component: blacklist, name: '黑名单 ' },
+        { path: 'datarate', component: datarate, name: '数据对比 ' },
+      ]
+    },
+    {
+      path: '/ai',
+      component: Layout,
+      redirect: '/ai/index',
+      name: '智能调价',
+      icon: 'zujian',
+      children: [
+        { path: 'planset', component: planset, name: '计划设置 ' },
+      ]
+    },
+    {
+      path: '/monitor',
+      component: Layout,
+      redirect: '/monitor/index',
+      name: '异常监控',
+      icon: 'zujian',
+      children: [
+        { path: 'illegal', component: illegal, name: '违规检查 ' },
+        { path: 'daily/check', component: taskDay, name: '每日检查 ' },
       ]
     },
 
