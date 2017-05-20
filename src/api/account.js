@@ -15,6 +15,13 @@ export function getPlanTable(userId) {
     params: { userId }
   });
 }
+export function getDanTable(userId) {
+  return fetch({
+    url: '/unit/getunit',
+    method: 'get',
+    params: { userId }
+  });
+}
 export function getlandpageAll(userId) {
   return fetch({
     url: '/landpage/all',

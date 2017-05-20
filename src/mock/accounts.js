@@ -1569,6 +1569,426 @@ const hun= [{
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
   }]
+const wudan=[{
+  "adgroupName": "20170423_个人住房公积金查询",
+  "campaignName": "昆明_iOS_公积金查询",
+  "view_total": 172,
+  "click_total": 18,
+  "cost_total": 13.35
+},
+  {
+    "adgroupName": "20170423_住房基金查询",
+    "campaignName": "成都_android_公积金查询",
+    "view_total": 3,
+    "click_total": 2,
+    "cost_total": 1.09
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "南京_android_公积金查询",
+    "view_total": 21,
+    "click_total": 1,
+    "cost_total": 0.33
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "南京_android_公积金查询",
+    "view_total": 31,
+    "click_total": 3,
+    "cost_total": 1.67
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "南昌_android_公积金查询",
+    "view_total": 16,
+    "click_total": 1,
+    "cost_total": 0.57
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "佛山_android_公积金查询",
+    "view_total": 160,
+    "click_total": 13,
+    "cost_total": 7.11
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "佛山_android_公积金查询",
+    "view_total": 4,
+    "click_total": 1,
+    "cost_total": 0.56
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "南昌_iOS_公积金查询",
+    "view_total": 6,
+    "click_total": 1,
+    "cost_total": 0.86
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "西安_iOS_公积金查询",
+    "view_total": 103,
+    "click_total": 24,
+    "cost_total": 17.98
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "九江_android_公积金查询",
+    "view_total": 108,
+    "click_total": 10,
+    "cost_total": 5.46
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "吉林_iOS_公积金查询",
+    "view_total": 376,
+    "click_total": 32,
+    "cost_total": 24.19
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "济南_android_公积金查询",
+    "view_total": 22,
+    "click_total": 5,
+    "cost_total": 2.83
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "青岛_iOS_公积金查询",
+    "view_total": 20,
+    "click_total": 3,
+    "cost_total": 2.14
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "郑州_android_公积金查询",
+    "view_total": 66,
+    "click_total": 7,
+    "cost_total": 3.74
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "常德_iOS_公积金查询",
+    "view_total": 95,
+    "click_total": 18,
+    "cost_total": 14.32
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "宁波_iOS_公积金查询",
+    "view_total": 159,
+    "click_total": 25,
+    "cost_total": 18.81
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "北京_iOS_公积金查询",
+    "view_total": 295,
+    "click_total": 38,
+    "cost_total": 28.12
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "南通_iOS_公积金查询",
+    "view_total": 64,
+    "click_total": 12,
+    "cost_total": 8.69
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "桂林_iOS_公积金查询",
+    "view_total": 27,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人住房公积金",
+    "campaignName": "南京_android_公积金查询",
+    "view_total": 1,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "临沂_android_公积金查询",
+    "view_total": 1,
+    "click_total": 1,
+    "cost_total": 0.58
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "东莞_android_公积金查询",
+    "view_total": 2,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "济宁_iOS_公积金查询",
+    "view_total": 138,
+    "click_total": 34,
+    "cost_total": 23.82
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "南京_iOS_公积金查询",
+    "view_total": 4,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "福州_android_公积金查询",
+    "view_total": 2,
+    "click_total": 1,
+    "cost_total": 0.49
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "德州_android_公积金查询",
+    "view_total": 23,
+    "click_total": 7,
+    "cost_total": 3.55
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "昆明_android_公积金查询",
+    "view_total": 1,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "吉林_iOS_公积金查询",
+    "view_total": 522,
+    "click_total": 61,
+    "cost_total": 43.46
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "南宁_android_公积金查询",
+    "view_total": 39,
+    "click_total": 7,
+    "cost_total": 3.7
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "上海_iOS_公积金查询",
+    "view_total": 690,
+    "click_total": 132,
+    "cost_total": 93.17
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "哈尔滨_iOS_公积金查询",
+    "view_total": 3,
+    "click_total": 2,
+    "cost_total": 1.24
+  },
+  {
+    "adgroupName": "20170423_住房基金查询",
+    "campaignName": "上海_iOS_公积金查询",
+    "view_total": 3,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "昆明_iOS_公积金查询",
+    "view_total": 6,
+    "click_total": 3,
+    "cost_total": 2.39
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "无锡_android_公积金查询",
+    "view_total": 164,
+    "click_total": 5,
+    "cost_total": 2.66
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "朝阳_iOS_公积金查询",
+    "view_total": 75,
+    "click_total": 11,
+    "cost_total": 8.75
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "东营_iOS_公积金查询",
+    "view_total": 16,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "合肥_iOS_公积金查询",
+    "view_total": 250,
+    "click_total": 38,
+    "cost_total": 28.8
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "东营_iOS_公积金查询",
+    "view_total": 141,
+    "click_total": 12,
+    "cost_total": 8.33
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "东莞_android_公积金查询",
+    "view_total": 95,
+    "click_total": 5,
+    "cost_total": 2.89
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "其他_android_公积金查询",
+    "view_total": 7888,
+    "click_total": 1237,
+    "cost_total": 654.56
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "广州_android_公积金查询",
+    "view_total": 264,
+    "click_total": 33,
+    "cost_total": 18.49
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "福州_android_公积金查询",
+    "view_total": 36,
+    "click_total": 4,
+    "cost_total": 2.24
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "郑州_android_公积金查询",
+    "view_total": 168,
+    "click_total": 32,
+    "cost_total": 15.37
+  },
+  {
+    "adgroupName": "公积金查询",
+    "campaignName": "北京_iOS_公积金查询",
+    "view_total": 105,
+    "click_total": 19,
+    "cost_total": 14.71
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "无锡_iOS_公积金查询",
+    "view_total": 8,
+    "click_total": 1,
+    "cost_total": 0.85
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "南宁_iOS_公积金查询",
+    "view_total": 128,
+    "click_total": 27,
+    "cost_total": 19.98
+  },
+  {
+    "adgroupName": "20170423_住房公积金个人账户",
+    "campaignName": "济宁_iOS_公积金查询",
+    "view_total": 88,
+    "click_total": 28,
+    "cost_total": 21.1
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "南通_android_公积金查询",
+    "view_total": 108,
+    "click_total": 25,
+    "cost_total": 13.29
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "宁波_iOS_公积金查询",
+    "view_total": 44,
+    "click_total": 3,
+    "cost_total": 2.66
+  },
+  {
+    "adgroupName": "20170423_住房基金查询",
+    "campaignName": "惠州_iOS_公积金查询",
+    "view_total": 4,
+    "click_total": 1,
+    "cost_total": 0.76
+  },
+  {
+    "adgroupName": "20170423_个人住房公积金查询",
+    "campaignName": "邯郸_iOS_公积金查询",
+    "view_total": 44,
+    "click_total": 5,
+    "cost_total": 3.88
+  },
+  {
+    "adgroupName": "20170423_公积金网站",
+    "campaignName": "吉林_android_公积金查询",
+    "view_total": 32,
+    "click_total": 1,
+    "cost_total": 0.62
+  },
+  {
+    "adgroupName": "个人住房公积金",
+    "campaignName": "大连_iOS_公积金查询",
+    "view_total": 8,
+    "click_total": 1,
+    "cost_total": 0.76
+  },
+  {
+    "adgroupName": "20170423_其他",
+    "campaignName": "哈尔滨_android_公积金查询",
+    "view_total": 348,
+    "click_total": 19,
+    "cost_total": 10.19
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "南通_android_公积金查询",
+    "view_total": 2,
+    "click_total": 1,
+    "cost_total": 0.55
+  },
+  {
+    "adgroupName": "个人公积金余额查询",
+    "campaignName": "长春_android_公积金查询",
+    "view_total": 6,
+    "click_total": 0,
+    "cost_total": 0
+  },
+  {
+    "adgroupName": "个人住房公积金",
+    "campaignName": "深圳_iOS_公积金查询",
+    "view_total": 51,
+    "click_total": 5,
+    "cost_total": 4.32
+  },
+  {
+    "adgroupName": "20170423_身份证查公积金",
+    "campaignName": "武汉_iOS_公积金查询",
+    "view_total": 9,
+    "click_total": 1,
+    "cost_total": 0.79
+  },
+  {
+    "adgroupName": "20170423_个人公积金查询",
+    "campaignName": "沈阳_iOS_公积金查询",
+    "view_total": 70,
+    "click_total": 3,
+    "cost_total": 2.13
+  },
+  {
+    "adgroupName": "20170423_公积金查询",
+    "campaignName": "朝阳_android_公积金查询",
+    "view_total": 5,
+    "click_total": 3,
+    "cost_total": 1.73
+  }]
     export default {
     getAccountsByUser: config => {
         const userId = config.params;
@@ -1630,5 +2050,15 @@ const hun= [{
       }, 500);
     })
   },
+      danyuan: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve([200, {
+              data:wudan
+            }]);
+          }, 500);
+        })
+      },
 };
 

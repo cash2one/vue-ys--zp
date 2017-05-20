@@ -22,7 +22,7 @@
                 检查详情
             </div>
             <el-row>
-            <el-col :xs="24" class="col-xs-12 gailan-zhi" id="users" style="display: block;">
+            <el-col :xs="24" class="col-xs-12 gailan-zhi1" id="users" style="display: block;">
 
                     <el-col :span="24" class="col-xs-12" style="margin-top: 15px;padding-left: 15px;">
                         <el-radio-group v-model="radio3">
@@ -223,7 +223,7 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" lang="scss" scoped>
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -253,6 +253,9 @@
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
     }
+    label{
+        margin-right: 0;
+    }
     .gailan{
         padding: 0;
         box-shadow: 0px 0px 6px #d9d9d9;
@@ -267,7 +270,7 @@
         color: #3b4161;
         font-family: 'Microsoft YaHei';
     }
-    .gailan-zhi{
+    .gailan-zhi1{
         overflow: hidden;
         padding:0;
         background: #fff;

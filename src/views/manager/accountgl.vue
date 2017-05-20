@@ -11,7 +11,7 @@
                 <div class="col-xs-12 gailan-toubiao">
                     管理 > 账户管理
                 </div>
-                <div class="col-xs-12 gailan-zhi" id="users">
+                <div class="col-xs-12 gailan-zhi1" id="users">
                     <el-row>
                         <el-col :span="24" class="col-xs-12" style="margin-top: 30px;">
                             <a href="/v2/fenpeizhanghu/page.html"><el-button class="keep">分配账户</el-button></a>
@@ -396,7 +396,7 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" lang="scss" scoped>
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -446,12 +446,11 @@
         color: #3b4161;
         font-family: 'Microsoft YaHei';
     }
-    .gailan-zhi{
+    .gailan-zhi1{
         padding:0;
         background: #fff;
         padding-bottom: 30px;
     }
-
     .search{
         height: 30px;
         border-radius: 5px;

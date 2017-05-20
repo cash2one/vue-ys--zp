@@ -4,12 +4,12 @@
             <el-col :span='24' class="gailan-toubiao">
                 各计划消费占比
             </el-col>
-            <el-col :span='24' class="gailan-zhi">
+            <el-col :span='24' class="gailan-zhi1">
                 <el-col :span='24' style="margin-top: 30px;">
                     <div style="float: left">
-                        <el-radio-group v-model="radio3">
-                            <el-radio-button v-on:click='g1' label="消费占比"></el-radio-button>
-                            <el-radio-button v-on:click='g2' label="计划分布"></el-radio-button>
+                        <el-radio-group v-model="radio3" @change="g">
+                            <el-radio-button  class='g1' label="消费占比"></el-radio-button>
+                            <el-radio-button  class='g2' label="计划分布"></el-radio-button>
                         </el-radio-group>
                         <!--<div class="lav-li" style="display: inline-block">
                             <span class="la1 clink">消费占比</span><span class="la2">计划分布</span>
@@ -24,19 +24,22 @@
                                     :value="item.value">
                             </el-option>
                         </el-select>-->
-                        <select class="trim" style="display: none;">
+                        <select class="trim">
                             <option value="0">展现 消费</option>
                             <option value="1">展现 点击</option>
                             <option value="2">展现 下载</option>
                             <option value="3">消费 下载</option>
                         </select>
-                        <el-date-picker
-                                v-model="value1"
-                                type="date"
-                                placeholder="选择日期"
-                                @change="date"
-                                :picker-options="pickerOptions0">
-                        </el-date-picker>
+                        <span class="bir">
+                            <el-date-picker
+                                    v-model="value1"
+                                    type="date"
+                                    placeholder="选择日期"
+                                    @change="daten"
+                                    :picker-options="pickerOptions0">
+                            </el-date-picker>
+                        </span>
+
                         <!--<input type="text" readonly style="width: 150px;" name="birthday" class="birthday form-control" />-->
                     </div>
                 </el-col>
@@ -48,9 +51,9 @@
             <el-col :span='24' class="gailan-toubiao">
                 各计划数据统计
             </el-col>
-            <el-col :span='24' class="gailan-zhi" id="users">
+            <el-col :span='24' class="gailan-zhi1" id="users">
                 <el-col :span='24' style="margin-top: 30px;">
-                    <el-radio-group v-model="radio2">
+                    <el-radio-group v-model="radio2" @change="gnd">
                         <el-radio-button label="下载"></el-radio-button>
                         <el-radio-button label="激活"></el-radio-button>
                     </el-radio-group>
@@ -65,7 +68,7 @@
                 <el-col :span='24' style="margin-top: 30px;" id="tb">
                     <el-table
                             :data="tableData3"
-                            height="250"
+                            height="350"
                             border
                             :default-sort = "{prop: 'name', order: 'descending'}"
                             style="width: 100%">
@@ -139,7 +142,92 @@
                             </template>
                         </el-table-column>
                         <el-table-column
-                                style="display: none"
+                                class="a2"
+                                sortable
+                                label="按钮消费">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.button_cost }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.button_cost_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="按钮展现">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.view_button }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.view_button_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="按钮下载">
+                            <template scope="scope">
+                                <p class="col-xs-12 cost1" style="font-weight:bold;">{{ scope.row.click_button }}
+                                </p>
+                                <p class="col-xs-12 btn_cost1" v-html="scope.row.click_button_change" style="font-size: 12px;">
+                                </p>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+
+                </el-col>
+                <el-col :span='24' style="margin-top: 30px;" id="weishen" >
+                    <el-table
+                            :data="tableData2"
+                            height="350"
+                            border
+                            :default-sort = "{prop: 'name', order: 'descending'}"
+                            style="width: 100%">
+                        <el-table-column
+                                prop="name"
+                                sortable
+                                label="计划">
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="消费变动">
+                            <template scope="scope">
+                                <el-col :span='24' class="cost1" style="font-weight:bold;">
+                                    {{ scope.row.cost }}
+                                </el-col>
+                                <el-col :span='24' class="cost2" style="font-size: 12px;" v-html="scope.row.cost_change">
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="展示变动">
+                            <template scope="scope">
+                                <el-col :span='24' class="cost1" style="font-weight:bold;">{{ scope.row.view }}
+                                </el-col>
+                                <el-col :span='24' class="view2" style="font-size: 12px;" v-html="scope.row.view_change">
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                class="a2"
+                                sortable
+                                label="点击变动">
+                            <template scope="scope">
+                                <el-col :span='12' class="" style="padding: 0;">
+                                    <p class="col-xs-12 cost1" style="font-weight:bold;"v-html="scope.row.pv"></p>
+                                    <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_change"></p>
+                                </el-col>
+                                <el-col :span='12' class=""  style="padding: 0;">
+                                    <p class="col-xs-12 pv1" style="font-weight:bold;" > <span v-html="scope.row.pv_rate"></span>%</p>
+                                    <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_rate_change"></p>
+                                </el-col>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
                                 class="a2"
                                 sortable
                                 label="激活变动">
@@ -156,7 +244,6 @@
                         </el-table-column>
                         <el-table-column
                                 class="a2"
-                                style="display: none"
                                 sortable
                                 label="激活成本变动">
                             <template scope="scope">
@@ -200,7 +287,9 @@
                             </template>
                         </el-table-column>
                     </el-table>
+
                 </el-col>
+
             </el-col>
         </el-col>
         </el-row>
@@ -530,12 +619,18 @@
                 }
               },
               tableData3:[],
+              tableData2:[],
               value: '0',
               value1:getDateStr(-1),
             }
         } ,
+      mounted(){
+        $('.trim').change(function () {
+          renderS(all,$(this).val());
+        });
+      },
       methods:{
-        date:function () {
+        daten:function () {
 //          alert(this.value1);
           getPlanTable({uid:111}).then(response => {
             console.log(response);
@@ -616,6 +711,7 @@
 //          console.log(arr_legend)
 //          console.log(arr_cost)
             this.tableData3=response.data;
+            this.tableData2=response.data;
             renderPie(tit, arr_legend, arr_cost);
 //          let myChart = this.$echarts.init(document.getElementById('myChart'))
               /*   _self.loading = false;
@@ -626,12 +722,35 @@
 //                  _self.loading = false;
           });
         },
-        g1:function () {
-          renderPie(tit, arr_legend, arr_cost);
+       /* g1:function(event) {
+
 
         },
-        g2:function () {
-          renderS(all,$('.trim').val());
+        g2:function (event) {
+
+        },*/
+        g:function (event) {
+          console.log(event);
+          if(event=='消费占比'){
+            renderPie(tit, arr_legend, arr_cost);
+            $('.bir').show();
+            $('.trim').hide();
+          }else{
+            renderS(all,$('.trim').val());
+            $('.trim').show();
+            $('.bir').hide()
+          }
+        },
+        gnd:function (event) {
+          console.log(event);
+          if(event=='下载'){
+
+            $('#weishen').css('display','none');
+            $('#tb').show();
+          }else{
+            $('#tb').hide();
+            $('#weishen').css('display','block');
+          }
         }
       },
      created(){
@@ -714,6 +833,7 @@
 //          console.log(arr_legend)
 //          console.log(arr_cost)
          this.tableData3=response.data;
+         this.tableData2=response.data;
          renderPie(tit, arr_legend, arr_cost);
 //          let myChart = this.$echarts.init(document.getElementById('myChart'))
            /*   _self.loading = false;
@@ -732,7 +852,7 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped  lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -743,6 +863,15 @@
     }
     .el-radio-button__inner{
         width:120px;
+    }
+    .trim{
+        display: none;
+    }
+    .bir{
+        display: inline-block;
+    }
+    #weishen{
+        display: none;
     }
     #page-wrapper{
         background:#f5f7f9;
@@ -777,7 +906,7 @@
         color: #3b4161;
         font-family: 'Microsoft YaHei';
     }
-    .gailan-zhi{
+    .gailan-zhi1{
         padding:0;
         background: #fff;
         padding-bottom: 30px;

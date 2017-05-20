@@ -25,7 +25,7 @@
                     <div style="float: left">
                     </div>
                     <div style="float: right">
-                        <select class="trim">
+                        <select class="trimn">
                             <option value="0">展现 消费</option>
                             <option value="1">展现 点击</option>
                         </select>
@@ -66,107 +66,33 @@
                                     :default-sort = "{prop: 'name', order: 'descending'}"
                                     style="width: 100%">
                                 <el-table-column
-                                        prop="name"
+                                        prop="adgroupName"
                                         sortable
-                                        label="计划">
+                                        label="单元名">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        prop="campaignName"
+                                        sortable
+                                        label="计划名">
+                                </el-table-column>
+                                <el-table-column
+                                        class="a2"
+                                        prop="view_total"
+                                        sortable
+                                        label="展示">
                                 </el-table-column>
                                 <el-table-column
                                         class="a2"
                                         sortable
-                                        label="消费变动">
-                                    <template scope="scope">
-                                        <div  class="cost1" style="font-weight:bold;">
-                                            {{ scope.row.cost }}
-                                        </div>
-                                        <div  class="cost2" style="font-size: 12px;">
-                                            {{ scope.row.cost_change }}
-                                        </div>
-                                    </template>
+                                        prop="click_total"
+                                        label="点击">
                                 </el-table-column>
                                 <el-table-column
                                         class="a2"
+                                        prop="cost_total"
                                         sortable
-                                        label="展示变动">
-                                    <template scope="scope">
-                                        <div  class="cost1" style="font-weight:bold;">{{ scope.row.view }}
-                                        </div>
-                                        <div  class="view2" style="font-size: 12px;" v-html="scope.row.view_change">
-                                        </div>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="点击变动">
-                                    <template scope="scope">
-                                        <el-row>
-                                            <el-col :span='12' class="" style="padding: 0;">
-                                                <p class="col-xs-12 cost1" style="font-weight:bold;"v-html="scope.row.pv"></p>
-                                                <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_change"></p>
-                                            </el-col>
-                                            <el-col :span='12' class=""  style="padding: 0;">
-                                                <p class="col-xs-12 pv1" style="font-weight:bold;" > <span v-html="scope.row.pv_rate"></span>%</p>
-                                                <p class="col-xs-12 pv2" style="font-size: 12px;" v-html="scope.row.pv_rate_change"></p>
-                                            </el-col>
-                                        </el-row>
-
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="下载变动">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="下载成本变动">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="激活变动">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="激活成本变动">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="按钮消费">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="按钮展现">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="按钮下载">
-                                    <template scope="scope">
-                                        <span style="margin-left: 10px">{{ scope.row.pv }}</span>
-                                    </template>
+                                        label="消费">
                                 </el-table-column>
                             </el-table>
 
@@ -182,24 +108,157 @@
 <script>
 
     import { mapGetters } from 'vuex';
-    import { getPlanTable } from 'api/account';
+    import { getDanTable } from 'api/account';
+    const echarts = require('echarts/lib/echarts');
+    require('echarts/lib/chart/pie');
+    require('echarts/lib/chart/line');
+    require('echarts/lib/chart/scatter')
+    // 引入提示框和标题组件
+    require('echarts/lib/component/tooltip');
+    require('echarts/lib/component/title');
+    require('echarts/lib/component/legend');
+    let all;
+    function renderS(data,who){
+      console.log(data);
+      let scatter=[];
+      let x;
+      let y;
+      if(who==0){
+        for(let i=0;i<data.length;i++){
+          scatter[i]=[];
+          scatter[i].push(data[i].cost_total);
+          scatter[i].push(data[i].view_total);
+          scatter[i].push(data[i].adgroupName);
+        }
+        x='消费';
+        y='展现';
+      }else if(who==1){
+        for(let i=0;i<data.length;i++){
+          scatter[i]=[];
+          scatter[i].push(data[i].click_total);
+          scatter[i].push(data[i].view_total);
+          scatter[i].push(data[i].adgroupName);
+        }
+        x='点击';
+        y='展现';
+      }
 
+      console.log(scatter);
+      var myChart = echarts.init(document.getElementById('main'));
+      var option = {
+        grid: {
+          left: '3%',
+          right: '7%',
+          bottom: '3%',
+          containLabel: true
+        },
+        tooltip : {
+          trigger: 'item',
+          showDelay : 0,
+          formatter : function (params) {
+            if (params.value.length > 1) {
+              return params.value[2] + ' :<br/>（'
+                + params.value[0] + '， '
+                + params.value[1] + '） ';
+            }else {
+              return params.value[2] + ' :<br/>'
+                + params.name + ' : '
+                + params.value ;
+            }
+          },
+
+        },
+
+        brush: {
+        },
+        legend: {
+          data: ['单元'],
+          left: 'center'
+        },
+        xAxis : [
+          {
+            name:x,
+            type : 'value',
+            scale:true,
+              /*axisLabel : {
+               formatter: '{value} 元'
+               },*/
+            splitLine:{
+              show:false,
+            },
+            axisLine:{
+              show:false,
+            },
+            axisTick:{
+              show:false,
+            },
+            axisLabel:{
+              textStyle:{
+                color:'#3b4e61',
+                fontSize:14,
+              },
+            }
+          }
+        ],
+        yAxis : [
+          {
+            name:y,
+            type : 'value',
+            scale:true,
+            axisLine:{
+              show:false,
+            },
+            axisTick:{
+              show:false,
+            },
+            axisLabel:{
+              textStyle:{
+                color:'#3b4e61',
+                fontSize:14,
+              },
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: '#dfe1e4',
+                type: 'solid',
+                width: 1,
+              },
+            },
+          }
+        ],
+        series : [
+          {
+            name:'对比',
+            type:'scatter',
+            data: scatter,
+
+          },
+
+        ]
+      };
+
+      myChart.setOption(option);
+      window.addEventListener("resize", function () {
+        myChart.resize();
+      },false);
+    }
     export default {
-      name: 'bod',
         data() {
             return {
               value1:'',
               tableData3:[],
             }
         },
-        mounted(){
+        created(){
             var _self=this;
-          getPlanTable({uid:111}).then(response => {
+          getDanTable({uid:111}).then(response => {
             console.log(response);
+            all=response.data;
             this.tableData3=response.data;
               /*   _self.loading = false;
                ;*/
-
+            renderS(response.data,$('.trimn').val());
           }).catch(err => {
             this.$message.error(err);
 //                  _self.loading = false;
@@ -209,12 +268,14 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
-    .bod-container{
+    .bod-container {
         width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     html{
         background:#f5f7f9;
@@ -362,7 +423,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    .trim{
+    .trimn{
         border: solid 1px #dfe1e4;
         /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
         padding-right: 14px;

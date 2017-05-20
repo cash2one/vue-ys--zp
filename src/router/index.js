@@ -23,6 +23,7 @@ const jihua = resolve => require(['../views/reports/jihua'],resolve);
 const qudao = resolve => require(['../views/reports/qudao'],resolve);
 const danyuan= resolve => require(['../views/reports/danyuan'],resolve);
 const keyword= resolve => require(['../views/reports/keyword'],resolve);
+const datarate = resolve => require(['../views/reports/datarate'],resolve);
 const account= resolve => require(['../views/manager/accountgl'],resolve);
 
 /* 推广管理 */
@@ -44,6 +45,7 @@ const accountgl = resolve => require(['../views/manager/accountgl'],resolve);
 /* 数据分析 */
 const dailyAnalysis = resolve => require(['../views/data/analysis/daily'],resolve);
 const compareAnalysis = resolve => require(['../views/data/analysis/compare'],resolve);
+
 
 Vue.use(Router);
 
@@ -102,6 +104,7 @@ export default new Router({
       icon: 'zujian',
       children: [
         { path: 'blacklist', component: blacklist, name: '黑名单 ' },
+        { path: 'datarate', component: datarate, name: '数据对比 ' },
       ]
     },
     {
