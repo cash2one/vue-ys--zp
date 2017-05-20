@@ -177,6 +177,7 @@
         </el-row>
 </template>
 <script>
+    /*eslint-disable */
   import { mapGetters } from 'vuex';
   import Vue from 'vue';
   import { getPlanTable } from 'api/account';
@@ -230,8 +231,7 @@
           console.log(response);
           this.tableData3=response.data;
           let myChart = this.$echarts.init(document.getElementById('myChart'))
-            /*   _self.loading = false;
-             ;*/
+
 
         }).catch(err => {
           this.$message.error(err);
