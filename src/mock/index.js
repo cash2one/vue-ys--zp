@@ -20,6 +20,9 @@ mock.onGet('/apa/kwrealdata').reply(accountApi.param);
 mock.onGet('/apa/onekwdata').reply(accountApi.paramkey1);
 mock.onGet('/apa/onekwdailydata').reply(accountApi.paramkey2);
 mock.onGet('/account/all').reply(accountApi.accountall);
+mock.onGet('/account/twoweek').reply(accountApi.twoweek);
+mock.onGet('/account/getweekcost').reply(accountApi.getweekcost);
+mock.onGet('/apa/planvs').reply(accountApi.plan);
 // // 文章相关
 // mock.onGet('/article/list').reply(articleAPI.getList);
 // mock.onGet('/article/detail').reply(articleAPI.getArticle);

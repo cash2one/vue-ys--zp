@@ -124,6 +124,9 @@
 <script>
     /*eslint-disable */
     import { getAccountAll } from 'api/account';
+    import { getAccountTwoWeek } from 'api/account';
+    import { getAccountOneWeek } from 'api/account';
+
     let flag=1;
     let currentAccount={};
     currentAccount.appid=11;
@@ -132,9 +135,130 @@
     // 引入柱状图
     require('echarts/lib/chart/pie');
     require('echarts/lib/chart/funnel');
+    require('echarts/lib/chart/line');
     // 引入提示框和标题组件
     require('echarts/lib/component/tooltip');
     require('echarts/lib/component/title');
+    require('echarts/lib/component/legend');
+    function getSeries(datas) {
+      var series = [];
+      for (let i = 0; i < datas.length; i++) {
+        series.push({
+          name: datas[i].name,
+          type: 'line',
+          line: '总量',
+          data: datas[i].data,
+          symbol: 'circle',
+          symbolSize:5,
+          smooth: true,
+          itemStyle: {
+            normal: {
+              lineStyle: { // 系列级个性化折线样式，横向渐变描边
+                width: 2,
+              },
+            },
+            emphasis: {
+              label: {
+                show: true,
+              },
+            },
+          },
+        });
+
+      }
+      return series;
+    }
+    function renderLine(eleId, dates, selected1, legendData1, datas) {
+      const series = getSeries(datas);
+      const myChart = echarts.init(document.getElementById(eleId));
+      const option = {
+        tooltip: {
+          trigger: 'axis',
+        },
+        legend: {
+          orient: 'horizontal',
+          selected: selected1,
+          data: legendData1,
+          right:10,
+        },
+        calculable: true,
+        xAxis: [
+          {
+            type: 'category',
+            boundaryGap: false,
+            axisLine:{
+              show:false,
+            },
+            axisTick:{
+              show:false,
+            },
+            axisLabel:{
+              textStyle:{
+                color:'#3b4e61',
+                fontSize:14,
+              },
+            },
+
+            data: dates,
+          },
+        ],
+        yAxis: [
+          {
+            //                                    ,
+            type: 'value',
+            position: 'left',
+            axisLine:{
+              show:false,
+            },
+            axisTick:{
+              show:false,
+            },
+            axisLabel:{
+              textStyle:{
+                color:'#3b4e61',
+                fontSize:14,
+              },
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: '#dfe1e4',
+                type: 'solid',
+                width: 1,
+              },
+            },
+          },
+            /*{
+             type: 'value',
+             axisLine:{
+             show:false,
+             },
+             axisTick:{
+             show:false,
+             },
+             axisLabel:{
+             textStyle:{
+             color:'#3b4e61',
+             fontSize:14,
+             },
+             },
+             /!* splitLine: {
+             show: true,
+             lineStyle: {
+             color: '#dfe1e4',
+             type: 'solid',
+             width: 1,
+             },
+             },*!/
+             },*/
+        ],
+        series: series,
+      };
+      myChart.setOption(option);
+      window.addEventListener("resize", function () {
+        myChart.resize();
+      },false);
+    }
     function renderSinglePie(eleId, data, op) {
 
         let placeHolderStyle = {
@@ -393,114 +517,119 @@
         // $('#main').show();
         // console.log(flag);
         if (flag === 1) {
-            utils.ajax(apiUrl.getApiUrl('getAccountTwoWeek'), {
-                c1: str,
-                type:currentAccount.type,
-            }).done(function (el) {
-                var activeRate = [];
-                var days = [];
-                var downloadRate = [];
-                var totalCost = [];
-                var totalPV = [];
-                var totalCount = [];
-                var selecteder = {};
-                var legendData = [];
-                var line = [];
+          getAccountTwoWeek({uid:111}).then(response => {
+            let el=response.data;
+            var activeRate = [];
+            var days = [];
+            var downloadRate = [];
+            var totalCost = [];
+            var totalPV = [];
+            var totalCount = [];
+            var selecteder = {};
+            var legendData = [];
+            var line = [];
 
-                // console.log('el' + el);
+            // console.log('el' + el);
 
-                for (let i = 0; i < el.length; i++) {
-                    activeRate.push(parseFloat(el[i].active_rate));
-                    days.push(el[i].date);
-                    downloadRate.push(parseFloat(el[i].download_rate));
-                    totalCost.push(el[i].cost);
-                    totalPV.push(el[i].total_pv);
-                    totalCount.push(el[i].total_count);
-                }
-                line[0] = {
-                    name: '总消费',
-                    data: totalCost,
-                    time:days,
-                };
-                line[1] = {
-                    name: '按钮点击',
-                    data: totalCount,
-                    time:days,
-                };
-                line[2] = {
-                    name: 'H5展现',
-                    data: totalPV,
-                    time:days,
-                };
-                line[3] = {
-                    name: '下载率',
-                    data: downloadRate,
-                    time:days,
-                };
-                line[4] = {
-                    name: '激活率',
-                    data: activeRate,
-                    time:days,
-                };
-                selecteder = {
-                    按钮点击: false,
-                    下载率: false,
-                    激活率: false,
-                };
-                legendData = ['总消费', '按钮点击', 'H5展现', '下载率', '激活率'];
-                lineChart.renderLine('mainn', days, selecteder, legendData, line);
-            });
+            for (let i = 0; i < el.length; i++) {
+              activeRate.push(parseFloat(el[i].active_rate));
+              days.push(el[i].date);
+              downloadRate.push(parseFloat(el[i].download_rate));
+              totalCost.push(el[i].cost);
+              totalPV.push(el[i].total_pv);
+              totalCount.push(el[i].total_count);
+            }
+            line[0] = {
+              name: '总消费',
+              data: totalCost,
+              time:days,
+            };
+            line[1] = {
+              name: '按钮点击',
+              data: totalCount,
+              time:days,
+            };
+            line[2] = {
+              name: 'H5展现',
+              data: totalPV,
+              time:days,
+            };
+            line[3] = {
+              name: '下载率',
+              data: downloadRate,
+              time:days,
+            };
+            line[4] = {
+              name: '激活率',
+              data: activeRate,
+              time:days,
+            };
+            selecteder = {
+              按钮点击: false,
+              下载率: false,
+              激活率: false,
+            };
+            legendData = ['总消费', '按钮点击', 'H5展现', '下载率', '激活率'];
+            renderLine('mainn', days, selecteder, legendData, line);
+
+
+          }).catch(err => {
+            this.$message.error(err);
+          });
         } else if (flag === 2) {
-            utils.ajax(apiUrl.getApiUrl('getAccountWeekCost'), {
-                appid: str,
-                type:currentAccount.type,
-            }).done(function (el) {
-                var arr = [];
-                var arr2 = [];
-                var arr3 = [];
-                var selected = {};
-                var legendData = [];
-                if (el.length !== 0) {
-                    for (let i = 0; i < el.data.length; i++) {
-                        arr[i] = el.data[i].date;
-                    }
-                    for (let c = 0; c < el.data.length; c++) {
-                        arr2.push(el.data[c].cost);
-                    }
-                }
-                arr3[0] = {
-                    name: '消费',
-                    type: 'line',
-                    symbol: 'emptyCircle',
-                    symbolSize: 3,
-                    line: '总量',
-                    data: arr2,
-                    //                    symbol:'none',
-                    smooth: true,
-                    itemStyle: {
-                        normal: {
-                            lineStyle: { // 系列级个性化折线样式，横向渐变描边
-                                width: 2,
-                            },
-                        },
-                        emphasis: {
-                            label: {
-                                show: true,
-                            },
-                        },
-                    },
-                };
-                selected = {
-                    消费: true,
-                };
-                legendData = ['消费'];
-                // console.log(el);
-                lineChart.renderLine('mainn', arr, selected, legendData, arr3);
-            });
+          getAccountOneWeek({uid:111}).then(response => {
+            console.log(response);
+            let el=response.data;
+            var arr = [];
+            var arr2 = [];
+            var arr3 = [];
+            var selected = {};
+            var legendData = [];
+            if (el.length !== 0) {
+              for (let i = 0; i < el.data.length; i++) {
+                arr[i] = el.data[i].date;
+              }
+              for (let c = 0; c < el.data.length; c++) {
+                arr2.push(el.data[c].cost);
+              }
+            }
+            arr3[0] = {
+              name: '消费',
+              type: 'line',
+              symbol: 'emptyCircle',
+              symbolSize: 3,
+              line: '总量',
+              data: arr2,
+              //                    symbol:'none',
+              smooth: true,
+              itemStyle: {
+                normal: {
+                  lineStyle: { // 系列级个性化折线样式，横向渐变描边
+                    width: 2,
+                  },
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                  },
+                },
+              },
+            };
+            selected = {
+              消费: true,
+            };
+            legendData = ['消费'];
+            // console.log(el);
+            renderLine('mainn', arr, selected, legendData, arr3);
+
+          }).catch(err => {
+            this.$message.error(err);
+          });
+
         }
     }
     function upload(str, flag) {
-//        ajax(str, flag);
+        ajax(str, flag);
 
         getAccountAll({uid:111}).then(response => {
             console.log(response);

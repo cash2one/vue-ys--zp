@@ -285,37 +285,6 @@
           _self.message1='111111';
           _self.message2='111111';
           _self.message3='111111';
-          /*utils.ajax(apiUrl.getApiUrl('blackzhxx'), {
-            appid:currentAccount.appid,
-            type:currentAccount.type
-          }).done(function (data) {
-            _self.message=utils.dateFormat(data.lasttime,'yyyy-MM-dd hh:mm');
-            _self.message1=data.plancount;
-            _self.message2=data.unitcount;
-            _self.message3=data.kwcount;
-          });*/
-         /* utils.ajax(apiUrl.getApiUrl('blackzhcheck'), {
-            appid:currentAccount.appid,
-            type:currentAccount.type
-          }).done(function (data) {
-
-            for(let i=0;i<data.keyword.length;i++){
-              // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
-              data.keyword[i].date=utils.dateFormat(data.keyword[i].date,'yyyy-MM-dd hh:mm')
-            }
-            geet1=data.keyword;
-            for(let i=0;i<data.chuangyi.length;i++){
-              // scope.row.date=scope.row.date.Format("yyyy-MM-dd HH:mm");
-              data.chuangyi[i].date=utils.dateFormat(data.chuangyi[i].date,'yyyy-MM-dd hh:mm')
-            }
-            geet2=data.chuangyi;
-            if($('.clink').text()=='关键词'){
-              _self.goodsList=data.keyword;
-            }else{
-              _self.goodsList=data.chuangyi;
-            }
-
-          });*/
         },
       },
       mounted(){

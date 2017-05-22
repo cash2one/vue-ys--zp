@@ -78,4 +78,25 @@ export function getAccountAll(userId) {
         params: { userId }
     });
 }
+export function getAccountTwoWeek(userId) {
+  return fetch({
+    url: '/account/twoweek',
+    method: 'get',
+    params: { userId }
+  });
+}
+export function getAccountOneWeek(userId) {
+  return fetch({
+    url: '/account/getweekcost',
+    method: 'get',
+    params: { userId }
+  });
+}
+export function planvs(userId) {
+  return fetch({
+    url: '/apa/planvs',
+    method: 'get',
+    params: { userId }
+  });
+}
 
