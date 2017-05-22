@@ -246,7 +246,7 @@
     </div>
 </template>
 <script>
-
+    /*eslint-disable */
     import { mapGetters } from 'vuex';
     import { keyAll } from 'api/account';
 

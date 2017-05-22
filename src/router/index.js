@@ -24,6 +24,7 @@ const qudao = resolve => require(['../views/reports/qudao'],resolve);
 const danyuan= resolve => require(['../views/reports/danyuan'],resolve);
 const keyword= resolve => require(['../views/reports/keyword'],resolve);
 const datarate = resolve => require(['../views/reports/datarate'],resolve);
+const outribao = resolve => require(['../views/reports/newribao'],resolve);
 const account= resolve => require(['../views/manager/accountgl'],resolve);
 
 /* 推广管理 */
@@ -31,6 +32,8 @@ const blacklist = resolve => require(['../views/adtools/blacklist'],resolve);
 
 /* 智能调价 */
 const planset = resolve => require(['../views/ai/planset'],resolve);
+const param = resolve => require(['../views/ai/param'],resolve);
+const paramkey = resolve => require(['../views/ai/paramkey'],resolve);
 
 /* 异常监控 */
 const illegal = resolve => require(['../views/monitor/illegal'],resolve);
@@ -61,6 +64,7 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     { path: '/login', component: Login, hidden: true },
+
     { path: '/authredirect', component: authRedirect, hidden: true },
     { path: '/sendpwd', component: sendPWD, hidden: true },
     { path: '/reset', component: reset, hidden: true },
@@ -92,6 +96,7 @@ export default new Router({
         { path: 'keyword', component: keyword, name: '关键词' },
         { path: 'qudao', component: qudao, name: '渠道' },
         { path: 'illegal', component: illegal, name: '违规查询' },
+        { path: 'outribao', component:outribao, name: '导出日报' },
         { path: 'account', component: account, name: '账户管理' },
         { path: 'landpage', component: overview, name: '头像上传' },
       ]
@@ -115,6 +120,8 @@ export default new Router({
       icon: 'zujian',
       children: [
         { path: 'planset', component: planset, name: '计划设置 ' },
+        { path: 'param', component: param, name: '查看效果 ' },
+        { path: 'paramkey', component: paramkey, hidden: true },
       ]
     },
     {

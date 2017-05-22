@@ -106,7 +106,7 @@
     </div>
 </template>
 <script>
-
+    /*eslint-disable */
     import { mapGetters } from 'vuex';
     import { getDanTable } from 'api/account';
     const echarts = require('echarts/lib/echarts');

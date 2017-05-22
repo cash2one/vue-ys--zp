@@ -1989,6 +1989,108 @@ const wudan=[{
     "click_total": 3,
     "cost_total": 1.73
   }]
+const paramdata= [
+    {
+        "keyword": "货拉拉收费标准",
+        "keyword_id": "60927464610",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 16.05,
+        "view": 49,
+        "click": 8,
+        "cpd": "3.21",
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    },
+    {
+        "keyword": "同城货运收费",
+        "keyword_id": "60927464592",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 0,
+        "view": 2,
+        "click": 0,
+        "cpd": 0,
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    },
+    {
+        "keyword": "小型货车出租价格",
+        "keyword_id": "60927464481",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 0,
+        "view": 1,
+        "click": 0,
+        "cpd": 0,
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    },
+    {
+        "keyword": "货车出租价格",
+        "keyword_id": "60927464619",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 0,
+        "view": 1,
+        "click": 0,
+        "cpd": 0,
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    },
+    {
+        "keyword": "钢琴搬运价格",
+        "keyword_id": "60927464472",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 0,
+        "view": 1,
+        "click": 0,
+        "cpd": 0,
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    },
+    {
+        "keyword": "搬家收费",
+        "keyword_id": "60927464490",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 0,
+        "view": 1,
+        "click": 0,
+        "cpd": 0,
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    },
+    {
+        "keyword": "搬家公司收费",
+        "keyword_id": "60927464463",
+        "plan_id": "74223317",
+        "unit_id": "2469984510",
+        "plan_name": "sem19-南京",
+        "unit_name": "价格",
+        "cost": 0,
+        "view": 1,
+        "click": 0,
+        "cpd": 0,
+        "max_price": "15",
+        "mubiao_cpd": "2"
+    }]
+const paramkey1=[{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 10:35:45","cost":"0","view":"5","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 10:45:43","cost":"0","view":"5","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 11:35:44","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 11:45:46","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"18.2"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 12:35:48","cost":"0","view":"2","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.03,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 12:45:54","cost":"0","view":"2","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.03,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 13:35:45","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 13:45:48","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"23.5"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 14:35:48","cost":"1","view":"2","click":"1","download_total":"1","cpd":"2.2","cpc_cpd":"2.2","first_rate":0,"button_view_rate":"28.6"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 14:45:52","cost":"1","view":"2","click":"1","download_total":"1","cpd":"2.2","cpc_cpd":"2.2","first_rate":0,"button_view_rate":"28.6"}]
+const paramkey2=[{"date":"2017-05-16T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":8.43,"view":26,"click":4,"cpd":"4.21","download_total":2,"cpc_cpd":0.5285,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0},{"date":"2017-05-17T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":0,"view":29,"click":0,"cpd":0,"download_total":0,"cpc_cpd":null,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0},{"date":"2017-05-18T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":16.05,"view":49,"click":8,"cpd":"3.21","download_total":5,"cpc_cpd":0.625,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0}];
+const all={"total_view":85917,"total_pv":12570,"total_count":1938,"cost":"7208","download_rate":"15.4","pv_rate":"14.6","total_active":0,"active_rate":0,"mobileBalance":"85956.18","yesterdayCost":"11133","monthCost":"208718","yestoday_total_view":129781,"yestoday_total_pv":19368,"yestoday_total_count":2886,"yestoday_total_active":0,"yestoday_cost":"11133","yestoday_download_rate":"2.2","yestoday_active_rate":"0.0","msg":"success"};
     export default {
     getAccountsByUser: config => {
         const userId = config.params;
@@ -2060,5 +2162,45 @@ const wudan=[{
           }, 500);
         })
       },
+        param: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve([200, {
+              data:paramdata
+            }]);
+          }, 500);
+        })
+      },
+        paramkey1: config => {
+            const userId = config.params;
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([200, {
+                        data:paramkey1
+                    }]);
+                }, 500);
+            })
+        },
+        paramkey2: config => {
+            const userId = config.params;
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([200, {
+                        data:paramkey2
+                    }]);
+                }, 500);
+            })
+        },
+        accountall: config => {
+            const userId = config.params;
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([200, {
+                        data:all
+                    }]);
+                }, 500);
+            })
+        },
 };
 

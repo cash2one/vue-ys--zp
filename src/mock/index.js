@@ -16,6 +16,10 @@ mock.onGet('/black/zhcheck').reply(accountApi.illegalAll);
 mock.onGet('/keywords/allwords').reply(accountApi.keywordAll);
 mock.onGet('/sem/getallhu').reply(accountApi.hu);
 mock.onGet('/unit/getunit').reply(accountApi.danyuan);
+mock.onGet('/apa/kwrealdata').reply(accountApi.param);
+mock.onGet('/apa/onekwdata').reply(accountApi.paramkey1);
+mock.onGet('/apa/onekwdailydata').reply(accountApi.paramkey2);
+mock.onGet('/account/all').reply(accountApi.accountall);
 // // 文章相关
 // mock.onGet('/article/list').reply(articleAPI.getList);
 // mock.onGet('/article/detail').reply(articleAPI.getArticle);

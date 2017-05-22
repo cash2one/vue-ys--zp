@@ -630,16 +630,16 @@
         getPlanTable({uid:111}).then(response => {
           console.log(response);
           this.tableData3=response.data;
-          let myChart = this.$echarts.init(document.getElementById('myChart'))
 
 
         }).catch(err => {
           this.$message.error(err);
 //                  _self.loading = false;
-
-        $('.trim').change(function () {
+        })
+          $('.trim').change(function () {
           renderS(all,$(this).val());
         });
+
       },
       methods:{
         daten:function () {
@@ -741,7 +741,7 @@
         g2:function (event) {
 
         },*/
-        g:function (event) {
+        g:function(event) {
           console.log(event);
           if(event=='消费占比'){
             renderPie(tit, arr_legend, arr_cost);

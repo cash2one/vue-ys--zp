@@ -50,4 +50,32 @@ export function getHu(userId) {
     params: { userId }
   });
 }
+export function getParam(userId) {
+  return fetch({
+    url: '/apa/kwrealdata',
+    method: 'get',
+    params: { userId }
+  });
+}
+export function getParamkey(userId) {
+    return fetch({
+        url: '/apa/onekwdata',
+        method: 'get',
+        params: { userId }
+    });
+}
+export function getParamkeydata(userId) {
+    return fetch({
+        url: '/apa/onekwdailydata',
+        method: 'get',
+        params: { userId }
+    });
+}
+export function getAccountAll(userId) {
+    return fetch({
+        url: '/account/all',
+        method: 'get',
+        params: { userId }
+    });
+}
 
