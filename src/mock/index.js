@@ -15,14 +15,14 @@ mock.onGet('/landpage/all').reply(accountApi.landpageAll);
 mock.onGet('/black/zhcheck').reply(accountApi.illegalAll);
 mock.onGet('/keywords/allwords').reply(accountApi.keywordAll);
 mock.onGet('/sem/getallhu').reply(accountApi.hu);
-mock.onGet('/unit/getunit').reply(accountApi.danyuan);
-mock.onGet('/apa/kwrealdata').reply(accountApi.param);
-mock.onGet('/apa/onekwdata').reply(accountApi.paramkey1);
-mock.onGet('/apa/onekwdailydata').reply(accountApi.paramkey2);
-mock.onGet('/account/all').reply(accountApi.accountall);
-mock.onGet('/account/twoweek').reply(accountApi.twoweek);
-mock.onGet('/account/getweekcost').reply(accountApi.getweekcost);
-mock.onGet('/apa/planvs').reply(accountApi.plan);
+//周任务
+mock.onGet('/sem/getwtask').reply(accountApi.getweek);
+//全部sem
+mock.onGet('/sem/zuanduser').reply(accountApi.grtsem);
+//用户管理
+mock.onGet('/sem/allsem').reply(accountApi.getAllyonghu);
+//全部客户
+mock.onGet('/sem/allkehu').reply(accountApi.getAllkehu);
 // // 文章相关
 // mock.onGet('/article/list').reply(articleAPI.getList);
 // mock.onGet('/article/detail').reply(articleAPI.getArticle);

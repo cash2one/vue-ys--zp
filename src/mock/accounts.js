@@ -167,69 +167,933 @@ const tableData3 = [{
     "view_button_change": -2
 }];
 const tableQudao = [{
-    "_id": "003",
-    "ios_dl_total": 114,
-    "android_dl_total": 387,
-    "dl_total": 501,
-    "ios_pv_total": 336,
-    "android_pv_total": 1269,
-    "pv_total": 1605,
-    "ios_rate": "34",
-    "android_rate": "30"
-}, {
     "_id": "001",
-    "ios_dl_total": 2351,
-    "android_dl_total": 6620,
-    "dl_total": 8971,
-    "ios_pv_total": 7729,
-    "android_pv_total": 20535,
-    "pv_total": 28264,
-    "ios_rate": "30",
-    "android_rate": "32"
-}, {
-    "_id": "004",
-    "ios_dl_total": 77,
-    "android_dl_total": 649,
-    "dl_total": 726,
-    "ios_pv_total": 238,
-    "android_pv_total": 1968,
-    "pv_total": 2206,
-    "ios_rate": "32",
-    "android_rate": "33"
-}, {
-    "_id": "002",
-    "ios_dl_total": 7,
-    "android_dl_total": 46,
-    "dl_total": 53,
-    "ios_pv_total": 37,
-    "android_pv_total": 259,
-    "pv_total": 296,
-    "ios_rate": "19",
-    "android_rate": "18"
-}, {
-    "_id": "005",
-    "ios_dl_total": 177,
-    "android_dl_total": 335,
-    "dl_total": 512,
-    "ios_pv_total": 562,
-    "android_pv_total": 1150,
-    "pv_total": 1712,
-    "ios_rate": "31",
-    "android_rate": "29"
-}, {
-    "_id": "006",
-    "ios_dl_total": 48,
-    "android_dl_total": 247,
-    "dl_total": 295,
-    "ios_pv_total": 175,
-    "android_pv_total": 948,
-    "pv_total": 1123,
-    "ios_rate": "27",
-    "android_rate": "26"
-}];
-const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272969262"},{"id":17915828,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272968275"},{"id":17915858,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981594"},{"id":17915859,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981588"},{"id":17915879,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978984"},{"id":17915902,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150977916"},{"id":17915907,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300738"},{"id":17915908,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130300678"},{"id":17915916,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299619"},{"id":17915918,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130299559"},{"id":17916526,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272968275"},{"id":17916530,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981588"},{"id":17916534,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978984"},{"id":17916547,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300738"},{"id":17916549,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299619"},{"id":17916563,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685745","keyword_id":"60127724555"},{"id":17922524,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272969244"},{"id":17922663,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272968317"},{"id":17922673,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099474","keyword_id":"60252388003"},{"id":17922685,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981597"},{"id":17922686,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981546"},{"id":17922688,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685718","keyword_id":"60150981210"},{"id":17922701,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685667","keyword_id":"60150979071"},{"id":17922703,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978990"},{"id":17922712,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978663"},{"id":17922717,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300792"},{"id":17922720,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300096"},{"id":17922721,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889703","keyword_id":"60130299988"},{"id":17922722,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299616"},{"id":17922723,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299583"},{"id":17945830,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型搬家需要多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685682","keyword_id":"60127724867"},{"id":17945831,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685682","keyword_id":"60127724846"},{"id":17945832,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 钢琴搬运","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685694","keyword_id":"60127724783"},{"id":17947138,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家一般多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099477","keyword_id":"60272969097"},{"id":17947139,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型搬家需要多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099477","keyword_id":"60272968935"},{"id":17947140,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099477","keyword_id":"60272968929"},{"id":17947143,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 钢琴搬运","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099462","keyword_id":"60272969532"},{"id":17947144,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳58同城货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099459","keyword_id":"60272969517"},{"id":17947145,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳钢琴搬运","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099462","keyword_id":"60272968569"},{"id":17947146,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳面包车送货","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099465","keyword_id":"60272968428"},{"id":17947147,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388405"},{"id":17947148,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳厢式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388399"},{"id":17947149,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388396"},{"id":17947150,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租面包车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388393"},{"id":17947151,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388267"},{"id":17947152,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388258"},{"id":17947153,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租拉货","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388225"},{"id":17947155,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳钢琴搬运价格","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099483","keyword_id":"60252388051"},{"id":17947156,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家电话","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099474","keyword_id":"60252387991"},{"id":17947158,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387448"},{"id":17947159,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳微型面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387430"},{"id":17947160,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租网","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387424"},{"id":17947161,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387199"},{"id":17947162,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387181"},{"id":17947163,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租货车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387178"},{"id":17947165,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387157"},{"id":17947166,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387145"},{"id":17947167,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家电话","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685718","keyword_id":"60150982308"},{"id":17947168,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981741"},{"id":17947169,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981738"},{"id":17947170,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租面包车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981693"},{"id":17947171,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981690"},{"id":17947172,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租货车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981687"},{"id":17947173,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981684"},{"id":17947174,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981678"},{"id":17947175,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981675"},{"id":17947176,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳厢式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981663"},{"id":17947177,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租网","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981660"},{"id":17947178,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981657"},{"id":17947179,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981654"},{"id":17947180,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租拉货","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981651"},{"id":17947181,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981648"},{"id":17947182,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳微型面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981633"},{"id":17947183,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳钢琴搬运价格","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685721","keyword_id":"60150981306"}],"chuangyi":[]};
-  const key=[
-      {
+    "ios_dl_total": 1522,
+    "android_dl_total": 1124,
+    "dl_total": 2646,
+    "ios_pv_total": 15714,
+    "android_pv_total": 9742,
+    "pv_total": 25456,
+    "ios_rate": "10",
+    "android_rate": "12"
+},
+    {
+        "_id": "001",
+        "ios_dl_total": 1522,
+        "android_dl_total": 1124,
+        "dl_total": 2646,
+        "ios_pv_total": 15714,
+        "android_pv_total": 9742,
+        "pv_total": 25456,
+        "ios_rate": "10",
+        "android_rate": "12"
+    },
+    {
+        "_id": "001",
+        "ios_dl_total": 1522,
+        "android_dl_total": 1124,
+        "dl_total": 2646,
+        "ios_pv_total": 15714,
+        "android_pv_total": 9742,
+        "pv_total": 25456,
+        "ios_rate": "10",
+        "android_rate": "12"
+    },
+];
+const illegal = {
+    "keyword": [{
+        "id": 17915733,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272969262"
+    }, {
+        "id": 17915828,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272968275"
+    }, {
+        "id": 17915858,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981594"
+    }, {
+        "id": 17915859,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981588"
+    }, {
+        "id": 17915879,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978984"
+    }, {
+        "id": 17915902,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150977916"
+    }, {
+        "id": 17915907,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300738"
+    }, {
+        "id": 17915908,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130300678"
+    }, {
+        "id": 17915916,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299619"
+    }, {
+        "id": 17915918,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130299559"
+    }, {
+        "id": 17916526,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272968275"
+    }, {
+        "id": 17916530,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981588"
+    }, {
+        "id": 17916534,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978984"
+    }, {
+        "id": 17916547,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300738"
+    }, {
+        "id": 17916549,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299619"
+    }, {
+        "id": 17916563,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685745",
+        "keyword_id": "60127724555"
+    }, {
+        "id": 17922524,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272969244"
+    }, {
+        "id": 17922663,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272968317"
+    }, {
+        "id": 17922673,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099474",
+        "keyword_id": "60252388003"
+    }, {
+        "id": 17922685,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981597"
+    }, {
+        "id": 17922686,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981546"
+    }, {
+        "id": 17922688,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685718",
+        "keyword_id": "60150981210"
+    }, {
+        "id": 17922701,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685667",
+        "keyword_id": "60150979071"
+    }, {
+        "id": 17922703,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978990"
+    }, {
+        "id": 17922712,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978663"
+    }, {
+        "id": 17922717,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300792"
+    }, {
+        "id": 17922720,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300096"
+    }, {
+        "id": 17922721,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889703",
+        "keyword_id": "60130299988"
+    }, {
+        "id": 17922722,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299616"
+    }, {
+        "id": 17922723,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299583"
+    }, {
+        "id": 17945830,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型搬家需要多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685682",
+        "keyword_id": "60127724867"
+    }, {
+        "id": 17945831,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685682",
+        "keyword_id": "60127724846"
+    }, {
+        "id": 17945832,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 钢琴搬运",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685694",
+        "keyword_id": "60127724783"
+    }, {
+        "id": 17947138,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家一般多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099477",
+        "keyword_id": "60272969097"
+    }, {
+        "id": 17947139,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型搬家需要多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099477",
+        "keyword_id": "60272968935"
+    }, {
+        "id": 17947140,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099477",
+        "keyword_id": "60272968929"
+    }, {
+        "id": 17947143,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 钢琴搬运",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099462",
+        "keyword_id": "60272969532"
+    }, {
+        "id": 17947144,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳58同城货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099459",
+        "keyword_id": "60272969517"
+    }, {
+        "id": 17947145,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳钢琴搬运",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099462",
+        "keyword_id": "60272968569"
+    }, {
+        "id": 17947146,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳面包车送货",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099465",
+        "keyword_id": "60272968428"
+    }, {
+        "id": 17947147,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388405"
+    }, {
+        "id": 17947148,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳厢式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388399"
+    }, {
+        "id": 17947149,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388396"
+    }, {
+        "id": 17947150,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租面包车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388393"
+    }, {
+        "id": 17947151,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388267"
+    }, {
+        "id": 17947152,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388258"
+    }, {
+        "id": 17947153,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租拉货",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388225"
+    }, {
+        "id": 17947155,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳钢琴搬运价格",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099483",
+        "keyword_id": "60252388051"
+    }, {
+        "id": 17947156,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家电话",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099474",
+        "keyword_id": "60252387991"
+    }, {
+        "id": 17947158,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387448"
+    }, {
+        "id": 17947159,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳微型面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387430"
+    }, {
+        "id": 17947160,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租网",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387424"
+    }, {
+        "id": 17947161,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387199"
+    }, {
+        "id": 17947162,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387181"
+    }, {
+        "id": 17947163,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租货车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387178"
+    }, {
+        "id": 17947165,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387157"
+    }, {
+        "id": 17947166,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387145"
+    }, {
+        "id": 17947167,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家电话",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685718",
+        "keyword_id": "60150982308"
+    }, {
+        "id": 17947168,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981741"
+    }, {
+        "id": 17947169,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981738"
+    }, {
+        "id": 17947170,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租面包车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981693"
+    }, {
+        "id": 17947171,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981690"
+    }, {
+        "id": 17947172,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租货车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981687"
+    }, {
+        "id": 17947173,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981684"
+    }, {
+        "id": 17947174,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981678"
+    }, {
+        "id": 17947175,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981675"
+    }, {
+        "id": 17947176,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳厢式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981663"
+    }, {
+        "id": 17947177,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租网",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981660"
+    }, {
+        "id": 17947178,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981657"
+    }, {
+        "id": 17947179,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981654"
+    }, {
+        "id": 17947180,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租拉货",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981651"
+    }, {
+        "id": 17947181,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981648"
+    }, {
+        "id": 17947182,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳微型面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981633"
+    }, {
+        "id": 17947183,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳钢琴搬运价格",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685721",
+        "keyword_id": "60150981306"
+    }], "chuangyi": []
+};
+const task_day = [{}];
+const key = [
+    {
         "keyword_id": "60927036191",
         "keyword_name": "成都面包车出租",
         "jihua_name": "sem58-成都",
@@ -256,8 +1120,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60602689251",
         "keyword_name": "货拉拉官网",
         "jihua_name": "华东大区",
@@ -284,8 +1148,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927329560",
         "keyword_name": "五八速运",
         "jihua_name": "sem56-北京",
@@ -312,8 +1176,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927922682",
         "keyword_name": "上海小货车出租",
         "jihua_name": "sem51-上海",
@@ -340,8 +1204,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927918038",
         "keyword_name": "货拉拉官网",
         "jihua_name": "sem55-东莞",
@@ -368,8 +1232,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927035006",
         "keyword_name": "面包车出租价格",
         "jihua_name": "sem58-成都",
@@ -396,8 +1260,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60603055982",
         "keyword_name": "货拉拉官网",
         "jihua_name": "华中大区",
@@ -424,8 +1288,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927922406",
         "keyword_name": "出租小货车",
         "jihua_name": "sem51-上海",
@@ -452,8 +1316,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927923579",
         "keyword_name": "深圳出租面包车",
         "jihua_name": "sem20-深圳",
@@ -480,8 +1344,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927054770",
         "keyword_name": "货车 出租",
         "jihua_name": "sem57-重庆",
@@ -508,8 +1372,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927054956",
         "keyword_name": "货车出租网站",
         "jihua_name": "sem57-重庆",
@@ -536,8 +1400,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60602690088",
         "keyword_name": "货拉拉客户端",
         "jihua_name": "华东大区",
@@ -564,8 +1428,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60603055970",
         "keyword_name": "货拉拉下载",
         "jihua_name": "华中大区",
@@ -592,8 +1456,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927055076",
         "keyword_name": "搬家app",
         "jihua_name": "sem57-重庆",
@@ -620,8 +1484,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927460827",
         "keyword_name": "58同城速运",
         "jihua_name": "sem54-广州",
@@ -648,8 +1512,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60926579007",
         "keyword_name": "58同城速运",
         "jihua_name": "sem9-长沙",
@@ -676,8 +1540,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927914948",
         "keyword_name": "广州货拉拉",
         "jihua_name": "sem28-佛山",
@@ -704,8 +1568,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927333814",
         "keyword_name": "广州货拉拉",
         "jihua_name": "sem56-北京",
@@ -732,8 +1596,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927035687",
         "keyword_name": "成都出租面包车",
         "jihua_name": "sem58-成都",
@@ -760,8 +1624,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "61151456282",
         "keyword_name": "同城货运",
         "jihua_name": "sem56-北京",
@@ -788,8 +1652,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60602690241",
         "keyword_name": "货拉拉下载",
         "jihua_name": "华东大区",
@@ -816,8 +1680,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927336751",
         "keyword_name": "广州货拉拉",
         "jihua_name": "sem54-广州",
@@ -844,8 +1708,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927331759",
         "keyword_name": "货拉拉收费标准",
         "jihua_name": "sem54-广州",
@@ -872,8 +1736,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927036074",
         "keyword_name": "货拉拉收费标准",
         "jihua_name": "sem58-成都",
@@ -900,8 +1764,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927458073",
         "keyword_name": "货拉拉官网",
         "jihua_name": "sem53-杭州",
@@ -928,8 +1792,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60926446885",
         "keyword_name": "福州面包车出租",
         "jihua_name": "sem4-福州",
@@ -956,8 +1820,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927048950",
         "keyword_name": "沈阳搬家电话",
         "jihua_name": "sem23-沈阳",
@@ -984,8 +1848,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60602690250",
         "keyword_name": "货拉拉",
         "jihua_name": "华东大区",
@@ -1012,8 +1876,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60602690799",
         "keyword_name": "出租货车",
         "jihua_name": "华东大区",
@@ -1040,8 +1904,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60926447395",
         "keyword_name": "面包车拉货平台",
         "jihua_name": "sem58-成都",
@@ -1068,8 +1932,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927035972",
         "keyword_name": "面包车出租电话",
         "jihua_name": "sem58-成都",
@@ -1096,8 +1960,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "61319661498",
         "keyword_name": "同城速运",
         "jihua_name": "sem56-北京",
@@ -1124,8 +1988,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927922235",
         "keyword_name": "货运出租车",
         "jihua_name": "sem51-上海",
@@ -1152,8 +2016,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927334735",
         "keyword_name": "货拉拉 下载",
         "jihua_name": "sem56-北京",
@@ -1180,8 +2044,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60927468387",
         "keyword_name": "货拉拉收费标准",
         "jihua_name": "sem51-上海",
@@ -1208,893 +2072,621 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      }];
-const hun= [{
-  "huid": 642,
-  "name": "耽美小说",
-  "appid": "odvdoh6o1hz827kbjuxh1714im5qtoca",
-  "account_type": 110201,
-  "account_name": "bjznaao",
-  "account_password": "QAZqaz123",
-  "account_appid": "undefined",
-  "account_status": 2,
-  "fd_rate": 0.47,
-  "view_type": 120001,
-  "api_count": 0,
-  "auto": "off",
-  "userid": 3360,
-  "semname": "许恩楼",
-  "type": 100001,
-  "icon": "http://test.yushan.mobi//icon/icon.jpg"
-},
-  {
-    "huid": 326,
-    "name": "有妖气漫画-神马",
-    "appid": "ur70qvsdzxm8h2t4eposnstt9mqz0klo",
+    }];
+const hun = [{
+    "huid": 642,
+    "name": "耽美小说",
+    "appid": "odvdoh6o1hz827kbjuxh1714im5qtoca",
     "account_type": 110201,
-    "account_name": "youyaoqi",
+    "account_name": "bjznaao",
     "account_password": "QAZqaz123",
-    "account_appid": "c080a49a-33a2-47f9-b575-dc920caf1a9d",
-    "account_status": 2,
-    "fd_rate": 0.1,
-    "view_type": 120001,
-    "api_count": 499885,
-    "auto": "off",
-    "userid": 3359,
-    "semname": "张莉",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 640,
-    "name": "蜻蜓fm",
-    "appid": "x2z4w86qydghtx4fb79pgy14i7wmi6dx",
-    "account_type": 110201,
-    "account_name": "蜻蜓-神马",
-    "account_password": "qingting123",
-    "account_appid": "b1ca677bb8dde098d1a04ee1a713f6c2",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3309,
-    "semname": "张瑞雪",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 297,
-    "name": "秀吧",
-    "appid": "a87jg7kchylp8z38ipiq3q5mij4zdba7",
-    "account_type": 110201,
-    "account_name": "bjznaac",
-    "account_password": "QAZwsx123",
-    "account_appid": "79757746-7b07-4240-ab2c-7874b13aafaa",
+    "account_appid": "undefined",
     "account_status": 2,
     "fd_rate": 0.47,
     "view_type": 120001,
-    "api_count": 499875,
+    "api_count": 0,
     "auto": "off",
     "userid": 3360,
     "semname": "许恩楼",
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 282,
-    "name": "欢乐书客-神马",
-    "appid": "ae6h7wm6fwlvxnlynnxchgds4i57f23a",
-    "account_type": 110201,
-    "account_name": "bjznaag",
-    "account_password": "QAZqaz123",
-    "account_appid": "f16c427d-e0b2-4835-87ac-084c735fb8df",
-    "account_status": 2,
-    "fd_rate": 0.25,
+},
+    {
+        "huid": 326,
+        "name": "有妖气漫画-神马",
+        "appid": "ur70qvsdzxm8h2t4eposnstt9mqz0klo",
+        "account_type": 110201,
+        "account_name": "youyaoqi",
+        "account_password": "QAZqaz123",
+        "account_appid": "c080a49a-33a2-47f9-b575-dc920caf1a9d",
+        "account_status": 2,
+        "fd_rate": 0.1,
+        "view_type": 120001,
+        "api_count": 499885,
+        "auto": "off",
+        "userid": 3359,
+        "semname": "张莉",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 640,
+        "name": "蜻蜓fm",
+        "appid": "x2z4w86qydghtx4fb79pgy14i7wmi6dx",
+        "account_type": 110201,
+        "account_name": "蜻蜓-神马",
+        "account_password": "qingting123",
+        "account_appid": "b1ca677bb8dde098d1a04ee1a713f6c2",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3309,
+        "semname": "张瑞雪",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 297,
+        "name": "秀吧",
+        "appid": "a87jg7kchylp8z38ipiq3q5mij4zdba7",
+        "account_type": 110201,
+        "account_name": "bjznaac",
+        "account_password": "QAZwsx123",
+        "account_appid": "79757746-7b07-4240-ab2c-7874b13aafaa",
+        "account_status": 2,
+        "fd_rate": 0.47,
+        "view_type": 120001,
+        "api_count": 499875,
+        "auto": "off",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 282,
+        "name": "欢乐书客-神马",
+        "appid": "ae6h7wm6fwlvxnlynnxchgds4i57f23a",
+        "account_type": 110201,
+        "account_name": "bjznaag",
+        "account_password": "QAZqaz123",
+        "account_appid": "f16c427d-e0b2-4835-87ac-084c735fb8df",
+        "account_status": 2,
+        "fd_rate": 0.25,
+        "view_type": 120001,
+        "api_count": 499885,
+        "auto": "off",
+        "userid": 3359,
+        "semname": "张莉",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3851,
+        "name": "蜻蜓2",
+        "appid": "2d5012514a7f4698955a07cb5cef9951",
+        "account_type": 110101,
+        "account_name": "sh倾听-vip",
+        "account_password": "QingTing@12.com",
+        "account_appid": "fbd5fcef394db91abf23f83375a74af3",
+        "account_status": 2,
+        "fd_rate": 0.41,
+        "view_type": 120001,
+        "api_count": 1715758,
+        "auto": "on",
+        "userid": 3309,
+        "semname": "张瑞雪",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi/Fvf1qIVgeBnAi6j3doqdXTGLMpEx"
+    },
+    {
+        "huid": 1007,
+        "name": "嗨起",
+        "appid": "6fj7tlj39pswogmemxl16h6w29r4k5n8",
+        "account_type": 110201,
+        "account_name": "bjznbbo",
+        "account_password": "QAZqaz123",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0.15,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3359,
+        "semname": "张莉",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 553,
+        "name": "玖珺",
+        "appid": "b44i5a12jmf1igy4tnemnp14i9d96wnv",
+        "account_type": 110107,
+        "account_name": "Baidu-无线-玖珺Ff2165396",
+        "account_password": "AAbb001",
+        "account_appid": "notoken",
+        "account_status": 2,
+        "fd_rate": 0.055,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3228,
+        "semname": "陈岩",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 298,
+        "name": "畅读书城-神马",
+        "appid": "cy5hp16m2jmw2rt78vu545cditbhhzrj",
+        "account_type": 110201,
+        "account_name": "changdusc",
+        "account_password": "QAZqaz123",
+        "account_appid": "b1718341-7205-4ae3-ae9e-b6b7fe05a9ff",
+        "account_status": 2,
+        "fd_rate": 0.29,
+        "view_type": 120001,
+        "api_count": 499885,
+        "auto": "on",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3790,
+        "name": "单身交友",
+        "appid": "9bf95ca025b140ca95782e98d0bcd36d",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道av2162292",
+        "account_password": "QAZqaz1234",
+        "account_appid": "432c013ad48b70f0e0c11022f5ca6e9c",
+        "account_status": 2,
+        "fd_rate": 0.5,
+        "view_type": 120001,
+        "api_count": 34138,
+        "auto": "off",
+        "userid": 3228,
+        "semname": "陈岩",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3930,
+        "name": "美团2",
+        "appid": "c5b781a3230c4b0d81e9024533a76bc9",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bd-智道gu2162292",
+        "account_password": "Qa1234  ",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0.31,
+        "view_type": 120001,
+        "api_count": 34528,
+        "auto": "off",
+        "userid": 3924,
+        "semname": "胡冰霞",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 864,
+        "name": "简单借款",
+        "appid": "cx2hegfpnr6odns7h8r5rvn29j9vcti7",
+        "account_type": 110201,
+        "account_name": "心向076",
+        "account_password": "1q2w3e4r",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0.3,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 879,
+        "name": "美团备用",
+        "appid": "f58iukunmp13cbo9sknd7eewmi8cmlp2",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智投aq2160884",
+        "account_password": "QAZqaz123",
+        "account_appid": "9ccfd7d14094596c7cbd7f99d203d723",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": 34997,
+        "auto": "off",
+        "userid": 3924,
+        "semname": "胡冰霞",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 4036,
+        "name": "联泓",
+        "appid": "ZhlCDhegteWBMUtrVLVuqLHvsOHkbNWj",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-联泓2165235",
+        "account_password": "Qa1234",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": null,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 370,
+        "name": "北京服务您",
+        "appid": "rtreqi1gn9rgrkapip4hiwwmiuz8kf5n",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道hq2162292 ",
+        "account_password": "Qa1234",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0.41,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 451,
+        "semname": "张玉杰",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 4005,
+        "name": "百度外卖",
+        "appid": "gwfZacWoPtehGwlhQMUoieddSibinnxP",
+        "account_type": 110101,
+        "account_name": "Baidu-DSP智道m2162577",
+        "account_password": "QAZqaz1234",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": null,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3939,
+        "name": "搜狗地图",
+        "appid": "YAcrOAOCdtJMlgwPxClOUeqZwgkYkhkT",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道u2162292",
+        "account_password": "Hzld2017fff",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0.41,
+        "view_type": 120001,
+        "api_count": null,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 882,
+        "name": "水晶直播",
+        "appid": "dnb61i6t73e79n3r31nnhlg14it7m67i",
+        "account_type": 110201,
+        "account_name": "bjznbba",
+        "account_password": "QAZqaz123",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 554,
+        "name": "玖珺",
+        "appid": "xnt6fs42jt89l9vuijw6ogvi9s9r50by",
+        "account_type": 110107,
+        "account_name": "Baidu-无线-玖珺Fg2165396",
+        "account_password": "AAbb001",
+        "account_appid": "notoken",
+        "account_status": 2,
+        "fd_rate": 0.055,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3768,
+        "name": "同城聊",
+        "appid": "7ecae9c1828e4dd68e59069167e8c270",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道cl2162292",
+        "account_password": "QAZqaz1234",
+        "account_appid": "e379d6e30357234138989208de840f50",
+        "account_status": 2,
+        "fd_rate": 0.3,
+        "view_type": 120001,
+        "api_count": 34440,
+        "auto": "off",
+        "userid": 3221,
+        "semname": "周雷雨",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    }]
+const task_week = [{
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 0,
+    "rate": 0,
+    "monthDate": null,
+    "week": 5,
+    "startDate": 1495987200000,
+    "endDate": 1496160000000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 0,
+    "rate": 0,
+    "monthDate": null,
+    "week": 4,
+    "startDate": 1495382400000,
+    "endDate": 1495900800000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 133394.23,
+    "rate": 13.339423000000002,
+    "monthDate": null,
+    "week": 3,
+    "startDate": 1494777600000,
+    "endDate": 1495296000000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 359436.95,
+    "rate": 35.943695,
+    "monthDate": null,
+    "week": 2,
+    "startDate": 1494172800000,
+    "endDate": 1494691200000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 116881.39,
+    "rate": 11.688139,
+    "monthDate": null,
+    "week": 1,
+    "startDate": 1493568000000,
+    "endDate": 1494086400000
+}]
+const Allzu = [[
+    {
+        "name": "刘鹏举",
+        "role_name": "admin",
+        "user_id": 3102,
+        "group_id": 156,
+        "role_id": 2
+    },
+    {
+        "name": "党卓娅",
+        "role_name": "user",
+        "user_id": 3127,
+        "group_id": 156,
+        "role_id": 3
+    }, {"name": "张玉杰", "role_name": "user", "user_id": 451, "group_id": 156, "role_id": 3}, {
+        "name": "唐思远",
+        "role_name": "user",
+        "user_id": 290,
+        "group_id": 156,
+        "role_id": 3
+    },
+    {"name": "李翔宇", "role_name": "user", "user_id": 3090, "group_id": 156, "role_id": 3}, {
+        "name": "胡冰霞",
+        "role_name": "user",
+        "user_id": 3924,
+        "group_id": 156,
+        "role_id": 3
+    },
+    {"name": "张瑞雪", "role_name": "user", "user_id": 3309, "group_id": 156, "role_id": 3}
+],
+    [{
+        "name": "祁文昊",
+        "role_name": "user",
+        "user_id": 364,
+        "group_id": 157,
+        "role_id": 3
+    }, {"name": "古小平", "role_name": "admin", "user_id": 3181, "group_id": 157, "role_id": 2}, {
+        "name": "张恩乾",
+        "role_name": "user",
+        "user_id": 3279,
+        "group_id": 157,
+        "role_id": 3
+    }],
+    [{"name": "张莉", "role_name": "user", "user_id": 3359, "group_id": 158, "role_id": 3}, {
+        "name": "许恩楼",
+        "role_name": "admin",
+        "user_id": 3360,
+        "group_id": 158,
+        "role_id": 2
+    }],
+    [{"name": "马刚", "role_name": "user", "user_id": 3175, "group_id": 233, "role_id": 3}, {
+        "name": "周雷雨",
+        "role_name": "user",
+        "user_id": 3221,
+        "group_id": 233,
+        "role_id": 3
+    }, {"name": "陈岩", "role_name": "admin", "user_id": 3228, "group_id": 233, "role_id": 2}, {
+        "name": "李金茹",
+        "role_name": "user",
+        "user_id": 3088,
+        "group_id": 233,
+        "role_id": 3
+    }]];
+const  getAllyonghu = [{
+    "id": 3132,
+    "name": "韩温玉",
+    "email": null,
+    "phone": null,
+    "password": "d798ee360d36c48da27b687bd0815392",
+    "real_name": "韩温玉",
+    "create_date": "2016-05-26T08:55:35.000Z",
+    "last_login_date": "2016-12-30T02:29:15.483Z",
+    "type": 100003
+}, {
+    "id": 312,
+    "name": "九星互动",
+    "email": "1@qq.com",
+    "phone": "13312345678",
+    "password": "fad27a6b35c51bbfff6d8fbe34c4f10d",
+    "real_name": "九星互动",
+    "create_date": null,
+    "last_login_date": null,
+    "type": 100004
+}, {
+    "id": 564,
+    "name": "饿了么",
+    "email": "elm@elm.com",
+    "phone": "13512345678",
+    "password": "d798ee360d36c48da27b687bd0815392",
+    "real_name": "饿了么",
+    "create_date": null,
+    "last_login_date": null,
+    "type": 100002
+},  {
+    "id": 1057,
+    "name": "hpstore",
+    "email": "hpstore@hp.com",
+    "phone": "18618600000",
+    "password": "a0eab08429a379f869ea6e0173957f7a",
+    "real_name": "hpstore",
+    "create_date": null,
+    "last_login_date": null,
+    "type": 100002
+}, {
+    "id": 3360,
+    "name": "许恩楼",
+    "email": null,
+    "phone": null,
+    "password": "d798ee360d36c48da27b687bd0815392",
+    "real_name": "许恩楼",
+    "create_date": "2016-12-26T06:12:57.649Z",
+    "last_login_date": null,
+    "type": 100001
+}];
+const getAllhu =  [{
+    "huid": 198,
+    "name": "附近夜约爱",
+    "appid": "bb9654d9d4254d00a800371a62f4fcfe",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道fk2162292",
+    "account_password": "Qa1234",
+    "account_appid": "810b4801942171f356d7ad76839bb074",
+    "account_status": 0,
+    "fd_rate": 0.1,
     "view_type": 120001,
-    "api_count": 499885,
+    "api_count": 34096,
     "auto": "off",
     "userid": 3359,
     "semname": "张莉",
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3851,
-    "name": "蜻蜓2",
-    "appid": "2d5012514a7f4698955a07cb5cef9951",
-    "account_type": 110101,
-    "account_name": "sh倾听-vip",
-    "account_password": "QingTing@12.com",
-    "account_appid": "fbd5fcef394db91abf23f83375a74af3",
-    "account_status": 2,
-    "fd_rate": 0.41,
-    "view_type": 120001,
-    "api_count": 1715758,
-    "auto": "on",
-    "userid": 3309,
-    "semname": "张瑞雪",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi/Fvf1qIVgeBnAi6j3doqdXTGLMpEx"
-  },
-  {
-    "huid": 1007,
-    "name": "嗨起",
-    "appid": "6fj7tlj39pswogmemxl16h6w29r4k5n8",
-    "account_type": 110201,
-    "account_name": "bjznbbo",
-    "account_password": "QAZqaz123",
-    "account_appid": "undefined",
-    "account_status": 2,
-    "fd_rate": 0.15,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3359,
-    "semname": "张莉",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 553,
-    "name": "玖珺",
-    "appid": "b44i5a12jmf1igy4tnemnp14i9d96wnv",
-    "account_type": 110107,
-    "account_name": "Baidu-无线-玖珺Ff2165396",
-    "account_password": "AAbb001",
-    "account_appid": "notoken",
-    "account_status": 2,
-    "fd_rate": 0.055,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3228,
-    "semname": "陈岩",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 298,
-    "name": "畅读书城-神马",
-    "appid": "cy5hp16m2jmw2rt78vu545cditbhhzrj",
-    "account_type": 110201,
-    "account_name": "changdusc",
-    "account_password": "QAZqaz123",
-    "account_appid": "b1718341-7205-4ae3-ae9e-b6b7fe05a9ff",
-    "account_status": 2,
-    "fd_rate": 0.29,
-    "view_type": 120001,
-    "api_count": 499885,
-    "auto": "on",
-    "userid": 3360,
-    "semname": "许恩楼",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3790,
-    "name": "单身交友",
-    "appid": "9bf95ca025b140ca95782e98d0bcd36d",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道av2162292",
-    "account_password": "QAZqaz1234",
-    "account_appid": "432c013ad48b70f0e0c11022f5ca6e9c",
-    "account_status": 2,
-    "fd_rate": 0.5,
-    "view_type": 120001,
-    "api_count": 34138,
-    "auto": "off",
-    "userid": 3228,
-    "semname": "陈岩",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3930,
-    "name": "美团2",
-    "appid": "c5b781a3230c4b0d81e9024533a76bc9",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bd-智道gu2162292",
-    "account_password": "Qa1234  ",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0.31,
-    "view_type": 120001,
-    "api_count": 34528,
-    "auto": "off",
-    "userid": 3924,
-    "semname": "胡冰霞",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 864,
-    "name": "简单借款",
-    "appid": "cx2hegfpnr6odns7h8r5rvn29j9vcti7",
-    "account_type": 110201,
-    "account_name": "心向076",
-    "account_password": "1q2w3e4r",
-    "account_appid": "undefined",
-    "account_status": 2,
-    "fd_rate": 0.3,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3360,
-    "semname": "许恩楼",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 879,
-    "name": "美团备用",
-    "appid": "f58iukunmp13cbo9sknd7eewmi8cmlp2",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智投aq2160884",
-    "account_password": "QAZqaz123",
-    "account_appid": "9ccfd7d14094596c7cbd7f99d203d723",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": 34997,
-    "auto": "off",
-    "userid": 3924,
-    "semname": "胡冰霞",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 4036,
-    "name": "联泓",
-    "appid": "ZhlCDhegteWBMUtrVLVuqLHvsOHkbNWj",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-联泓2165235",
-    "account_password": "Qa1234",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": null,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 370,
-    "name": "北京服务您",
-    "appid": "rtreqi1gn9rgrkapip4hiwwmiuz8kf5n",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道hq2162292 ",
+}, {
+    "huid": 911,
+    "name": "Baidu-无线DSP智投as2161077",
+    "appid": "t971jchl8rszwmypktqsq0k9abojtkka",
+    "account_type": 110104,
+    "account_name": "Baidu-无线DSP智投as2161077",
     "account_password": "Qa1234",
     "account_appid": "undefined",
-    "account_status": 2,
-    "fd_rate": 0.41,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 451,
-    "semname": "张玉杰",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 4005,
-    "name": "百度外卖",
-    "appid": "gwfZacWoPtehGwlhQMUoieddSibinnxP",
-    "account_type": 110101,
-    "account_name": "Baidu-DSP智道m2162577",
-    "account_password": "QAZqaz1234",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": null,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3939,
-    "name": "搜狗地图",
-    "appid": "YAcrOAOCdtJMlgwPxClOUeqZwgkYkhkT",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道u2162292",
-    "account_password": "Hzld2017fff",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0.41,
-    "view_type": 120001,
-    "api_count": null,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 882,
-    "name": "水晶直播",
-    "appid": "dnb61i6t73e79n3r31nnhlg14it7m67i",
-    "account_type": 110201,
-    "account_name": "bjznbba",
-    "account_password": "QAZqaz123",
-    "account_appid": "undefined",
-    "account_status": 2,
+    "account_status": 0,
     "fd_rate": 0,
     "view_type": 120001,
     "api_count": 0,
-    "auto": "off",
-    "userid": 3360,
-    "semname": "许恩楼",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 554,
-    "name": "玖珺",
-    "appid": "xnt6fs42jt89l9vuijw6ogvi9s9r50by",
-    "account_type": 110107,
-    "account_name": "Baidu-无线-玖珺Fg2165396",
-    "account_password": "AAbb001",
-    "account_appid": "notoken",
-    "account_status": 2,
-    "fd_rate": 0.055,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3768,
-    "name": "同城聊",
-    "appid": "7ecae9c1828e4dd68e59069167e8c270",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道cl2162292",
-    "account_password": "QAZqaz1234",
-    "account_appid": "e379d6e30357234138989208de840f50",
-    "account_status": 2,
-    "fd_rate": 0.3,
-    "view_type": 120001,
-    "api_count": 34440,
     "auto": "off",
     "userid": 3221,
     "semname": "周雷雨",
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  }]
-const wudan=[{
-  "adgroupName": "20170423_个人住房公积金查询",
-  "campaignName": "昆明_iOS_公积金查询",
-  "view_total": 172,
-  "click_total": 18,
-  "cost_total": 13.35
-},
-  {
-    "adgroupName": "20170423_住房基金查询",
-    "campaignName": "成都_android_公积金查询",
-    "view_total": 3,
-    "click_total": 2,
-    "cost_total": 1.09
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "南京_android_公积金查询",
-    "view_total": 21,
-    "click_total": 1,
-    "cost_total": 0.33
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "南京_android_公积金查询",
-    "view_total": 31,
-    "click_total": 3,
-    "cost_total": 1.67
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "南昌_android_公积金查询",
-    "view_total": 16,
-    "click_total": 1,
-    "cost_total": 0.57
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "佛山_android_公积金查询",
-    "view_total": 160,
-    "click_total": 13,
-    "cost_total": 7.11
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "佛山_android_公积金查询",
-    "view_total": 4,
-    "click_total": 1,
-    "cost_total": 0.56
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "南昌_iOS_公积金查询",
-    "view_total": 6,
-    "click_total": 1,
-    "cost_total": 0.86
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "西安_iOS_公积金查询",
-    "view_total": 103,
-    "click_total": 24,
-    "cost_total": 17.98
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "九江_android_公积金查询",
-    "view_total": 108,
-    "click_total": 10,
-    "cost_total": 5.46
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "吉林_iOS_公积金查询",
-    "view_total": 376,
-    "click_total": 32,
-    "cost_total": 24.19
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "济南_android_公积金查询",
-    "view_total": 22,
-    "click_total": 5,
-    "cost_total": 2.83
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "青岛_iOS_公积金查询",
-    "view_total": 20,
-    "click_total": 3,
-    "cost_total": 2.14
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "郑州_android_公积金查询",
-    "view_total": 66,
-    "click_total": 7,
-    "cost_total": 3.74
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "常德_iOS_公积金查询",
-    "view_total": 95,
-    "click_total": 18,
-    "cost_total": 14.32
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "宁波_iOS_公积金查询",
-    "view_total": 159,
-    "click_total": 25,
-    "cost_total": 18.81
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "北京_iOS_公积金查询",
-    "view_total": 295,
-    "click_total": 38,
-    "cost_total": 28.12
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "南通_iOS_公积金查询",
-    "view_total": 64,
-    "click_total": 12,
-    "cost_total": 8.69
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "桂林_iOS_公积金查询",
-    "view_total": 27,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人住房公积金",
-    "campaignName": "南京_android_公积金查询",
-    "view_total": 1,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "临沂_android_公积金查询",
-    "view_total": 1,
-    "click_total": 1,
-    "cost_total": 0.58
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "东莞_android_公积金查询",
-    "view_total": 2,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "济宁_iOS_公积金查询",
-    "view_total": 138,
-    "click_total": 34,
-    "cost_total": 23.82
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "南京_iOS_公积金查询",
-    "view_total": 4,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "福州_android_公积金查询",
-    "view_total": 2,
-    "click_total": 1,
-    "cost_total": 0.49
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "德州_android_公积金查询",
-    "view_total": 23,
-    "click_total": 7,
-    "cost_total": 3.55
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "昆明_android_公积金查询",
-    "view_total": 1,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "吉林_iOS_公积金查询",
-    "view_total": 522,
-    "click_total": 61,
-    "cost_total": 43.46
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "南宁_android_公积金查询",
-    "view_total": 39,
-    "click_total": 7,
-    "cost_total": 3.7
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "上海_iOS_公积金查询",
-    "view_total": 690,
-    "click_total": 132,
-    "cost_total": 93.17
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "哈尔滨_iOS_公积金查询",
-    "view_total": 3,
-    "click_total": 2,
-    "cost_total": 1.24
-  },
-  {
-    "adgroupName": "20170423_住房基金查询",
-    "campaignName": "上海_iOS_公积金查询",
-    "view_total": 3,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "昆明_iOS_公积金查询",
-    "view_total": 6,
-    "click_total": 3,
-    "cost_total": 2.39
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "无锡_android_公积金查询",
-    "view_total": 164,
-    "click_total": 5,
-    "cost_total": 2.66
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "朝阳_iOS_公积金查询",
-    "view_total": 75,
-    "click_total": 11,
-    "cost_total": 8.75
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "东营_iOS_公积金查询",
-    "view_total": 16,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "合肥_iOS_公积金查询",
-    "view_total": 250,
-    "click_total": 38,
-    "cost_total": 28.8
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "东营_iOS_公积金查询",
-    "view_total": 141,
-    "click_total": 12,
-    "cost_total": 8.33
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "东莞_android_公积金查询",
-    "view_total": 95,
-    "click_total": 5,
-    "cost_total": 2.89
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "其他_android_公积金查询",
-    "view_total": 7888,
-    "click_total": 1237,
-    "cost_total": 654.56
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "广州_android_公积金查询",
-    "view_total": 264,
-    "click_total": 33,
-    "cost_total": 18.49
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "福州_android_公积金查询",
-    "view_total": 36,
-    "click_total": 4,
-    "cost_total": 2.24
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "郑州_android_公积金查询",
-    "view_total": 168,
-    "click_total": 32,
-    "cost_total": 15.37
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "北京_iOS_公积金查询",
-    "view_total": 105,
-    "click_total": 19,
-    "cost_total": 14.71
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "无锡_iOS_公积金查询",
-    "view_total": 8,
-    "click_total": 1,
-    "cost_total": 0.85
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "南宁_iOS_公积金查询",
-    "view_total": 128,
-    "click_total": 27,
-    "cost_total": 19.98
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "济宁_iOS_公积金查询",
-    "view_total": 88,
-    "click_total": 28,
-    "cost_total": 21.1
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "南通_android_公积金查询",
-    "view_total": 108,
-    "click_total": 25,
-    "cost_total": 13.29
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "宁波_iOS_公积金查询",
-    "view_total": 44,
-    "click_total": 3,
-    "cost_total": 2.66
-  },
-  {
-    "adgroupName": "20170423_住房基金查询",
-    "campaignName": "惠州_iOS_公积金查询",
-    "view_total": 4,
-    "click_total": 1,
-    "cost_total": 0.76
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "邯郸_iOS_公积金查询",
-    "view_total": 44,
-    "click_total": 5,
-    "cost_total": 3.88
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "吉林_android_公积金查询",
-    "view_total": 32,
-    "click_total": 1,
-    "cost_total": 0.62
-  },
-  {
-    "adgroupName": "个人住房公积金",
-    "campaignName": "大连_iOS_公积金查询",
-    "view_total": 8,
-    "click_total": 1,
-    "cost_total": 0.76
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "哈尔滨_android_公积金查询",
-    "view_total": 348,
-    "click_total": 19,
-    "cost_total": 10.19
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "南通_android_公积金查询",
-    "view_total": 2,
-    "click_total": 1,
-    "cost_total": 0.55
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "长春_android_公积金查询",
-    "view_total": 6,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人住房公积金",
-    "campaignName": "深圳_iOS_公积金查询",
-    "view_total": 51,
-    "click_total": 5,
-    "cost_total": 4.32
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "武汉_iOS_公积金查询",
-    "view_total": 9,
-    "click_total": 1,
-    "cost_total": 0.79
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "沈阳_iOS_公积金查询",
-    "view_total": 70,
-    "click_total": 3,
-    "cost_total": 2.13
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "朝阳_android_公积金查询",
-    "view_total": 5,
-    "click_total": 3,
-    "cost_total": 1.73
-  }]
-const paramdata= [
+}, {
+    "huid": 4058,
+    "name": "战旗tv",
+    "appid": "46e40d4f45f8496db2615c260127ef1a",
+    "account_type": 110201,
+    "account_name": "北京智道未来网络科技",
+    "account_password": "shenma1019",
+    "account_appid": "ec8dcfae-e922-4f78-b21e-508abc3ba900",
+    "account_status": 0,
+    "fd_rate": 0.25,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3359,
+    "semname": "张莉",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+}, {
+    "huid": 3951,
+    "name": "一元购",
+    "appid": "408f806275614be68879fdac2f8c2c41",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道ct2162292",
+    "account_password": "QWEewq696",
+    "account_appid": "",
+    "account_status": 0,
+    "fd_rate": 0.47,
+    "view_type": 120001,
+    "api_count": null,
+    "auto": "off",
+    "userid": 3102,
+    "semname": "刘鹏举",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+}];
+const  getAllkehu = [
     {
-        "keyword": "货拉拉收费标准",
-        "keyword_id": "60927464610",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 16.05,
-        "view": 49,
-        "click": 8,
-        "cpd": "3.21",
-        "max_price": "15",
-        "mubiao_cpd": "2"
+        "id": 8,
+        "name": "触宝",
+        "email": "",
+        "phone": "",
+        "create_date": "2017-03-15T02:26:18.000Z",
+        "huname": "触宝",
+        "type": 100002,
+        "huid": 3852,
+        "semname": "张瑞雪"
     },
     {
-        "keyword": "同城货运收费",
-        "keyword_id": "60927464592",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 2,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "小型货车出租价格",
-        "keyword_id": "60927464481",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "货车出租价格",
-        "keyword_id": "60927464619",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "钢琴搬运价格",
-        "keyword_id": "60927464472",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "搬家收费",
-        "keyword_id": "60927464490",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "搬家公司收费",
-        "keyword_id": "60927464463",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    }]
-const paramkey1=[{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 10:35:45","cost":"0","view":"5","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 10:45:43","cost":"0","view":"5","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 11:35:44","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 11:45:46","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"18.2"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 12:35:48","cost":"0","view":"2","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.03,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 12:45:54","cost":"0","view":"2","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.03,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 13:35:45","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 13:45:48","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"23.5"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 14:35:48","cost":"1","view":"2","click":"1","download_total":"1","cpd":"2.2","cpc_cpd":"2.2","first_rate":0,"button_view_rate":"28.6"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 14:45:52","cost":"1","view":"2","click":"1","download_total":"1","cpd":"2.2","cpc_cpd":"2.2","first_rate":0,"button_view_rate":"28.6"}]
-const paramkey2=[{"date":"2017-05-16T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":8.43,"view":26,"click":4,"cpd":"4.21","download_total":2,"cpc_cpd":0.5285,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0},{"date":"2017-05-17T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":0,"view":29,"click":0,"cpd":0,"download_total":0,"cpc_cpd":null,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0},{"date":"2017-05-18T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":16.05,"view":49,"click":8,"cpd":"3.21","download_total":5,"cpc_cpd":0.625,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0}];
-const all={"total_view":85917,"total_pv":12570,"total_count":1938,"cost":"7208","download_rate":"15.4","pv_rate":"14.6","total_active":0,"active_rate":0,"mobileBalance":"85956.18","yesterdayCost":"11133","monthCost":"208718","yestoday_total_view":129781,"yestoday_total_pv":19368,"yestoday_total_count":2886,"yestoday_total_active":0,"yestoday_cost":"11133","yestoday_download_rate":"2.2","yestoday_active_rate":"0.0","msg":"success"};
-const twow=[{"total_pv":40509,"total_count":5711,"total_active":0,"cost":"25508.41","download_rate":"14.10","active_rate":"0.00","date":"2017-05-09","total_view":238712},{"total_pv":32399,"total_count":4951,"total_active":0,"cost":"20181.93","download_rate":"15.28","active_rate":"0.00","date":"2017-05-10","total_view":194569},{"total_pv":30713,"total_count":4699,"total_active":0,"cost":"19669.04","download_rate":"15.30","active_rate":"0.00","date":"2017-05-11","total_view":180817},{"total_pv":26835,"total_count":4166,"total_active":0,"cost":"17391.12","download_rate":"15.52","active_rate":"0.00","date":"2017-05-12","total_view":152871},{"total_pv":21948,"total_count":3336,"total_active":0,"cost":"14305.59","download_rate":"15.20","active_rate":"0.00","date":"2017-05-13","total_view":132600},{"total_pv":21519,"total_count":3150,"total_active":0,"cost":"13972.95","download_rate":"14.64","active_rate":"0.00","date":"2017-05-14","total_view":137719},{"total_pv":34226,"total_count":4781,"total_active":0,"cost":"21705.70","download_rate":"13.97","active_rate":"0.00","date":"2017-05-15","total_view":215559},{"total_pv":33451,"total_count":4074,"total_active":0,"cost":"18844.60","download_rate":"12.18","active_rate":"0.00","date":"2017-05-16","total_view":198313},{"total_pv":28451,"total_count":4047,"total_active":0,"cost":"16442.91","download_rate":"14.22","active_rate":"0.00","date":"2017-05-17","total_view":174529},{"total_pv":26858,"total_count":3722,"total_active":0,"cost":"15440.17","download_rate":"13.86","active_rate":"0.00","date":"2017-05-18","total_view":168921},{"total_pv":24591,"total_count":3384,"total_active":0,"cost":"14122.62","download_rate":"13.76","active_rate":"0.00","date":"2017-05-19","total_view":161037},{"total_pv":19368,"total_count":2849,"total_active":0,"cost":"11133.39","download_rate":"14.71","active_rate":"0.00","date":"2017-05-20","total_view":129781},{"total_pv":21419,"total_count":3121,"total_active":0,"cost":"12286.42","download_rate":"14.57","active_rate":"0.00","date":"2017-05-21","total_view":143628},{"total_view":26814,"total_pv":3008,"total_count":498,"cost":"1728","download_rate":"16.6","pv_rate":"11.2","total_active":0,"active_rate":0,"mobileBalance":"79063.01","date":"2017-05-22"}]
-const onew={"appid":"er3e6c0j6ezmsa5n8bo2u1h5mif1efwt","data":[{"cost":"111029.04","date":"2017-05-08----2017-05-14"},{"cost":"109975.81","date":"2017-05-15----2017-05-21"}]};
-const planvs={"voAccountCom":{"oneView":129781,"oneClick":19368,"oneDown":2886,"oneActive":0,"oneCost":11133.39,"oneTotalCpc":0.57,"oneTotalCpd":3.86,"oneTotalCpa":0,"twoView":143628,"twoClick":21419,"twoDown":3153,"twoActive":0,"twoCost":11133.39,"twoTotalCpc":0.57,"twoTotalCpd":3.9,"twoTotalCpa":0},"voCampaignComs":[{"oneCampaignId":"73808649","oneCampaignName":"常州_iOS_公积金查询","oneView":415,"oneClick":39,"oneDown":5,"oneActive":0,"oneCost":23.58,"oneTotalCpc":0.6,"oneTotalCpd":4.72,"oneTotalCpa":0,"twoCampaignId":"73808649","twoCampaignName":"常州_iOS_公积金查询","twoView":484,"twoClick":46,"twoDown":6,"twoActive":0,"twoCost":29.2,"twoTotalCpc":0.63,"twoTotalCpd":4.87,"twoTotalCpa":0},{"oneCampaignId":"74057367","oneCampaignName":"重庆_android_公积金查询","oneView":1401,"oneClick":158,"oneDown":19,"oneActive":0,"oneCost":97.5,"oneTotalCpc":0.62,"oneTotalCpd":5.13,"oneTotalCpa":0,"twoCampaignId":"74057367","twoCampaignName":"重庆_android_公积金查询","twoView":1447,"twoClick":163,"twoDown":27,"twoActive":0,"twoCost":100.05,"twoTotalCpc":0.61,"twoTotalCpd":3.71,"twoTotalCpa":0},{"oneCampaignId":"74057289","oneCampaignName":"哈尔滨_android_公积金查询","oneView":567,"oneClick":76,"oneDown":11,"oneActive":0,"oneCost":45.01,"oneTotalCpc":0.59,"oneTotalCpd":4.09,"oneTotalCpa":0,"twoCampaignId":"74057289","twoCampaignName":"哈尔滨_android_公积金查询","twoView":729,"twoClick":91,"twoDown":12,"twoActive":0,"twoCost":55.92,"twoTotalCpc":0.61,"twoTotalCpd":4.66,"twoTotalCpa":0},{"oneCampaignId":"73800547","oneCampaignName":"全国_iOS_提取、代缴、计算器","oneView":2945,"oneClick":258,"oneDown":19,"oneActive":0,"oneCost":122.64,"oneTotalCpc":0.48,"oneTotalCpd":6.45,"oneTotalCpa":0,"twoCampaignId":"73800547","twoCampaignName":"全国_iOS_提取、代缴、计算器","twoView":2748,"twoClick":269,"twoDown":16,"twoActive":0,"twoCost":128.32,"twoTotalCpc":0.48,"twoTotalCpd":8.02,"twoTotalCpa":0},{"oneCampaignId":"74070888","oneCampaignName":"东营_android_公积金查询","oneView":449,"oneClick":60,"oneDown":7,"oneActive":0,"oneCost":33.59,"oneTotalCpc":0.56,"oneTotalCpd":4.8,"oneTotalCpa":0,"twoCampaignId":"74070888","twoCampaignName":"东营_android_公积金查询","twoView":472,"twoClick":97,"twoDown":11,"twoActive":0,"twoCost":53.53,"twoTotalCpc":0.55,"twoTotalCpd":4.87,"twoTotalCpa":0},{"oneCampaignId":"74057358","oneCampaignName":"长春_android_公积金查询","oneView":468,"oneClick":80,"oneDown":13,"oneActive":0,"oneCost":49.52,"oneTotalCpc":0.62,"oneTotalCpd":3.81,"oneTotalCpa":0,"twoCampaignId":"74057358","twoCampaignName":"长春_android_公积金查询","twoView":389,"twoClick":69,"twoDown":13,"twoActive":0,"twoCost":42.6,"twoTotalCpc":0.62,"twoTotalCpd":3.28,"twoTotalCpa":0},{"oneCampaignId":"74057349","oneCampaignName":"苏州_android_公积金查询","oneView":1968,"oneClick":213,"oneDown":39,"oneActive":0,"oneCost":123.57,"oneTotalCpc":0.58,"oneTotalCpd":3.17,"oneTotalCpa":0,"twoCampaignId":"74057349","twoCampaignName":"苏州_android_公积金查询","twoView":2203,"twoClick":247,"twoDown":48,"twoActive":0,"twoCost":143.99,"twoTotalCpc":0.58,"twoTotalCpd":3,"twoTotalCpa":0},{"oneCampaignId":"74057310","oneCampaignName":"衡阳_android_公积金查询","oneView":279,"oneClick":33,"oneDown":4,"oneActive":0,"oneCost":20.29,"oneTotalCpc":0.61,"oneTotalCpd":5.07,"oneTotalCpa":0,"twoCampaignId":"74057310","twoCampaignName":"衡阳_android_公积金查询","twoView":286,"twoClick":35,"twoDown":6,"twoActive":0,"twoCost":20.31,"twoTotalCpc":0.58,"twoTotalCpd":3.39,"twoTotalCpa":0},{"oneCampaignId":"73824579","oneCampaignName":"其他_iOS_公积金查询","oneView":10187,"oneClick":674,"oneDown":94,"oneActive":0,"oneCost":423.37,"oneTotalCpc":0.63,"oneTotalCpd":4.5,"oneTotalCpa":0,"twoCampaignId":"73824579","twoCampaignName":"其他_iOS_公积金查询","twoView":13869,"twoClick":777,"twoDown":97,"twoActive":0,"twoCost":486.8,"twoTotalCpc":0.63,"twoTotalCpd":5.02,"twoTotalCpa":0},{"oneCampaignId":"73808574","oneCampaignName":"合肥_iOS_公积金查询","oneView":226,"oneClick":24,"oneDown":2,"oneActive":0,"oneCost":14.74,"oneTotalCpc":0.61,"oneTotalCpd":7.37,"oneTotalCpa":0,"twoCampaignId":"73808574","twoCampaignName":"合肥_iOS_公积金查询","twoView":325,"twoClick":14,"twoDown":1,"twoActive":0,"twoCost":8.72,"twoTotalCpc":0.62,"twoTotalCpd":8.72,"twoTotalCpa":0},{"oneCampaignId":"74070606","oneCampaignName":"宁波_android_公积金查询","oneView":1138,"oneClick":187,"oneDown":17,"oneActive":0,"oneCost":105.47,"oneTotalCpc":0.56,"oneTotalCpd":6.2,"oneTotalCpa":0,"twoCampaignId":"74070606","twoCampaignName":"宁波_android_公积金查询","twoView":1181,"twoClick":208,"twoDown":25,"twoActive":0,"twoCost":116.47,"twoTotalCpc":0.56,"twoTotalCpd":4.66,"twoTotalCpa":0},{"oneCampaignId":"74070876","oneCampaignName":"成都_android_公积金查询","oneView":1015,"oneClick":91,"oneDown":20,"oneActive":0,"oneCost":54.39,"oneTotalCpc":0.6,"oneTotalCpd":2.72,"oneTotalCpa":0,"twoCampaignId":"74070876","twoCampaignName":"成都_android_公积金查询","twoView":1320,"twoClick":106,"twoDown":15,"twoActive":0,"twoCost":62.13,"twoTotalCpc":0.59,"twoTotalCpd":4.14,"twoTotalCpa":0},{"oneCampaignId":"74057346","oneCampaignName":"温州_android_公积金查询","oneView":187,"oneClick":12,"oneDown":0,"oneActive":0,"oneCost":7.01,"oneTotalCpc":0.58,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"74057346","twoCampaignName":"温州_android_公积金查询","twoView":167,"twoClick":16,"twoDown":3,"twoActive":0,"twoCost":10.01,"twoTotalCpc":0.63,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74057301","oneCampaignName":"济宁_android_公积金查询","oneView":1307,"oneClick":259,"oneDown":25,"oneActive":0,"oneCost":136.95,"oneTotalCpc":0.53,"oneTotalCpd":5.48,"oneTotalCpa":0,"twoCampaignId":"74057301","twoCampaignName":"济宁_android_公积金查询","twoView":1344,"twoClick":268,"twoDown":38,"twoActive":0,"twoCost":143.31,"twoTotalCpc":0.53,"twoTotalCpd":3.77,"twoTotalCpa":0},{"oneCampaignId":"73808685","oneCampaignName":"广州_iOS_公积金查询","oneView":465,"oneClick":23,"oneDown":4,"oneActive":0,"oneCost":15.16,"oneTotalCpc":0.66,"oneTotalCpd":3.79,"oneTotalCpa":0,"twoCampaignId":"73808685","twoCampaignName":"广州_iOS_公积金查询","twoView":494,"twoClick":18,"twoDown":3,"twoActive":0,"twoCost":11.46,"twoTotalCpc":0.64,"twoTotalCpd":3.82,"twoTotalCpa":0},{"oneCampaignId":"74070873","oneCampaignName":"德州_android_公积金查询","oneView":562,"oneClick":95,"oneDown":17,"oneActive":0,"oneCost":58.38,"oneTotalCpc":0.61,"oneTotalCpd":3.43,"oneTotalCpa":0,"twoCampaignId":"74070873","twoCampaignName":"德州_android_公积金查询","twoView":618,"twoClick":122,"twoDown":13,"twoActive":0,"twoCost":74.08,"twoTotalCpc":0.61,"twoTotalCpd":5.7,"twoTotalCpa":0},{"oneCampaignId":"74057286","oneCampaignName":"合肥_android_公积金查询","oneView":636,"oneClick":90,"oneDown":15,"oneActive":0,"oneCost":55.16,"oneTotalCpc":0.61,"oneTotalCpd":3.68,"oneTotalCpa":0,"twoCampaignId":"74057286","twoCampaignName":"合肥_android_公积金查询","twoView":737,"twoClick":100,"twoDown":11,"twoActive":0,"twoCost":59.59,"twoTotalCpc":0.6,"twoTotalCpd":5.42,"twoTotalCpa":0},{"oneCampaignId":"74057304","oneCampaignName":"吉林_android_公积金查询","oneView":1136,"oneClick":155,"oneDown":20,"oneActive":0,"oneCost":88.21,"oneTotalCpc":0.57,"oneTotalCpd":4.41,"oneTotalCpa":0,"twoCampaignId":"74057304","twoCampaignName":"吉林_android_公积金查询","twoView":1283,"twoClick":171,"twoDown":23,"twoActive":0,"twoCost":101.31,"twoTotalCpc":0.59,"twoTotalCpd":4.4,"twoTotalCpa":0},{"oneCampaignId":"73808655","oneCampaignName":"常德_iOS_公积金查询","oneView":70,"oneClick":3,"oneDown":0,"oneActive":0,"oneCost":1.79,"oneTotalCpc":0.6,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808655","twoCampaignName":"常德_iOS_公积金查询","twoView":70,"twoClick":1,"twoDown":0,"twoActive":0,"twoCost":0.7,"twoTotalCpc":0.7,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74070885","oneCampaignName":"北京_android_公积金查询","oneView":875,"oneClick":74,"oneDown":13,"oneActive":0,"oneCost":43.3,"oneTotalCpc":0.59,"oneTotalCpd":3.33,"oneTotalCpa":0,"twoCampaignId":"74070885","twoCampaignName":"北京_android_公积金查询","twoView":988,"twoClick":79,"twoDown":8,"twoActive":0,"twoCost":46.26,"twoTotalCpc":0.59,"twoTotalCpd":5.78,"twoTotalCpa":0},{"oneCampaignId":"74057382","oneCampaignName":"连云港_android_公积金查询","oneView":868,"oneClick":161,"oneDown":27,"oneActive":0,"oneCost":94.76,"oneTotalCpc":0.59,"oneTotalCpd":3.51,"oneTotalCpa":0,"twoCampaignId":"74057382","twoCampaignName":"连云港_android_公积金查询","twoView":952,"twoClick":198,"twoDown":30,"twoActive":0,"twoCost":113.48,"twoTotalCpc":0.57,"twoTotalCpd":3.78,"twoTotalCpa":0},{"oneCampaignId":"73808616","oneCampaignName":"重庆_iOS_公积金查询","oneView":806,"oneClick":56,"oneDown":4,"oneActive":0,"oneCost":34.59,"oneTotalCpc":0.62,"oneTotalCpd":8.65,"oneTotalCpa":0,"twoCampaignId":"73808616","twoCampaignName":"重庆_iOS_公积金查询","twoView":991,"twoClick":52,"twoDown":7,"twoActive":0,"twoCost":32.73,"twoTotalCpc":0.63,"twoTotalCpd":4.68,"twoTotalCpa":0},{"oneCampaignId":"73808658","oneCampaignName":"福州_iOS_公积金查询","oneView":352,"oneClick":17,"oneDown":2,"oneActive":0,"oneCost":11.85,"oneTotalCpc":0.7,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808658","twoCampaignName":"福州_iOS_公积金查询","twoView":451,"twoClick":21,"twoDown":0,"twoActive":0,"twoCost":12.51,"twoTotalCpc":0.6,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74070630","oneCampaignName":"南昌_android_公积金查询","oneView":466,"oneClick":73,"oneDown":18,"oneActive":0,"oneCost":42.64,"oneTotalCpc":0.58,"oneTotalCpd":2.37,"oneTotalCpa":0,"twoCampaignId":"74070630","twoCampaignName":"南昌_android_公积金查询","twoView":493,"twoClick":72,"twoDown":12,"twoActive":0,"twoCost":42.04,"twoTotalCpc":0.58,"twoTotalCpd":3.5,"twoTotalCpa":0},{"oneCampaignId":"73808700","oneCampaignName":"吉林_iOS_公积金查询","oneView":412,"oneClick":31,"oneDown":3,"oneActive":0,"oneCost":20.2,"oneTotalCpc":0.65,"oneTotalCpd":6.73,"oneTotalCpa":0,"twoCampaignId":"73808700","twoCampaignName":"吉林_iOS_公积金查询","twoView":450,"twoClick":33,"twoDown":4,"twoActive":0,"twoCost":20.9,"twoTotalCpc":0.63,"twoTotalCpd":5.22,"twoTotalCpa":0},{"oneCampaignId":"73808688","oneCampaignName":"九江_iOS_公积金查询","oneView":102,"oneClick":9,"oneDown":3,"oneActive":0,"oneCost":5.19,"oneTotalCpc":0.58,"oneTotalCpd":1.73,"oneTotalCpa":0,"twoCampaignId":"73808688","twoCampaignName":"九江_iOS_公积金查询","twoView":102,"twoClick":8,"twoDown":1,"twoActive":0,"twoCost":5.28,"twoTotalCpc":0.66,"twoTotalCpd":5.28,"twoTotalCpa":0},{"oneCampaignId":"74057268","oneCampaignName":"天津_android_公积金查询","oneView":435,"oneClick":40,"oneDown":9,"oneActive":0,"oneCost":23.33,"oneTotalCpc":0.58,"oneTotalCpd":2.59,"oneTotalCpa":0,"twoCampaignId":"74057268","twoCampaignName":"天津_android_公积金查询","twoView":538,"twoClick":58,"twoDown":16,"twoActive":0,"twoCost":35.59,"twoTotalCpc":0.61,"twoTotalCpd":2.22,"twoTotalCpa":0},{"oneCampaignId":"74057379","oneCampaignName":"九江_android_公积金查询","oneView":320,"oneClick":67,"oneDown":11,"oneActive":0,"oneCost":39.65,"oneTotalCpc":0.59,"oneTotalCpd":3.6,"oneTotalCpa":0,"twoCampaignId":"74057379","twoCampaignName":"九江_android_公积金查询","twoView":333,"twoClick":76,"twoDown":9,"twoActive":0,"twoCost":43.99,"twoTotalCpc":0.58,"twoTotalCpd":4.89,"twoTotalCpa":0},{"oneCampaignId":"73824573","oneCampaignName":"南昌_iOS_公积金查询","oneView":250,"oneClick":20,"oneDown":7,"oneActive":0,"oneCost":12.2,"oneTotalCpc":0.61,"oneTotalCpd":1.74,"oneTotalCpa":0,"twoCampaignId":"73824573","twoCampaignName":"南昌_iOS_公积金查询","twoView":319,"twoClick":28,"twoDown":7,"twoActive":0,"twoCost":17.26,"twoTotalCpc":0.62,"twoTotalCpd":2.47,"twoTotalCpa":0},{"oneCampaignId":"74070882","oneCampaignName":"常州_android_公积金查询","oneView":699,"oneClick":73,"oneDown":14,"oneActive":0,"oneCost":39.91,"oneTotalCpc":0.55,"oneTotalCpd":2.85,"oneTotalCpa":0,"twoCampaignId":"74070882","twoCampaignName":"常州_android_公积金查询","twoView":757,"twoClick":87,"twoDown":12,"twoActive":0,"twoCost":46.66,"twoTotalCpc":0.54,"twoTotalCpd":3.89,"twoTotalCpa":0},{"oneCampaignId":"73808676","oneCampaignName":"邯郸_iOS_公积金查询","oneView":100,"oneClick":7,"oneDown":1,"oneActive":0,"oneCost":4.57,"oneTotalCpc":0.65,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808676","twoCampaignName":"邯郸_iOS_公积金查询","twoView":100,"twoClick":7,"twoDown":0,"twoActive":0,"twoCost":4.66,"twoTotalCpc":0.67,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74070603","oneCampaignName":"上海_android_公积金查询","oneView":1137,"oneClick":111,"oneDown":17,"oneActive":0,"oneCost":66.17,"oneTotalCpc":0.6,"oneTotalCpd":3.89,"oneTotalCpa":0,"twoCampaignId":"74070603","twoCampaignName":"上海_android_公积金查询","twoView":1352,"twoClick":122,"twoDown":31,"twoActive":0,"twoCost":72.35,"twoTotalCpc":0.59,"twoTotalCpd":2.33,"twoTotalCpa":0},{"oneCampaignId":"74057331","oneCampaignName":"佛山_android_公积金查询","oneView":366,"oneClick":32,"oneDown":5,"oneActive":0,"oneCost":19.21,"oneTotalCpc":0.6,"oneTotalCpd":3.84,"oneTotalCpa":0,"twoCampaignId":"74057331","twoCampaignName":"佛山_android_公积金查询","twoView":354,"twoClick":35,"twoDown":9,"twoActive":0,"twoCost":21.5,"twoTotalCpc":0.61,"twoTotalCpd":2.39,"twoTotalCpa":0},{"oneCampaignId":"74070636","oneCampaignName":"南通_android_公积金查询","oneView":531,"oneClick":71,"oneDown":8,"oneActive":0,"oneCost":42.18,"oneTotalCpc":0.59,"oneTotalCpd":5.27,"oneTotalCpa":0,"twoCampaignId":"74070636","twoCampaignName":"南通_android_公积金查询","twoView":517,"twoClick":90,"twoDown":20,"twoActive":0,"twoCost":53.03,"twoTotalCpc":0.59,"twoTotalCpd":2.65,"twoTotalCpa":0},{"oneCampaignId":"74057370","oneCampaignName":"郑州_android_公积金查询","oneView":2368,"oneClick":308,"oneDown":45,"oneActive":0,"oneCost":178.8,"oneTotalCpc":0.58,"oneTotalCpd":3.97,"oneTotalCpa":0,"twoCampaignId":"74057370","twoCampaignName":"郑州_android_公积金查询","twoView":2539,"twoClick":330,"twoDown":43,"twoActive":0,"twoCost":191.49,"twoTotalCpc":0.58,"twoTotalCpd":4.45,"twoTotalCpa":0},{"oneCampaignId":"73808694","oneCampaignName":"济宁_iOS_公积金查询","oneView":195,"oneClick":19,"oneDown":3,"oneActive":0,"oneCost":12.25,"oneTotalCpc":0.64,"oneTotalCpd":4.08,"oneTotalCpa":0,"twoCampaignId":"73808694","twoCampaignName":"济宁_iOS_公积金查询","twoView":205,"twoClick":19,"twoDown":2,"twoActive":0,"twoCost":12.6,"twoTotalCpc":0.66,"twoTotalCpd":6.3,"twoTotalCpa":0},{"oneCampaignId":"73808613","oneCampaignName":"武汉_iOS_公积金查询","oneView":358,"oneClick":15,"oneDown":3,"oneActive":0,"oneCost":10,"oneTotalCpc":0.67,"oneTotalCpd":3.33,"oneTotalCpa":0,"twoCampaignId":"73808613","twoCampaignName":"武汉_iOS_公积金查询","twoView":695,"twoClick":20,"twoDown":2,"twoActive":0,"twoCost":11.98,"twoTotalCpc":0.6,"twoTotalCpd":5.99,"twoTotalCpa":0},{"oneCampaignId":"73808646","oneCampaignName":"朝阳_iOS_公积金查询","oneView":114,"oneClick":18,"oneDown":1,"oneActive":0,"oneCost":12.28,"oneTotalCpc":0.68,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808646","twoCampaignName":"朝阳_iOS_公积金查询","twoView":62,"twoClick":6,"twoDown":0,"twoActive":0,"twoCost":3.71,"twoTotalCpc":0.62,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74070633","oneCampaignName":"其他_android_公积金查询","oneView":44032,"oneClick":10950,"oneDown":1753,"oneActive":0,"oneCost":6393.52,"oneTotalCpc":0.58,"oneTotalCpd":3.65,"oneTotalCpa":0,"twoCampaignId":"74070633","twoCampaignName":"其他_android_公积金查询","twoView":46050,"twoClick":11923,"twoDown":1898,"twoActive":0,"twoCost":6929.68,"twoTotalCpc":0.58,"twoTotalCpd":3.65,"twoTotalCpa":0},{"oneCampaignId":"74070870","oneCampaignName":"常德_android_公积金查询","oneView":155,"oneClick":22,"oneDown":7,"oneActive":0,"oneCost":13.53,"oneTotalCpc":0.62,"oneTotalCpd":1.93,"oneTotalCpa":0,"twoCampaignId":"74070870","twoCampaignName":"常德_android_公积金查询","twoView":214,"twoClick":29,"twoDown":2,"twoActive":0,"twoCost":17.2,"twoTotalCpc":0.59,"twoTotalCpd":8.6,"twoTotalCpa":0},{"oneCampaignId":"73824558","oneCampaignName":"临沂_iOS_公积金查询","oneView":202,"oneClick":12,"oneDown":0,"oneActive":0,"oneCost":8.13,"oneTotalCpc":0.68,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73824558","twoCampaignName":"临沂_iOS_公积金查询","twoView":199,"twoClick":12,"twoDown":0,"twoActive":0,"twoCost":7.4,"twoTotalCpc":0.62,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73824582","oneCampaignName":"上海_iOS_公积金查询","oneView":779,"oneClick":41,"oneDown":3,"oneActive":0,"oneCost":25.65,"oneTotalCpc":0.63,"oneTotalCpd":8.55,"oneTotalCpa":0,"twoCampaignId":"73824582","twoCampaignName":"上海_iOS_公积金查询","twoView":1291,"twoClick":36,"twoDown":3,"twoActive":0,"twoCost":21.95,"twoTotalCpc":0.61,"twoTotalCpd":7.32,"twoTotalCpa":0},{"oneCampaignId":"73808634","oneCampaignName":"西安_iOS_公积金查询","oneView":592,"oneClick":50,"oneDown":4,"oneActive":0,"oneCost":31.64,"oneTotalCpc":0.63,"oneTotalCpd":7.91,"oneTotalCpa":0,"twoCampaignId":"73808634","twoCampaignName":"西安_iOS_公积金查询","twoView":826,"twoClick":40,"twoDown":6,"twoActive":0,"twoCost":26.82,"twoTotalCpc":0.67,"twoTotalCpd":4.47,"twoTotalCpa":0},{"oneCampaignId":"73824567","oneCampaignName":"宁波_iOS_公积金查询","oneView":600,"oneClick":82,"oneDown":7,"oneActive":0,"oneCost":50.94,"oneTotalCpc":0.62,"oneTotalCpd":7.28,"oneTotalCpa":0,"twoCampaignId":"73824567","twoCampaignName":"宁波_iOS_公积金查询","twoView":718,"twoClick":73,"twoDown":5,"twoActive":0,"twoCost":44.09,"twoTotalCpc":0.6,"twoTotalCpd":8.82,"twoTotalCpa":0},{"oneCampaignId":"74070891","oneCampaignName":"东莞_android_公积金查询","oneView":799,"oneClick":91,"oneDown":13,"oneActive":0,"oneCost":53.9,"oneTotalCpc":0.59,"oneTotalCpd":4.15,"oneTotalCpa":0,"twoCampaignId":"74070891","twoCampaignName":"东莞_android_公积金查询","twoView":1006,"twoClick":146,"twoDown":21,"twoActive":0,"twoCost":85.54,"twoTotalCpc":0.59,"twoTotalCpd":4.07,"twoTotalCpa":0},{"oneCampaignId":"74070624","oneCampaignName":"南京_android_公积金查询","oneView":360,"oneClick":43,"oneDown":7,"oneActive":0,"oneCost":24.57,"oneTotalCpc":0.57,"oneTotalCpd":3.51,"oneTotalCpa":0,"twoCampaignId":"74070624","twoCampaignName":"南京_android_公积金查询","twoView":356,"twoClick":43,"twoDown":10,"twoActive":0,"twoCost":23.14,"twoTotalCpc":0.54,"twoTotalCpd":2.31,"twoTotalCpa":0},{"oneCampaignId":"74057271","oneCampaignName":"深圳_android_公积金查询","oneView":2271,"oneClick":228,"oneDown":28,"oneActive":0,"oneCost":133.17,"oneTotalCpc":0.58,"oneTotalCpd":4.76,"oneTotalCpa":0,"twoCampaignId":"74057271","twoCampaignName":"深圳_android_公积金查询","twoView":3037,"twoClick":353,"twoDown":58,"twoActive":0,"twoCost":203.66,"twoTotalCpc":0.58,"twoTotalCpd":3.51,"twoTotalCpa":0},{"oneCampaignId":"73808619","oneCampaignName":"郑州_iOS_公积金查询","oneView":700,"oneClick":28,"oneDown":3,"oneActive":0,"oneCost":17.68,"oneTotalCpc":0.63,"oneTotalCpd":5.89,"oneTotalCpa":0,"twoCampaignId":"73808619","twoCampaignName":"郑州_iOS_公积金查询","twoView":834,"twoClick":53,"twoDown":4,"twoActive":0,"twoCost":33.79,"twoTotalCpc":0.64,"twoTotalCpd":8.45,"twoTotalCpa":0},{"oneCampaignId":"73808679","oneCampaignName":"哈尔滨_iOS_公积金查询","oneView":421,"oneClick":24,"oneDown":2,"oneActive":0,"oneCost":15.09,"oneTotalCpc":0.63,"oneTotalCpd":7.54,"oneTotalCpa":0,"twoCampaignId":"73808679","twoCampaignName":"哈尔滨_iOS_公积金查询","twoView":524,"twoClick":29,"twoDown":2,"twoActive":0,"twoCost":18.62,"twoTotalCpc":0.64,"twoTotalCpd":9.31,"twoTotalCpa":0},{"oneCampaignId":"74070627","oneCampaignName":"南宁_android_公积金查询","oneView":735,"oneClick":100,"oneDown":25,"oneActive":0,"oneCost":60.03,"oneTotalCpc":0.6,"oneTotalCpd":2.4,"oneTotalCpa":0,"twoCampaignId":"74070627","twoCampaignName":"南宁_android_公积金查询","twoView":723,"twoClick":100,"twoDown":16,"twoActive":0,"twoCost":58.61,"twoTotalCpc":0.59,"twoTotalCpd":3.66,"twoTotalCpa":0},{"oneCampaignId":"74057373","oneCampaignName":"长沙_android_公积金查询","oneView":1071,"oneClick":112,"oneDown":13,"oneActive":0,"oneCost":67.09,"oneTotalCpc":0.6,"oneTotalCpd":5.16,"oneTotalCpa":0,"twoCampaignId":"74057373","twoCampaignName":"长沙_android_公积金查询","twoView":1178,"twoClick":162,"twoDown":15,"twoActive":0,"twoCost":94.91,"twoTotalCpc":0.59,"twoTotalCpd":6.33,"twoTotalCpa":0},{"oneCampaignId":"74057376","oneCampaignName":"荆州_android_公积金查询","oneView":406,"oneClick":87,"oneDown":19,"oneActive":0,"oneCost":52.09,"oneTotalCpc":0.6,"oneTotalCpd":2.74,"oneTotalCpa":0,"twoCampaignId":"74057376","twoCampaignName":"荆州_android_公积金查询","twoView":368,"twoClick":83,"twoDown":23,"twoActive":0,"twoCost":47.77,"twoTotalCpc":0.58,"twoTotalCpd":2.08,"twoTotalCpa":0},{"oneCampaignId":"73824555","oneCampaignName":"南宁_iOS_公积金查询","oneView":268,"oneClick":14,"oneDown":1,"oneActive":0,"oneCost":8.41,"oneTotalCpc":0.6,"oneTotalCpd":8.41,"oneTotalCpa":0,"twoCampaignId":"73824555","twoCampaignName":"南宁_iOS_公积金查询","twoView":279,"twoClick":26,"twoDown":1,"twoActive":0,"twoCost":16.28,"twoTotalCpc":0.63,"twoTotalCpd":16.28,"twoTotalCpa":0},{"oneCampaignId":"74057292","oneCampaignName":"广州_android_公积金查询","oneView":851,"oneClick":56,"oneDown":11,"oneActive":0,"oneCost":32.77,"oneTotalCpc":0.59,"oneTotalCpd":2.98,"oneTotalCpa":0,"twoCampaignId":"74057292","twoCampaignName":"广州_android_公积金查询","twoView":821,"twoClick":72,"twoDown":17,"twoActive":0,"twoCost":43.76,"twoTotalCpc":0.61,"twoTotalCpd":2.57,"twoTotalCpa":0},{"oneCampaignId":"74070879","oneCampaignName":"大连_android_公积金查询","oneView":606,"oneClick":56,"oneDown":17,"oneActive":0,"oneCost":33.07,"oneTotalCpc":0.59,"oneTotalCpd":1.95,"oneTotalCpa":0,"twoCampaignId":"74070879","twoCampaignName":"大连_android_公积金查询","twoView":827,"twoClick":83,"twoDown":15,"twoActive":0,"twoCost":50.04,"twoTotalCpc":0.6,"twoTotalCpd":3.34,"twoTotalCpa":0},{"oneCampaignId":"73808712","oneCampaignName":"连云港_iOS_公积金查询","oneView":250,"oneClick":22,"oneDown":2,"oneActive":0,"oneCost":13.72,"oneTotalCpc":0.62,"oneTotalCpd":6.86,"oneTotalCpa":0,"twoCampaignId":"73808712","twoCampaignName":"连云港_iOS_公积金查询","twoView":227,"twoClick":16,"twoDown":2,"twoActive":0,"twoCost":10.68,"twoTotalCpc":0.67,"twoTotalCpd":5.34,"twoTotalCpa":0},{"oneCampaignId":"74057361","oneCampaignName":"无锡_android_公积金查询","oneView":639,"oneClick":64,"oneDown":12,"oneActive":0,"oneCost":35.05,"oneTotalCpc":0.55,"oneTotalCpd":2.92,"oneTotalCpa":0,"twoCampaignId":"74057361","twoCampaignName":"无锡_android_公积金查询","twoView":555,"twoClick":44,"twoDown":9,"twoActive":0,"twoCost":26.17,"twoTotalCpc":0.59,"twoTotalCpd":2.91,"twoTotalCpa":0},{"oneCampaignId":"74057262","oneCampaignName":"昆明_android_公积金查询","oneView":614,"oneClick":84,"oneDown":14,"oneActive":0,"oneCost":48.45,"oneTotalCpc":0.58,"oneTotalCpd":3.46,"oneTotalCpa":0,"twoCampaignId":"74057262","twoCampaignName":"昆明_android_公积金查询","twoView":731,"twoClick":96,"twoDown":20,"twoActive":0,"twoCost":56.93,"twoTotalCpc":0.59,"twoTotalCpd":2.85,"twoTotalCpa":0},{"oneCampaignId":"74057328","oneCampaignName":"福州_android_公积金查询","oneView":490,"oneClick":41,"oneDown":6,"oneActive":0,"oneCost":24.17,"oneTotalCpc":0.59,"oneTotalCpd":4.03,"oneTotalCpa":0,"twoCampaignId":"74057328","twoCampaignName":"福州_android_公积金查询","twoView":407,"twoClick":33,"twoDown":3,"twoActive":0,"twoCost":20.23,"twoTotalCpc":0.61,"twoTotalCpd":6.74,"twoTotalCpa":0},{"oneCampaignId":"73808652","oneCampaignName":"北京_iOS_公积金查询","oneView":510,"oneClick":29,"oneDown":6,"oneActive":0,"oneCost":18.8,"oneTotalCpc":0.65,"oneTotalCpd":3.13,"oneTotalCpa":0,"twoCampaignId":"73808652","twoCampaignName":"北京_iOS_公积金查询","twoView":555,"twoClick":27,"twoDown":3,"twoActive":0,"twoCost":18.37,"twoTotalCpc":0.68,"twoTotalCpd":6.12,"twoTotalCpa":0},{"oneCampaignId":"73824561","oneCampaignName":"深圳_iOS_公积金查询","oneView":896,"oneClick":45,"oneDown":4,"oneActive":0,"oneCost":28.74,"oneTotalCpc":0.64,"oneTotalCpd":7.19,"oneTotalCpa":0,"twoCampaignId":"73824561","twoCampaignName":"深圳_iOS_公积金查询","twoView":1012,"twoClick":38,"twoDown":3,"twoActive":0,"twoCost":23.84,"twoTotalCpc":0.63,"twoTotalCpd":7.95,"twoTotalCpa":0},{"oneCampaignId":"74057295","oneCampaignName":"桂林_android_公积金查询","oneView":405,"oneClick":78,"oneDown":4,"oneActive":0,"oneCost":46.23,"oneTotalCpc":0.59,"oneTotalCpd":11.56,"oneTotalCpa":0,"twoCampaignId":"74057295","twoCampaignName":"桂林_android_公积金查询","twoView":451,"twoClick":73,"twoDown":12,"twoActive":0,"twoCost":44.1,"twoTotalCpc":0.6,"twoTotalCpd":3.68,"twoTotalCpa":0},{"oneCampaignId":"73808589","oneCampaignName":"天津_iOS_公积金查询","oneView":267,"oneClick":11,"oneDown":3,"oneActive":0,"oneCost":7.31,"oneTotalCpc":0.66,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808589","twoCampaignName":"天津_iOS_公积金查询","twoView":312,"twoClick":3,"twoDown":0,"twoActive":0,"twoCost":1.53,"twoTotalCpc":0.51,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808640","oneCampaignName":"成都_iOS_公积金查询","oneView":473,"oneClick":18,"oneDown":4,"oneActive":0,"oneCost":11.81,"oneTotalCpc":0.66,"oneTotalCpd":2.95,"oneTotalCpa":0,"twoCampaignId":"73808640","twoCampaignName":"成都_iOS_公积金查询","twoView":628,"twoClick":21,"twoDown":3,"twoActive":0,"twoCost":12.19,"twoTotalCpc":0.58,"twoTotalCpd":4.06,"twoTotalCpa":0},{"oneCampaignId":"73808595","oneCampaignName":"荆州_iOS_公积金查询","oneView":125,"oneClick":12,"oneDown":2,"oneActive":0,"oneCost":7.65,"oneTotalCpc":0.64,"oneTotalCpd":3.82,"oneTotalCpa":0,"twoCampaignId":"73808595","twoCampaignName":"荆州_iOS_公积金查询","twoView":141,"twoClick":15,"twoDown":5,"twoActive":0,"twoCost":9.33,"twoTotalCpc":0.62,"twoTotalCpd":1.87,"twoTotalCpa":0},{"oneCampaignId":"73808610","oneCampaignName":"无锡_iOS_公积金查询","oneView":176,"oneClick":12,"oneDown":1,"oneActive":0,"oneCost":7.24,"oneTotalCpc":0.6,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808610","twoCampaignName":"无锡_iOS_公积金查询","twoView":219,"twoClick":8,"twoDown":0,"twoActive":0,"twoCost":5.32,"twoTotalCpc":0.66,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74057355","oneCampaignName":"西安_android_公积金查询","oneView":1264,"oneClick":200,"oneDown":28,"oneActive":0,"oneCost":116.78,"oneTotalCpc":0.58,"oneTotalCpd":4.17,"oneTotalCpa":0,"twoCampaignId":"74057355","twoCampaignName":"西安_android_公积金查询","twoView":1478,"twoClick":240,"twoDown":30,"twoActive":0,"twoCost":136.74,"twoTotalCpc":0.57,"twoTotalCpd":4.56,"twoTotalCpa":0},{"oneCampaignId":"73808628","oneCampaignName":"苏州_iOS_公积金查询","oneView":864,"oneClick":34,"oneDown":5,"oneActive":0,"oneCost":19.4,"oneTotalCpc":0.57,"oneTotalCpd":3.88,"oneTotalCpa":0,"twoCampaignId":"73808628","twoCampaignName":"苏州_iOS_公积金查询","twoView":1289,"twoClick":72,"twoDown":9,"twoActive":0,"twoCost":44.91,"twoTotalCpc":0.62,"twoTotalCpd":4.99,"twoTotalCpa":0},{"oneCampaignId":"73824570","oneCampaignName":"南京_iOS_公积金查询","oneView":181,"oneClick":5,"oneDown":2,"oneActive":0,"oneCost":2.55,"oneTotalCpc":0.51,"oneTotalCpd":1.28,"oneTotalCpa":0,"twoCampaignId":"73824570","twoCampaignName":"南京_iOS_公积金查询","twoView":231,"twoClick":15,"twoDown":1,"twoActive":0,"twoCost":8.64,"twoTotalCpc":0.58,"twoTotalCpd":8.64,"twoTotalCpa":0},{"oneCampaignId":"74057307","oneCampaignName":"惠州_android_公积金查询","oneView":785,"oneClick":137,"oneDown":21,"oneActive":0,"oneCost":81.04,"oneTotalCpc":0.59,"oneTotalCpd":3.86,"oneTotalCpa":0,"twoCampaignId":"74057307","twoCampaignName":"惠州_android_公积金查询","twoView":859,"twoClick":147,"twoDown":34,"twoActive":0,"twoCost":85.71,"twoTotalCpc":0.58,"twoTotalCpd":2.52,"twoTotalCpa":0},{"oneCampaignId":"73824576","oneCampaignName":"南通_iOS_公积金查询","oneView":325,"oneClick":28,"oneDown":3,"oneActive":0,"oneCost":18.68,"oneTotalCpc":0.67,"oneTotalCpd":6.23,"oneTotalCpa":0,"twoCampaignId":"73824576","twoCampaignName":"南通_iOS_公积金查询","twoView":404,"twoClick":40,"twoDown":2,"twoActive":0,"twoCost":26.82,"twoTotalCpc":0.67,"twoTotalCpd":13.41,"twoTotalCpa":0},{"oneCampaignId":"73808583","oneCampaignName":"石家庄_iOS_公积金查询","oneView":197,"oneClick":13,"oneDown":4,"oneActive":0,"oneCost":8.92,"oneTotalCpc":0.69,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808583","twoCampaignName":"石家庄_iOS_公积金查询","twoView":230,"twoClick":14,"twoDown":0,"twoActive":0,"twoCost":8.56,"twoTotalCpc":0.61,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808703","oneCampaignName":"衡阳_iOS_公积金查询","oneView":120,"oneClick":9,"oneDown":0,"oneActive":0,"oneCost":5.65,"oneTotalCpc":0.63,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808703","twoCampaignName":"衡阳_iOS_公积金查询","twoView":89,"twoClick":6,"twoDown":0,"twoActive":0,"twoCost":3.44,"twoTotalCpc":0.57,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808637","oneCampaignName":"长春_iOS_公积金查询","oneView":290,"oneClick":17,"oneDown":1,"oneActive":0,"oneCost":11.09,"oneTotalCpc":0.65,"oneTotalCpd":11.09,"oneTotalCpa":0,"twoCampaignId":"73808637","twoCampaignName":"长春_iOS_公积金查询","twoView":224,"twoClick":18,"twoDown":3,"twoActive":0,"twoCost":11.32,"twoTotalCpc":0.63,"twoTotalCpd":3.77,"twoTotalCpa":0},{"oneCampaignId":"73808682","oneCampaignName":"桂林_iOS_公积金查询","oneView":114,"oneClick":8,"oneDown":2,"oneActive":0,"oneCost":5.05,"oneTotalCpc":0.63,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808682","twoCampaignName":"桂林_iOS_公积金查询","twoView":105,"twoClick":12,"twoDown":0,"twoActive":0,"twoCost":8.15,"twoTotalCpc":0.68,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74057400","oneCampaignName":"沈阳_android_公积金查询","oneView":779,"oneClick":62,"oneDown":13,"oneActive":0,"oneCost":38.04,"oneTotalCpc":0.61,"oneTotalCpd":2.93,"oneTotalCpa":0,"twoCampaignId":"74057400","twoCampaignName":"沈阳_android_公积金查询","twoView":697,"twoClick":62,"twoDown":6,"twoActive":0,"twoCost":38.02,"twoTotalCpc":0.61,"twoTotalCpd":6.34,"twoTotalCpa":0},{"oneCampaignId":"73808631","oneCampaignName":"太原_iOS_公积金查询","oneView":146,"oneClick":9,"oneDown":0,"oneActive":0,"oneCost":5.93,"oneTotalCpc":0.66,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808631","twoCampaignName":"太原_iOS_公积金查询","twoView":146,"twoClick":8,"twoDown":1,"twoActive":0,"twoCost":5.53,"twoTotalCpc":0.69,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808673","oneCampaignName":"杭州_iOS_公积金查询","oneView":573,"oneClick":68,"oneDown":9,"oneActive":0,"oneCost":23.94,"oneTotalCpc":0.35,"oneTotalCpd":2.66,"oneTotalCpa":0,"twoCampaignId":"73808673","twoCampaignName":"杭州_iOS_公积金查询","twoView":684,"twoClick":61,"twoDown":11,"twoActive":0,"twoCost":22.67,"twoTotalCpc":0.37,"twoTotalCpd":2.06,"twoTotalCpa":0},{"oneCampaignId":"73808667","oneCampaignName":"东营_iOS_公积金查询","oneView":131,"oneClick":5,"oneDown":0,"oneActive":0,"oneCost":2.94,"oneTotalCpc":0.59,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808667","twoCampaignName":"东营_iOS_公积金查询","twoView":129,"twoClick":4,"twoDown":0,"twoActive":0,"twoCost":2.84,"twoTotalCpc":0.71,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74070894","oneCampaignName":"朝阳_android_公积金查询","oneView":418,"oneClick":101,"oneDown":17,"oneActive":0,"oneCost":59.12,"oneTotalCpc":0.59,"oneTotalCpd":3.48,"oneTotalCpa":0,"twoCampaignId":"74070894","twoCampaignName":"朝阳_android_公积金查询","twoView":500,"twoClick":124,"twoDown":20,"twoActive":0,"twoCost":70.94,"twoTotalCpc":0.57,"twoTotalCpd":3.55,"twoTotalCpa":0},{"oneCampaignId":"73808691","oneCampaignName":"济南_iOS_公积金查询","oneView":377,"oneClick":11,"oneDown":2,"oneActive":0,"oneCost":7.39,"oneTotalCpc":0.67,"oneTotalCpd":3.69,"oneTotalCpa":0,"twoCampaignId":"73808691","twoCampaignName":"济南_iOS_公积金查询","twoView":467,"twoClick":27,"twoDown":6,"twoActive":0,"twoCost":17.3,"twoTotalCpc":0.64,"twoTotalCpd":2.88,"twoTotalCpa":0},{"oneCampaignId":"74057364","oneCampaignName":"武汉_android_公积金查询","oneView":672,"oneClick":65,"oneDown":16,"oneActive":0,"oneCost":37.37,"oneTotalCpc":0.57,"oneTotalCpd":2.34,"oneTotalCpa":0,"twoCampaignId":"74057364","twoCampaignName":"武汉_android_公积金查询","twoView":766,"twoClick":65,"twoDown":5,"twoActive":0,"twoCost":37.72,"twoTotalCpc":0.58,"twoTotalCpd":7.54,"twoTotalCpa":0},{"oneCampaignId":"74057280","oneCampaignName":"杭州_android_公积金查询","oneView":290,"oneClick":36,"oneDown":9,"oneActive":0,"oneCost":12.73,"oneTotalCpc":0.35,"oneTotalCpd":1.41,"oneTotalCpa":0,"twoCampaignId":"74057280","twoCampaignName":"杭州_android_公积金查询","twoView":364,"twoClick":30,"twoDown":8,"twoActive":0,"twoCost":10.15,"twoTotalCpc":0.34,"twoTotalCpd":1.27,"twoTotalCpa":0},{"oneCampaignId":"74057352","oneCampaignName":"太原_android_公积金查询","oneView":531,"oneClick":80,"oneDown":15,"oneActive":0,"oneCost":46.87,"oneTotalCpc":0.59,"oneTotalCpd":3.12,"oneTotalCpa":0,"twoCampaignId":"74057352","twoCampaignName":"太原_android_公积金查询","twoView":497,"twoClick":74,"twoDown":10,"twoActive":0,"twoCost":44.55,"twoTotalCpc":0.6,"twoTotalCpd":4.46,"twoTotalCpa":0},{"oneCampaignId":"74057409","oneCampaignName":"邯郸_android_公积金查询","oneView":402,"oneClick":53,"oneDown":12,"oneActive":0,"oneCost":29.63,"oneTotalCpc":0.56,"oneTotalCpd":2.47,"oneTotalCpa":0,"twoCampaignId":"74057409","twoCampaignName":"邯郸_android_公积金查询","twoView":401,"twoClick":64,"twoDown":11,"twoActive":0,"twoCost":37.59,"twoTotalCpc":0.59,"twoTotalCpd":3.42,"twoTotalCpa":0},{"oneCampaignId":"74057283","oneCampaignName":"怀化_android_公积金查询","oneView":222,"oneClick":47,"oneDown":9,"oneActive":0,"oneCost":29.62,"oneTotalCpc":0.63,"oneTotalCpd":3.29,"oneTotalCpa":0,"twoCampaignId":"74057283","twoCampaignName":"怀化_android_公积金查询","twoView":204,"twoClick":32,"twoDown":4,"twoActive":0,"twoCost":19.9,"twoTotalCpc":0.62,"twoTotalCpd":4.98,"twoTotalCpa":0},{"oneCampaignId":"73808661","oneCampaignName":"佛山_iOS_公积金查询","oneView":150,"oneClick":8,"oneDown":0,"oneActive":0,"oneCost":5.3,"oneTotalCpc":0.66,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808661","twoCampaignName":"佛山_iOS_公积金查询","twoView":179,"twoClick":11,"twoDown":2,"twoActive":0,"twoCost":7.01,"twoTotalCpc":0.64,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808571","oneCampaignName":"怀化_iOS_公积金查询","oneView":77,"oneClick":7,"oneDown":1,"oneActive":0,"oneCost":4.41,"oneTotalCpc":0.63,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808571","twoCampaignName":"怀化_iOS_公积金查询","twoView":58,"twoClick":7,"twoDown":0,"twoActive":0,"twoCost":3.99,"twoTotalCpc":0.57,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808670","oneCampaignName":"德州_iOS_公积金查询","oneView":81,"oneClick":7,"oneDown":0,"oneActive":0,"oneCost":5,"oneTotalCpc":0.71,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808670","twoCampaignName":"德州_iOS_公积金查询","twoView":95,"twoClick":5,"twoDown":0,"twoActive":0,"twoCost":3.32,"twoTotalCpc":0.66,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74057298","oneCampaignName":"济南_android_公积金查询","oneView":850,"oneClick":66,"oneDown":7,"oneActive":0,"oneCost":39.06,"oneTotalCpc":0.59,"oneTotalCpd":5.58,"oneTotalCpa":0,"twoCampaignId":"74057298","twoCampaignName":"济南_android_公积金查询","twoView":934,"twoClick":84,"twoDown":11,"twoActive":0,"twoCost":50.27,"twoTotalCpc":0.6,"twoTotalCpd":4.57,"twoTotalCpa":0},{"oneCampaignId":"73808697","oneCampaignName":"惠州_iOS_公积金查询","oneView":367,"oneClick":30,"oneDown":3,"oneActive":0,"oneCost":19.78,"oneTotalCpc":0.66,"oneTotalCpd":6.59,"oneTotalCpa":0,"twoCampaignId":"73808697","twoCampaignName":"惠州_iOS_公积金查询","twoView":310,"twoClick":26,"twoDown":3,"twoActive":0,"twoCost":16.29,"twoTotalCpc":0.63,"twoTotalCpd":5.43,"twoTotalCpa":0},{"oneCampaignId":"73808643","oneCampaignName":"大连_iOS_公积金查询","oneView":335,"oneClick":13,"oneDown":6,"oneActive":0,"oneCost":8.3,"oneTotalCpc":0.64,"oneTotalCpd":1.38,"oneTotalCpa":0,"twoCampaignId":"73808643","twoCampaignName":"大连_iOS_公积金查询","twoView":508,"twoClick":14,"twoDown":3,"twoActive":0,"twoCost":8.26,"twoTotalCpc":0.59,"twoTotalCpd":2.75,"twoTotalCpa":0},{"oneCampaignId":"73808577","oneCampaignName":"沈阳_iOS_公积金查询","oneView":465,"oneClick":17,"oneDown":3,"oneActive":0,"oneCost":10.93,"oneTotalCpc":0.64,"oneTotalCpd":3.64,"oneTotalCpa":0,"twoCampaignId":"73808577","twoCampaignName":"沈阳_iOS_公积金查询","twoView":540,"twoClick":16,"twoDown":3,"twoActive":0,"twoCost":10.9,"twoTotalCpc":0.68,"twoTotalCpd":3.63,"twoTotalCpa":0},{"oneCampaignId":"74057265","oneCampaignName":"石家庄_android_公积金查询","oneView":814,"oneClick":103,"oneDown":16,"oneActive":0,"oneCost":60.31,"oneTotalCpc":0.59,"oneTotalCpd":3.77,"oneTotalCpa":0,"twoCampaignId":"74057265","twoCampaignName":"石家庄_android_公积金查询","twoView":747,"twoClick":90,"twoDown":6,"twoActive":0,"twoCost":52.37,"twoTotalCpc":0.58,"twoTotalCpd":8.73,"twoTotalCpa":0},{"oneCampaignId":"73824564","oneCampaignName":"青岛_iOS_公积金查询","oneView":336,"oneClick":13,"oneDown":1,"oneActive":0,"oneCost":7.92,"oneTotalCpc":0.61,"oneTotalCpd":7.92,"oneTotalCpa":0,"twoCampaignId":"73824564","twoCampaignName":"青岛_iOS_公积金查询","twoView":398,"twoClick":18,"twoDown":1,"twoActive":0,"twoCost":11.93,"twoTotalCpc":0.66,"twoTotalCpd":11.93,"twoTotalCpa":0},{"oneCampaignId":"73808625","oneCampaignName":"温州_iOS_公积金查询","oneView":188,"oneClick":14,"oneDown":4,"oneActive":0,"oneCost":8.57,"oneTotalCpc":0.61,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808625","twoCampaignName":"温州_iOS_公积金查询","twoView":184,"twoClick":2,"twoDown":0,"twoActive":0,"twoCost":1.47,"twoTotalCpc":0.73,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"74070639","oneCampaignName":"青岛_android_公积金查询","oneView":870,"oneClick":89,"oneDown":11,"oneActive":0,"oneCost":52.49,"oneTotalCpc":0.59,"oneTotalCpd":4.77,"oneTotalCpa":0,"twoCampaignId":"74070639","twoCampaignName":"青岛_android_公积金查询","twoView":947,"twoClick":108,"twoDown":19,"twoActive":0,"twoCost":65.75,"twoTotalCpc":0.61,"twoTotalCpd":3.46,"twoTotalCpa":0},{"oneCampaignId":"73800544","oneCampaignName":"全国_android_提取、代缴计算器","oneView":18494,"oneClick":1638,"oneDown":137,"oneActive":0,"oneCost":752.45,"oneTotalCpc":0.46,"oneTotalCpd":5.49,"oneTotalCpa":0,"twoCampaignId":"73800544","twoCampaignName":"全国_android_提取、代缴计算器","twoView":19602,"twoClick":1877,"twoDown":177,"twoActive":0,"twoCost":873.95,"twoTotalCpc":0.47,"twoTotalCpd":4.94,"twoTotalCpa":0},{"oneCampaignId":"74070651","oneCampaignName":"临沂_android_公积金查询","oneView":1266,"oneClick":180,"oneDown":28,"oneActive":0,"oneCost":103.93,"oneTotalCpc":0.58,"oneTotalCpd":3.71,"oneTotalCpa":0,"twoCampaignId":"74070651","twoCampaignName":"临沂_android_公积金查询","twoView":1306,"twoClick":191,"twoDown":25,"twoActive":0,"twoCost":112.75,"twoTotalCpc":0.59,"twoTotalCpd":4.51,"twoTotalCpa":0},{"oneCampaignId":"73808715","oneCampaignName":"昆明_iOS_公积金查询","oneView":295,"oneClick":16,"oneDown":2,"oneActive":0,"oneCost":9.9,"oneTotalCpc":0.62,"oneTotalCpd":4.95,"oneTotalCpa":0,"twoCampaignId":"73808715","twoCampaignName":"昆明_iOS_公积金查询","twoView":339,"twoClick":17,"twoDown":1,"twoActive":0,"twoCost":11.14,"twoTotalCpc":0.66,"twoTotalCpd":11.14,"twoTotalCpa":0},{"oneCampaignId":"73808664","oneCampaignName":"东莞_iOS_公积金查询","oneView":223,"oneClick":12,"oneDown":1,"oneActive":0,"oneCost":8.3,"oneTotalCpc":0.69,"oneTotalCpd":0,"oneTotalCpa":0,"twoCampaignId":"73808664","twoCampaignName":"东莞_iOS_公积金查询","twoView":301,"twoClick":14,"twoDown":0,"twoActive":0,"twoCost":9.14,"twoTotalCpc":0.65,"twoTotalCpd":0,"twoTotalCpa":0},{"oneCampaignId":"73808622","oneCampaignName":"长沙_iOS_公积金查询","oneView":421,"oneClick":23,"oneDown":2,"oneActive":0,"oneCost":14.14,"oneTotalCpc":0.61,"oneTotalCpd":7.07,"oneTotalCpa":0,"twoCampaignId":"73808622","twoCampaignName":"长沙_iOS_公积金查询","twoView":563,"twoClick":28,"twoDown":4,"twoActive":0,"twoCost":17.91,"twoTotalCpc":0.64,"twoTotalCpd":4.48,"twoTotalCpa":0}]}
-    export default {
+
+        "id": 159,
+        "name": "蜻蜓",
+        "email": "",
+        "phone": "",
+        "create_date": null,
+        "huname": "蜻蜓",
+        "type": 100002,
+        "huid": 3774,
+        "semname": "吕波（备用）"
+    }];
+export default {
     getAccountsByUser: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
@@ -2115,16 +2707,16 @@ const planvs={"voAccountCom":{"oneView":129781,"oneClick":19368,"oneDown":2886,"
             }, 500);
         })
     },
-  keywordAll: config => {
-    const userId = config.params;
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([200, {
-          data: key
-        }]);
-      }, 500);
-    })
-  },
+    keywordAll: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: key
+                }]);
+            }, 500);
+        })
+    },
     landpageAll: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
@@ -2135,105 +2727,85 @@ const planvs={"voAccountCom":{"oneView":129781,"oneClick":19368,"oneDown":2886,"
             }, 500);
         })
     },
-      hu: config => {
+    getcheck: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data: hun
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: task_day
+                }]);
+            }, 500);
         })
-      },
-  illegalAll: config => {
-    const userId = config.params;
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([200, {
-          data: illegal
-        }]);
-      }, 500);
-    })
-  },
-      danyuan: config => {
+    },
+    getweek: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:wudan
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: task_week
+                }]);
+            }, 500);
         })
-      },
-        param: config => {
+    },
+    hu: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:paramdata
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: hun
+                }]);
+            }, 500);
         })
-      },
-        paramkey1: config => {
-            const userId = config.params;
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve([200, {
-                        data:paramkey1
-                    }]);
-                }, 500);
-            })
-        },
-        paramkey2: config => {
-            const userId = config.params;
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve([200, {
-                        data:paramkey2
-                    }]);
-                }, 500);
-            })
-        },
-        accountall: config => {
-            const userId = config.params;
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve([200, {
-                        data:all
-                    }]);
-                }, 500);
-            })
-        },
-      twoweek: config => {
+    },
+    illegalAll: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:twow
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: illegal
+                }]);
+            }, 500);
         })
-      },
-      getweekcost: config => {
+    },
+    grtsem: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:onew
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: Allzu
+                }]);
+            }, 500);
         })
-      },
-      plan: config => {
+    },
+    grtallkehu: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:planvs
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: grtallkehu
+                }]);
+            }, 500);
         })
-      },
+    },
+    getAllyonghu: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: getAllyonghu
+                }]);
+            }, 500);
+        })
+    },
+    getAllkehu: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: getAllkehu
+                }]);
+            }, 500);
+        })
+    },
 };
 
