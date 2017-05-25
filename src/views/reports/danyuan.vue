@@ -243,6 +243,9 @@
         myChart.resize();
       },false);
     }
+
+
+
     export default {
         data() {
             return {

@@ -52,6 +52,8 @@ const qudaoguanli = resolve => require(['../views/manager/qudaoguanli'],resolve)
 const kehuguanli = resolve => require(['../views/manager/kehuguanli'],resolve);
 /*用户管理*/
 const yonghuguanli = resolve => require(['../views/manager/yonghuguanli'],resolve);
+/*分配账户*/
+const fenpeizhanghu = resolve => require(['../views/manager/fenpeizhanghu'],resolve);
 Vue.use(Router);
 
 /**
@@ -152,6 +154,7 @@ export default new Router({
                 { path: 'qudaoguanli', component: qudaoguanli, name: '渠道管理 ' },
                 { path: 'kehuguanli', component: kehuguanli, name: '客户管理 ' },
                 { path: 'yonghuguanli', component: yonghuguanli, name: '用户管理 ' },
+                { path: 'fenpeizhanghu', component: fenpeizhanghu, name: '分配账户 ' },
             ]
         },
         { path: '*', redirect: '/404', hidden: true }

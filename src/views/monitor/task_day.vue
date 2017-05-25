@@ -8,90 +8,135 @@
                     </a>
                 </div>
                 <div class="task_day_select">
-                    <el-button type="primary click_h btn_h" id="btn_2">每日检查</el-button>
-                    <el-button type="primary click_h all_h" id="btn_1">历史记录</el-button>
+                    <el-radio-group v-model="radio3" @change="fn()">
+                        <el-radio-button label="每日检查"></el-radio-button>
+                        <el-radio-button label="历史记录"></el-radio-button>
+                    </el-radio-group>
                     <div class="remove_h">
-                        <el-button type="primary click_h btn_r2" id="btn_2"> 提交</el-button>
+                        <el-button type="primary click_h btn_r2"> 提交</el-button>
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="task_table">
+                <div  v-if="willShow" class="task_table">
                     <el-table
-                            :data="tableData3"
-                            height="250"
+                            :data="getcheck"
+                            height="600"
                             border
                             style="width: 100%">
+
                         <el-table-column
                                 prop="date"
                                 label="内容"
+                                width="180"
                               >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.checkName }}</span>
+                            </template>
                         </el-table-column>
                         <el-table-column
                                 prop="date"
                                 label="结果"
+                                width="200"
                         >
+                            <template scope="scope">
+                                <span style="margin-left: 10px"></span>
+                            </template>
                         </el-table-column>
                         <el-table-column
                                 prop="name"
                                 label="备注"
                                >
+                            <template scope="scope">
+                                <el-input v-model="input" class="e-border" placeholder="请输入内容"></el-input>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <div  v-else="willFalse" class="task_table">
+                    <el-table
+                            :data="history"
+                            height="600"
+                            border
+                            style="width: 100%">
+                        <el-table-column
+                                prop="date"
+                                label="日期"
+                                width="180"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.date }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="date"
+                                label="检查结果"
+                                width="200"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px" v-if="scope.row.checkValue == '1'"  class="true">
+                                    {{ scope.row.checkName }}正确
+                                </span>
+                                <span style="margin-left: 10px" v-else="" class="false">
+                                    {{ scope.row.checkName }}错误
+                                </span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="name"
+                                label="备注信息"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.checkBak }}</span>
+                            </template>
                         </el-table-column>
                     </el-table>
                 </div>
             </div>
 
         </div>
-
-        <!--&lt;!&ndash;弹窗&ndash;&gt;-->
-        <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
-            <!--<div class="thishi">-->
-                <!--<P>提交检查项</P>-->
-                <!--<div class="delete">-->
-                    <!--<P>提交后不可修改</P>-->
-                    <!--<button class=" cancel" data-dismiss="modal">取消</button>-->
-                    <!--<button class="ok task_ok">确认</button>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;弹窗2&ndash;&gt;-->
-        <!--<div class="modal fade modal_1" id="myModa2"   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
-            <!--<div class="thishi">-->
-                <!--<P>提交检查项</P>-->
-                <!--<div class="delete">-->
-                    <!--<P>不可重复</P>-->
-                    <!--<button class=" cancel" data-dismiss="modal">取消</button>-->
-                    <!--<button class="ok" data-dismiss="modal">确认</button>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
 </template>
 <script>
 
     import { mapGetters } from 'vuex';
-    import { getlandpageAll } from 'api/account';
+    import { getcheck , checkhistory} from 'api/account';
+
 
     export default {
         data() {
             return {
-                tableQudao: [],
-                value6: '',
-                value: '',
-                value1:'',
+                getcheck: [],
+                history:[],
+                radio3: '每日检查',
+                willShow:true,
+                willFalse:false,
                 radio: 5,
             }
         },
         created:function(){
+            //每日检查
             var _self=this;
-            getlandpageAll({uid:111}).then(response => {
-                console.log(response);
-            _self.tableQudao=response.data;
-            /*   _self.loading = false;
-             ;*/
-
+            getcheck({uid:111}).then(response => {
+            _self.getcheck=response.data;
         }).catch(err => {
                 _self.$message.error(err);
-//                  _self.loading = false;
         });
+         //历史记录
+            var $this=this;
+            checkhistory({uid:111}).then(response => {
+                console.log(response.data.data  );
+                $this.history=response.data.data.checkStatuses;
+            }).catch(err => {
+                $this.$message.error(err);
+            });
+        },
+        methods: {
+            fn: function () {
+                if (this.willShow == true) {
+                    this.willShow = false;
+                } else {
+                    this.willShow = true
+                }
+            }
         }
     }
 </script>
@@ -172,8 +217,6 @@
         right:30px;
     }
     .btn_r2 {
-        background: #00b7ee;
-        color: #ffffff;
         border-radius: 5px;
     }
 
@@ -478,14 +521,29 @@
         right: -100px;
     }
 
-    /*文件上唇*/
-    .file_text {
-        opacity: 0;
-        position: absolute;
-        top: -2px;
+    /*button*/
+    .el-radio-button__inner {
+        width:110px;
     }
-
-
+    .el-button--primary {
+        width:110px;
+    }
+    .true {
+        color: green;
+    }
+    .false {
+        color: red;
+    }
+    /*表格*/
+    .el-table__body-wrapper {
+        overflow-x: hidden;
+    }
+    .el-table .el-table_1_column_3 .cell{
+        padding:0;
+    }
+    .e-border input {
+        border:none;
+    }
     @media screen and (max-width: 1000px){
         #page-wrapper {
             right: 0;

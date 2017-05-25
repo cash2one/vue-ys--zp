@@ -9,10 +9,42 @@
                             placeholder="Search"
                             icon="search"
                             v-model="input2"
-                            :on-icon-click="handleIconClick">
+                            :on-icon-click="handleIconClick"
+                            class="el-in">
                     </el-input>
-                    <el-button type="primary qudao_btn" @click="fn()">注册账户</el-button>
-                        <el-radio-group v-model="radio">
+                    <el-button type="primary qudao_btn" class="el-right"  @click="handleAdd">注册账户</el-button>
+                    <!--新增界面-->
+                    <el-dialog title="注册账户" v-model="addFormVisible" :close-on-click-modal="false">
+                        <el-form :model="form">
+                            <el-form-item label="真实姓名" :label-width="formLabelWidth">
+                                <el-input v-model="form.name" auto-complete="off" class="add-input"></el-input>
+                            </el-form-item>
+                            <el-form-item label="用户名" :label-width="formLabelWidth">
+                                <el-input v-model="form.name" auto-complete="off" class="add-input"></el-input>
+                            </el-form-item>
+                            <el-form-item label="密码" :label-width="formLabelWidth">
+                                <el-input v-model="form.name" auto-complete="off" class="add-input"></el-input>
+                            </el-form-item>
+                            <el-form-item label="邮箱" :label-width="formLabelWidth">
+                                <el-input v-model="form.name" auto-complete="off" class="add-input"></el-input>
+                            </el-form-item>
+                            <el-form-item label="手机号" :label-width="formLabelWidth">
+                                <el-input v-model="form.name" auto-complete="off" class="add-input"></el-input>
+                            </el-form-item>
+                            <el-form-item label="用户类型" :label-width="formLabelWidth">
+                                <el-select v-model="form.region" placeholder="请选择活动区域">
+                                    <el-option label="优化师" value="shanghai"></el-option>
+                                    <el-option label="客户" value="beijing"></el-option>
+                                    <el-option label="技术" value="beijing"></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-form>
+                        <div slot="footer" class="dialog-footer">
+                            <el-button @click.native="addFormVisible = false">取消</el-button>
+                            <el-button type="primary" @click.native="addSubmit" >提交</el-button>
+                        </div>
+                    </el-dialog>
+                        <el-radio-group v-model="radio" class="add-input">
                             <el-radio :label="1">优化师</el-radio>
                             <el-radio :label="4">客户</el-radio>
                             <el-radio :label="2">技术</el-radio>
@@ -20,9 +52,6 @@
 
                         </el-radio-group>
                 </div>
-
-
-
                         <el-row>
                             <el-table
                                     :data="getAllyonghu"
@@ -103,27 +132,37 @@
         data() {
             return {
                 getAllyonghu: [],
-                value6: '',
-                value: '',
-                value1:'',
                 radio: 5,
-                loading:'',
-
+                radio: 1,
+                addFormVisible: false,
+                formLabelWidth:'120px',
+                form: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
+                },
             }
         },
-        created:function(){
+        created: function () {
 
-            var _self=this;
-            Allyonghu({uid:111}).then(response => {
+            var _self = this;
+            Allyonghu({uid: 111}).then(response => {
                 console.log(response);
-            _self.getAllyonghu=response.data;
-            /*   _self.loading = false;
-             ;*/
-        }).catch(err => {
+                _self.getAllyonghu = response.data;
+            }).catch(err => {
                 _self.$message.error(err);
-//                  _self.loading = false;
-        });
+            });
 
+        },
+        methods: {
+            handleAdd: function () {
+                this.addFormVisible = true;
+            },
         }
     }
 </script>
@@ -309,18 +348,15 @@ transition: transform .15s cubic-bezier(.71,-.46,.88,.6);
     .el-input__inner {
         height: 30px !important;
     }
-    .el-input {
+    .el-in    {
         width:250px;
         height:30px;
         float: left;
     }
-    .el-button {
+    .el-right {
         height:30px;
         line-height: 10px;
         margin-left: 30px;
-    }
-
-    .el-button--primary {
         float: left;
     }
     .el-radio-group {
@@ -335,6 +371,26 @@ transition: transform .15s cubic-bezier(.71,-.46,.88,.6);
     }
     label {
         margin:0;
+    }
+    /*弹窗*/
+    .el-dialog {
+        padding:0 30px;
+    }
+    .add-input {
+        width:300px;
+    }
+    .dialog-footer {
+        text-align: center;
+    }
+    .dialog-footer button {
+        width: 110px;
+        height: 40px;
+    }
+    .el-dialog--small {
+        width:600px;
+    }
+    .el-dialog__footer {
+        padding: 12px 20px 40px;
     }
 </style>
 

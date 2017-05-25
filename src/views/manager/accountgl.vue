@@ -365,7 +365,7 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss" scoped>
+<style rel="stylesheet/scss" scoped lang="scss" scoped>
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";

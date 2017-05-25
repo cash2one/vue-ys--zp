@@ -16,25 +16,25 @@
                     </el-input>
                 </div>
                 <div class="allBox list">
-                    <div class="account_box"  v-for="data in getAllkehu">
+                    <div class="account_box"  v-for="(data,index) in grtallkehu">
                         <ul class="client_box ">
                             <li class="client_title name_1">
-                                {{ data.huname }}
+                                {{ data.name }}
                             </li>
                             <li class="client_banner">
                                 <P>用户</P>
                                 <P>优化师</P>
                                 <P>操作</P>
                             </li>
-                            <li class="client_infor">
+                            <li class="client_infor" >
                                 <div class="client_inforBox">
 
-                                    <div class="client">
+                                    <div class="client" v-for="sem in grtallzhanghus[index]">
                                         <P>
-                                            {{data.name}}
+                                            {{sem.huname}}
                                         </P>
                                         <P>
-                                            {{data.semname}}
+                                            {{sem.semname}}
                                         </P>
                                         <p>
                                             <a href="javascript:;">
@@ -44,7 +44,7 @@
                                     </div>
 
                                     <div class="client add_client">
-                                        <el-button type="primary"  @click="handleAdd" >添加账户 </el-button>
+                                           <el-button type="primary"  @click="handleAdd" >添加账户 </el-button>
                                     </div>
                                 </div>
                             </li>
@@ -101,7 +101,8 @@
     export default {
         data() {
             return {
-                getallkehu:[],
+                grtallkehu:[],
+                grtallzhanghus:[],
                 hun:[],
                 input2:'',
                 click:'',
@@ -110,12 +111,28 @@
         },
         created:function(){
             //全部客户
-            var $this=this;
+            var _self=this;
+            let zu = [];
+            let zh = [];
             Allkehu({uid:111}).then(response => {
-                console.log(response);
-                $this.getAllkehu=response.data;
+                for(var i in response.data) {
+
+                    zu.push(response.data[i].xinxi);
+                }
+                for(var n in response.data) {
+
+                    zh.push(response.data[n].zhanghus);
+                }
+                console.log(zh);
+                console.log(zu);
+                _self.grtallkehu = zu;
+                _self.grtallzhanghus = zh;
+
+                /*   _self.loading = false;
+                 ;*/
             }).catch(err => {
-                $this.$message.error(err);
+                _self.$message.error(err);
+//                  _self.loading = false;
             });
             //获取全部账户
             var _this=this;
@@ -132,10 +149,11 @@
         }
     }
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
+
     .box-left {
         display: none;
     }
@@ -261,6 +279,8 @@
         text-align: center;
         line-height: 60px;
         margin:0;
+        border-right: 1px solid #f4f4f4;
+        border-bottom:1px solid #f4f4f4;
     }
     .client p:first-child,.client p:last-child  {
         background: #f6f7f9;
@@ -402,9 +422,6 @@
     /*ipnput*/
     .el-input {
         width:200px;
-    }
-    .pagination {
-        text-align: right;
     }
 /*弹窗*/
     .el-dialog {

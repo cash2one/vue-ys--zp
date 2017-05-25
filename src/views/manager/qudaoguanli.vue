@@ -11,62 +11,106 @@
                             placeholder="Search"
                             icon="search"
                             v-model="input2"
-                            :on-icon-click="handleIconClick">
+                            >
                     </el-input>
-                    <el-button type="primary">添加账户</el-button>
+                    <el-button type="primary"  @click="handleAdd">添加账户</el-button>
+                    <!--新增界面-->
+                    <el-dialog title="添加账户" v-model="addFormVisible" :close-on-click-modal="false">
+                        <el-input
+                                placeholder="Search"
+                                icon="search"
+                                v-model="input3"
+                                >
+                        </el-input>
+                        <el-table
+                                :data="hun"
+                                height="350"
+                                border
+                                style="width: 100%"
+                               >
+                            <el-table-column type="selection" width="55">
+
+                            </el-table-column>
+                            <el-table-column
+                                    label="账户名"
+                            >
+                                <template scope="scope">
+                                    <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                                    label="优化师"
+                            >
+                                <template scope="scope">
+                                    <span style="margin-left: 10px">{{ scope.row.semname }}</span>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                        <div slot="footer" class="dialog-footer">
+                            <el-button @click.native="addFormVisible = false">取消</el-button>
+                            <el-button type="primary" @click.native="addSubmit" >提交</el-button>
+                        </div>
+                    </el-dialog>
                 </div>
             </div>
             <div class="clear"></div>
             <div class="qudao_table">
                 <el-table
-                        :data="task_week"
-                        height="600"
+                        height="40"
                         border
-                        :default-sort = "{prop: 'date', order: 'descending'}"
                         style="width: 100%">
-
-
-                    <el-table-column type="expand">
-
-                        <!--<el-table-column scope="scope">-->
-                            <!--<span style="margin-left: 10px">{{ scope.row.startDate }}-{{ scope.row.endDate }}</span>-->
-                        <!--</el-table-column>-->
-
-                    </el-table-column>
-
                     <el-table-column
-                            prop="date"
                             label="渠道"
                     >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ scope.row.startDate }}-{{ scope.row.endDate }}</span>
-                        </template>
                     </el-table-column>
                     <el-table-column
-                            prop="date"
                             label="户名"
                     >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ scope.row.weekTask }}</span>
-                        </template>
                     </el-table-column>
                     <el-table-column
-                            prop="name"
                             label="优化师"
                     >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ scope.row.offWeekTask }}</span>
-                        </template>
                     </el-table-column>
                     <el-table-column
-                            prop="name"
                             label="删除"
                     >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ ((scope.row.weekTask/scope.row.offWeekTask)*100).toFixed(2) }}%</span>
-                        </template>
                     </el-table-column>
                 </el-table>
+                <el-collapse v-model="activeNames" accordion @change="handleChange">
+                    <el-collapse-item  :name= data v-for="(data,index) in grtallkehu"  :title= data.name>
+                        <el-table
+                                :data="grtallzhanghus[index]"
+                                border
+                                :class="table"
+                                style="width: 100%"
+                        >
+                            <el-table-column
+                            >
+                                <template scope="scope">
+                                    <span style="margin-left: 10px">{{ scope.row.huname }}</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                            >
+                                <template scope="scope">
+                                    <span style="margin-left: 10px"></span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                            >
+                                <template scope="scope">
+                                    <span style="margin-left: 10px">{{ scope.row.semname }}</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column
+                            >
+                                <template scope="scope">
+                                    <span style="margin-left: 10px"></span>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                    </el-collapse-item>
+                </el-collapse>
             </div>
         </div>
 
@@ -74,25 +118,47 @@
 <script>
 
     import { mapGetters } from 'vuex';
-
+    import { Allkehu ,getHu} from 'api/account';
 
     export default {
         data() {
             return {
-
-                task_week: [],
-                Allzu:[],
+                grtallkehu:[],
+                grtallzhanghus:[],
+                getHu:[],
+                hun:[],
                 click:'',
-                week:true,
-                month:false
+                activeNames: ['1'],
+                addFormVisible: false,
+                input2:'',
+                input3:'',
             }
         },
         created:function(){
+            //获取全部账户
+            var _this=this;
+            getHu({uid:111}).then(response => {
+                _this.hun=response.data;
+            }).catch(err => {
+                _this.$message.error(err);
+            });
             //周任务
             var _self=this;
-            getwtask({uid:111}).then(response => {
-                console.log(response);
-                _self.task_week=response.data;
+            let zu = [];
+            let zh = [];
+            Allkehu({uid:111}).then(response => {
+                for(var i in response.data) {
+
+                    zu.push(response.data[i].xinxi);
+                }
+                for(var n in response.data) {
+
+                    zh.push(response.data[n].zhanghus);
+                }
+                console.log(zh[0]);
+                _self.grtallkehu = zu;
+                _self.grtallzhanghus = zh;
+
                 /*   _self.loading = false;
                  ;*/
             }).catch(err => {
@@ -101,6 +167,11 @@
             });
 
 
+        },
+        methods:{
+            handleAdd: function () {
+                this.addFormVisible = true;
+            },
         }
     }
 </script>
@@ -436,19 +507,55 @@
         background: #00b7ee;
         color: white;
     }
+    /*开头*/
+    .qudao_title {
+        width: 100%;
+        height: 39px;
+        line-height: 40px;
+        font-size: 16px;
+        border-bottom: 1px solid #e8e8e8;
+        text-indent: 30px;
+        margin-bottom: 30px;
+        background: #fbfbfb;
+    }
     /*ipnput*/
     .el-input {
         width:200px;
     }
-    .el-button--primary {
-        float: right;
-    }
         /*表格*/
+    .el-collapse-item thead {
+        display: none;
+    }
     .qudao_table {
         width:100%;
         padding:30px;
     }
-
+    /*弹窗*/
+    .el-dialog {
+        width:800px;
+    }
+    .el-dialog__body {
+        padding: 30px;
+    }
+    .el-input {
+        margin-bottom: 30px;
+    }
+    .el-pagination {
+        margin-top: 10px;
+    }
+    .el-table__body-wrapper {
+        overflow-x: hidden;
+    }
+    .dialog-footer {
+        text-align: center;
+    }
+    .dialog-footer button {
+        width: 110px;
+        height: 40px;
+    }
+    .el-collapse-item__content {
+        padding:0!important;
+    }
     @media screen and (max-width: 1000px) {
         #page-wrapper {
             width:1000px;

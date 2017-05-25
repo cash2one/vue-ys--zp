@@ -23,15 +23,23 @@ export function getlandpageAll(userId) {
         params: { userId }
     });
 }
-//每日任务
+//每日任务-每日检查
 export function getcheck(userId) {
     return fetch({
-        url: '/sem/setcheck',
+        url: '/sem/getcheck',
         method: 'get',
         params: { userId }
     });
 }
-//每周任务
+//每日任务-每日检查-历史记录
+export function checkhistory(userId) {
+    return fetch({
+        url: '/sem/checkhistory',
+        method: 'get',
+        params: { userId }
+    });
+}
+//月任务-每周任务
 export function getwtask(userId) {
     return fetch({
         url: '/sem/getwtask',
@@ -39,6 +47,16 @@ export function getwtask(userId) {
         params: { userId }
     });
 }
+//月任务-月任务
+export function getmtask(userId) {
+    return fetch({
+        url: '/sem/getmtask',
+        method: 'get',
+        params: { userId }
+    });
+}
+
+
 //sem
 export function getzuanduser(userId) {
     return fetch({
@@ -47,14 +65,7 @@ export function getzuanduser(userId) {
         params: { userId }
     });
 }
-//渠道管理
-export function AllKeHu(userId) {
-    return fetch({
-        url: '/sem/allkehu',
-        method: 'get',
-        params: { userId }
-    });
-}
+
 //用户管理
 export function Allyonghu(userId) {
     return fetch({
@@ -71,7 +82,7 @@ export function Allhu(userId) {
         params: { userId }
     });
 }
-//全部客户
+//全部客户 渠道管理  客户管理
 export function Allkehu(userId) {
     return fetch({
         url: '/sem/allkehu',

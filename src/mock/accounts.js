@@ -1091,7 +1091,6 @@ const illegal = {
         "keyword_id": "60150981306"
     }], "chuangyi": []
 };
-const task_day = [{}];
 const key = [
     {
         "keyword_id": "60927036191",
@@ -2542,7 +2541,7 @@ const Allzu = [[
         "group_id": 233,
         "role_id": 3
     }]];
-const  getAllyonghu = [{
+const getAllyonghu = [{
     "id": 3132,
     "name": "韩温玉",
     "email": null,
@@ -2572,7 +2571,7 @@ const  getAllyonghu = [{
     "create_date": null,
     "last_login_date": null,
     "type": 100002
-},  {
+}, {
     "id": 1057,
     "name": "hpstore",
     "email": "hpstore@hp.com",
@@ -2593,7 +2592,7 @@ const  getAllyonghu = [{
     "last_login_date": null,
     "type": 100001
 }];
-const getAllhu =  [{
+const getAllhu = [{
     "huid": 198,
     "name": "附近夜约爱",
     "appid": "bb9654d9d4254d00a800371a62f4fcfe",
@@ -2662,30 +2661,150 @@ const getAllhu =  [{
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
 }];
-const  getAllkehu = [
-    {
-        "id": 8,
-        "name": "触宝",
-        "email": "",
-        "phone": "",
-        "create_date": "2017-03-15T02:26:18.000Z",
-        "huname": "触宝",
-        "type": 100002,
-        "huid": 3852,
-        "semname": "张瑞雪"
+const grtallkehu = {
+    "18": {
+        "xinxi": {
+            "id": 18,
+            "name": "树明",
+            "email": "1@qq.com",
+            "phone": "13312345678",
+            "create_date": "2017-03-10T09:02:45.000Z"
+        },
+        "zhanghus": [
+            {
+                "huname": "成人社交",
+                "type": 100004,
+                "huid": 3978,
+                "semname": "周雷雨"
+            },
+            {
+                "huname": "夜夜约爱",
+                "type": 100004,
+                "huid": 3979,
+                "semname": "李金茹",
+                "create_date": "2017-03-10T09:02:45.000Z"
+            },
+        ]
     },
+    "17": {
+        "xinxi": {
+            "id": 18,
+            "name": "树明",
+            "email": "1@qq.com",
+            "phone": "13312345678",
+            "create_date": "2017-03-10T09:02:45.000Z"
+        },
+        "zhanghus": [
+            {
+                "huname": "成人社交",
+                "type": 100004,
+                "huid": 3978,
+                "semname": "周雷雨"
+            },
+            {
+                "huname": "夜夜约爱",
+                "type": 100004,
+                "huid": 3979,
+                "semname": "李金茹",
+                "create_date": "2017-03-10T09:02:45.000Z"
+            },
+        ]
+    },
+}
+const getcheck = [
+    {"id": 4, "checkId": 4, "checkName": "着落页"},
+    {"id": 5, "checkId": 5, "checkName": "包链接"},
     {
-
-        "id": 159,
-        "name": "蜻蜓",
-        "email": "",
-        "phone": "",
-        "create_date": null,
-        "huname": "蜻蜓",
-        "type": 100002,
-        "huid": 3774,
-        "semname": "吕波（备用）"
-    }];
+        "id": 3,
+        "checkId": 3,
+        "checkName": "关键词"
+    },
+    {"id": 2, "checkId": 2, "checkName": "LOGO检查"}, {"id": 1, "checkId": 1, "checkName": "版权信息"}, {
+        "id": 6,
+        "checkId": 6,
+        "checkName": "跳转检查"
+    },
+    {"id": 7, "checkId": 7, "checkName": "域名检查"}]
+const history = {
+    "data": {
+        "checkStatuses": [{
+            "id": 36566137,
+            "checkId": 4,
+            "checkValue": 1,
+            "checkName": "着落页",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566138,
+            "checkId": 5,
+            "checkValue": 1,
+            "checkName": "包链接",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566139,
+            "checkId": 3,
+            "checkValue": 0,
+            "checkName": "关键词",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566140,
+            "checkId": 2,
+            "checkValue": 1,
+            "checkName": "LOGO检查",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566141,
+            "checkId": 1,
+            "checkValue": 1,
+            "checkName": "版权信息",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566142,
+            "checkId": 6,
+            "checkValue": 1,
+            "checkName": "跳转检查",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {"id": 36566143, "checkId": 7, "checkValue": 1, "checkName": "域名检查", "checkBak": "无", "date": 1495615282587}]
+    }
+}
+const getmtask = {
+    "data": [{"semId": 3102, "monthTask": 50000, "monthOffTask": 0, "rate": 0, "monthDate": "2017-07"}, {
+        "semId": 3102,
+        "monthTask": 50000,
+        "monthOffTask": 0,
+        "rate": 0,
+        "monthDate": "2017-06"
+    }, {
+        "semId": 3102,
+        "monthTask": 50000,
+        "monthOffTask": 856502.52,
+        "rate": 17.130050400000002,
+        "monthDate": "2017-05"
+    }, {
+        "semId": 3102,
+        "monthTask": 50000,
+        "monthOffTask": 807013.35,
+        "rate": 16.140266999999998,
+        "monthDate": "2017-04"
+    }, {"semId": 3102, "monthTask": 0, "monthOffTask": 513963.02, "rate": 0, "monthDate": "2017-03"}, {
+        "semId": 3102,
+        "monthTask": 100000,
+        "monthOffTask": 397196.68,
+        "rate": 3.9719668,
+        "monthDate": "2017-02"
+    }, {
+        "semId": 3102,
+        "monthTask": 60000,
+        "monthOffTask": 350963.72,
+        "rate": 5.849395333333333,
+        "monthDate": "2017-01"
+    }]
+}
 export default {
     getAccountsByUser: config => {
         const userId = config.params;
@@ -2727,26 +2846,7 @@ export default {
             }, 500);
         })
     },
-    getcheck: config => {
-        const userId = config.params;
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve([200, {
-                    data: task_day
-                }]);
-            }, 500);
-        })
-    },
-    getweek: config => {
-        const userId = config.params;
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve([200, {
-                    data: task_week
-                }]);
-            }, 500);
-        })
-    },
+
     hu: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
@@ -2767,7 +2867,7 @@ export default {
             }, 500);
         })
     },
-    grtsem: config => {
+    grtsem: config => {    //获取全部sem
         const userId = config.params;
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -2777,7 +2877,8 @@ export default {
             }, 500);
         })
     },
-    grtallkehu: config => {
+    //type:100004
+    grtallkehu: config => {   //客户管理
         const userId = config.params;
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -2787,7 +2888,7 @@ export default {
             }, 500);
         })
     },
-    getAllyonghu: config => {
+    getAllyonghu: config => {  //用户管理
         const userId = config.params;
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -2797,12 +2898,42 @@ export default {
             }, 500);
         })
     },
-    getAllkehu: config => {
+    getcheck: config => {    //每日任务-每日检查
         const userId = config.params;
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([200, {
-                    data: getAllkehu
+                    data: getcheck
+                }]);
+            }, 500);
+        })
+    },
+    getcheckhistory: config => {  //日任务历史记录
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: history
+                }]);
+            }, 500);
+        })
+    },
+    getweek: config => {   ////月任务-每周任务
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: task_week
+                }]);
+            }, 500);
+        })
+    },
+    getmtask: config => {   //月任务-月任务
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: getmtask
                 }]);
             }, 500);
         })

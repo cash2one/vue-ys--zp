@@ -49,42 +49,6 @@
                         <el-radio :label="4">其他</el-radio>
                         <el-radio :label="5">百度其他</el-radio>
                     </el-radio-group>
-                    <!--<div class="qudao_select_all">-->
-                        <!--<a href="javascript:;">-->
-                            <!--<span class="select_click">-->
-                             <!--<i class="select_yuan"></i>-->
-                        <!--</span>-->
-                        <!--</a>-->
-                        <!--<span class="select_name">全部</span>-->
-
-                        <!--<a href="javascript:;">-->
-                            <!--<span class="select_click">-->
-                             <!--<i ></i>-->
-                        <!--</span>-->
-                        <!--</a>-->
-                        <!--<span class="select_name">百度来源</span>-->
-
-                        <!--<a href="javascript:;">-->
-                            <!--<span class="select_click">-->
-                             <!--<i ></i>-->
-                        <!--</span>-->
-                        <!--</a>-->
-                        <!--<span  class="select_name">搜索</span>-->
-
-                        <!--<a href="javascript:;">-->
-                            <!--<span class="select_click">-->
-                             <!--<i ></i>-->
-                        <!--</span>-->
-                        <!--</a>-->
-                        <!--<span  class="select_name">其他</span>-->
-
-                        <!--<a href="javascript:;">-->
-                            <!--<span class="select_click">-->
-                             <!--<i ></i>-->
-                        <!--</span>-->
-                        <!--</a>-->
-                        <!--<span  class="select_name">百度其他</span>-->
-                    <!--</div>-->
                 </div>
                         <el-row>
                             <el-table
@@ -192,7 +156,7 @@
                 value6: '',
                 value: '',
                 value1:'',
-                radio: 5,
+                radio:1,
             }
         },
         created:function(){

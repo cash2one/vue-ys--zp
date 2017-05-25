@@ -4,17 +4,49 @@
         <div class="task_set_list">
             <div class="account_title" id="week">
                 <a href="javascript:;" class="click_up">
-                    管理 > 任务设置
+                    管理 > 任务设置<i class="iconfont wen" style="cursor: pointer;">&#xe767;</i>
                 </a>
             </div>
             <div class="task_set_select">
                 <div>
-                    <el-radio-group v-model="radio3" @change="fn()">
+                    <el-radio-group v-model="radio3" @change="fn">
                          <el-radio-button label="周任务" ></el-radio-button>
                         <el-radio-button label="月任务"></el-radio-button>
                     </el-radio-group>
                     <div class="remove_h">
-                        <el-button  type="primary">任务设置</el-button>
+                        <el-button  type="primary"  @click="handleAdd" >任务设置</el-button>
+                        <!--新增界面-->
+                        <el-dialog title="任务设置" v-model="addFormVisible" :close-on-click-modal="false">
+                            <form id="myForm">
+                                <div class="content">
+                                    <div class="content_all content_all_1">
+                                        <span class="content_datd select_month">&nbsp;&nbsp;&nbsp;月份</span>
+                                        <el-select v-model="value" placeholder="请选择">
+                                            <el-option
+                                                    v-for="item in data"
+                                                    :value="item">
+                                            </el-option>
+                                        </el-select>
+                                        <span class="content_datd " >任务总额</span>
+                                        <input class="content_datd weekTask all_set ser_1" type="number" style=" margin-right:5px;"> <i class="tishi" style="color: red;font-size: 14px;">(/万)</i>
+                                    </div>
+                                    <div class="data" >
+                                        <span class="content_datd week" data-week="<%=time%>">第 周</span>
+                                        <el-input v-model="input" disabled="disabled" class="startDate" ></el-input>
+                                        <!--<input type="text" value="" disabled="disabled" class="startDate">-->
+                                        <span style="margin:0 10px">至</span>
+                                        <el-input v-model="input" disabled="disabled" class="startDate" ></el-input>
+                                        <span class="content_datd">任务额</span>
+                                        <el-input v-model="input" type="number" class="startDate" ></el-input><i style="color: red;font-size: 14px;">(/万)</i>
+                                    </div>
+                                    <div class="content_all content_btn">
+                                        <el-button class="qx" @click.native="addFormVisible = false">取消</el-button>
+                                        <a class="sever sever_1">重置</a>
+                                        <el-button class="ok_send" type="primary" @click.native="addSubmit" >提交</el-button>
+                                    </div>
+                                </div>
+                            </form>
+                        </el-dialog>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -28,8 +60,8 @@
                     </el-option>
                 </el-select>
             </div>
-
-            <div class="task_set_box"  v-if="week">
+            <!--周任务-->
+            <div class="task_set_box"  v-show="willShow">
                 <el-table
                         :data="task_week"
                         height="500"
@@ -38,6 +70,7 @@
                         style="width: 100%">
                     <el-table-column
                             prop="date"
+                            sortable
                             label="日期"
                     >
                         <template scope="scope">
@@ -46,6 +79,7 @@
                     </el-table-column>
                     <el-table-column
                             prop="date"
+                            sortable
                             label="任务总额"
                     >
                         <template scope="scope">
@@ -54,6 +88,7 @@
                     </el-table-column>
                     <el-table-column
                             prop="name"
+                            sortable
                             label="完成总额"
                     >
                         <template scope="scope">
@@ -62,6 +97,7 @@
                     </el-table-column>
                     <el-table-column
                             prop="name"
+                            sortable
                             label="完成占比"
                     >
                         <template scope="scope">
@@ -70,39 +106,60 @@
                     </el-table-column>
                 </el-table>
             </div>
-            <div class="task_table" v-else="month">
+            <!--月任务-->
+            <div class="task_table" v-show="willFalse">
+                <div id="main" ></div>
+                <div class="month_table_box">
+                    <div class="month_table">
+                        <p>各月任务完成数据统计</p>
+                    </div>
+                    <el-table
+                            :data="getmtask"
+                            height="500"
+                            border
+                            :default-sort = "{prop: 'date', order: 'descending'}"
+                            style="width: 100%">
+                        <el-table-column
+                                prop="date"
+                                sortable
+                                label="日期"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.monthDate }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="date"
+                                sortable
+                                label="任务总额"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.monthTask }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="name"
+                                sortable
+                                label="完成总额"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.monthOffTask }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                prop="name"
+                                sortable
+                                label="完成占比"
+                        >
+                            <template scope="scope">
+                                <span style="margin-left: 10px">{{ scope.row.rate }}%</span>
+                            </template>
+                        </el-table-column>
+                    </el-table>
 
-                <el-table
-                        :data="task_week"
-                        height="250"
-                        border
-                        :default-sort = "{prop: '_id', order: 'descending'}"
-                        style="width: 100%">
-                    <el-table-column
-                            prop="date"
-                            label="内容"
-                    >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ scope.row.pv_total }}</span>
-                        </template>
-                    </el-table-column>
-                    <el-table-column
-                            prop="date"
-                            label="结果"
-                    >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ scope.row.pv_total }}</span>
-                        </template>
-                    </el-table-column>
-                    <el-table-column
-                            prop="name"
-                            label="备注"
-                    >
-                        <template scope="scope">
-                            <span style="margin-left: 10px">{{ scope.row.pv_total }}</span>
-                        </template>
-                    </el-table-column>
-                </el-table>
+
+
+                </div>
             </div>
 
         </div>
@@ -114,71 +171,173 @@
 <script>
 
     import { mapGetters } from 'vuex';
-    import { getwtask } from 'api/account';
-    import { getzuanduser } from 'api/account';
+    import { getwtask , getzuanduser, getmtask} from 'api/account';
+    const echarts = require('echarts/lib/echarts');
+    // 引入柱状图
+    require('echarts/lib/chart/bar');
+    require('echarts/lib/chart/line');
+    // 引入提示框和标题组件
+    require('echarts/lib/component/tooltip');
+    require('echarts/lib/component/title');
+    require('echarts/lib/component/legend');
+    require('../../assets/js/moment.js');
+    let monthTask = [];
+    let monthOffTask = [];
 
-    export default {
+        function rendebar(monthTask,monthOffTask) {
+            let myChart = echarts.init(document.getElementById('main'));
+            console.log(myChart);
+            const option = {
+                // 提示框
+                tooltip: {
+                    trigger: 'item',
+
+                },
+
+                toolbox: {
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                legend: {
+                    data:['总任务','已完成']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        //                                    ,
+                        type: 'value',
+                        name: '完成额度',
+                        position: 'left',
+                        axisLine:{
+                            show:false,
+                        },
+                        axisTick:{
+                            show:false,
+                        },
+                        axisLabel:{
+                            textStyle:{
+                                color:'#3b4e61',
+                                fontSize:14,
+                            },
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#dfe1e4',
+                                type: 'solid',
+                                width: 1,
+                            },
+                        },
+                    },
+                ],
+                series: [
+                    {
+                        name:'总任务',
+                        type:'bar',
+                        barWidth:50,
+                        color:['#20a0ff'],
+                        data:monthTask,
+                    },
+                    {
+                        name:'已完成',
+                        type:'line',
+                        color:['#ed5957'],
+                        yAxisIndex: 0,
+                        data:monthOffTask,
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            window.addEventListener("resize", function () {
+                myChart.resize();
+            },false);
+        }
+
+
+        export default {
         data() {
             return {
+                task_week: [],//周
+                Allzu:[],//sem
+                getmtask:[],//月
                 radio3: '周任务',
-                task_week: [],
-                Allzu:[],
-                value6: '',
+                input:'',
                 value: '',
-                value1:'',
                 value2:'',
-                radio: 5,
                 click:'',
-                week:true,
-                month:false
+                willShow:true,
+                willFalse:false,
+                addFormVisible:false,
             }
         },
         created:function(){
+            var data  = moment();
+            alert(data);
             //周任务
-            var _self=this;
+            let _self=this;
             getwtask({uid:111}).then(response => {
-                console.log(response);
                 _self.task_week=response.data;
-                /*   _self.loading = false;
-                 ;*/
+
             }).catch(err => {
                 _self.$message.error(err);
-//                  _self.loading = false;
             });
             //sem
-            var $this=this;
-            var semAll = [];
-            var k = 0;
+            let $this=this;
+            let semAll = [];
+            let k = 0;
             getzuanduser({uid:111}).then(response => {
-                for(var i = 0;i <response.data.length;i++){
-                   for(var n = 0;n<response.data[i].length;n++){
+                for(let i = 0;i <response.data.length;i++){
+                   for(let n = 0;n<response.data[i].length;n++){
                        k++
                        semAll.push({name: response.data[i][n].name,value:k})
                    }
                 }
                 $this.Allzu=semAll;
-                console.log($this.Allzu);
-                /*   _self.loading = false;
-                 ;*/
+
             }).catch(err => {
                 $this.$message.error(err);
-//                  _self.loading = false;
             });
 
         },
         methods:{
-            fn:function(){
-                if($(".el-radio-button").eq(0).attr("data") == "true") {
-                    this.week = true;
-                    this.month = false;
-                    $(".el-radio-button").eq(0).attr("data",false);
-                }else {
-                    this.week = false;
-                    this.month = true;
-
-                    $(".el-radio-button").eq(0).attr("data",true);
+            fn:function(event){
+                 monthTask = [];
+                 monthOffTask = [];
+                if (event == "周任务") {
+                   this.willShow = true;
+                    this.willFalse = false;
+                } else {
+                    //月任务
+                    let this_month=this;
+                    getmtask({uid:111}).then(response => {
+                        this_month.getmtask=response.data.data;
+                        for(let n in response.data.data) {
+                            monthTask.push(response.data.data[n].monthTask);
+                            monthOffTask.push(response.data.data[n].monthOffTask);
+                        }
+                        rendebar(monthTask,monthOffTask)
+                    }).catch(err => {
+                        this_month.$message.error(err);
+                    });
+                    this.willFalse = true;
+                    this.willShow = false;
                 }
-            }
+            },
+            handleAdd: function () {
+                this.addFormVisible = true;
+            },
         }
     }
 </script>
@@ -247,7 +406,7 @@
     }
 
     #btn_2 {
-        background: #00b7ee;
+        background: #28acff;
         border: 1px solid #28acff;
         color: #ffffff;
     }
@@ -260,7 +419,7 @@
         float: right;
     }
     .btn_r2 {
-        background: #00b7ee;
+        background: #28acff;
         color: #ffffff;
         border-radius: 5px;
     }
@@ -350,8 +509,12 @@
     }
     /*月任务*/
     #main {
-        width: 100%;height:400px;
+        width: 100%;
+        height:400px;
         margin:0 0 10px 0;
+    }
+    #main div {
+        width:100%;
     }
     .month_table_box {
         border:1px solid #dfe1e4;
@@ -374,7 +537,7 @@
         border-radius: 5px;
         right: 0%;
         top: 10px;
-        background: #00b7ee;
+        background: #28acff;
         color: #fff;
         outline: none;
         border: none;
@@ -452,7 +615,7 @@
     .ok {
         margin: 40px 10px 0 0;
         float: right;
-        background: #00b7ee;
+        background: #28acff;
         color: white;
     }
 
@@ -501,7 +664,7 @@
         margin-bottom: 20px;
     }
     .content_datd {
-        margin-right: 30px;
+        margin:0 15px;
     }
     .content_btn {
         text-align: center;
@@ -511,7 +674,7 @@
         margin:0 50px;
     }
     .ok_send,.xiugai_send {
-        background: #00b7ee;
+        background: #28acff;
     }
 
     #table1.tablesorter thead tr .tablesorter-header-inner{
@@ -552,6 +715,22 @@
     .task_set_box {
         width:100%;
         padding:30px 30px 0 30px ;
+    }
+    /*弹窗*/
+    .el-dialog {
+        width:100%;
+        height: 450px;
+        transform: none;
+        position: fixed;
+        bottom: 0;
+        top:auto!important;
+    }
+    /*input*/
+    .startDate {
+        width:140px;
+    }
+    .startDate input{
+        width:100%;
     }
 </style>
 
