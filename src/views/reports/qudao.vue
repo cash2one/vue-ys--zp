@@ -265,7 +265,6 @@
         display: inline-block;
         width:8px;
         height:8px;
-        background: #02b7ee;
         position: absolute;
         top:0;
         right:0;
@@ -286,9 +285,7 @@
     .qudao_btn,.qudao_out,.qudao_fenri {
         height: 30px;
         width: 90px;
-        background: #02b7ee;
         color: white;
-        box-shadow: 0px 0px 8px #9ae2f8;
         outline:none;
         display: inline-block;
         padding: 6px 12px;
@@ -352,6 +349,10 @@
     }
     .qudao_table tbody tr:nth-child(even) {
         background: #f6f7f9;
+    }
+    /*input*/
+    .el-date-editor.el-input[data-v-12b121f8] {
+        width:230px;
     }
 /*日历*/
     .el-date-editor.el-input {
