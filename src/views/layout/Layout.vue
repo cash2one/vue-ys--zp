@@ -1,23 +1,27 @@
 <template>
-    <div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
-        <div class="sidebar-wrapper">
-            <Sidebar class="sidebar-container"/>
-        </div>
-        <div class="main-container">
-            <Navbar/>
-            <App-main/>
+    <div>
+        <HeaderNav></HeaderNav>
+        <div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
+            <div class="sidebar-wrapper">
+                <Sidebar class="sidebar-container"/>
+            </div>
+            <div class="main-container">
+                <Navbar/>
+                <App-main/>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import { Navbar, Sidebar, AppMain } from 'views/layout';
+    import { Navbar, Sidebar, AppMain, HeaderNav } from 'views/layout';
     import store from 'store';
     import router from 'router';
     import permission from 'store/permission';
     export default {
       name: 'layout',
       components: {
+        HeaderNav,
         Navbar,
         Sidebar,
         AppMain
@@ -73,7 +77,7 @@
         .sidebar-wrapper {
             width: 180px;
             position: fixed;
-            top: 0;
+            top: 80px;
             bottom: 0;
             left: 0;
             z-index: 2;
