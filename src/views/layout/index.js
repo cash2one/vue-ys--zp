@@ -5,3 +5,5 @@ export { default as Sidebar } from './Sidebar';
 export { default as Levelbar } from './Sidebar';
 
 export { default as AppMain } from './AppMain';
+
+export { default as HeaderNav} from './HeaderNav';
