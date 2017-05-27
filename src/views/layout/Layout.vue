@@ -1,6 +1,5 @@
 <template>
     <div>
-        <HeaderNav></HeaderNav>
         <div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
             <div class="sidebar-wrapper">
                 <Sidebar class="sidebar-container"/>
@@ -14,14 +13,13 @@
 </template>
 
 <script>
-    import { Navbar, Sidebar, AppMain, HeaderNav } from 'views/layout';
+    import { Navbar, Sidebar, AppMain } from 'views/layout';
     import store from 'store';
     import router from 'router';
     import permission from 'store/permission';
     export default {
       name: 'layout',
       components: {
-        HeaderNav,
         Navbar,
         Sidebar,
         AppMain

@@ -1,12 +1,12 @@
 const permission = {
   state: {
-    permissionRoutes: []
+    headerMenu: [],
+    sidebarMenus: {}
   },
   init(data) {
     const roles = data.roles;
     const router = data.router;
-    const permissionRoutes = router.filter(v => {
-      if (roles.indexOf('admin') >= 0) return true;
+    const headerMenu = router.filter(v => {
       if (this.hasPermission(roles, v)) {
         if (v.children && v.children.length > 0) {
           v.children = v.children.filter(child => {
@@ -22,12 +22,39 @@ const permission = {
       }
       return false;
     });
-    this.permissionRoutes = permissionRoutes;
+    this.state.headerMenu = headerMenu;
+
+    let $this = this;
+    for (let v of router) {
+      if(this.hasPermission(roles, v) && v.children && v.children.length > 0){
+        $this.state.sidebarMenus[v.path] = v.children.filter(menu => {
+          if(this.hasPermission(roles,menu)){
+            if(menu.children && menu.children.length > 0){
+              menu.children = menu.children.filter(child => {
+                if (this.hasPermission(roles, child)) {
+                  return true;
+                }
+                return false;
+              });
+            }
+            return true;
+          }
+          return false;
+        });
+      }
+    }
+
   },
   get() {
-    return this.permissionRoutes
+    return this.state.sidebarMenus['/account'];
+  },
+  getHeaderMenu() {
+    return this.state.headerMenu;
   },
   hasPermission(roles, route) {
+    if(roles.indexOf('admin') >= 0) {
+      return true;
+    }
     if (route.meta && route.meta.role) {
       return roles.some(role => route.meta.role.indexOf(role) >= 0)
     } else {

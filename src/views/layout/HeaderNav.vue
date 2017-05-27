@@ -5,12 +5,11 @@
                 <h1 style="height: 20px;">羽扇系统</h1>
             </div>
             <el-menu mode="horizontal" :default-active="activeNav" class="nav-menu-container">
-                <router-link to="/reports/overview">
-                    <el-menu-item index="/reports">账户</el-menu-item>
-                </router-link>
-                <router-link to="/ai/planset">
-                    <el-menu-item index="/ai">AI</el-menu-item>
-                </router-link>
+                <template v-for="item in permissionRoutes" v-if="!item.hidden">
+                    <router-link :to="item.path">
+                        <el-menu-item :index="item.path">{{item.name}}</el-menu-item>
+                    </router-link>
+                </template>
             </el-menu>
             <ErrLog v-if="log.length>0" class="errLog-container" :logsList="log"></ErrLog>
             <el-dropdown class="avatar-container" trigger="click">
@@ -40,6 +39,7 @@
   import { mapGetters } from 'vuex'
   import ErrLog from 'components/ErrLog';
   import errLogStore from 'store/errLog';
+  import permissionRoutes from 'store/permission';
 
   export default {
     components: {
@@ -48,7 +48,8 @@
     data() {
       return {
         activeNav: '/reports',
-        log: errLogStore.state.errLog
+        log: errLogStore.state.errLog,
+        permissionRoutes: permissionRoutes.getHeaderMenu()
       }
     },
     computed: {

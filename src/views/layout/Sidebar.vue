@@ -5,7 +5,7 @@
                 <template slot="title">
                     <wscn-icon-svg :icon-class="item.icon||'wenzhang1'" /> {{item.name}}
                 </template>
-                <router-link v-for="child in item.children" :key="child.path" v-if="!child.hidden" class="title-link" :to="item.path+'/'+child.path">
+                <router-link v-for="child in item.children" :key="child.path" v-if="!child.hidden" class="title-link" :to="child.path">
                     <el-menu-item :index="item.path+'/'+child.path">
                         {{child.name}}
                     </el-menu-item>

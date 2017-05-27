@@ -153,14 +153,6 @@ export function updateActiveNum(userId) {
   });
 }
 
-export function updateActiveNum(userId) {
-  return fetch({
-    url: '/out/upacall',
-    method: 'post',
-    params: { userId }
-  });
-}
-
 export function setCost(userId) {
   return fetch({
     url: '/account/setcost',
