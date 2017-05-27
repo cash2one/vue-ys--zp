@@ -123,9 +123,9 @@
 </template>
 <script>
     /*eslint-disable */
-    import { getAccountAll } from 'api/account';
-    import { getAccountTwoWeek } from 'api/account';
-    import { getAccountOneWeek } from 'api/account';
+    import { getAll } from 'api/account';
+    import { getTwoWeekCost } from 'api/account';
+    import { getWeekCost } from 'api/account';
 
     let flag=1;
     let currentAccount={};
@@ -517,7 +517,7 @@
         // $('#main').show();
         // console.log(flag);
         if (flag === 1) {
-          getAccountTwoWeek({uid:111}).then(response => {
+          getTwoWeekCost({uid:111}).then(response => {
             let el=response.data;
             var activeRate = [];
             var days = [];
@@ -574,10 +574,10 @@
 
 
           }).catch(err => {
-            this.$message.error(err);
+
           });
         } else if (flag === 2) {
-          getAccountOneWeek({uid:111}).then(response => {
+          getWeekCost({uid:111}).then(response => {
             console.log(response);
             let el=response.data;
             var arr = [];
@@ -623,7 +623,7 @@
             renderLine('mainn', arr, selected, legendData, arr3);
 
           }).catch(err => {
-            this.$message.error(err);
+
           });
 
         }
@@ -631,7 +631,7 @@
     function upload(str, flag) {
         ajax(str, flag);
 
-        getAccountAll({uid:111}).then(response => {
+      getAll({uid:111}).then(response => {
             console.log(response);
 //            this.tableData3=response.data;
             let el=response.data;
@@ -675,7 +675,7 @@
 
 
         }).catch(err => {
-            this.$message.error(err);
+//            this.$message.error(err);
 //                  _self.loading = false;
         });
 

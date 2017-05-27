@@ -76,8 +76,8 @@
         }
         .sidebar-wrapper {
             width: 180px;
-            position: fixed;
-            top: 80px;
+            position: absolute;
+            top: 0px;
             bottom: 0;
             left: 0;
             z-index: 2;
