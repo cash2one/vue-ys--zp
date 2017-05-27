@@ -29,6 +29,7 @@ const shezhi = resolve => require(['../views/reports/shezhi'],resolve);
 const tuoci = resolve => require(['../views/reports/tuoci'],resolve);
 const account= resolve => require(['../views/manager/accountgl'],resolve);
 
+//管理
 /* 推广管理 */
 const blacklist = resolve => require(['../views/adtools/blacklist'],resolve);
 
@@ -48,23 +49,32 @@ const taskDay = resolve => require(['../views/monitor/task_day'],resolve);
 /* 用户设置 */
 const passwordSet = resolve => require(['../views/user/password'],resolve);
 
-/* 管理 */
-const accountgl = resolve => require(['../views/manager/accountgl'],resolve);
+
 
 /* 数据分析 */
 const dailyAnalysis = resolve => require(['../views/data/analysis/daily'],resolve);
 const compareAnalysis = resolve => require(['../views/data/analysis/compare'],resolve);
-
-
+/*月任务*/
+const task_s = resolve => require(['../views/task/task_s'],resolve);
+/*账户管理*/
+const accountgl = resolve => require(['../views/manager/accountgl'],resolve);
+/*渠道管理*/
+const qudaoguanli = resolve => require(['../views/manager/qudaoguanli'],resolve);
+/*客户管理*/
+const kehuguanli = resolve => require(['../views/manager/kehuguanli'],resolve);
+/*用户管理*/
+const yonghuguanli = resolve => require(['../views/manager/yonghuguanli'],resolve);
+/*分配账户*/
+const fenpeizhanghu = resolve => require(['../views/manager/fenpeizhanghu'],resolve);
 Vue.use(Router);
 
- /**
-  * icon :the icon show in the sidebar
-  * hidden: if hiddenLtrue will not show in the sidebar
-  * redirect :if redirect:noredirect will not redirct in the levelbar
-  * noDropdown : if noDropdown:true will not has submenu
-  * meta: { role: ['admin'] }  will control the page role
-  */
+/**
+ * icon :the icon show in the sidebar
+ * hidden: if hiddenLtrue will not show in the sidebar
+ * redirect :if redirect:noredirect will not redirct in the levelbar
+ * noDropdown : if noDropdown:true will not has submenu
+ * meta: { role: ['admin'] }  will control the page role
+ */
 export default new Router({
   // mode: 'history', //后端支持可开
   scrollBehavior: () => ({ y: 0 }),
@@ -150,4 +160,99 @@ export default new Router({
 
     { path: '*', redirect: '/404', hidden: true }
   ]
+    // mode: 'history', //后端支持可开
+    scrollBehavior: () => ({ y: 0 }),
+    routes: [
+        { path: '/login', component: Login, hidden: true },
+        { path: '/authredirect', component: authRedirect, hidden: true },
+        { path: '/sendpwd', component: sendPWD, hidden: true },
+        { path: '/reset', component: reset, hidden: true },
+        { path: '/404', component: Err404, hidden: true },
+        { path: '/401', component: Err401, hidden: true },
+        {
+            path: '/',
+            component: dashboard,
+            name: '首页',
+            hidden: true,
+        },
+        {
+            path: '/dashboard',
+            component: dashboard,
+            name: '总览',
+            hidden: true,
+            meta: { role: true }
+        },
+        {
+            path: '/reports',
+            component: Layout,
+            redirect: '/reports/index',
+            name: '数据日报',
+            icon: 'zujian',
+            children: [
+                { path: 'overview', component: overview, name: '概览 ' },
+                { path: 'campaign', component: jihua, name: '计划' },
+                { path: 'adgroup', component: danyuan, name: '单元' },
+                { path: 'keyword', component: keyword, name: '关键词' },
+                { path: 'qudao', component: qudao, name: '渠道' },
+                { path: 'illegal', component: illegal, name: '违规查询' },
+                { path: 'landpage', component: overview, name: '头像上传' },
+            ]
+        },
+        {
+            path: '/adtools',
+            component: Layout,
+            redirect: '/adtools/index',
+            name: '推广管理',
+            icon: 'zujian',
+            children: [
+                { path: 'blacklist', component: blacklist, name: '黑名单 ' },
+            ]
+        },
+        {
+            path: '/ai',
+            component: Layout,
+            redirect: '/ai/index',
+            name: '智能调价',
+            icon: 'zujian',
+            children: [
+                { path: 'planset', component: planset, name: '计划设置 ' },
+            ]
+        },
+        {
+            path: '/monitor',
+            component: Layout,
+            redirect: '/monitor/index',
+            name: '异常监控',
+            icon: 'zujian',
+            children: [
+                { path: 'illegal', component: illegal, name: '违规检查 ' },
+                { path: 'daily/check', component: taskDay, name: '每日检查 ' },
+            ]
+        },
+        {
+            path: '/monitor',
+            component: Layout,
+            redirect: '/monitor/index',
+            name: '任务管理',
+            icon: 'zujian',
+            children: [
+                { path: 'task_s', component: task_s, name: '月任务 ' },
+            ]
+        },
+        {
+            path: '/monitor',
+            component: Layout,
+            redirect: '/monitor/index',
+            name: '管理',
+            icon: 'zujian',
+            children: [
+                { path: 'accountgl', component: accountgl, name: '账户管理 ' },
+                { path: 'qudaoguanli', component: qudaoguanli, name: '渠道管理 ' },
+                { path: 'kehuguanli', component: kehuguanli, name: '客户管理 ' },
+                { path: 'yonghuguanli', component: yonghuguanli, name: '用户管理 ' },
+                { path: 'fenpeizhanghu', component: fenpeizhanghu, name: '分配账户 ' },
+            ]
+        },
+        { path: '*', redirect: '/404', hidden: true }
+    ]
 });

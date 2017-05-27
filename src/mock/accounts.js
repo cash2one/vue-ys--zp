@@ -167,69 +167,932 @@ const tableData3 = [{
     "view_button_change": -2
 }];
 const tableQudao = [{
-    "_id": "003",
-    "ios_dl_total": 114,
-    "android_dl_total": 387,
-    "dl_total": 501,
-    "ios_pv_total": 336,
-    "android_pv_total": 1269,
-    "pv_total": 1605,
-    "ios_rate": "34",
-    "android_rate": "30"
-}, {
     "_id": "001",
-    "ios_dl_total": 2351,
-    "android_dl_total": 6620,
-    "dl_total": 8971,
-    "ios_pv_total": 7729,
-    "android_pv_total": 20535,
-    "pv_total": 28264,
-    "ios_rate": "30",
-    "android_rate": "32"
-}, {
-    "_id": "004",
-    "ios_dl_total": 77,
-    "android_dl_total": 649,
-    "dl_total": 726,
-    "ios_pv_total": 238,
-    "android_pv_total": 1968,
-    "pv_total": 2206,
-    "ios_rate": "32",
-    "android_rate": "33"
-}, {
-    "_id": "002",
-    "ios_dl_total": 7,
-    "android_dl_total": 46,
-    "dl_total": 53,
-    "ios_pv_total": 37,
-    "android_pv_total": 259,
-    "pv_total": 296,
-    "ios_rate": "19",
-    "android_rate": "18"
-}, {
-    "_id": "005",
-    "ios_dl_total": 177,
-    "android_dl_total": 335,
-    "dl_total": 512,
-    "ios_pv_total": 562,
-    "android_pv_total": 1150,
-    "pv_total": 1712,
-    "ios_rate": "31",
-    "android_rate": "29"
-}, {
-    "_id": "006",
-    "ios_dl_total": 48,
-    "android_dl_total": 247,
-    "dl_total": 295,
-    "ios_pv_total": 175,
-    "android_pv_total": 948,
-    "pv_total": 1123,
-    "ios_rate": "27",
-    "android_rate": "26"
-}];
-const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272969262"},{"id":17915828,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272968275"},{"id":17915858,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981594"},{"id":17915859,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981588"},{"id":17915879,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978984"},{"id":17915902,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150977916"},{"id":17915907,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300738"},{"id":17915908,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130300678"},{"id":17915916,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299619"},{"id":17915918,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网址","reason":"官方","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130299559"},{"id":17916526,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272968275"},{"id":17916530,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981588"},{"id":17916534,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978984"},{"id":17916547,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300738"},{"id":17916549,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官方网站","reason":"官方网站","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299619"},{"id":17916563,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685745","keyword_id":"60127724555"},{"id":17922524,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272969244"},{"id":17922663,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099471","keyword_id":"60272968317"},{"id":17922673,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099474","keyword_id":"60252388003"},{"id":17922685,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981597"},{"id":17922686,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685724","keyword_id":"60150981546"},{"id":17922688,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685718","keyword_id":"60150981210"},{"id":17922701,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685667","keyword_id":"60150979071"},{"id":17922703,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978990"},{"id":17922712,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685739","keyword_id":"60150978663"},{"id":17922717,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300792"},{"id":17922720,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685760","keyword_id":"60130300096"},{"id":17922721,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889703","keyword_id":"60130299988"},{"id":17922722,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉官网","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299616"},{"id":17922723,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"货拉拉 - 官网电话","reason":"官网","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753128","adgroup_id":"2433889712","keyword_id":"60130299583"},{"id":17945830,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型搬家需要多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685682","keyword_id":"60127724867"},{"id":17945831,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685682","keyword_id":"60127724846"},{"id":17945832,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 钢琴搬运","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753122","adgroup_id":"2440685694","keyword_id":"60127724783"},{"id":17947138,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家一般多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099477","keyword_id":"60272969097"},{"id":17947139,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型搬家需要多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099477","keyword_id":"60272968935"},{"id":17947140,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家多少钱","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099477","keyword_id":"60272968929"},{"id":17947143,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 钢琴搬运","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099462","keyword_id":"60272969532"},{"id":17947144,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳58同城货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099459","keyword_id":"60272969517"},{"id":17947145,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳钢琴搬运","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099462","keyword_id":"60272968569"},{"id":17947146,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳面包车送货","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099465","keyword_id":"60272968428"},{"id":17947147,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388405"},{"id":17947148,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳厢式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388399"},{"id":17947149,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388396"},{"id":17947150,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租面包车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388393"},{"id":17947151,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388267"},{"id":17947152,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388258"},{"id":17947153,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租拉货","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252388225"},{"id":17947155,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳钢琴搬运价格","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099483","keyword_id":"60252388051"},{"id":17947156,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家电话","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099474","keyword_id":"60252387991"},{"id":17947158,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387448"},{"id":17947159,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳微型面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387430"},{"id":17947160,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租网","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387424"},{"id":17947161,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387199"},{"id":17947162,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387181"},{"id":17947163,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租货车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387178"},{"id":17947165,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387157"},{"id":17947166,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753125","adgroup_id":"2374099480","keyword_id":"60252387145"},{"id":17947167,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳搬家电话","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685718","keyword_id":"60150982308"},{"id":17947168,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981741"},{"id":17947169,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小型货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981738"},{"id":17947170,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租面包车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981693"},{"id":17947171,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981690"},{"id":17947172,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳出租货车","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981687"},{"id":17947173,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981684"},{"id":17947174,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981678"},{"id":17947175,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳 货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981675"},{"id":17947176,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳厢式货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981663"},{"id":17947177,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳货车出租网","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981660"},{"id":17947178,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981657"},{"id":17947179,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981654"},{"id":17947180,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳小货车出租拉货","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981651"},{"id":17947181,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳箱货车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981648"},{"id":17947182,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳微型面包车出租","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753116","adgroup_id":"2440685703","keyword_id":"60150981633"},{"id":17947183,"date":"2017-04-27T16:00:00.000Z","account_id":null,"appid":"pfeh5w6kdzr42eww56wasjormia8ayuf","type":"blackList","item":"沈阳钢琴搬运价格","reason":"沈阳","last_time":"2017-04-28T02:52:00.338Z","campaign_id":"73753119","adgroup_id":"2440685721","keyword_id":"60150981306"}],"chuangyi":[]};
-  const key=[
-      {
+    "ios_dl_total": 1522,
+    "android_dl_total": 1124,
+    "dl_total": 2646,
+    "ios_pv_total": 15714,
+    "android_pv_total": 9742,
+    "pv_total": 25456,
+    "ios_rate": "10",
+    "android_rate": "12"
+},
+    {
+        "_id": "001",
+        "ios_dl_total": 1522,
+        "android_dl_total": 1124,
+        "dl_total": 2646,
+        "ios_pv_total": 15714,
+        "android_pv_total": 9742,
+        "pv_total": 25456,
+        "ios_rate": "10",
+        "android_rate": "12"
+    },
+    {
+        "_id": "001",
+        "ios_dl_total": 1522,
+        "android_dl_total": 1124,
+        "dl_total": 2646,
+        "ios_pv_total": 15714,
+        "android_pv_total": 9742,
+        "pv_total": 25456,
+        "ios_rate": "10",
+        "android_rate": "12"
+    },
+];
+const illegal = {
+    "keyword": [{
+        "id": 17915733,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272969262"
+    }, {
+        "id": 17915828,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272968275"
+    }, {
+        "id": 17915858,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981594"
+    }, {
+        "id": 17915859,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981588"
+    }, {
+        "id": 17915879,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978984"
+    }, {
+        "id": 17915902,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150977916"
+    }, {
+        "id": 17915907,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300738"
+    }, {
+        "id": 17915908,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130300678"
+    }, {
+        "id": 17915916,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299619"
+    }, {
+        "id": 17915918,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网址",
+        "reason": "官方",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130299559"
+    }, {
+        "id": 17916526,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272968275"
+    }, {
+        "id": 17916530,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981588"
+    }, {
+        "id": 17916534,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978984"
+    }, {
+        "id": 17916547,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300738"
+    }, {
+        "id": 17916549,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官方网站",
+        "reason": "官方网站",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299619"
+    }, {
+        "id": 17916563,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685745",
+        "keyword_id": "60127724555"
+    }, {
+        "id": 17922524,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272969244"
+    }, {
+        "id": 17922663,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099471",
+        "keyword_id": "60272968317"
+    }, {
+        "id": 17922673,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099474",
+        "keyword_id": "60252388003"
+    }, {
+        "id": 17922685,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981597"
+    }, {
+        "id": 17922686,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685724",
+        "keyword_id": "60150981546"
+    }, {
+        "id": 17922688,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685718",
+        "keyword_id": "60150981210"
+    }, {
+        "id": 17922701,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685667",
+        "keyword_id": "60150979071"
+    }, {
+        "id": 17922703,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978990"
+    }, {
+        "id": 17922712,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685739",
+        "keyword_id": "60150978663"
+    }, {
+        "id": 17922717,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300792"
+    }, {
+        "id": 17922720,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685760",
+        "keyword_id": "60130300096"
+    }, {
+        "id": 17922721,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889703",
+        "keyword_id": "60130299988"
+    }, {
+        "id": 17922722,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉官网",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299616"
+    }, {
+        "id": 17922723,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "货拉拉 - 官网电话",
+        "reason": "官网",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753128",
+        "adgroup_id": "2433889712",
+        "keyword_id": "60130299583"
+    }, {
+        "id": 17945830,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型搬家需要多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685682",
+        "keyword_id": "60127724867"
+    }, {
+        "id": 17945831,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685682",
+        "keyword_id": "60127724846"
+    }, {
+        "id": 17945832,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 钢琴搬运",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753122",
+        "adgroup_id": "2440685694",
+        "keyword_id": "60127724783"
+    }, {
+        "id": 17947138,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家一般多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099477",
+        "keyword_id": "60272969097"
+    }, {
+        "id": 17947139,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型搬家需要多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099477",
+        "keyword_id": "60272968935"
+    }, {
+        "id": 17947140,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家多少钱",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099477",
+        "keyword_id": "60272968929"
+    }, {
+        "id": 17947143,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 钢琴搬运",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099462",
+        "keyword_id": "60272969532"
+    }, {
+        "id": 17947144,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳58同城货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099459",
+        "keyword_id": "60272969517"
+    }, {
+        "id": 17947145,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳钢琴搬运",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099462",
+        "keyword_id": "60272968569"
+    }, {
+        "id": 17947146,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳面包车送货",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099465",
+        "keyword_id": "60272968428"
+    }, {
+        "id": 17947147,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388405"
+    }, {
+        "id": 17947148,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳厢式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388399"
+    }, {
+        "id": 17947149,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388396"
+    }, {
+        "id": 17947150,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租面包车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388393"
+    }, {
+        "id": 17947151,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388267"
+    }, {
+        "id": 17947152,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388258"
+    }, {
+        "id": 17947153,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租拉货",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252388225"
+    }, {
+        "id": 17947155,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳钢琴搬运价格",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099483",
+        "keyword_id": "60252388051"
+    }, {
+        "id": 17947156,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家电话",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099474",
+        "keyword_id": "60252387991"
+    }, {
+        "id": 17947158,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387448"
+    }, {
+        "id": 17947159,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳微型面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387430"
+    }, {
+        "id": 17947160,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租网",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387424"
+    }, {
+        "id": 17947161,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387199"
+    }, {
+        "id": 17947162,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387181"
+    }, {
+        "id": 17947163,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租货车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387178"
+    }, {
+        "id": 17947165,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387157"
+    }, {
+        "id": 17947166,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753125",
+        "adgroup_id": "2374099480",
+        "keyword_id": "60252387145"
+    }, {
+        "id": 17947167,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳搬家电话",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685718",
+        "keyword_id": "60150982308"
+    }, {
+        "id": 17947168,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981741"
+    }, {
+        "id": 17947169,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小型货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981738"
+    }, {
+        "id": 17947170,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租面包车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981693"
+    }, {
+        "id": 17947171,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981690"
+    }, {
+        "id": 17947172,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳出租货车",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981687"
+    }, {
+        "id": 17947173,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981684"
+    }, {
+        "id": 17947174,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981678"
+    }, {
+        "id": 17947175,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳 货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981675"
+    }, {
+        "id": 17947176,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳厢式货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981663"
+    }, {
+        "id": 17947177,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳货车出租网",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981660"
+    }, {
+        "id": 17947178,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981657"
+    }, {
+        "id": 17947179,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981654"
+    }, {
+        "id": 17947180,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳小货车出租拉货",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981651"
+    }, {
+        "id": 17947181,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳箱货车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981648"
+    }, {
+        "id": 17947182,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳微型面包车出租",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753116",
+        "adgroup_id": "2440685703",
+        "keyword_id": "60150981633"
+    }, {
+        "id": 17947183,
+        "date": "2017-04-27T16:00:00.000Z",
+        "account_id": null,
+        "appid": "pfeh5w6kdzr42eww56wasjormia8ayuf",
+        "type": "blackList",
+        "item": "沈阳钢琴搬运价格",
+        "reason": "沈阳",
+        "last_time": "2017-04-28T02:52:00.338Z",
+        "campaign_id": "73753119",
+        "adgroup_id": "2440685721",
+        "keyword_id": "60150981306"
+    }], "chuangyi": []
+};
+const key = [
+    {
         "keyword_id": "60927036191",
         "keyword_name": "成都面包车出租",
         "jihua_name": "sem58-成都",
@@ -256,8 +1119,8 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      },
-      {
+    },
+    {
         "keyword_id": "60602689251",
         "keyword_name": "货拉拉官网",
         "jihua_name": "华东大区",
@@ -1208,885 +2071,738 @@ const illegal={"keyword":[{"id":17915733,"date":"2017-04-27T16:00:00.000Z","acco
         "active_chengben_change": 0,
         "active_rate": 0,
         "active_rate_change": 0
-      }];
-const hun= [{
-  "huid": 642,
-  "name": "耽美小说",
-  "appid": "odvdoh6o1hz827kbjuxh1714im5qtoca",
-  "account_type": 110201,
-  "account_name": "bjznaao",
-  "account_password": "QAZqaz123",
-  "account_appid": "undefined",
-  "account_status": 2,
-  "fd_rate": 0.47,
-  "view_type": 120001,
-  "api_count": 0,
-  "auto": "off",
-  "userid": 3360,
-  "semname": "许恩楼",
-  "type": 100001,
-  "icon": "http://test.yushan.mobi//icon/icon.jpg"
-},
-  {
-    "huid": 326,
-    "name": "有妖气漫画-神马",
-    "appid": "ur70qvsdzxm8h2t4eposnstt9mqz0klo",
+    }];
+const hun = [{
+    "huid": 642,
+    "name": "耽美小说",
+    "appid": "odvdoh6o1hz827kbjuxh1714im5qtoca",
     "account_type": 110201,
-    "account_name": "youyaoqi",
+    "account_name": "bjznaao",
     "account_password": "QAZqaz123",
-    "account_appid": "c080a49a-33a2-47f9-b575-dc920caf1a9d",
-    "account_status": 2,
-    "fd_rate": 0.1,
-    "view_type": 120001,
-    "api_count": 499885,
-    "auto": "off",
-    "userid": 3359,
-    "semname": "张莉",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 640,
-    "name": "蜻蜓fm",
-    "appid": "x2z4w86qydghtx4fb79pgy14i7wmi6dx",
-    "account_type": 110201,
-    "account_name": "蜻蜓-神马",
-    "account_password": "qingting123",
-    "account_appid": "b1ca677bb8dde098d1a04ee1a713f6c2",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3309,
-    "semname": "张瑞雪",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 297,
-    "name": "秀吧",
-    "appid": "a87jg7kchylp8z38ipiq3q5mij4zdba7",
-    "account_type": 110201,
-    "account_name": "bjznaac",
-    "account_password": "QAZwsx123",
-    "account_appid": "79757746-7b07-4240-ab2c-7874b13aafaa",
+    "account_appid": "undefined",
     "account_status": 2,
     "fd_rate": 0.47,
     "view_type": 120001,
-    "api_count": 499875,
+    "api_count": 0,
     "auto": "off",
     "userid": 3360,
     "semname": "许恩楼",
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 282,
-    "name": "欢乐书客-神马",
-    "appid": "ae6h7wm6fwlvxnlynnxchgds4i57f23a",
-    "account_type": 110201,
-    "account_name": "bjznaag",
-    "account_password": "QAZqaz123",
-    "account_appid": "f16c427d-e0b2-4835-87ac-084c735fb8df",
-    "account_status": 2,
-    "fd_rate": 0.25,
+},
+    {
+        "huid": 326,
+        "name": "有妖气漫画-神马",
+        "appid": "ur70qvsdzxm8h2t4eposnstt9mqz0klo",
+        "account_type": 110201,
+        "account_name": "youyaoqi",
+        "account_password": "QAZqaz123",
+        "account_appid": "c080a49a-33a2-47f9-b575-dc920caf1a9d",
+        "account_status": 2,
+        "fd_rate": 0.1,
+        "view_type": 120001,
+        "api_count": 499885,
+        "auto": "off",
+        "userid": 3359,
+        "semname": "张莉",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 640,
+        "name": "蜻蜓fm",
+        "appid": "x2z4w86qydghtx4fb79pgy14i7wmi6dx",
+        "account_type": 110201,
+        "account_name": "蜻蜓-神马",
+        "account_password": "qingting123",
+        "account_appid": "b1ca677bb8dde098d1a04ee1a713f6c2",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3309,
+        "semname": "张瑞雪",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 297,
+        "name": "秀吧",
+        "appid": "a87jg7kchylp8z38ipiq3q5mij4zdba7",
+        "account_type": 110201,
+        "account_name": "bjznaac",
+        "account_password": "QAZwsx123",
+        "account_appid": "79757746-7b07-4240-ab2c-7874b13aafaa",
+        "account_status": 2,
+        "fd_rate": 0.47,
+        "view_type": 120001,
+        "api_count": 499875,
+        "auto": "off",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 282,
+        "name": "欢乐书客-神马",
+        "appid": "ae6h7wm6fwlvxnlynnxchgds4i57f23a",
+        "account_type": 110201,
+        "account_name": "bjznaag",
+        "account_password": "QAZqaz123",
+        "account_appid": "f16c427d-e0b2-4835-87ac-084c735fb8df",
+        "account_status": 2,
+        "fd_rate": 0.25,
+        "view_type": 120001,
+        "api_count": 499885,
+        "auto": "off",
+        "userid": 3359,
+        "semname": "张莉",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3851,
+        "name": "蜻蜓2",
+        "appid": "2d5012514a7f4698955a07cb5cef9951",
+        "account_type": 110101,
+        "account_name": "sh倾听-vip",
+        "account_password": "QingTing@12.com",
+        "account_appid": "fbd5fcef394db91abf23f83375a74af3",
+        "account_status": 2,
+        "fd_rate": 0.41,
+        "view_type": 120001,
+        "api_count": 1715758,
+        "auto": "on",
+        "userid": 3309,
+        "semname": "张瑞雪",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi/Fvf1qIVgeBnAi6j3doqdXTGLMpEx"
+    },
+    {
+        "huid": 1007,
+        "name": "嗨起",
+        "appid": "6fj7tlj39pswogmemxl16h6w29r4k5n8",
+        "account_type": 110201,
+        "account_name": "bjznbbo",
+        "account_password": "QAZqaz123",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0.15,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3359,
+        "semname": "张莉",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 553,
+        "name": "玖珺",
+        "appid": "b44i5a12jmf1igy4tnemnp14i9d96wnv",
+        "account_type": 110107,
+        "account_name": "Baidu-无线-玖珺Ff2165396",
+        "account_password": "AAbb001",
+        "account_appid": "notoken",
+        "account_status": 2,
+        "fd_rate": 0.055,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3228,
+        "semname": "陈岩",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 298,
+        "name": "畅读书城-神马",
+        "appid": "cy5hp16m2jmw2rt78vu545cditbhhzrj",
+        "account_type": 110201,
+        "account_name": "changdusc",
+        "account_password": "QAZqaz123",
+        "account_appid": "b1718341-7205-4ae3-ae9e-b6b7fe05a9ff",
+        "account_status": 2,
+        "fd_rate": 0.29,
+        "view_type": 120001,
+        "api_count": 499885,
+        "auto": "on",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3790,
+        "name": "单身交友",
+        "appid": "9bf95ca025b140ca95782e98d0bcd36d",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道av2162292",
+        "account_password": "QAZqaz1234",
+        "account_appid": "432c013ad48b70f0e0c11022f5ca6e9c",
+        "account_status": 2,
+        "fd_rate": 0.5,
+        "view_type": 120001,
+        "api_count": 34138,
+        "auto": "off",
+        "userid": 3228,
+        "semname": "陈岩",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3930,
+        "name": "美团2",
+        "appid": "c5b781a3230c4b0d81e9024533a76bc9",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bd-智道gu2162292",
+        "account_password": "Qa1234  ",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0.31,
+        "view_type": 120001,
+        "api_count": 34528,
+        "auto": "off",
+        "userid": 3924,
+        "semname": "胡冰霞",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 864,
+        "name": "简单借款",
+        "appid": "cx2hegfpnr6odns7h8r5rvn29j9vcti7",
+        "account_type": 110201,
+        "account_name": "心向076",
+        "account_password": "1q2w3e4r",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0.3,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 879,
+        "name": "美团备用",
+        "appid": "f58iukunmp13cbo9sknd7eewmi8cmlp2",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智投aq2160884",
+        "account_password": "QAZqaz123",
+        "account_appid": "9ccfd7d14094596c7cbd7f99d203d723",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": 34997,
+        "auto": "off",
+        "userid": 3924,
+        "semname": "胡冰霞",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 4036,
+        "name": "联泓",
+        "appid": "ZhlCDhegteWBMUtrVLVuqLHvsOHkbNWj",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-联泓2165235",
+        "account_password": "Qa1234",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": null,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 370,
+        "name": "北京服务您",
+        "appid": "rtreqi1gn9rgrkapip4hiwwmiuz8kf5n",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道hq2162292 ",
+        "account_password": "Qa1234",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0.41,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 451,
+        "semname": "张玉杰",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 4005,
+        "name": "百度外卖",
+        "appid": "gwfZacWoPtehGwlhQMUoieddSibinnxP",
+        "account_type": 110101,
+        "account_name": "Baidu-DSP智道m2162577",
+        "account_password": "QAZqaz1234",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": null,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3939,
+        "name": "搜狗地图",
+        "appid": "YAcrOAOCdtJMlgwPxClOUeqZwgkYkhkT",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道u2162292",
+        "account_password": "Hzld2017fff",
+        "account_appid": "",
+        "account_status": 2,
+        "fd_rate": 0.41,
+        "view_type": 120001,
+        "api_count": null,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 882,
+        "name": "水晶直播",
+        "appid": "dnb61i6t73e79n3r31nnhlg14it7m67i",
+        "account_type": 110201,
+        "account_name": "bjznbba",
+        "account_password": "QAZqaz123",
+        "account_appid": "undefined",
+        "account_status": 2,
+        "fd_rate": 0,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3360,
+        "semname": "许恩楼",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 554,
+        "name": "玖珺",
+        "appid": "xnt6fs42jt89l9vuijw6ogvi9s9r50by",
+        "account_type": 110107,
+        "account_name": "Baidu-无线-玖珺Fg2165396",
+        "account_password": "AAbb001",
+        "account_appid": "notoken",
+        "account_status": 2,
+        "fd_rate": 0.055,
+        "view_type": 120001,
+        "api_count": 0,
+        "auto": "off",
+        "userid": 3102,
+        "semname": "刘鹏举",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    },
+    {
+        "huid": 3768,
+        "name": "同城聊",
+        "appid": "7ecae9c1828e4dd68e59069167e8c270",
+        "account_type": 110101,
+        "account_name": "Baidu-无线bc-智道cl2162292",
+        "account_password": "QAZqaz1234",
+        "account_appid": "e379d6e30357234138989208de840f50",
+        "account_status": 2,
+        "fd_rate": 0.3,
+        "view_type": 120001,
+        "api_count": 34440,
+        "auto": "off",
+        "userid": 3221,
+        "semname": "周雷雨",
+        "type": 100001,
+        "icon": "http://test.yushan.mobi//icon/icon.jpg"
+    }]
+const task_week = [{
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 0,
+    "rate": 0,
+    "monthDate": null,
+    "week": 5,
+    "startDate": 1495987200000,
+    "endDate": 1496160000000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 0,
+    "rate": 0,
+    "monthDate": null,
+    "week": 4,
+    "startDate": 1495382400000,
+    "endDate": 1495900800000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 133394.23,
+    "rate": 13.339423000000002,
+    "monthDate": null,
+    "week": 3,
+    "startDate": 1494777600000,
+    "endDate": 1495296000000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 359436.95,
+    "rate": 35.943695,
+    "monthDate": null,
+    "week": 2,
+    "startDate": 1494172800000,
+    "endDate": 1494691200000
+}, {
+    "semId": 3102,
+    "weekTask": 10000,
+    "offWeekTask": 116881.39,
+    "rate": 11.688139,
+    "monthDate": null,
+    "week": 1,
+    "startDate": 1493568000000,
+    "endDate": 1494086400000
+}]
+const Allzu = [[
+    {
+        "name": "刘鹏举",
+        "role_name": "admin",
+        "user_id": 3102,
+        "group_id": 156,
+        "role_id": 2
+    },
+    {
+        "name": "党卓娅",
+        "role_name": "user",
+        "user_id": 3127,
+        "group_id": 156,
+        "role_id": 3
+    }, {"name": "张玉杰", "role_name": "user", "user_id": 451, "group_id": 156, "role_id": 3}, {
+        "name": "唐思远",
+        "role_name": "user",
+        "user_id": 290,
+        "group_id": 156,
+        "role_id": 3
+    },
+    {"name": "李翔宇", "role_name": "user", "user_id": 3090, "group_id": 156, "role_id": 3}, {
+        "name": "胡冰霞",
+        "role_name": "user",
+        "user_id": 3924,
+        "group_id": 156,
+        "role_id": 3
+    },
+    {"name": "张瑞雪", "role_name": "user", "user_id": 3309, "group_id": 156, "role_id": 3}
+],
+    [{
+        "name": "祁文昊",
+        "role_name": "user",
+        "user_id": 364,
+        "group_id": 157,
+        "role_id": 3
+    }, {"name": "古小平", "role_name": "admin", "user_id": 3181, "group_id": 157, "role_id": 2}, {
+        "name": "张恩乾",
+        "role_name": "user",
+        "user_id": 3279,
+        "group_id": 157,
+        "role_id": 3
+    }],
+    [{"name": "张莉", "role_name": "user", "user_id": 3359, "group_id": 158, "role_id": 3}, {
+        "name": "许恩楼",
+        "role_name": "admin",
+        "user_id": 3360,
+        "group_id": 158,
+        "role_id": 2
+    }],
+    [{"name": "马刚", "role_name": "user", "user_id": 3175, "group_id": 233, "role_id": 3}, {
+        "name": "周雷雨",
+        "role_name": "user",
+        "user_id": 3221,
+        "group_id": 233,
+        "role_id": 3
+    }, {"name": "陈岩", "role_name": "admin", "user_id": 3228, "group_id": 233, "role_id": 2}, {
+        "name": "李金茹",
+        "role_name": "user",
+        "user_id": 3088,
+        "group_id": 233,
+        "role_id": 3
+    }]];
+const getAllyonghu = [{
+    "id": 3132,
+    "name": "韩温玉",
+    "email": null,
+    "phone": null,
+    "password": "d798ee360d36c48da27b687bd0815392",
+    "real_name": "韩温玉",
+    "create_date": "2016-05-26T08:55:35.000Z",
+    "last_login_date": "2016-12-30T02:29:15.483Z",
+    "type": 100003
+}, {
+    "id": 312,
+    "name": "九星互动",
+    "email": "1@qq.com",
+    "phone": "13312345678",
+    "password": "fad27a6b35c51bbfff6d8fbe34c4f10d",
+    "real_name": "九星互动",
+    "create_date": null,
+    "last_login_date": null,
+    "type": 100004
+}, {
+    "id": 564,
+    "name": "饿了么",
+    "email": "elm@elm.com",
+    "phone": "13512345678",
+    "password": "d798ee360d36c48da27b687bd0815392",
+    "real_name": "饿了么",
+    "create_date": null,
+    "last_login_date": null,
+    "type": 100002
+}, {
+    "id": 1057,
+    "name": "hpstore",
+    "email": "hpstore@hp.com",
+    "phone": "18618600000",
+    "password": "a0eab08429a379f869ea6e0173957f7a",
+    "real_name": "hpstore",
+    "create_date": null,
+    "last_login_date": null,
+    "type": 100002
+}, {
+    "id": 3360,
+    "name": "许恩楼",
+    "email": null,
+    "phone": null,
+    "password": "d798ee360d36c48da27b687bd0815392",
+    "real_name": "许恩楼",
+    "create_date": "2016-12-26T06:12:57.649Z",
+    "last_login_date": null,
+    "type": 100001
+}];
+const getAllhu = [{
+    "huid": 198,
+    "name": "附近夜约爱",
+    "appid": "bb9654d9d4254d00a800371a62f4fcfe",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道fk2162292",
+    "account_password": "Qa1234",
+    "account_appid": "810b4801942171f356d7ad76839bb074",
+    "account_status": 0,
+    "fd_rate": 0.1,
     "view_type": 120001,
-    "api_count": 499885,
+    "api_count": 34096,
     "auto": "off",
     "userid": 3359,
     "semname": "张莉",
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3851,
-    "name": "蜻蜓2",
-    "appid": "2d5012514a7f4698955a07cb5cef9951",
-    "account_type": 110101,
-    "account_name": "sh倾听-vip",
-    "account_password": "QingTing@12.com",
-    "account_appid": "fbd5fcef394db91abf23f83375a74af3",
-    "account_status": 2,
-    "fd_rate": 0.41,
-    "view_type": 120001,
-    "api_count": 1715758,
-    "auto": "on",
-    "userid": 3309,
-    "semname": "张瑞雪",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi/Fvf1qIVgeBnAi6j3doqdXTGLMpEx"
-  },
-  {
-    "huid": 1007,
-    "name": "嗨起",
-    "appid": "6fj7tlj39pswogmemxl16h6w29r4k5n8",
-    "account_type": 110201,
-    "account_name": "bjznbbo",
-    "account_password": "QAZqaz123",
-    "account_appid": "undefined",
-    "account_status": 2,
-    "fd_rate": 0.15,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3359,
-    "semname": "张莉",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 553,
-    "name": "玖珺",
-    "appid": "b44i5a12jmf1igy4tnemnp14i9d96wnv",
-    "account_type": 110107,
-    "account_name": "Baidu-无线-玖珺Ff2165396",
-    "account_password": "AAbb001",
-    "account_appid": "notoken",
-    "account_status": 2,
-    "fd_rate": 0.055,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3228,
-    "semname": "陈岩",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 298,
-    "name": "畅读书城-神马",
-    "appid": "cy5hp16m2jmw2rt78vu545cditbhhzrj",
-    "account_type": 110201,
-    "account_name": "changdusc",
-    "account_password": "QAZqaz123",
-    "account_appid": "b1718341-7205-4ae3-ae9e-b6b7fe05a9ff",
-    "account_status": 2,
-    "fd_rate": 0.29,
-    "view_type": 120001,
-    "api_count": 499885,
-    "auto": "on",
-    "userid": 3360,
-    "semname": "许恩楼",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3790,
-    "name": "单身交友",
-    "appid": "9bf95ca025b140ca95782e98d0bcd36d",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道av2162292",
-    "account_password": "QAZqaz1234",
-    "account_appid": "432c013ad48b70f0e0c11022f5ca6e9c",
-    "account_status": 2,
-    "fd_rate": 0.5,
-    "view_type": 120001,
-    "api_count": 34138,
-    "auto": "off",
-    "userid": 3228,
-    "semname": "陈岩",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3930,
-    "name": "美团2",
-    "appid": "c5b781a3230c4b0d81e9024533a76bc9",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bd-智道gu2162292",
-    "account_password": "Qa1234  ",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0.31,
-    "view_type": 120001,
-    "api_count": 34528,
-    "auto": "off",
-    "userid": 3924,
-    "semname": "胡冰霞",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 864,
-    "name": "简单借款",
-    "appid": "cx2hegfpnr6odns7h8r5rvn29j9vcti7",
-    "account_type": 110201,
-    "account_name": "心向076",
-    "account_password": "1q2w3e4r",
-    "account_appid": "undefined",
-    "account_status": 2,
-    "fd_rate": 0.3,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3360,
-    "semname": "许恩楼",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 879,
-    "name": "美团备用",
-    "appid": "f58iukunmp13cbo9sknd7eewmi8cmlp2",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智投aq2160884",
-    "account_password": "QAZqaz123",
-    "account_appid": "9ccfd7d14094596c7cbd7f99d203d723",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": 34997,
-    "auto": "off",
-    "userid": 3924,
-    "semname": "胡冰霞",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 4036,
-    "name": "联泓",
-    "appid": "ZhlCDhegteWBMUtrVLVuqLHvsOHkbNWj",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-联泓2165235",
-    "account_password": "Qa1234",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": null,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 370,
-    "name": "北京服务您",
-    "appid": "rtreqi1gn9rgrkapip4hiwwmiuz8kf5n",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道hq2162292 ",
+}, {
+    "huid": 911,
+    "name": "Baidu-无线DSP智投as2161077",
+    "appid": "t971jchl8rszwmypktqsq0k9abojtkka",
+    "account_type": 110104,
+    "account_name": "Baidu-无线DSP智投as2161077",
     "account_password": "Qa1234",
     "account_appid": "undefined",
-    "account_status": 2,
-    "fd_rate": 0.41,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 451,
-    "semname": "张玉杰",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 4005,
-    "name": "百度外卖",
-    "appid": "gwfZacWoPtehGwlhQMUoieddSibinnxP",
-    "account_type": 110101,
-    "account_name": "Baidu-DSP智道m2162577",
-    "account_password": "QAZqaz1234",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0,
-    "view_type": 120001,
-    "api_count": null,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3939,
-    "name": "搜狗地图",
-    "appid": "YAcrOAOCdtJMlgwPxClOUeqZwgkYkhkT",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道u2162292",
-    "account_password": "Hzld2017fff",
-    "account_appid": "",
-    "account_status": 2,
-    "fd_rate": 0.41,
-    "view_type": 120001,
-    "api_count": null,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 882,
-    "name": "水晶直播",
-    "appid": "dnb61i6t73e79n3r31nnhlg14it7m67i",
-    "account_type": 110201,
-    "account_name": "bjznbba",
-    "account_password": "QAZqaz123",
-    "account_appid": "undefined",
-    "account_status": 2,
+    "account_status": 0,
     "fd_rate": 0,
     "view_type": 120001,
     "api_count": 0,
-    "auto": "off",
-    "userid": 3360,
-    "semname": "许恩楼",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 554,
-    "name": "玖珺",
-    "appid": "xnt6fs42jt89l9vuijw6ogvi9s9r50by",
-    "account_type": 110107,
-    "account_name": "Baidu-无线-玖珺Fg2165396",
-    "account_password": "AAbb001",
-    "account_appid": "notoken",
-    "account_status": 2,
-    "fd_rate": 0.055,
-    "view_type": 120001,
-    "api_count": 0,
-    "auto": "off",
-    "userid": 3102,
-    "semname": "刘鹏举",
-    "type": 100001,
-    "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  },
-  {
-    "huid": 3768,
-    "name": "同城聊",
-    "appid": "7ecae9c1828e4dd68e59069167e8c270",
-    "account_type": 110101,
-    "account_name": "Baidu-无线bc-智道cl2162292",
-    "account_password": "QAZqaz1234",
-    "account_appid": "e379d6e30357234138989208de840f50",
-    "account_status": 2,
-    "fd_rate": 0.3,
-    "view_type": 120001,
-    "api_count": 34440,
     "auto": "off",
     "userid": 3221,
     "semname": "周雷雨",
     "type": 100001,
     "icon": "http://test.yushan.mobi//icon/icon.jpg"
-  }]
-const wudan=[{
-  "adgroupName": "20170423_个人住房公积金查询",
-  "campaignName": "昆明_iOS_公积金查询",
-  "view_total": 172,
-  "click_total": 18,
-  "cost_total": 13.35
-},
-  {
-    "adgroupName": "20170423_住房基金查询",
-    "campaignName": "成都_android_公积金查询",
-    "view_total": 3,
-    "click_total": 2,
-    "cost_total": 1.09
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "南京_android_公积金查询",
-    "view_total": 21,
-    "click_total": 1,
-    "cost_total": 0.33
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "南京_android_公积金查询",
-    "view_total": 31,
-    "click_total": 3,
-    "cost_total": 1.67
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "南昌_android_公积金查询",
-    "view_total": 16,
-    "click_total": 1,
-    "cost_total": 0.57
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "佛山_android_公积金查询",
-    "view_total": 160,
-    "click_total": 13,
-    "cost_total": 7.11
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "佛山_android_公积金查询",
-    "view_total": 4,
-    "click_total": 1,
-    "cost_total": 0.56
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "南昌_iOS_公积金查询",
-    "view_total": 6,
-    "click_total": 1,
-    "cost_total": 0.86
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "西安_iOS_公积金查询",
-    "view_total": 103,
-    "click_total": 24,
-    "cost_total": 17.98
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "九江_android_公积金查询",
-    "view_total": 108,
-    "click_total": 10,
-    "cost_total": 5.46
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "吉林_iOS_公积金查询",
-    "view_total": 376,
-    "click_total": 32,
-    "cost_total": 24.19
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "济南_android_公积金查询",
-    "view_total": 22,
-    "click_total": 5,
-    "cost_total": 2.83
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "青岛_iOS_公积金查询",
-    "view_total": 20,
-    "click_total": 3,
-    "cost_total": 2.14
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "郑州_android_公积金查询",
-    "view_total": 66,
-    "click_total": 7,
-    "cost_total": 3.74
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "常德_iOS_公积金查询",
-    "view_total": 95,
-    "click_total": 18,
-    "cost_total": 14.32
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "宁波_iOS_公积金查询",
-    "view_total": 159,
-    "click_total": 25,
-    "cost_total": 18.81
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "北京_iOS_公积金查询",
-    "view_total": 295,
-    "click_total": 38,
-    "cost_total": 28.12
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "南通_iOS_公积金查询",
-    "view_total": 64,
-    "click_total": 12,
-    "cost_total": 8.69
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "桂林_iOS_公积金查询",
-    "view_total": 27,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人住房公积金",
-    "campaignName": "南京_android_公积金查询",
-    "view_total": 1,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "临沂_android_公积金查询",
-    "view_total": 1,
-    "click_total": 1,
-    "cost_total": 0.58
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "东莞_android_公积金查询",
-    "view_total": 2,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "济宁_iOS_公积金查询",
-    "view_total": 138,
-    "click_total": 34,
-    "cost_total": 23.82
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "南京_iOS_公积金查询",
-    "view_total": 4,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "福州_android_公积金查询",
-    "view_total": 2,
-    "click_total": 1,
-    "cost_total": 0.49
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "德州_android_公积金查询",
-    "view_total": 23,
-    "click_total": 7,
-    "cost_total": 3.55
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "昆明_android_公积金查询",
-    "view_total": 1,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "吉林_iOS_公积金查询",
-    "view_total": 522,
-    "click_total": 61,
-    "cost_total": 43.46
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "南宁_android_公积金查询",
-    "view_total": 39,
-    "click_total": 7,
-    "cost_total": 3.7
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "上海_iOS_公积金查询",
-    "view_total": 690,
-    "click_total": 132,
-    "cost_total": 93.17
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "哈尔滨_iOS_公积金查询",
-    "view_total": 3,
-    "click_total": 2,
-    "cost_total": 1.24
-  },
-  {
-    "adgroupName": "20170423_住房基金查询",
-    "campaignName": "上海_iOS_公积金查询",
-    "view_total": 3,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "昆明_iOS_公积金查询",
-    "view_total": 6,
-    "click_total": 3,
-    "cost_total": 2.39
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "无锡_android_公积金查询",
-    "view_total": 164,
-    "click_total": 5,
-    "cost_total": 2.66
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "朝阳_iOS_公积金查询",
-    "view_total": 75,
-    "click_total": 11,
-    "cost_total": 8.75
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "东营_iOS_公积金查询",
-    "view_total": 16,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "合肥_iOS_公积金查询",
-    "view_total": 250,
-    "click_total": 38,
-    "cost_total": 28.8
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "东营_iOS_公积金查询",
-    "view_total": 141,
-    "click_total": 12,
-    "cost_total": 8.33
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "东莞_android_公积金查询",
-    "view_total": 95,
-    "click_total": 5,
-    "cost_total": 2.89
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "其他_android_公积金查询",
-    "view_total": 7888,
-    "click_total": 1237,
-    "cost_total": 654.56
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "广州_android_公积金查询",
-    "view_total": 264,
-    "click_total": 33,
-    "cost_total": 18.49
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "福州_android_公积金查询",
-    "view_total": 36,
-    "click_total": 4,
-    "cost_total": 2.24
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "郑州_android_公积金查询",
-    "view_total": 168,
-    "click_total": 32,
-    "cost_total": 15.37
-  },
-  {
-    "adgroupName": "公积金查询",
-    "campaignName": "北京_iOS_公积金查询",
-    "view_total": 105,
-    "click_total": 19,
-    "cost_total": 14.71
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "无锡_iOS_公积金查询",
-    "view_total": 8,
-    "click_total": 1,
-    "cost_total": 0.85
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "南宁_iOS_公积金查询",
-    "view_total": 128,
-    "click_total": 27,
-    "cost_total": 19.98
-  },
-  {
-    "adgroupName": "20170423_住房公积金个人账户",
-    "campaignName": "济宁_iOS_公积金查询",
-    "view_total": 88,
-    "click_total": 28,
-    "cost_total": 21.1
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "南通_android_公积金查询",
-    "view_total": 108,
-    "click_total": 25,
-    "cost_total": 13.29
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "宁波_iOS_公积金查询",
-    "view_total": 44,
-    "click_total": 3,
-    "cost_total": 2.66
-  },
-  {
-    "adgroupName": "20170423_住房基金查询",
-    "campaignName": "惠州_iOS_公积金查询",
-    "view_total": 4,
-    "click_total": 1,
-    "cost_total": 0.76
-  },
-  {
-    "adgroupName": "20170423_个人住房公积金查询",
-    "campaignName": "邯郸_iOS_公积金查询",
-    "view_total": 44,
-    "click_total": 5,
-    "cost_total": 3.88
-  },
-  {
-    "adgroupName": "20170423_公积金网站",
-    "campaignName": "吉林_android_公积金查询",
-    "view_total": 32,
-    "click_total": 1,
-    "cost_total": 0.62
-  },
-  {
-    "adgroupName": "个人住房公积金",
-    "campaignName": "大连_iOS_公积金查询",
-    "view_total": 8,
-    "click_total": 1,
-    "cost_total": 0.76
-  },
-  {
-    "adgroupName": "20170423_其他",
-    "campaignName": "哈尔滨_android_公积金查询",
-    "view_total": 348,
-    "click_total": 19,
-    "cost_total": 10.19
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "南通_android_公积金查询",
-    "view_total": 2,
-    "click_total": 1,
-    "cost_total": 0.55
-  },
-  {
-    "adgroupName": "个人公积金余额查询",
-    "campaignName": "长春_android_公积金查询",
-    "view_total": 6,
-    "click_total": 0,
-    "cost_total": 0
-  },
-  {
-    "adgroupName": "个人住房公积金",
-    "campaignName": "深圳_iOS_公积金查询",
-    "view_total": 51,
-    "click_total": 5,
-    "cost_total": 4.32
-  },
-  {
-    "adgroupName": "20170423_身份证查公积金",
-    "campaignName": "武汉_iOS_公积金查询",
-    "view_total": 9,
-    "click_total": 1,
-    "cost_total": 0.79
-  },
-  {
-    "adgroupName": "20170423_个人公积金查询",
-    "campaignName": "沈阳_iOS_公积金查询",
-    "view_total": 70,
-    "click_total": 3,
-    "cost_total": 2.13
-  },
-  {
-    "adgroupName": "20170423_公积金查询",
-    "campaignName": "朝阳_android_公积金查询",
-    "view_total": 5,
-    "click_total": 3,
-    "cost_total": 1.73
-  }]
-const paramdata= [
-    {
-        "keyword": "货拉拉收费标准",
-        "keyword_id": "60927464610",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 16.05,
-        "view": 49,
-        "click": 8,
-        "cpd": "3.21",
-        "max_price": "15",
-        "mubiao_cpd": "2"
+}, {
+    "huid": 4058,
+    "name": "战旗tv",
+    "appid": "46e40d4f45f8496db2615c260127ef1a",
+    "account_type": 110201,
+    "account_name": "北京智道未来网络科技",
+    "account_password": "shenma1019",
+    "account_appid": "ec8dcfae-e922-4f78-b21e-508abc3ba900",
+    "account_status": 0,
+    "fd_rate": 0.25,
+    "view_type": 120001,
+    "api_count": 0,
+    "auto": "off",
+    "userid": 3359,
+    "semname": "张莉",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+}, {
+    "huid": 3951,
+    "name": "一元购",
+    "appid": "408f806275614be68879fdac2f8c2c41",
+    "account_type": 110101,
+    "account_name": "Baidu-无线bc-智道ct2162292",
+    "account_password": "QWEewq696",
+    "account_appid": "",
+    "account_status": 0,
+    "fd_rate": 0.47,
+    "view_type": 120001,
+    "api_count": null,
+    "auto": "off",
+    "userid": 3102,
+    "semname": "刘鹏举",
+    "type": 100001,
+    "icon": "http://test.yushan.mobi//icon/icon.jpg"
+}];
+const grtallkehu = {
+    "18": {
+        "xinxi": {
+            "id": 18,
+            "name": "树明",
+            "email": "1@qq.com",
+            "phone": "13312345678",
+            "create_date": "2017-03-10T09:02:45.000Z"
+        },
+        "zhanghus": [
+            {
+                "huname": "成人社交",
+                "type": 100004,
+                "huid": 3978,
+                "semname": "周雷雨"
+            },
+            {
+                "huname": "夜夜约爱",
+                "type": 100004,
+                "huid": 3979,
+                "semname": "李金茹",
+                "create_date": "2017-03-10T09:02:45.000Z"
+            },
+        ]
     },
-    {
-        "keyword": "同城货运收费",
-        "keyword_id": "60927464592",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 2,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
+    "17": {
+        "xinxi": {
+            "id": 18,
+            "name": "树明",
+            "email": "1@qq.com",
+            "phone": "13312345678",
+            "create_date": "2017-03-10T09:02:45.000Z"
+        },
+        "zhanghus": [
+            {
+                "huname": "成人社交",
+                "type": 100004,
+                "huid": 3978,
+                "semname": "周雷雨"
+            },
+            {
+                "huname": "夜夜约爱",
+                "type": 100004,
+                "huid": 3979,
+                "semname": "李金茹",
+                "create_date": "2017-03-10T09:02:45.000Z"
+            },
+        ]
     },
+}
+const getcheck = [
+    {"id": 4, "checkId": 4, "checkName": "着落页"},
+    {"id": 5, "checkId": 5, "checkName": "包链接"},
     {
-        "keyword": "小型货车出租价格",
-        "keyword_id": "60927464481",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
+        "id": 3,
+        "checkId": 3,
+        "checkName": "关键词"
     },
-    {
-        "keyword": "货车出租价格",
-        "keyword_id": "60927464619",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
+    {"id": 2, "checkId": 2, "checkName": "LOGO检查"}, {"id": 1, "checkId": 1, "checkName": "版权信息"}, {
+        "id": 6,
+        "checkId": 6,
+        "checkName": "跳转检查"
     },
-    {
-        "keyword": "钢琴搬运价格",
-        "keyword_id": "60927464472",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "搬家收费",
-        "keyword_id": "60927464490",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
-    },
-    {
-        "keyword": "搬家公司收费",
-        "keyword_id": "60927464463",
-        "plan_id": "74223317",
-        "unit_id": "2469984510",
-        "plan_name": "sem19-南京",
-        "unit_name": "价格",
-        "cost": 0,
-        "view": 1,
-        "click": 0,
-        "cpd": 0,
-        "max_price": "15",
-        "mubiao_cpd": "2"
+    {"id": 7, "checkId": 7, "checkName": "域名检查"}]
+const history = {
+    "data": {
+        "checkStatuses": [{
+            "id": 36566137,
+            "checkId": 4,
+            "checkValue": 1,
+            "checkName": "着落页",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566138,
+            "checkId": 5,
+            "checkValue": 1,
+            "checkName": "包链接",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566139,
+            "checkId": 3,
+            "checkValue": 0,
+            "checkName": "关键词",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566140,
+            "checkId": 2,
+            "checkValue": 1,
+            "checkName": "LOGO检查",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566141,
+            "checkId": 1,
+            "checkValue": 1,
+            "checkName": "版权信息",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {
+            "id": 36566142,
+            "checkId": 6,
+            "checkValue": 1,
+            "checkName": "跳转检查",
+            "checkBak": "无",
+            "date": 1495615282587
+        }, {"id": 36566143, "checkId": 7, "checkValue": 1, "checkName": "域名检查", "checkBak": "无", "date": 1495615282587}]
+    }
+}
+const getmtask = {
+    "data": [{"semId": 3102, "monthTask": 50000, "monthOffTask": 0, "rate": 0, "monthDate": "2017-07"}, {
+        "semId": 3102,
+        "monthTask": 50000,
+        "monthOffTask": 0,
+        "rate": 0,
+        "monthDate": "2017-06"
+    }, {
+        "semId": 3102,
+        "monthTask": 50000,
+        "monthOffTask": 856502.52,
+        "rate": 17.130050400000002,
+        "monthDate": "2017-05"
+    }, {
+        "semId": 3102,
+        "monthTask": 50000,
+        "monthOffTask": 807013.35,
+        "rate": 16.140266999999998,
+        "monthDate": "2017-04"
+    }, {"semId": 3102, "monthTask": 0, "monthOffTask": 513963.02, "rate": 0, "monthDate": "2017-03"}, {
+        "semId": 3102,
+        "monthTask": 100000,
+        "monthOffTask": 397196.68,
+        "rate": 3.9719668,
+        "monthDate": "2017-02"
+    }, {
+        "semId": 3102,
+        "monthTask": 60000,
+        "monthOffTask": 350963.72,
+        "rate": 5.849395333333333,
+        "monthDate": "2017-01"
     }]
 const paramkey1=[{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 10:35:45","cost":"0","view":"5","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 10:45:43","cost":"0","view":"5","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 11:35:44","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"11.1"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 11:45:46","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"18.2"},{"keyword":"货拉拉收费标准","price":3.69,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 12:35:48","cost":"0","view":"2","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.03,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 12:45:54","cost":"0","view":"2","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.03,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 13:35:45","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"20.0"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 13:45:48","cost":"0","view":"1","click":"0","download_total":"0","cpd":0,"cpc_cpd":0,"first_rate":0,"button_view_rate":"23.5"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 14:35:48","cost":"1","view":"2","click":"1","download_total":"1","cpd":"2.2","cpc_cpd":"2.2","first_rate":0,"button_view_rate":"28.6"},{"keyword":"货拉拉收费标准","price":4.4,"max_price":"15","mubiao_cpd":"2","date":"2017-05-20 14:45:52","cost":"1","view":"2","click":"1","download_total":"1","cpd":"2.2","cpc_cpd":"2.2","first_rate":0,"button_view_rate":"28.6"}]
 const paramkey2=[{"date":"2017-05-16T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":8.43,"view":26,"click":4,"cpd":"4.21","download_total":2,"cpc_cpd":0.5285,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0},{"date":"2017-05-17T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":0,"view":29,"click":0,"cpd":0,"download_total":0,"cpc_cpd":null,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0},{"date":"2017-05-18T16:00:00.000Z","keyword":"货拉拉收费标准","keyword_id":"60927464610","cost":16.05,"view":49,"click":8,"cpd":"3.21","download_total":5,"cpc_cpd":0.625,"max_price":"15","mubiao_cpd":"2","first_rate":0,"button_view_rate":0}];
@@ -2540,16 +3256,16 @@ const ribao=[[{"date":"2017-05-23","cost":"18400.61","truecost":"18400.61","down
             }, 500);
         })
     },
-  keywordAll: config => {
-    const userId = config.params;
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([200, {
-          data: key
-        }]);
-      }, 500);
-    })
-  },
+    keywordAll: config => {
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: key
+                }]);
+            }, 500);
+        })
+    },
     landpageAll: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
@@ -2560,87 +3276,89 @@ const ribao=[[{"date":"2017-05-23","cost":"18400.61","truecost":"18400.61","down
             }, 500);
         })
     },
-      hu: config => {
+
+    hu: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data: hun
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: hun
+                }]);
+            }, 500);
         })
-      },
-  illegalAll: config => {
-    const userId = config.params;
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([200, {
-          data: illegal
-        }]);
-      }, 500);
-    })
-  },
-      danyuan: config => {
+    },
+    illegalAll: config => {
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:wudan
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: illegal
+                }]);
+            }, 500);
         })
-      },
-        param: config => {
+    },
+    grtsem: config => {    //获取全部sem
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:paramdata
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: Allzu
+                }]);
+            }, 500);
         })
-      },
-        paramkey1: config => {
-            const userId = config.params;
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve([200, {
-                        data:paramkey1
-                    }]);
-                }, 500);
-            })
-        },
-        paramkey2: config => {
-            const userId = config.params;
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve([200, {
-                        data:paramkey2
-                    }]);
-                }, 500);
-            })
-        },
-        accountall: config => {
-            const userId = config.params;
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve([200, {
-                        data:all
-                    }]);
-                }, 500);
-            })
-        },
-      twoweek: config => {
+    },
+    //type:100004
+    grtallkehu: config => {   //客户管理
         const userId = config.params;
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([200, {
-              data:twow
-            }]);
-          }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: grtallkehu
+                }]);
+            }, 500);
         })
-      },
-      getweekcost: config => {
+    },
+    getAllyonghu: config => {  //用户管理
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: getAllyonghu
+                }]);
+            }, 500);
+        })
+    },
+    getcheck: config => {    //每日任务-每日检查
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: getcheck
+                }]);
+            }, 500);
+        })
+    },
+    getcheckhistory: config => {  //日任务历史记录
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: history
+                }]);
+            }, 500);
+        })
+    },
+    getweek: config => {   ////月任务-每周任务
+        const userId = config.params;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([200, {
+                    data: task_week
+                }]);
+            }, 500);
+        })
+    },
+    getmtask: config => {   //月任务-月任务
         const userId = config.params;
         return new Promise((resolve, reject) => {
           setTimeout(() => {
@@ -2688,7 +3406,12 @@ const ribao=[[{"date":"2017-05-23","cost":"18400.61","truecost":"18400.61","down
               data:ribao
             }]);
           }, 500);
+            setTimeout(() => {
+                resolve([200, {
+                    data: getmtask
+                }]);
+            }, 500);
         })
-      },
+    },
 };
 
