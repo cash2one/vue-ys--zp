@@ -15,6 +15,17 @@ mock.onGet('/landpage/all').reply(accountApi.landpageAll);
 mock.onGet('/black/zhcheck').reply(accountApi.illegalAll);
 mock.onGet('/keywords/allwords').reply(accountApi.keywordAll);
 mock.onGet('/sem/getallhu').reply(accountApi.hu);
+mock.onGet('/unit/getunit').reply(accountApi.danyuan);
+mock.onGet('/apa/kwrealdata').reply(accountApi.param);
+mock.onGet('/apa/onekwdata').reply(accountApi.paramkey1);
+mock.onGet('/apa/onekwdailydata').reply(accountApi.paramkey2);
+mock.onGet('/account/all').reply(accountApi.accountall);
+mock.onGet('/account/twoweek').reply(accountApi.twoweek);
+mock.onGet('/account/getweekcost').reply(accountApi.getweekcost);
+mock.onGet('/apa/planvs').reply(accountApi.plan);
+mock.onGet('/apa/plandata').reply(accountApi.mondata);
+mock.onGet('/apa/getplan').reply(accountApi.tiaojiaplan);
+mock.onGet('/out/ribaoview').reply(accountApi.ribao);
 //每日检查 > 每日检查
 mock.onGet('/sem/getcheck').reply(accountApi.getcheck);
 //每日检查 > 历史记录

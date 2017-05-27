@@ -1,5 +1,5 @@
 <template>
-    <el-row style="padding-right: 15px;padding-left: 15px;margin-top: 30px;">
+    <el-row id='newri' style="padding-right: 15px;padding-left: 15px;margin-top: 30px;">
         <el-row class="row">
             <div class="col-xs-12" style="padding: 0;">
                 <el-col :span="14" class="col-xs-7" style="padding: 0;">
@@ -7,15 +7,13 @@
                     <el-date-picker
                             v-model="value1"
                             type="date"
-                            placeholder="选择日期"
-                    >
+                            placeholder="选择日期">
                     </el-date-picker>
                     结束
                     <el-date-picker
                             v-model="value2"
                             type="date"
-                            placeholder="选择日期"
-                    >
+                            placeholder="选择日期">
                     </el-date-picker>
                     <button class="keep">查看</button>
                 </el-col>
@@ -73,9 +71,9 @@
                         </el-col>
                     </div>
                     <div class="col-xs-12 drop1" style="padding-left: 15px;">
-                        <el-dropdown :hide-on-click="false" menu-align="start">
+                        <!--<el-dropdown :hide-on-click="false" menu-align="start">
                               <span class="el-dropdown-link">
-                                请选择(最多五个)<i class="el-icon-caret-bottom el-icon--right"></i>
+                                请选择(最多五个)<i class="el-icon-caret-bottom el-icon&#45;&#45;right"></i>
                               </span>
                                 <el-dropdown-menu slot="dropdown">
                                     <el-dropdown-item>
@@ -134,73 +132,224 @@
                                         </label>
                                     </el-dropdown-item>
                                 </el-dropdown-menu>
-                        </el-dropdown>
+                        </el-dropdown>-->
                     </div>
                     <div class="col-xs-12" style="margin-top: 30px;padding-bottom: 30px;" id="tb">
                         <div id="users">
                             <el-table
                                     :data="tableData3"
-                                    height="350"
+                                    height="400"
                                     border
                                     stripe
-                                    :default-sort = "{prop: 'keyword', order: 'descending'}"
                                     style="width: 100%">
                                 <el-table-column
-                                        prop="keyword"
-                                        sortable
-                                        label="关键词">
+                                        prop="date"
+                                        fixed
+                                        label="日期"
+                                        width="150">
                                 </el-table-column>
                                 <el-table-column
                                         class="a2"
-                                        sortable
-                                        label="计划-单元">
-                                    <template scope="scope">
-                                        <el-col :span='24' class="cost1" style="font-weight:bold;">
-                                            {{ scope.row.plan_name }}-{{ scope.row.unit_name }}
-                                        </el-col>
-                                    </template>
+                                        prop="device"
+                                        fixed
+                                        label="平台"
+                                        width="150">
                                 </el-table-column>
                                 <el-table-column
                                         class="a2"
+                                        prop="view"
+                                        fixed
+                                        class-name="zhanxian"
+                                        label="展现量"
+                                        width="100">
+                                </el-table-column>
+                                <el-table-column label="总激活" class-name="keyword_id">
+                                    <el-table-column
+                                            prop="active_total"
+                                            label="量" class-name="keyword_id"
+                                            width="100">
+                                        <template scope="scope">
+                                            <div class="active_sum">
+                                                {{ scope.row.active_total }}
+                                            </div>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="率" class-name="keyword_id"
+                                            width="100">
+                                        <template scope="scope">
+                                            <div class="active_rate">
+                                                {{ scope.row.active_rate }}%
+                                            </div>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="激活" class-name="unit_id">
+                                    <el-table-column
+                                            label="H5" class-name="unit_id"
+                                            width="100">
+                                        <template scope="scope">
+                                            <div class="page_active">
+                                                {{ scope.row.lp_active }}%
+                                            </div>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="按钮" class-name="unit_id"
+                                            width="100">
+                                        <template scope="scope">
+                                            <div class="btn_active">
+                                                <span class="btn_active1" @click='btnS' data-type="text" style="color: #00b7ee;text-decoration: underline;cursor: pointer;">{{ scope.row.button_active }}</span>
+                                                <div class="upda">
+                                                    <input type="number" style="width: 100px;border-radius: 4px;border: 1px solid #eee;height: 30px;line-height: 30px;"placeholder="Num">
+                                                    <el-button style="padding: 3px 10px;vertical-align: middle;" @click="cancel">取消</el-button>
+                                                    <el-button type="primary" style="padding: 3px 10px;vertical-align: middle;" @click="cancel1(scope.row)">提交</el-button>
+                                                </div>
+
+                                            </div>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="成本" class-name="cost">
+                                    <el-table-column
+                                            label="激活" class-name="cost"
+                                            width="100">
+                                        <template scope="scope">
+                                            <span class="active_cb">{{ scope.row.active_chengben }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="真实激活" class-name="cost" width="100">
+                                        <template scope="scope">
+                                            <span class="active_true_rate">{{ scope.row.active_true_chengben }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="留存新购" class-name="liang">
+                                    <el-table-column
+                                            label="量" class-name="liang" width="100">
+                                        <template scope="scope">
+                                            <span class="liu_cun"><span class="liucun1" @click='btnS1' data-type="text" style="color: #00b7ee;text-decoration: underline;cursor: pointer;">{{ scope.row.liucun }}</span> </span>
+                                            <div class="upda">
+                                                <input type="number" style="width: 100px;border-radius: 4px;border: 1px solid #eee;height: 30px;line-height: 30px;"placeholder="Num">
+                                                <el-button style="padding: 3px 10px;vertical-align: middle;" @click="cancel">取消</el-button>
+                                                <el-button type="primary" class='tj2' style="padding: 3px 10px;vertical-align: middle;" @click="cancel2(scope.row)">提交</el-button>
+                                            </div>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="率" class-name="liang" width="100">
+                                        <template scope="scope">
+                                            <span class="liucun_rate">{{ scope.row.liucun_rate }}%</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="成本" class-name="liang" width="100">
+                                        <template scope="scope">
+                                            <span class="liucun_cb">{{ scope.row.liucun_chengben }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="点击" class-name="cpd">
+                                    <el-table-column
+                                            label="量" class-name="cpd" width="100">
+                                        <template scope="scope">
+                                            <span class="pv">{{ scope.row.pv }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="率" class-name="cpd" width="100">
+                                        <template scope="scope">
+                                            <span class="pv_rate">{{ scope.row.pv_rate }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="单价" class-name="cpd" width="100">
+                                        <template scope="scope">
+                                            <span class="pv_dan">{{ scope.row.click_price }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="按钮" class-name="bian">
+                                    <el-table-column
+                                            label="展现" class-name="bian" width="100">
+                                        <template scope="scope">
+                                            <span class="btn_view">{{ scope.row.btn_view }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="点击" class-name="bian" width="100">
+                                        <template scope="scope">
+                                            <span class="btn_pv">{{ scope.row.btn_pv }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="消费" class-name="bian" width="100">
+                                        <template scope="scope">
+                                            <span class="btn_cost">{{ scope.row.btn_cost }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="H5" class-name="bian1">
+                                    <el-table-column
+                                            label="点击" class-name="bian1" width="100">
+                                        <template scope="scope">
+                                            <span class="h5_pv">{{ scope.row.h5_pv }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="下载" class-name="bian1" width="100">
+                                        <template scope="scope">
+                                            <span class="h5_download_total">{{ scope.row.h5_download_total }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="消费" class-name="bian1" width="100">
+                                        <template scope="scope">
+                                            <span class="h5_cost">{{ scope.row.h5_cost }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="总下载" class-name="bian2">
+                                    <el-table-column
+                                            label="量" class-name="bian2" width="100">
+                                        <template scope="scope">
+                                            <span class="down_sum">{{ scope.row.download_total }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="率" class-name="bian2" width="100">
+                                        <template scope="scope">
+                                            <span>{{ scope.row.download_rate }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="成本" class-name="bian2" width="100">
+                                        <template scope="scope">
+                                            <span>{{ scope.row.download_chengben }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column label="账户" class-name="bian3">
+                                    <el-table-column
+                                            label="余额" class-name="bian3" width="100">
+                                        <template scope="scope">
+                                            <span class="some_remainder">{{ scope.row.balance }}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            label="消费" class-name="bian3" width="100">
+                                        <template scope="scope">
+                                            <span class="some_cost">{{ scope.row.cost }}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table-column>
+                                <el-table-column
                                         prop="keyword_id"
-                                        sortable
-                                        label="关键词ID">
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        prop="unit_id"
-                                        label="单元ID">
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        prop="cost"
-                                        sortable
-                                        label="昨日消费">
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="展现量/点击量/影响度">
+                                        class-name="bian4"
+                                        label="实际消费" width="100">
                                     <template scope="scope">
-                                        {{ scope.row.view }}/{{ scope.row.click }}/0
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="目标成本/当前成本">
-                                    <template scope="scope">
-                                        {{ scope.row.mubiao_cpd }}/{{ scope.row.cpd }}
-                                    </template>
-                                </el-table-column>
-                                <el-table-column
-                                        class="a2"
-                                        sortable
-                                        label="优化效果">
-                                    <template scope="scope">
-                                        <span class="label label-default" style="vertical-align: middle;background: #fff;color: #64cd64;border: 1px solid #64cd64;">AUTO</span>
-                                        <img src="../../assets/组-27@2x.png" style="vertical-align: middle;margin-left: 20px;cursor: pointer;" v-on:click="tunup(scope.row.keyword_id,scope.row.keyword)" class="chart" :data-keyid='scope.row.keyword_id' :data-keyname='scope.row.keyword' alt="">
+                                        <span class="acsum">{{ scope.row.truecost }}</span>
                                     </template>
                                 </el-table-column>
                             </el-table>
@@ -212,16 +361,68 @@
                 </div>
             </div>
         </el-row>
+        <div class="beizhaoaa">
+            <div class="changedaa">
+                <div class="col-xs-12">
+                    <el-col :span="24" class="col-xs-12">
+                        <el-col :span="8" class="col-xs-4" style="font-size: 15px;font-family: 'Microsoft YaHei';color: #3b4e61;margin-top:20px;">数据重载</el-col>
+                        <el-col :span="24" class="col-xs-12 shezhi-content">
+                            <el-col :span="6" class="col-xs-3" style="height: 30px;line-height: 30px;color: #3b4e61;font-size: 13px;">
+                                选择日期
+                            </el-col>
+                            <el-col :span="18" class="col-xs-9" style="padding:0;">
+                                <p style="height: 30px;margin-bottom: 10px;" class="datta clear">
+                                    <span class="nian">2017</span>
+                                    <span class="yue">
+                                     <span class="yu1">11</span>/<span class="ri1">11</span>
+                                 </span>
+                                </p>
+                                <div id="datepicker">
+
+                                </div>
+                            </el-col>
+                        </el-col>
+                        <div class="col-xs-12 shezhi-content">
+                            <el-col :span="12" class="col-xs-6 leff1" style="text-align: right;">
+                                <button class="ribao_qx">取消</button>
+                            </el-col>
+                            <el-col :span="12" class="col-xs-6">
+                                <button class="ribao_cz">重载</button>
+                            </el-col>
+                        </div>
+                    </el-col>
+                </div>
+            </div>
+        </div>
+        <div class="beizhaobb">
+            <div class="changedbb">
+                <div class="col-xs-12">
+                    <div class="col-xs-12">
+                        <el-col :span="8" class="col-xs-4" style="font-size: 15px;font-family: 'Microsoft YaHei';color: #3b4e61;margin-top:20px;">数据重载</el-col>
+                        <div class="col-xs-12 shezhi-content">
+                            <div class="col-xs-12" style="margin-bottom: 90px;margin-top:90px;border-bottom: 1px solid #eee;font-size: 15px;height: 30px;line-height: 30px;color: #cacfd7;text-align: center;">
+                                操作已提交，请三分钟后刷新页面查看
+                            </div>
+                        </div>
+                        <div class="col-xs-12 shezhi-content" style="text-align: center;">
+                            <button class="ribao_fh">返回日报</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </el-row>
 
 </template>
-<script>
+<script >
     /*eslint-disable */
     import { mapGetters } from 'vuex';
     import Vue from 'vue';
     //    import $ from 'jquery'
-    import { getParam } from 'api/account';
+    import { getribao } from 'api/account';
     const echarts = require('echarts/lib/echarts');
+    require('../../styles/jquery-ui.min.css');
+    require('../../vendor/jquery-ui.min');
     // 引入柱状图
     require('echarts/lib/chart/bar');
     require('echarts/lib/chart/line');
@@ -267,12 +468,29 @@
     let non=1;
     let all;
     let daten=getDateStr(-1);
+
+
+    function pos(date,type,active,jihuaid,all,device) {
+      utils.ajaxPost(apiUrl.getApiUrl('getP'), {
+        appid:currentAccount.appid,
+        date:date,
+        type:type,
+        active:active,
+        jihuaid:jihuaid,
+        active_all:all,
+        device:device,
+      }).done(function (data) {
+        console.log(data);
+      });
+    }
+
     export default {
         data() {
             return {
+               input: '',
                value1:getDateStr(-2),
                value2:getDateStr(-1),
-                tableData3:[]
+               tableData3:[]
             }
         },
         mounted(){
@@ -303,11 +521,66 @@
                 console.log(b)
             });
             $('.cz').click(function () {
+              $("#datepicker").datepicker({
+                  /* 区域化周名为中文 */
+                dayNamesMin : ["日", "一", "二", "三", "四", "五", "六"],
+                  /* 每周从周一开始 */
+                firstDay : 1,
+                  /* 区域化月名为中文习惯 */
+                monthNames : ["1月", "2月", "3月", "4月", "5月", "6月",
+                  "7月", "8月", "9月", "10月", "11月", "12月"],
+                  /* 月份显示在年后面 */
+                showMonthAfterYear : true,
+                  /* 年份后缀字符 */
+                yearSuffix : "年",
+                maxDate: new Date(),
+                showOtherMonths: true,
+                selectOtherMonths: false,
+                dateFormat:'yy-mm-dd',
+                onSelect: function(dateText, inst) {
+                  // $('.datta').text(dateText)
+                  daten=dateText;
+                  let data=dateText.split('-');
+                  $('.nian').text(data[0]);
+                  $('.yu1').text(data[1]);
+                  $('.ri1').text(data[2]);
+                }
+              });
                 $('.beizhaoaa').show();
             });
             $('.ribao_qx').click(function () {
                 $('.beizhaoaa').hide();
             });
+          function recon(cln){
+            let data=[];
+            if(cln==1){
+
+              for(let i=0;i<record.length;i++){
+                data.push(record[i]);
+              }
+            }else if(cln==4){
+              for(let i=0;i<record.length;i++){
+                if(record[i].device=='iOS+Android'){
+                  data.push(record[i]);
+                }
+              }
+            }else if(cln==3){
+              for(let i=0;i<record.length;i++){
+                if(record[i].device=='android'){
+                  data.push(record[i]);
+                }
+              }
+            }else if(cln==2){
+              for(let i=0;i<record.length;i++){
+                if(record[i].device=='ios'){
+                  data.push(record[i]);
+                }
+              }
+            }
+            flag=1;
+            console.log(data);
+            non=1;
+          }
             let n=1;
             $('.statu-start').eq(0).click(function () {
                 $(this).find('i').addClass('statu-end');
@@ -315,7 +588,8 @@
                 $('.statu-start').eq(2).find('i').removeClass('statu-end');
                 $('.statu-start').eq(3).find('i').removeClass('statu-end');
                 n=1;
-                recon(n)
+//              this.recon(n)
+              recon(n)
             });
             $('.statu-start').eq(1).click(function () {
                 $(this).find('i').addClass('statu-end');
@@ -323,7 +597,7 @@
                 $('.statu-start').eq(2).find('i').removeClass('statu-end');
                 $('.statu-start').eq(3).find('i').removeClass('statu-end');
                 n=2;
-                recon(n)
+              recon(n)
             });
             $('.statu-start').eq(2).click(function () {
                 $(this).find('i').addClass('statu-end');
@@ -331,7 +605,7 @@
                 $('.statu-start').eq(0).find('i').removeClass('statu-end');
                 $('.statu-start').eq(3).find('i').removeClass('statu-end');
                 n=3;
-                recon(n)
+              recon(n)
             });
             $('.statu-start').eq(3).click(function () {
                 $(this).find('i').addClass('statu-end');
@@ -339,7 +613,7 @@
                 $('.statu-start').eq(0).find('i').removeClass('statu-end');
                 $('.statu-start').eq(2).find('i').removeClass('statu-end');
                 n=4;
-                recon(n)
+              recon(n)
             });
             $('.ribao_cz').click(function () {
                 utils.ajax(apiUrl.getApiUrl('restribao'), {
@@ -386,103 +660,92 @@
                     sdate: $('.birthday1').val(),
                 })
             });
-            $(document).on('click', '.tijiao', function () {
-                /* if($(this).parents('th').attr('class').toString() == 'tou'){
-                 console.log('aaa')
-                 // if($(this).parents('th').find('a').attr('class').toString() == 'tou_liu'){
-
-                 $(this).parents('th').siblings('.lcl').text($(this).parent().siblings('.editable-input').find('input').val()+'率');
-                 $(this).parents('th').siblings('.liucb').text($(this).parent().siblings('.editable-input').find('input').val()+'成本');
-                 pos('',currentAccount.appid, '', '', '', 'all', '', false,$(this).parent().siblings('.editable-input').find('input').val(),'');
-
-                 // }
-                 }else{*/
-                if ($(this).parents('span').attr('class').toString() == 'liu_cun') {
-
-                    const $tr = $(this).parents('tr');
-                    const liucun = parseFloat($tr.find('.editable-input').find('input').val());
-                    const sum = parseFloat($tr.find('.active_sum').text());
-                    const xiaofei = parseFloat($tr.find('.acsum').text());
-
-                    pos($tr.find('.time').text(),'liucun',liucun,'','','');
-                    $tr.find('.liucun_rate').text(((liucun/sum) * 100) .toFixed(2)+ '%');
-                    $tr.find('.liucun_cb').text((xiaofei/liucun).toFixed(2));
-
-                } else if ($(this).parents('span').attr('class').toString() == 'page_active') {
-
-                } else if ($(this).parents('span').attr('class').toString() == 'btn_active') {
-                    const $tr1 = $(this).closest('tr');
-                    let device='';
-                    if($tr1.data('dec')=='iOS+Android'){
-                        device='all';
-                    }else if($tr1.data('dec')=='ios'){
-                        device='ios';
-                    }else if($tr1.data('dec')=='android'){
-                        device='android';
-                    }
-                    const btn = parseFloat($tr1.find('.editable-input').find('input').val());
-                    let a=parseInt($tr1.find('.page_active').text())+ parseInt($tr1.find('.editable-input').find('input').val());
-                    let b=(parseFloat($tr1.find('.acsum').text())/a).toFixed(2);
-                    let c=((a/parseFloat($tr1.find('.down_sum').text()))*100).toFixed(2)+"%";
-                    let d=((parseFloat($tr1.find('.liu_cun').find('a').text())/a)*100).toFixed(2)+"%";
-                    pos($tr1.find('.time').text(),'btn',btn,'','',device);
-                    $tr1.find('.active_sum').text(a);
-                    $tr1.find('.active_cb').text(b);
-                    $tr1.find('.active_rate').text(c);
-                    $tr1.find('.liucun_rate').text(d);
-
-                } else if ($(this).parents('span').attr('class').toString() == 're_point') {
-
-                } else if ($(this).parents('span').attr('class').toString() == 'shuoming') {
-                    const $tr1 = $(this).closest('tr');
-                    const btn = parseFloat($tr1.find('.editable-input').find('textarea').val());
-                    // pos($tr1.find('.time').text(),'btn',btn,'');
-
-                } else if ($(this).parents('span').attr('class').toString() == 'ji_pageactive') {
-                    const $tr2 = $(this).closest('li');
-                    let p = $(this).parents('p').attr('class');
-                    let sum=$('.ti').find('.'+p).find('.ji_pageactive1');
-                    let tol=0;
-                    for(let i=0;i<sum.length;i++){
-                        tol+=parseFloat(sum.eq(i).text());
-                    }
-                    tol=tol+parseInt($tr2.find('.editable-input').find('input').val())-parseFloat($(this).parents('.ji_pageactive').find('.ji_pageactive1').text());
-                    console.log(tol);
-                    const h5 = parseFloat($tr2.find('.editable-input').find('input').val());
-                    let a=parseInt($tr2.find('.ji_btnactive').text()) + parseInt($tr2.find('.editable-input').find('input').val());
-                    let b=(parseFloat($tr2.find('.ji_cost').text())/a).toFixed(2);
-                    let c=(parseFloat($tr2.find('.ji_pagecost').text())/parseFloat($tr2.find('.editable-input').find('input').val())).toFixed(2);
-                    pos($tr2.find('.date').text(),'h5',h5,$tr2.attr('title'),tol,'');
-                    $tr2.find('.ji_active').text(a);
-                    $tr2.find('.ji_activecb').text(b);
-                    $tr2.find('.ji_pageactivecb').text(c);
-                }else if ($(this).parents('span').attr('class').toString() == 'remark') {
-                    // pos('',currentAccount.appid, $(this).parent().siblings('.editable-input').find('textarea').val(), $(this).parents('td').siblings('.date').text(), '', 'plan', $(this).parents('td').siblings('.tui_jihua').text(), false,'','');
-
-                }
-                // }
-
-            });
-
         },
         methods:{
-            tunup:function (a,b) {
-//                window.open('/ai/paramKey?name='+b+'&id='+a);
-                this.$router.push({ path: '/ai/paramKey?name='+b+'&id='+a });
+          btnS:function (e) {
+            var el=e.target;
+            $(el).next().show();
+          },
+          btnS1:function (e) {
+            var el=e.target;
+            $(el).parent().next().show();
+          },
+          cancel:function (e) {
+            var el=e.target;
+            $(el).parents('.upda').hide();
+
+          },
+          cancel1:function (row) {
+            var el=event.target;
+            $(el).parents('.upda').hide();
+
+            let device='';
+            if(row.device=='iOS+Android'){
+              device='all';
+            }else if(row.device=='ios'){
+              device='ios';
+            }else if(row.device=='android'){
+              device='android';
             }
+            const btn = parseFloat($(el).parent().siblings('input').val());
+//            $(el).parents('.upda').siblings('.btn_active1').text(btn);
+            let a=parseInt(row.lp_active)+ btn;
+            let b=(parseFloat(row.truecost)/a).toFixed(2);
+            let c=((a/parseFloat(row.download_total))*100).toFixed(2);
+            let d=((parseFloat(row.liucun)/a)*100).toFixed(2);
+            pos(row.date,'btn',btn,'','',device);
+            this.$set(row,'button_active',btn);
+            this.$set(row,'active_total',a);
+            this.$set(row,'active_chengben',b);
+            this.$set(row,'active_rate',c);
+            this.$set(row,'liucun_rate',d);
+          },
+
+          cancel2:function (row) {
+//            console.log($(e).text());
+            var el=event.target;
+            $(el).parents('.upda').hide();
+            let liucun=parseFloat($(el).parent().siblings('input').val())
+//            $(el).parents('.upda').siblings('.liu_cun').find('.liucun1').text($(el).parent().siblings('input').val())
+            this.$set(row,'liucun',liucun);
+            const sum = parseFloat(row.active_total);
+            const xiaofei = parseFloat(row.truecost);
+            pos(row.date,'liucun',liucun,'','','');
+            this.$set(row,'liucun_rate',((liucun/sum) * 100) .toFixed(2));
+            this.$set(row,'liucun_chengben',(xiaofei/liucun).toFixed(2));
+          },
+
         },
         created:function(){
             var _self=this;
-            getParam({uid:111}).then(response => {
-                console.log(response);
-                this.tableData3=response.data;
+          let data=getDateStr(-1).split('-');
+          $('.nian').text(data[0]);
+          $('.yu1').text(data[1]);
+          $('.ri1').text(data[2]);
 
+            getribao({uid:111}).then(response => {
+                console.log(response);
+              all=response.data;
+              record=response.data[0];
+              // $('.zoukai').show();
+              for(var i=0;i<response.data[0].length;i++){
+                if(response.data[0][i].device=='all'){
+                  response.data[0][i].device='iOS+Android';
+                }
+
+              }
+              flag=1;
+              this.tableData3=response.data[0];
+//              tong();
 
             }).catch(err => {
                 this.$message.error(err);
 //                  _self.loading = false;
             });
 
+        },
+        ready:function(){
+            window.vm = this;
         }
     }
 
@@ -505,6 +768,18 @@
     }
     .el-table{
         font-size: 13px;
+    }
+    .upda{
+        display: none;
+        position: absolute;
+        border: 1px solid #eee;
+        left: 27px;
+        top: 12px;
+        width: 250px;
+        padding: 10px 15px;
+        background: #fff;
+        border-radius: 4px;
+        z-index: 1111;
     }
     html{
         background:#f5f7f9;
@@ -855,7 +1130,10 @@
     .table-condensed{
         background: #fff;
     }
-
+    .el-input__inner {
+        height: 30px !important;
+        line-height: 30px !important;
+    }
     .disabled { pointer-events: none;color: #ddd !important; }
     /*//////////////////////////////////////*/
 
