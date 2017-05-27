@@ -8,6 +8,175 @@ export function getAccountsByUserId(userId) {
     });
 }
 
+export function getWeekCost(userId) {
+  return fetch({
+    url: '/account/getweekcost',
+    method: 'get',
+    params: { userId }
+  });
+}
+
+export function getTwoWeekCost(userId) {
+  return fetch({
+    url: '/account/twoweek',
+    method: 'get',
+    params: { userId }
+  });
+}
+
+export function getNotice(userId) {
+  return fetch({
+    url: '/account/notice',
+    method: 'get',
+    params: { userId }
+  });
+}
+
+export function getAll(userId) {
+  return fetch({
+    url: '/account/all',
+    method: 'get',
+    params: { userId }
+  });
+}
+
+export function getDailyReport(userId) {
+  return fetch({
+    url: '/out/ribaoview',
+    method: 'get',
+    params: { userId }
+  });
+}
+
+export function exportDailyReport(userId) {
+  return fetch({
+    url: '/out/ribaoout',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function setActiveNum(userId) {
+  return fetch({
+    url: '/active/set',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function getPay(userId) {
+  return fetch({
+    url: '/account/pay',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+
+export function getHourReport(userId) {
+  return fetch({
+    url: '/account/timevs',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function setHourActiveNum(userId) {
+  return fetch({
+    url: '/active/sethour',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function getAccount(userId) {
+  return fetch({
+    url: '/account/gethu',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function getAccountsBySem(userId) {
+  return fetch({
+    url: '/sem/getallhu',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function getNoSemAccounts(userId) {
+  return fetch({
+    url: '/sem/nouserhu',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function addAccountToSem(userId) {
+  return fetch({
+    url: '/sem/useraddhu',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function delAccountFromSem(userId) {
+  return fetch({
+    url: '/sem/userdelhu',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function createAccount(userId) {
+  return fetch({
+    url: '/sem/createhu',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function updateStatus(userId) {
+  return fetch({
+    url: '/sem/upstatus',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function updateActiveNum(userId) {
+  return fetch({
+    url: '/out/upacall',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function updateActiveNum(userId) {
+  return fetch({
+    url: '/out/upacall',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function setCost(userId) {
+  return fetch({
+    url: '/account/setcost',
+    method: 'post',
+    params: { userId }
+  });
+}
+
+export function setCostOneDay(userId) {
+  return fetch({
+    url: '/account/setcostone',
+    method: 'post',
+    params: { userId }
+  });
+}
+
 export function getPlanTable(userId) {
     return fetch({
         url: '/plan/rate',
@@ -15,100 +184,3 @@ export function getPlanTable(userId) {
         params: { userId }
     });
 }
-//渠道
-export function getlandpageAll(userId) {
-    return fetch({
-        url: '/landpage/all',
-        method: 'get',
-        params: { userId }
-    });
-}
-//每日任务-每日检查
-export function getcheck(userId) {
-    return fetch({
-        url: '/sem/getcheck',
-        method: 'get',
-        params: { userId }
-    });
-}
-//每日任务-每日检查-历史记录
-export function checkhistory(userId) {
-    return fetch({
-        url: '/sem/checkhistory',
-        method: 'get',
-        params: { userId }
-    });
-}
-//月任务-每周任务
-export function getwtask(userId) {
-    return fetch({
-        url: '/sem/getwtask',
-        method: 'get',
-        params: { userId }
-    });
-}
-//月任务-月任务
-export function getmtask(userId) {
-    return fetch({
-        url: '/sem/getmtask',
-        method: 'get',
-        params: { userId }
-    });
-}
-
-
-//sem
-export function getzuanduser(userId) {
-    return fetch({
-        url: '/sem/zuanduser',
-        method: 'get',
-        params: { userId }
-    });
-}
-
-//用户管理
-export function Allyonghu(userId) {
-    return fetch({
-        url: '/sem/allsem',
-        method: 'get',
-        params: { userId }
-    });
-}
-//全账户
-export function Allhu(userId) {
-    return fetch({
-        url: '/sem/allsem',
-        method: 'get',
-        params: { userId }
-    });
-}
-//全部客户 渠道管理  客户管理
-export function Allkehu(userId) {
-    return fetch({
-        url: '/sem/allkehu',
-        method: 'get',
-        params: { userId }
-    });
-}
-export function getillegalAll(userId) {
-    return fetch({
-        url: '/black/zhcheck',
-        method: 'get',
-        params: { userId }
-    });
-}
-export function keyAll(userId) {
-    return fetch({
-        url: '/keywords/allwords',
-        method: 'get',
-        params: { userId }
-    });
-}
-export function getHu(userId) {
-    return fetch({
-        url: '/sem/getallhu',
-        method: 'get',
-        params: { userId }
-    });
-}
-
