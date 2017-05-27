@@ -1,5 +1,5 @@
 <template>
-    <div class="app" style="padding-left: 15px;padding-right: 15px;">
+    <div class="app" style="padding-left: 15px;padding-right: 15px;margin-top: 30px;">
         <el-dialog  title="提示" :visible.sync="dialogTableVisible">
             <P style="color: red;text-indent: 20px">提交后不可更改</P>
             <span slot="footer" class="dialog-footer">
@@ -16,7 +16,7 @@
                         <el-col :span="24" class="col-xs-12" style="margin-top: 30px;">
                             <a href="/v2/fenpeizhanghu/page.html"><el-button class="keep">分配账户</el-button></a>
                             <!--<button class="xinjian add_ant" data-toggle="modal" data-target="#myModal">新建账户</button>-->
-                            <el-button type="text" class="xinjian add_ant" style="margin-left: 30px;"  @click="dialogTableVisible = true">新建账户</el-button>
+                            <el-button type="text" class="xinjian add_ant" style="margin-left: 30px;"  @click="gd">新建账户</el-button>
                         </el-col>
 
                       </span>
@@ -76,10 +76,11 @@
                                         prop="danyuan_name"
                                         label="状态">
                                     <template scope="scope">
-                                        <el-tag class="label label-default" v-if="scope.row.account_status ==0" style="background: #EC5A55;">停投</el-tag>
-                                        <el-tag class="label label-default"  v-else-if="scope.row.account_status ==1" style="background: #64cd64;">在投</el-tag>
-                                        <el-tag class="label label-default" v-else-if="scope.row.account_status ==2" style="background: #faaa3a;">暂停</el-tag>
-
+                                        <div class="th-statu">
+                                            <el-tag class="label label-default" v-if="scope.row.account_status ==0" style="background: #EC5A55;">停投</el-tag>
+                                            <el-tag class="label label-default"  v-else-if="scope.row.account_status ==1" style="background: #64cd64;">在投</el-tag>
+                                            <el-tag class="label label-default" v-else-if="scope.row.account_status ==2" style="background: #faaa3a;">暂停</el-tag>
+                                        </div>
                                         <el-tag class="label label-default" v-if="scope.row.auto=='on'" style="background: #fff;color: #64cd64;border: 1px solid #64cd64;">AUTO</el-tag>
                                         <el-tag class="label label-default disabled" v-else style="background: #fff;color: #ddd;border: 1px solid #ddd;">AUTO</el-tag>
                                     </template>
@@ -125,21 +126,24 @@
                                         sortable
                                         label="操作">
                                     <template scope="scope">
-                                        <div v-if="scope.row.account_status ==0" >
-                                            <i class="iconfont wen1" :data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #64cd64;">&#xe68a;</i>
-                                            <i class="iconfont wen2" :data-status="2" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #faaa3a;">&#xe644;</i>
-                                            <i class="iconfont wen3 disabled" :data-status="0" :data-id=scope.row.huid  style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                        <div class="bian">
+                                            <div v-if="scope.row.account_status ==0" >
+                                                <i class="iconfont wen1" data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #64cd64;">&#xe68a;</i>
+                                                <i class="iconfont wen2" data-status="2" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #faaa3a;">&#xe644;</i>
+                                                <i class="iconfont wen3 disabled" data-status="0" :data-id=scope.row.huid  style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                            </div>
+                                            <div v-else-if="scope.row.account_status ==1" >
+                                                <i class="iconfont wen1 disabled"  data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #64cd64;">&#xe68a;</i>
+                                                <i class="iconfont wen2" data-status="2" :data-id=scope.row.huid  style="cursor: pointer;margin-right: 5px;color: #faaa3a;">&#xe644;</i>
+                                                <i class="iconfont wen3" data-status="0" :data-id=scope.row.huid style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                            </div>
+                                            <div v-else-if="scope.row.account_status ==2">
+                                                <i class="iconfont wen1" data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right: 5px;color: #64cd64;">&#xe68a;</i>
+                                                <i class="iconfont wen2 disabled" data-status="2" :data-id=scope.row.huid style="cursor: pointer;margin-right: 5px;color: #faaa3a;">&#xe644;</i>
+                                                <i class="iconfont wen3" data-status="0" :data-id=scope.row.huid  style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
+                                            </div>
                                         </div>
-                                        <div v-else-if="scope.row.account_status ==1" >
-                                            <i class="iconfont wen1 disabled"  :data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right:5px;color: #64cd64;">&#xe68a;</i>
-                                            <i class="iconfont wen2" :data-status="2" :data-id=scope.row.huid  style="cursor: pointer;margin-right: 5px;color: #faaa3a;">&#xe644;</i>
-                                            <i class="iconfont wen3" :data-status="0" :data-id=scope.row.huid style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
-                                        </div>
-                                        <div v-else-if="scope.row.account_status ==2">
-                                            <i class="iconfont wen1" :data-status="1" :data-id=scope.row.huid  style="cursor: pointer;margin-right: 5px;color: #64cd64;">&#xe68a;</i>
-                                            <i class="iconfont wen2 disabled" :data-status="2" :data-id=scope.row.huid style="cursor: pointer;margin-right: 5px;color: #faaa3a;">&#xe644;</i>
-                                            <i class="iconfont wen3" :data-status="0" :data-id=scope.row.huid  style="cursor: pointer;color: #EC5A55;">&#xe6f3;</i>
-                                        </div>
+
                                     </template>
                                 </el-table-column>
                             </el-table>
@@ -148,19 +152,19 @@
 
                     <!--提示-->
 
-                    <el-dialog  :visible.sync="dialogFormVisible">
-                        <div class="foot">
+                    <el-dialog v-model="dialogFormVisible" v-show="dialog">
+                        <div>
                             <form id="Form" >
 
                                 <p class="modal-title">账户管理</p>
                                 <ul class="first_ul">
                                     <li>
                                         <p>账户名</p>
-                                        <input type="text" name="name" required>
+                                        <el-input type="text" name="name" required></el-input>
                                     </li>
                                     <li>
                                         <p>优化师</p>
-                                        <input type="text" name="sem" required>
+                                        <el-input type="text" name="sem" required></el-input>
                                     </li>
                                     <li>
                                         <p>媒体类型</p>
@@ -174,11 +178,11 @@
                                     </li>
                                     <li>
                                         <p><span class="disan">第三方</span>账户</p>
-                                        <input type="text" name="account_name" required>
+                                        <el-input type="text" name="account_name" required></el-input>
                                     </li>
                                     <li>
                                         <p><span class="disan">第三方</span>密码</p>
-                                        <input type="text"  name="account_password" required>
+                                        <el-input type="text"  name="account_password" required></el-input>
                                     </li>
                                     <li>
                                         <p>服务类型</p>
@@ -188,18 +192,10 @@
                                     <li>
                                         <p style="vertical-align: middle;">是否渠道</p>
                                         <div style="width: 300px;display: inline-block;vertical-align: middle;">
-                                            <div class="col-xs-6" style="height: 30px;line-height: 30px;">
-                                                <i class="statu-start1">
-                                                    <i></i>
-                                                </i>
-                                                <span for="qy" style="vertical-align: middle;">是</span>
-                                            </div>
-                                            <div class="col-xs-6" style="height: 30px;line-height: 30px;">
-                                                <i class="statu-start1">
-                                                    <i class="statu-end1"></i>
-                                                </i>
-                                                <span for="qy" style="vertical-align: middle;">否</span>
-                                            </div>
+                                            <el-radio-group v-model="radio1" @change="radio">
+                                                <el-radio :label="1">是</el-radio>
+                                                <el-radio :label="2">否</el-radio>
+                                            </el-radio-group>
                                         </div>
                                     </li>
                                     <li class="youqudao" style="display: none;">
@@ -210,7 +206,7 @@
 
                                     <li>
                                         <p><span class="disan"></span>Token</p>
-                                        <input type="text" name="token" required>
+                                        <el-input type="text" name="token" required></el-input>
                                     </li>
                                     <li>
                                         <p>状态</p>
@@ -225,7 +221,7 @@
                                     </li>
                                     <li>
                                         <p>返点</p>
-                                        <input type="number" name="fd_rate" required>
+                                        <el-input type="number" name="fd_rate" required></el-input>
                                     </li>
                                     <li>
                                         <p>显示类型</p>
@@ -233,12 +229,14 @@
                                         </select>
                                     </li>
                                 </ul>
+
                                 <div class="modal-footer">
-                                    <el-button type="button"  @click="dialogFormVisible = false">关闭
+                                    <el-button type="button"  @click="gd1">关闭
                                     </el-button>
-                                    <el-button type="submit" @click="dialogFormVisible = false" class="btn btn-down">提交更改</el-button>
+                                    <el-button type="submit" @click="gd2" class="btn btn-down">提交更改</el-button>
                                 </div>
                             </form>
+
                         </div>
                     </el-dialog>
                     <!-- 模态框（Modal） -->
@@ -253,16 +251,41 @@
     import Vue from 'vue';
 //    import $ from 'jquery'
     import { getHu } from 'api/account';
+    let n1=1;
+    let all;
 
     export default {
         data() {
             return {
               dialogTableVisible: false,
-              dialogFormVisible: false,
-              tableData3:[]
+              radio1: 2,
+              tableData3:[],
+              dialogFormVisible:false,
+//              dialogVisible: false
+              dialog:false,
             }
         },
       methods: {
+          radio:function (e) {
+            if(e==1){
+              qudao();
+              $('.youqudao').show();
+              n1=1;
+            }else{
+              $("#qudao").find("option").remove();
+              $('.youqudao').hide();
+              n1=2;
+            }
+          },
+          gd:function () {
+            this.dialogFormVisible=true;
+          },
+        gd1:function () {
+          this.dialogFormVisible=false;
+        },
+        gd2:function () {
+          this.dialogFormVisible=false;
+        },
         greet1: function (event) {
           this.tableData=[]
 //          this.goodsList=geet1
@@ -288,32 +311,111 @@
         },
       },
       mounted(){
-        let n1=1;
-        $('.statu-start1').eq(0).click(function () {
-          $(this).find('i').addClass('statu-end1');
-          $('.statu-start1').eq(1).find('i').removeClass('statu-end1');
-          $('.statu-start1').eq(2).find('i').removeClass('statu-end1');
-          qudao();
-          $('.youqudao').show();
-          n1=1;
+        $(document).on('change','.type1',function () {
+//          change($(this).val(),all);
+          $('.disan').text($(this).find("option:selected").attr("title"))
         });
-        $('.statu-start1').eq(1).click(function () {
-          $(this).find('i').addClass('statu-end1');
-          $('.statu-start1').eq(0).find('i').removeClass('statu-end1');
-          $('.statu-start1').eq(2).find('i').removeClass('statu-end1');
-          $("#qudao").find("option").remove();
-          $('.youqudao').hide();
-          n1=2;
+        /*$("#Form").validate({
+          submitHandler: function () {
+            var dataArr = $("#Form").serializeArray();
+            // $('.tbody').prepend(tb1({data: dataArr}));
+            dataArr.push({name:"userid",value:store.getUser().data.id});
+            console.log(dataArr);
+            utils.ajaxPost(apiUrl.getApiUrl('CreateHu'),dataArr).done(function (data) {
+              console.log(data);
+              window.location.reload();
+            });
+
+            $(".modal-backdrop ").hide();
+            $(".modal ").hide();
+            return false;
+          },
+        });*/
+
+        $(document).on('click','.name1,.account_name',function(){
+          let that=$(this);
+          utils.ajax(apiUrl.getApiUrl('getPay'), {
+            userId: $(this).data('userid'),
+          }).done(function (data) {
+            console.log(data);
+            store.setAccounts(data);
+            store.setCurrentAccountUser(that.data('semname')) ;
+            let cu={};
+            cu.name=that.data('name');
+            cu.appid=that.data('appid');
+            cu.id=that.data('id');
+            cu.type=that.data('type');
+            store.setCurrentAccount(cu);
+
+            window.location = '/v2/gailan/page.html';
+          });
+
+        });
+        let n=1;
+        $(document).on('click','.xuan1',function(){
+          if(n==1){
+            n=0;
+            $('.statu-start').find('i').addClass('statu-end');
+            $('.statu-start').siblings('span').text('0');
+          }else {
+            n=1;
+            $('.statu-start').find('i').removeClass('statu-end');
+            $('.statu-start').siblings('span').text('1');
+          }
         });
         $(document).on('click','.statu-start',function () {
-          if($(this).siblings('span').text()==1){
+          if($(this).siblings('span').text()=='1'){
             $(this).find('i').addClass('statu-end');
             $(this).siblings('span').text('0');
-          }else if($(this).siblings('span').text()==0){
+          }else if($(this).siblings('span').text()=='0'){
             $(this).find('i').removeClass('statu-end');
             $(this).siblings('span').text('1');
           }
         });
+        $(document).on('click','.wen1,.wen2,.wen3',function(){
+          console.log($(this).data('id'));
+          let data=[];
+          data.push({
+            status:$(this).data('status'),
+            huid:$(this).data('id'),
+          });
+          pu(data);
+          if($(this).data('status')==1){
+            $(this).parents('td').siblings().find('.th-statu').html('<span class="label label-default" style="background: #64cd64;">在投</span>');
+            $(this).addClass('disabled').siblings().removeClass('disabled');
+          }else if($(this).data('status')==0){
+            $(this).parents('td').siblings().find('.th-statu').html('<span class="label label-default" style="background: #EC5A55;">停投</span>');
+            $(this).addClass('disabled').siblings().removeClass('disabled');
+          }else if($(this).data('status')==2){
+            $(this).parents('td').siblings().find('.th-statu').html('<span class="label label-default" style="background: #faaa3a;">暂停</span>');
+            $(this).addClass('disabled').siblings().removeClass('disabled');
+          }
+        });
+        $(document).on('click','.more-stop,.more-use,.more-wait',function(){
+          let data=[];
+          let that=$(this);
+          $(".statu-end").each(function(){
+            // console.log(that.data('status'));
+            data.push({
+
+              status:that.data('status'),
+              huid:$(this).data('id'),
+            });
+            if(that.data('status')==1){
+              $(this).parents('td').siblings().find('.th-statu').html('<span class="el-tag label label-default" style="background: #64cd64;">在投</span>');
+              $(this).parents('td').siblings().find('.bian').find('.wen1').addClass('disabled').siblings().removeClass('disabled');
+            }else if(that.data('status')==0){
+              $(this).parents('td').siblings().find('.th-statu').html('<span class="el-tag label label-default" style="background: #EC5A55;">停投</span>');
+              $(this).parents('td').siblings().find('.bian').find('.wen3').addClass('disabled').siblings().removeClass('disabled');
+            }else if(that.data('status')==2){
+              $(this).parents('td').siblings().find('.th-statu').html('<span class="el-tag label label-default" style="background: #faaa3a;">暂停</span>');
+              $(this).parents('td').siblings().find('.bian').find('.wen2').addClass('disabled').siblings().removeClass('disabled');
+            }
+          });
+          console.log(data);
+//          pu(data);
+        });
+
       },
       created:function(){
         var _self=this;

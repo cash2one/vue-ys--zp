@@ -23,6 +23,9 @@ mock.onGet('/account/all').reply(accountApi.accountall);
 mock.onGet('/account/twoweek').reply(accountApi.twoweek);
 mock.onGet('/account/getweekcost').reply(accountApi.getweekcost);
 mock.onGet('/apa/planvs').reply(accountApi.plan);
+mock.onGet('/apa/plandata').reply(accountApi.mondata);
+mock.onGet('/apa/getplan').reply(accountApi.tiaojiaplan);
+mock.onGet('/out/ribaoview').reply(accountApi.ribao);
 // // 文章相关
 // mock.onGet('/article/list').reply(articleAPI.getList);
 // mock.onGet('/article/detail').reply(articleAPI.getArticle);

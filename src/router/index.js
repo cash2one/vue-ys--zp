@@ -25,6 +25,8 @@ const danyuan= resolve => require(['../views/reports/danyuan'],resolve);
 const keyword= resolve => require(['../views/reports/keyword'],resolve);
 const datarate = resolve => require(['../views/reports/datarate'],resolve);
 const outribao = resolve => require(['../views/reports/newribao'],resolve);
+const shezhi = resolve => require(['../views/reports/shezhi'],resolve);
+const tuoci = resolve => require(['../views/reports/tuoci'],resolve);
 const account= resolve => require(['../views/manager/accountgl'],resolve);
 
 /* 推广管理 */
@@ -34,9 +36,13 @@ const blacklist = resolve => require(['../views/adtools/blacklist'],resolve);
 const planset = resolve => require(['../views/ai/planset'],resolve);
 const param = resolve => require(['../views/ai/param'],resolve);
 const paramkey = resolve => require(['../views/ai/paramkey'],resolve);
+const tiaojia = resolve => require(['../views/ai/tiaojia'],resolve);
+const tiaojiaunit = resolve => require(['../views/ai/tiaojiaunit'],resolve);
+const tiaojiakey = resolve => require(['../views/ai/tiaojiakey'],resolve);
 
 /* 异常监控 */
 const illegal = resolve => require(['../views/monitor/illegal'],resolve);
+const monitor = resolve => require(['../views/monitor/monitor'],resolve);
 const taskDay = resolve => require(['../views/monitor/task_day'],resolve);
 
 /* 用户设置 */
@@ -99,6 +105,8 @@ export default new Router({
         { path: 'outribao', component:outribao, name: '导出日报' },
         { path: 'account', component: account, name: '账户管理' },
         { path: 'landpage', component: overview, name: '头像上传' },
+        { path: 'shezhi', component: shezhi, name: '设置' },
+        { path: 'tuoci', component: tuoci, name: '托词' },
       ]
     },
     {
@@ -121,6 +129,9 @@ export default new Router({
       children: [
         { path: 'planset', component: planset, name: '计划设置 ' },
         { path: 'param', component: param, name: '查看效果 ' },
+        { path: 'tiaojia', component: tiaojia, name: '调价 ' },
+        { path: 'tiaojiaunit', component: tiaojiaunit, name: '调价单元 ', hidden: true },
+        { path: 'tiaojiakey', component: tiaojiakey, name: '调价关键词 ', hidden: true },
         { path: 'paramkey', component: paramkey, hidden: true },
       ]
     },
@@ -132,6 +143,7 @@ export default new Router({
       icon: 'zujian',
       children: [
         { path: 'illegal', component: illegal, name: '违规检查 ' },
+        { path: 'monitor', component: monitor, name: '昨日数据 ' },
         { path: 'daily/check', component: taskDay, name: '每日检查 ' },
       ]
     },

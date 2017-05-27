@@ -138,7 +138,7 @@
         },
         methods:{
             tunup:function (a,b) {
-//                window.open('/ai/paramKey?name='+b+'&id='+a);
+//                window.open('./paramKey?name='+b+'&id='+a);
                 this.$router.push({ path: '/ai/paramKey?name='+b+'&id='+a });
             }
         },

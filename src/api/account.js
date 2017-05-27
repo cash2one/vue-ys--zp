@@ -99,4 +99,25 @@ export function planvs(userId) {
     params: { userId }
   });
 }
+export function monitor(userId) {
+  return fetch({
+    url: '/apa/plandata',
+    method: 'get',
+    params: { userId }
+  });
+}
+export function tiaojia(userId) {
+  return fetch({
+    url: '/apa/getplan',
+    method: 'get',
+    params: { userId }
+  });
+}
+export function getribao(userId) {
+  return fetch({
+    url: '/out/ribaoview',
+    method: 'get',
+    params: { userId }
+  });
+}
 

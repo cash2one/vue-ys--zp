@@ -97,7 +97,6 @@
                                 <ul class="ti list">
 
                                     <li  v-for="item in items" style="position: relative" @mouseover="handleOver(item)" @mouseleave="handleLeave(item)">
-                                        <transition name="fade">
                                         <p class="col-xs-12 shen" style="padding: 0;" v-show="item.showColor">
                                             <span class="col-xs-n" style="text-decoration: underline;">{{ item.oneCampaignName }}</span>
                                             <span class="col-xs-n">
@@ -165,9 +164,7 @@
                                                 </span>
                                             </span>
                                         </p>
-                                        </transition>
                                         <p class="zhe" v-show="!item.showColor"></p>
-                                        <transition name="fade">
                                         <p class="col-xs-12 shen1 clear" style="padding: 0;" v-show="!item.showColor">
                                             <span class="col-xs-n" style="text-decoration: underline;">{{ item.oneCampaignName }}</span>
                                             <ColorBack :first-num="item.oneView" :second-num="item.twoView" ></ColorBack>
@@ -179,7 +176,6 @@
                                             <ColorBack :first-num="item.oneTotalCpd" :second-num="item.twoTotalCpd" ></ColorBack>
                                             <ColorBack :first-num="item.oneTotalCpa" :second-num="item.twoTotalCpa" ></ColorBack>
                                         </p>
-                                        </transition>
                                     </li>
                                 </ul>
                             </div>
