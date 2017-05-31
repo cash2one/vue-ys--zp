@@ -4,7 +4,7 @@ export function LoginByEmail(tok) {
 
   return fetch({
     url: '/login/login',
-    method: 'post',
+    method: 'get',
     data:tok
   });
 }
