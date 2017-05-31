@@ -25,10 +25,24 @@ const userMap = {
     uid: '003'
   }
 }
-
+const log={
+  token:'admin',
+  userid:'a213123'
+}
 export default {
   loginByEmail: config => {
-    const { email } = JSON.parse(config.data);
+
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve([200, {
+          data: log
+        }]);
+      }, 500);
+
+    })
+  },
+  /*loginByEmail: config => {
+    const { email } = JSON.parse(config.params);
     return new Promise((resolve, reject) => {
       if (userMap[email.split('@')[0]]) {
         setTimeout(() => {
@@ -40,7 +54,7 @@ export default {
         reject('账号不正确')
       }
     })
-  },
+  },*/
   getInfo: config => {
     const { token } = config.params;
     return new Promise((resolve, reject) => {

@@ -18,8 +18,11 @@
                          <img src="http://test.yushan.mobi//yushan_vue/矩形-10.png" alt="" class="rent">
                          <span>用户登录</span>
                      </el-col>
-                     <el-form id="login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm">
+                     <el-form id="login-form" autoComplete="on" :model="loginForm"  ref="loginForm">
+                         <input type="hidden" name="password" id="pwd"/>
+                         <input type="hidden" name="key" id="salt"/>
                          <el-form-item prop="email">
+
                             <el-col :span="24" class="el-input" style="margin-top: 20px;">
                                  <el-input type="text" name="username"  v-model="loginForm.email" autoComplete="on" class="username" placeholder="登录名/邮箱"/>
                             </el-col>
@@ -64,20 +67,25 @@
 <script>
     import { mapGetters } from 'vuex';
     import { isWscnEmail } from 'utils/validate';
+    const passport = require('../../utils/passport');
+    import Cookies from 'js-cookie';
+    require('../../utils/md5');
+    require('../../utils/validator');
     // import { getQueryObject } from 'utils';
     import socialSign from './socialsignin';
-
+    import { LoginByEmail } from 'api/login';
+    const postfix='yushan@MOSHI';
     export default {
         components: { socialSign },
         name: 'login',
         data() {
-            const validateEmail = (rule, value, callback) => {
+           /* const validateEmail = (rule, value, callback) => {
                 if (!isWscnEmail(value)) {
                     callback(new Error('请输入正确的合法邮箱'));
                 } else {
                     callback();
                 }
-            };
+            };*/
             const validatePass = (rule, value, callback) => {
                 if (value.length < 6) {
                     callback(new Error('密码不能小于6位'));
@@ -87,13 +95,13 @@
             };
             return {
                 loginForm: {
-                    email: 'admin@wallstreetcn.com',
+                    email: '',
                     password: ''
                 },
                 loginRules: {
-                    email: [
+                    /*email: [
                         { required: true, trigger: 'blur', validator: validateEmail }
-                    ],
+                    ],*/
                     password: [
                         { required: true, trigger: 'blur', validator: validatePass }
                     ]
@@ -109,17 +117,38 @@
     },
     methods: {
         handleLogin() {
+//          alert('aa')
+//          passport.login({selector:"#login-form"});
             this.$refs.loginForm.validate(valid => {
                 if (valid) {
                     this.loading = true;
-                    this.$store.dispatch('LoginByEmail', this.loginForm).then(() => {
+                  var pwd = this.loginForm.password;
+                  var user = this.loginForm.email;
+                  var random = new Date().getTime();
+
+                  var code = $.md5($.md5(pwd + postfix) + random);
+                  LoginByEmail({ username: user,password: code,key:random}).then(response => {
+                    console.log(response);
+                    Cookies.set('X-Ivanka-Token', response.data.token);
+                    this.$store.commit('SET_TOKEN', response.data.token);
+                    this.$store.commit('SET_EMAIL', response.data.userid);
+                    this.$router.push({ path: '/account/reports/overview' });
+                  }).catch(err => {
+                    this.$message.error(err);
+//                  _self.loading = false;
+                  });
+                    /*this.$store.dispatch('LoginByEmail', { username: user,password: code,key:random}).then(() => {
                         this.loading = false;
+//                        console.log(pwd)
+//                        console.log(user)
+//                        console.log(random)
+//                        console.log(code)
                     this.$router.push({ path: '/reports/overview' });
                     // this.showDialog = true;
                 }).catch(err => {
                         this.$message.error(err);
                     this.loading = false;
-                });
+                });*/
                 } else {
                     console.log('error submit!!');
             return false;
@@ -146,6 +175,7 @@
         }
     },
     created() {
+      passport.login({selector:"#login-form"});
         // window.addEventListener('hashchange', this.afterQRScan);
     },
     destroyed() {

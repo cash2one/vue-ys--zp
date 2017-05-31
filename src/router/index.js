@@ -75,7 +75,7 @@ export default new Router({
     { path: '/401', component: Err401, hidden: true },
     {
       path: '/',
-      component: dashboard,
+      component: overview,
       name: '首页',
       hidden: true,
     },

@@ -1,4 +1,4 @@
-import { loginByEmail, logout, getInfo } from 'api/login';
+import { wloginByEmail, logout, getInfo } from 'api/login';
 import Cookies from 'js-cookie';
 
 const user = {
@@ -64,9 +64,18 @@ const user = {
   actions: {
     // 邮箱登录
     LoginByEmail({ commit }, userInfo) {
-      const email = userInfo.email.trim();
+      // const email = userInfo.email.trim();
       return new Promise((resolve, reject) => {
-        loginByEmail(email, userInfo.password).then(response => {
+        loginByEmail(userInfo.username, userInfo.password, userInfo.key).then(response => {
+          console.log(response)
+          Cookies.set('X-Ivanka-Token', response.data.token);
+          commit('SET_TOKEN', response.data.token);
+          commit('SET_EMAIL', response.data.userid);
+          resolve();
+        }).catch(error => {
+          reject(error);
+        });
+        /*loginByEmail(userInfo.username, userInfo.password, userInfo.key).then(response => {
           const data = response.data;
           Cookies.set('X-Ivanka-Token', response.data.token);
           commit('SET_TOKEN', data.token);
@@ -74,7 +83,7 @@ const user = {
           resolve();
         }).catch(error => {
           reject(error);
-        });
+        });*/
       });
     },
 
