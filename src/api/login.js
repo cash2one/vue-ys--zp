@@ -1,14 +1,11 @@
 import { fetch } from 'utils/fetch';
 
-export function loginByEmail(email, password) {
-  const data = {
-    email,
-    password
-  };
+export function LoginByEmail(tok) {
+
   return fetch({
     url: '/login/login',
     method: 'post',
-    data
+    data:tok
   });
 }
 

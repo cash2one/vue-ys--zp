@@ -22,6 +22,7 @@ import vueWaves from './directive/waves';
 import vueSticky from './directive/sticky';
 import errLog from 'store/errLog';
 import './mock/index.js';  // 使用api请求时请将此行注释，不然将被mock拦截!!
+import { getInfo } from 'api/login';
 // import './styles/mixin.scss';
 import permission from 'store/permission';
 import echarts from 'echarts' ;
@@ -61,7 +62,21 @@ router.beforeEach((to, from, next) => {
             next('/401'); // 无权限
           }
         } else { // 未拉去info信息
-          store.dispatch('GetInfo').then(() => { // 拉取info
+          getInfo(store.getters.token).then(response => {
+            permission.init({ // 初始化权限
+              roles: store.getters.roles,
+              router: router.options.routes
+            });
+            if (hasPermission(store.getters.roles, to.meta.role)) { // 判断权限
+              next();// 有权限
+            } else {
+              next('/401');// 无权限
+            }
+          }).catch(err => {
+            this.$message.error(err);
+//                  _self.loading = false;
+          });
+          /*store.dispatch('GetInfo').then(() => { // 拉取info
             permission.init({ // 初始化权限
               roles: store.getters.roles,
               router: router.options.routes
@@ -73,7 +88,7 @@ router.beforeEach((to, from, next) => {
             }
           }).catch(err => {
             console.log(err);
-          });
+          });*/
         }
       } else { // 页面不需要权限 直接进入
         next();
