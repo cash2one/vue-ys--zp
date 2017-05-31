@@ -7,7 +7,7 @@
             <el-menu mode="horizontal" :default-active="activeNav" class="nav-menu-container">
                 <template v-for="item in permissionRoutes" v-if="!item.hidden">
                     <router-link :to="item.path">
-                        <el-menu-item :index="item.path">{{item.name}}</el-menu-item>
+                        <el-menu-item :index="item.path">{{item.title}}</el-menu-item>
                     </router-link>
                 </template>
             </el-menu>

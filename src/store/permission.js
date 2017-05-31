@@ -45,8 +45,11 @@ const permission = {
     }
 
   },
-  get() {
-    return this.state.sidebarMenus['/account'];
+  get(route) {
+    if(route.path){
+      let index = route.path.indexOf('/',1);
+      return this.state.sidebarMenus[route.path.substring(0,index)];
+    }
   },
   getHeaderMenu() {
     return this.state.headerMenu;
