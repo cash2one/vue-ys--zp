@@ -30,7 +30,8 @@
         }
       },
       beforeRouteEnter: (to, from, next) => {
-        const roles = store.getters.roles;
+        next();
+        /*const roles = store.getters.roles;
         if (roles.length !== 0) {
           next();
           return
@@ -40,10 +41,10 @@
             roles: store.getters.roles,
             router: router.options.routes
           });
-          next();
+
         }).catch(err => {
           console.log(err);
-        });
+        });*/
       }
     }
 </script>

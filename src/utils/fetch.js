@@ -3,7 +3,7 @@ import { Message } from 'element-ui';
 import store from '../store';
 import router from '../router';
 
-export default function _fetch(options) {
+export function fetch(options) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({
       baseURL: process.env.BASE_API,
@@ -13,7 +13,7 @@ export default function _fetch(options) {
     instance(options)
             .then(response => {
               const res = response.data;
-              if (res.code !== 20000) {
+              /*if (res.code !== 20000) {
                 console.log(options); // for debug
                 Message({
                   message: res.message,
@@ -33,7 +33,7 @@ export default function _fetch(options) {
                   });
                 }
                 reject(res);
-              }
+              }*/
               resolve(res);
             })
             .catch(error => {
@@ -48,7 +48,7 @@ export default function _fetch(options) {
   });
 }
 
-export function fetch(options) {
+export default function _fetch(options) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({
       timeout: 2000 // 超时

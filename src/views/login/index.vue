@@ -77,6 +77,7 @@
     const postfix='yushan@MOSHI';
     export default {
         components: { socialSign },
+
         name: 'login',
         data() {
            /* const validateEmail = (rule, value, callback) => {
@@ -99,6 +100,7 @@
                     password: ''
                 },
                 loginRules: {
+
                     /*email: [
                         { required: true, trigger: 'blur', validator: validateEmail }
                     ],*/
@@ -160,7 +162,9 @@
             // const hashObj = getQueryObject(hash);
             // const originUrl = window.location.origin;
             // history.replaceState({}, '', originUrl);
+
             // const codeMap = {
+
             //   wechat: 'code',
             //   tencent: 'code'
             // };
