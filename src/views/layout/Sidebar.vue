@@ -3,11 +3,11 @@
         <template v-for="item in permissionRoutes" v-if="!item.hidden">
             <el-submenu :index="item.path" v-if="!item.noDropdown">
                 <template slot="title">
-                    <wscn-icon-svg :icon-class="item.icon||'wenzhang1'" /> {{item.title}}
+                    <wscn-icon-svg :icon-class="item.icon||'wenzhang1'" /> {{item.meta.title}}
                 </template>
                 <router-link v-for="child in item.children" :key="child.path" v-if="!child.hidden" class="title-link" :to="{name:child.name}">
                     <el-menu-item :index="child.name">
-                        {{child.title}}
+                        {{child.meta.title}}
                     </el-menu-item>
                 </router-link>
             </el-submenu>

@@ -77,58 +77,57 @@ export default new Router({
       path: '/',
       component: Login,
       name: 'index',
-      title: '首页',
+      meta: {title: '首页'},
       hidden: true,
     },
     {
       path: '/dashboard',
       component: dashboard,
-      title: '总览',
       name: 'dashboard',
       hidden: true,
-      meta: { role: true }
+      meta: { title: '总览',role: true }
     },
     {
       path: '/account',
       component: LayoutWithHader,
       redirect: '/account/reports/overview',
-      title: '账户',
+      meta: {title: '账户'},
       icon: 'zujian',
       children: [
         {
           path: 'reports',
           component: Layout,
           redirect: '/reports/index',
-          title: '数据日报',
+          meta: {title: '数据日报'},
           icon: 'zujian',
           children: [
-            { path: 'overview', component: overview, title: '概览', name:'overview' },
-            { path: 'campaign', component: jihua, title: '计划', name:'campaign' },
-            { path: 'adgroup', component: danyuan, title: '单元' , name:'adgroup'},
-            { path: 'keyword', component: keyword, title: '关键词', name:'keyword' },
-            { path: 'qudao', component: qudao, title: '渠道', name:'qudao' },
-            { path: 'illegal', component: illegal, title: '违规查询', name:'illegal' },
-            { path: 'landpage', component: overview, title: '头像上传', name:'landpage' },
+            { path: 'overview', component: overview, meta: {title: '概览'}, name:'overview' },
+            { path: 'campaign', component: jihua, meta: {title: '计划'}, name:'campaign' },
+            { path: 'adgroup', component: danyuan, meta: {title: '单元'}, name:'adgroup'},
+            { path: 'keyword', component: keyword, meta: {title: '关键词'}, name:'keyword' },
+            { path: 'qudao', component: qudao, meta: {title: '渠道'}, name:'qudao' },
+            { path: 'illegal', component: illegal, meta: {title: '违规查询'}, name:'illegal' },
+            { path: 'landpage', component: overview, meta: {title: '头像上传'}, name:'landpage' },
           ]
         },
         {
           path: 'adtools',
           component: Layout,
           redirect: '/adtools/index',
-          title: '推广管理',
+          meta: {title: '推广管理'},
           icon: 'zujian',
           children: [
-            { path: 'blacklist', component: blacklist, title: '黑名单 ', name:'blacklist' },
+            { path: 'blacklist', component: blacklist, meta: {title: '黑名单 '}, name:'blacklist' },
           ]
         },
         {
           path: 'ai',
           component: Layout,
           redirect: '/ai/index',
-          title: '智能调价',
+          meta: {title: '智能调价'},
           icon: 'zujian',
           children: [
-            { path: 'planset', component: planset, title: '计划设置 ', name:'planset' },
+            { path: 'planset', component: planset, meta: {title: '计划设置 '}, name:'planset' },
           ]
         }
       ]
@@ -137,42 +136,42 @@ export default new Router({
       path: '/manager',
       component: LayoutWithHader,
       redirect: '/manager/monitor/illegal',
-      title: '管理',
+      meta: {title: '管理'},
       icon: 'zujian',
       children: [
         {
           path: 'monitor',
           component: Layout,
           redirect: '/monitor/index',
-          title: '异常监控',
+          meta: {title: '异常监控'},
           icon: 'zujian',
           children: [
-            { path: 'illegal', component: illegal, title: '违规检查', name:'illegal' },
-            { path: 'daily/check', component: taskDay, title: '每日检查', name:'daily_check' },
+            { path: 'illegal', component: illegal, meta: {title: '违规检查'}, name:'illegal' },
+            { path: 'daily/check', component: taskDay, meta: {title: '每日检查'}, name:'daily_check' },
           ]
         },
         {
           path: 'task',
           component: Layout,
           redirect: '/monitor/index',
-          title: '任务管理',
+          meta: {title: '任务管理'},
           icon: 'zujian',
           children: [
-            { path: 'task_s', component: task_s, title: '月任务', name:'task_s' },
+            { path: 'task_s', component: task_s, meta: {title: '月任务'}, name:'task_s' },
           ]
         },
         {
           path: 'users',
           component: Layout,
           redirect: '/monitor/index',
-          title: '用户管理',
+          meta: {title: '用户管理'},
           icon: 'zujian',
           children: [
-            { path: 'accountgl', component: accountgl, title: '账户管理', name:'accountgl' },
-            { path: 'qudaoguanli', component: qudaoguanli, title: '渠道管理', name:'qudaoguanli' },
-            { path: 'kehuguanli', component: kehuguanli, title: '客户管理', name:'kehuguanli' },
-            { path: 'yonghuguanli', component: yonghuguanli, title: '用户管理', name:'yonghuguanli' },
-            { path: 'fenpeizhanghu', component: fenpeizhanghu, title: '分配账户', name:'fenpeizhanghu' },
+            { path: 'accountgl', component: accountgl, meta: {title: '账户管理'}, name:'accountgl' },
+            { path: 'qudaoguanli', component: qudaoguanli, meta: {title: '渠道管理'}, name:'qudaoguanli' },
+            { path: 'kehuguanli', component: kehuguanli, meta: {title: '客户管理'}, name:'kehuguanli' },
+            { path: 'yonghuguanli', component: yonghuguanli, meta: {title: '用户管理'}, name:'yonghuguanli' },
+            { path: 'fenpeizhanghu', component: fenpeizhanghu, meta: {title: '分配账户'}, name:'fenpeizhanghu' },
           ]
         },
       ]
