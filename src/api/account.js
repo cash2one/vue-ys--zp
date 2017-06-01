@@ -23,7 +23,6 @@ export function getTwoWeekCost(userId) {
     params: { userId }
   });
 }
-
 export function getNotice(userId) {
   return fetch({
     url: '/account/notice',

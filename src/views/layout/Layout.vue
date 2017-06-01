@@ -54,6 +54,7 @@
     .app-wrapper {
         @include clearfix;
         position: relative;
+        margin-top: 60px;
         height: 100%;
         width: 100%;
         padding-left: 180px;
@@ -75,8 +76,8 @@
         }
         .sidebar-wrapper {
             width: 180px;
-            position: absolute;
-            top: 0px;
+            position: fixed;
+            top: 60px;
             bottom: 0;
             left: 0;
             z-index: 2;
@@ -91,6 +92,9 @@
             width: 100%;
             min-height: 100%;
             transition: all .28s ease-out;
+            .navbar[data-v-42c1d79b] {
+                width:100%;
+            }
         }
     }
 </style>

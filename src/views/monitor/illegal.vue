@@ -223,11 +223,10 @@
     }
 
 </script>
-<style rel="stylesheet/scss" lang="scss" scoped>
+<style rel="stylesheet/scss" scoped  lang="scss" >
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
-
     html{
         background:#f5f7f9;
     }

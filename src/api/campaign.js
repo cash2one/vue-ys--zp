@@ -43,10 +43,3 @@ export function updateActiveNum(id) {
   });
 }
 
-export function updateActiveNum(id) {
-  return fetch({
-    url: '/unit/getunit',
-    method: 'get',
-    params: { id }
-  });
-}
