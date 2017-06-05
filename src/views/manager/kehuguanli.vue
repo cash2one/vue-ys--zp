@@ -12,7 +12,7 @@
                             placeholder="Search"
                             icon="search"
                             v-model="input2"
-                           >
+                    >
                     </el-input>
                 </div>
                 <div class="allBox list">
@@ -44,7 +44,7 @@
                                     </div>
 
                                     <div class="client add_client">
-                                           <el-button type="primary"  @click="handleAdd" >添加账户 </el-button>
+                                        <el-button type="primary"  @click="handleAdd" >添加账户 </el-button>
                                     </div>
                                 </div>
                             </li>
@@ -423,7 +423,7 @@
     .el-input {
         width:200px;
     }
-/*弹窗*/
+    /*弹窗*/
     .el-dialog {
         width:800px;
     }

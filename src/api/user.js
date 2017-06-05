@@ -35,11 +35,11 @@ export function getZu(id) {
   });
 }
 
-export function getZuAndUser(id) {
+export function getZuAndUser() {
   return fetch({
     url: '/sem/zuanduser',
     method: 'get',
-    params: { id }
+    params:'',
   });
 }
 

@@ -33,7 +33,7 @@ module.exports = {
         proxyTable: {
           '/api': {
             target: 'http://192.168.1.113:5281/',
-            pathRewrite: {'/api': '/'},
+              pathRewrite: {'/api': '/'},
             secure: false,
           }
         },

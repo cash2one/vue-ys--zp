@@ -123,9 +123,7 @@
 </template>
 <script>
     /*eslint-disable */
-    import { getAll } from 'api/account';
-    import { getTwoWeekCost } from 'api/account';
-    import { getWeekCost } from 'api/account';
+//    import { getAll,getTwoWeekCost,getWeekCost } from 'api/account';
 
     let flag=1;
     let currentAccount={};

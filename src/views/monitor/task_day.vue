@@ -98,7 +98,7 @@
 <script>
 
     import { mapGetters } from 'vuex';
-    import { getcheck , checkhistory} from 'api/account';
+    import { getcheck , checkhistory} from 'api/manager';
 
 
     export default {
@@ -115,32 +115,37 @@
         created:function(){
             //每日检查
             var _self=this;
-            getcheck({uid:111}).then(response => {
+            getcheck().then(response => {
+                console.log(response);
             _self.getcheck=response.data;
         }).catch(err => {
                 _self.$message.error(err);
         });
-         //历史记录
-            var $this=this;
-            checkhistory({uid:111}).then(response => {
-                console.log(response.data.data  );
-                $this.history=response.data.data.checkStatuses;
-            }).catch(err => {
-                $this.$message.error(err);
-            });
+
         },
         methods: {
             fn: function () {
                 if (this.willShow == true) {
                     this.willShow = false;
                 } else {
+                    //历史记录
+                    var $this=this;
+                    checkhistory({
+                        userid:store.getUser().data.id,
+                        appid:currentAccount.appid,
+                    }).then(response => {
+                        console.log(response.data.data  );
+                        $this.history=response.data.data.checkStatuses;
+                    }).catch(err => {
+                        $this.$message.error(err);
+                    });
                     this.willShow = true
                 }
             }
         }
     }
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -543,6 +548,10 @@
     }
     .e-border input {
         border:none;
+    }
+    /*table-input*/
+    .el-input__inner {
+        border:none!important;
     }
     @media screen and (max-width: 1000px){
         #page-wrapper {

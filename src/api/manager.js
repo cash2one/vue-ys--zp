@@ -20,11 +20,11 @@ export function getQiniuToken(id) {
 }
 
 //每日任务-每日检查
-export function getcheck(userId) {
+export function getcheck() {
   return fetch({
     url: '/sem/getcheck',
     method: 'get',
-    params: { userId }
+    params:  '',
   });
 }
 
@@ -33,15 +33,15 @@ export function checkhistory(userId) {
   return fetch({
     url: '/sem/checkhistory',
     method: 'get',
-    params: { userId }
+    params: userId,
   });
 }
 //月任务-每周任务
-export function getwtask(userId) {
+export function getwtask(tok) {
   return fetch({
     url: '/sem/getwtask',
     method: 'get',
-    params: { userId }
+    params:  tok
   });
 }
 //月任务-月任务
@@ -49,6 +49,6 @@ export function getmtask(userId) {
   return fetch({
     url: '/sem/getmtask',
     method: 'get',
-    params: { userId }
+    params:  userId
   });
 }

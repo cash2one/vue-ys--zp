@@ -5,20 +5,20 @@
                 <h1 style="height: 20px;"> <a href="javascript:;"><img src="http://test.yushan.mobi//yushanLogo/%E7%BE%BD%E6%89%87LOGO.png" alt=""></a></h1>
             </div>
             <el-menu mode="horizontal" :default-active="activeNav" class="nav-menu-container">
-                <template v-for="item in permissionRoutes" v-if="!item.hidden">
+                <template v-for="item in permissionRoutes" v-if="!item.hidden" @click="color()">
                     <router-link :to="item.path">
                         <el-menu-item :index="item.path" >{{item.meta.title}}</el-menu-item>
                     </router-link>
                 </template>
             </el-menu>
             <ErrLog v-if="log.length>0" class="errLog-container" :logsList="log"></ErrLog>
-            <el-dropdown class="avatar-container" trigger="click">
+            <el-dropdown trigger="click">
                 <div class="avatar-wrapper">
                     <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
                     <i class="el-icon-caret-bottom"/>
                 </div>
                 <el-dropdown-menu class="user-dropdown" slot="dropdown">
-                    <router-link  class='inlineBlock' to="/">
+                    <router-link  class='inlineBlock' to="/account/reports/overview">
                         <el-dropdown-item>
                             首页
                         </el-dropdown-item>
@@ -28,7 +28,11 @@
                             设置
                         </el-dropdown-item>
                     </router-link>
-                    <el-dropdown-item divided><span @click="logout" style="display:block;">退出登录</span></el-dropdown-item>
+                    <router-link  class='inlineBlock'  to="/" @click="logout">
+                        <el-dropdown-item>
+                            退出登录
+                        </el-dropdown-item>
+                    </router-link>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
@@ -40,6 +44,7 @@
     import ErrLog from 'components/ErrLog';
     import errLogStore from 'store/errLog';
     import permissionRoutes from 'store/permission';
+    import $ from 'jquery'
 
     export default {
         components: {
@@ -69,6 +74,9 @@
                 this.$store.dispatch('LogOut').then(() => {
                     this.$router.push({ path: '/login' })
                 });
+            },
+            color(){
+
             }
         }
     }
@@ -104,27 +112,18 @@
         color: #000000;
         font-weight: 500;
     }
+    .el-menu[data-v-c1bfb5ca] li:hover{
+       background: #f1f1f1;
+
+    }
     .nav-logo-container {
         width: 180px;
         height: 59px;
         float: left;
         z-index: 9999;
         position: relative;
-        -webkit-animation: move 1s linear;
-        -moz-animation: move 1s linear;
-        -o-animation: move 1s linear;
-        animation: move 1s linear;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
     }
-    @-webkit-keyframes move {
-        to{
-            top:0px;
-        }
-        from {
-            top:-50px;
-        }
-    }
+
     .nav-logo-container img {
         width:70%;
         position: absolute;
@@ -159,5 +158,22 @@
             }
         }
     }
-
+    .el-dropdown[data-v-c1bfb5ca]{
+        width: 100px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        float: right;
+        .user-avatarp[data-v-c1bfb5ca] {
+            width: 40px;
+            height:40px;
+        }
+    }
+    .el-dropdown-menu[data-v-c1bfb5ca] {
+        width:100px;
+        text-align: center;
+    }
+   .el-menu[data-v-c1bfb5ca] .router-link-active[data-v-c1bfb5ca] li{
+        background: #f1f1f1;
+    }
 </style>

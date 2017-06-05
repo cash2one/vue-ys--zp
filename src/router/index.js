@@ -43,7 +43,7 @@ const passwordSet = resolve => require([ '../views/user/password' ], resolve);
 const dailyAnalysis = resolve => require([ '../views/data/analysis/daily' ], resolve);
 const compareAnalysis = resolve => require([ '../views/data/analysis/compare' ], resolve);
 /*月任务*/
-const task_s = resolve => require([ '../views/task/task_s' ], resolve);
+const task_month = resolve => require([ '../views/task/task_month' ], resolve);
 /*账户管理*/
 const accountgl = resolve => require([ '../views/manager/accountgl' ], resolve);
 /*渠道管理*/
@@ -106,7 +106,6 @@ export default new Router({
             { path: 'adgroup', component: danyuan, meta: {title: '单元'}, name:'adgroup'},
             { path: 'keyword', component: keyword, meta: {title: '关键词'}, name:'keyword' },
             { path: 'qudao', component: qudao, meta: {title: '渠道'}, name:'qudao' },
-            { path: 'illegal', component: illegal, meta: {title: '违规查询'}, name:'illegal' },
             { path: 'landpage', component: overview, meta: {title: '头像上传'}, name:'landpage' },
           ]
         },
@@ -157,7 +156,7 @@ export default new Router({
           meta: {title: '任务管理'},
           icon: 'zujian',
           children: [
-            { path: 'task_s', component: task_s, meta: {title: '月任务'}, name:'task_s' },
+            { path: 'task_month', component: task_month, meta: {title: '月任务'}, name:'task_month' },
           ]
         },
         {

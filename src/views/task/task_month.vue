@@ -21,28 +21,30 @@
                                 <div class="content">
                                     <div class="content_all content_all_1">
                                         <span class="content_datd select_month">&nbsp;&nbsp;&nbsp;月份</span>
-                                        <el-select v-model="value" placeholder="请选择">
+                                        <el-select v-model="value" placeholder="请选择" @change="monthfn">
                                             <el-option
-                                                    v-for="item in data"
-                                                    :value="item">
+                                                    v-for="item in monthZU"
+                                                    :value="item+'月'"
+                                                    >
                                             </el-option>
                                         </el-select>
                                         <span class="content_datd " >任务总额</span>
                                         <input class="content_datd weekTask all_set ser_1" type="number" style=" margin-right:5px;"> <i class="tishi" style="color: red;font-size: 14px;">(/万)</i>
                                     </div>
-                                    <div class="data" >
-                                        <span class="content_datd week" data-week="<%=time%>">第 周</span>
-                                        <el-input v-model="input" disabled="disabled" class="startDate" ></el-input>
-                                        <!--<input type="text" value="" disabled="disabled" class="startDate">-->
+                                    <div class="data" v-for="(j,index) in momentDate" >
+                                        <span class="content_datd week" data-week="">第 {{ index+1 }} 周</span>
+                                        <el-input  disabled="disabled"  class="startDate" :value="j.first"></el-input>
                                         <span style="margin:0 10px">至</span>
-                                        <el-input v-model="input" disabled="disabled" class="startDate" ></el-input>
+                                        <el-input  disabled="disabled" class="startDate" :value="j.last"></el-input>
                                         <span class="content_datd">任务额</span>
-                                        <el-input v-model="input" type="number" class="startDate" ></el-input><i style="color: red;font-size: 14px;">(/万)</i>
+                                        <el-input  type="number" class="startDate"></el-input>
+                                        <i style="color: red;font-size: 14px;">(/万)</i>
                                     </div>
+
                                     <div class="content_all content_btn">
-                                        <el-button class="qx" @click.native="addFormVisible = false">取消</el-button>
-                                        <a class="sever sever_1">重置</a>
-                                        <el-button class="ok_send" type="primary" @click.native="addSubmit" >提交</el-button>
+                                        <el-button   @click.native="addFormVisible = false">取消</el-button>
+                                        <el-button >重置</el-button>
+                                        <el-button  type="primary" @click.native="addSubmit" >提交</el-button>
                                     </div>
                                 </div>
                             </form>
@@ -71,8 +73,7 @@
                     <el-table-column
                             prop="date"
                             sortable
-                            label="日期"
-                    >
+                            label="日期">
                         <template scope="scope">
                             <span style="margin-left: 10px">{{ scope.row.startDate }}-{{ scope.row.endDate }}</span>
                         </template>
@@ -80,8 +81,7 @@
                     <el-table-column
                             prop="date"
                             sortable
-                            label="任务总额"
-                    >
+                            label="任务总额">
                         <template scope="scope">
                             <span style="margin-left: 10px">{{ scope.row.weekTask }}</span>
                         </template>
@@ -102,6 +102,7 @@
                     >
                         <template scope="scope">
                             <span style="margin-left: 10px">{{ ((scope.row.weekTask/scope.row.offWeekTask)*100).toFixed(2) }}%</span>
+
                         </template>
                     </el-table-column>
                 </el-table>
@@ -122,8 +123,7 @@
                         <el-table-column
                                 prop="date"
                                 sortable
-                                label="日期"
-                        >
+                                label="日期">
                             <template scope="scope">
                                 <span style="margin-left: 10px">{{ scope.row.monthDate }}</span>
                             </template>
@@ -131,8 +131,7 @@
                         <el-table-column
                                 prop="date"
                                 sortable
-                                label="任务总额"
-                        >
+                                label="任务总额">
                             <template scope="scope">
                                 <span style="margin-left: 10px">{{ scope.row.monthTask }}</span>
                             </template>
@@ -140,8 +139,7 @@
                         <el-table-column
                                 prop="name"
                                 sortable
-                                label="完成总额"
-                        >
+                                label="完成总额">
                             <template scope="scope">
                                 <span style="margin-left: 10px">{{ scope.row.monthOffTask }}</span>
                             </template>
@@ -149,16 +147,13 @@
                         <el-table-column
                                 prop="name"
                                 sortable
-                                label="完成占比"
-                        >
+                                label="完成占比">
                             <template scope="scope">
-                                <span style="margin-left: 10px">{{ scope.row.rate }}%</span>
+                                <span style="margin-left: 10px">{{ (scope.row.rate).toFixed(2) }}%</span>
+                                <el-button  type="primary" class="btn_month" >任务设置</el-button>
                             </template>
                         </el-table-column>
                     </el-table>
-
-
-
                 </div>
             </div>
 
@@ -171,8 +166,11 @@
 <script>
 
     import { mapGetters } from 'vuex';
-    import { getwtask , getzuanduser, getmtask} from 'api/account';
+    import { getwtask,getmtask} from 'api/manager';
+    import { getZuAndUser} from 'api/user';
     const echarts = require('echarts/lib/echarts');
+    const moment = require('moment');
+    const XDate = require('../../utils/xdate');
     // 引入柱状图
     require('echarts/lib/chart/bar');
     require('echarts/lib/chart/line');
@@ -180,20 +178,23 @@
     require('echarts/lib/component/tooltip');
     require('echarts/lib/component/title');
     require('echarts/lib/component/legend');
-    require('../../assets/js/moment.js');
     let monthTask = [];
     let monthOffTask = [];
+    let momtdate=[];
 
         function rendebar(monthTask,monthOffTask) {
             let myChart = echarts.init(document.getElementById('main'));
             console.log(myChart);
             const option = {
-                // 提示框
                 tooltip: {
-                    trigger: 'item',
-
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
                 },
-
                 toolbox: {
                     feature: {
                         dataView: {show: true, readOnly: false},
@@ -247,7 +248,7 @@
                         name:'总任务',
                         type:'bar',
                         barWidth:50,
-                        color:['#20a0ff'],
+                        color:['#00b7ee'],
                         data:monthTask,
                     },
                     {
@@ -264,7 +265,50 @@
                 myChart.resize();
             },false);
         }
+        function Data(date){
+        let firstDate = new Date( Date.parse(moment().month(date).format()));
+        firstDate.setDate(1); //第一天
+        let monthFirstday = moment(firstDate.setDate(1)).format('YYYY-MM-DD'); //月初第一天
+        let endDate = new Date(firstDate);
+        endDate.setMonth(firstDate.getMonth()+1);
+        endDate.setDate(0);
+        let ftime = new XDate(firstDate).toString('yyyy-MM-dd');
 
+        let ltime = new XDate(endDate).toString('yyyy-MM-dd'); //月末最后一天
+        let firstMonday = '';  //第一个周一
+        let j = 0;
+        let lastdata = '';
+        for(var i =0;i<Number(moment(ltime).format('D'));i++) {
+            if(moment(ftime).add(i,"day").format('d') == "0") {
+                var first_momentdata = Number(moment(ftime).add(i,"day").format("D")) - Number(moment(ftime).format('D'));
+                if(first_momentdata<7) {
+                    var sutime = Number(moment(ftime).add(i,"day").format("D")) - Number(moment(ftime).format('D'));
+                    var fitst_data =  moment(ftime).add(i,"day").subtract(sutime,"day").format('YYYY-MM-DD');
+                }else {
+                    j++;
+                    if(j == 1) {
+                        firstMonday = moment(ftime).add(i,"day").subtract(6,"day").format('YYYY-MM-DD');
+                    }
+                    var nextdata = moment(ftime).add(i,"day").subtract(6,"day").format('YYYY-MM-DD');
+                    lastdata = moment(nextdata).add(6,"day").format('YYYY-MM-DD');
+                    momtdate.push({first:nextdata,last:lastdata});
+                }
+//                        $('.data').append(tb({time: j,data:moment(ftime).add(i,"day").format('YYYY-MM-DD'),fitst_data:fitst_data,ftime:ftime,nextdata:nextdata,f_moment:first_momentdata}));
+            }
+        }
+        var first_time = Number(moment( firstMonday).format('D'))-Number(moment(monthFirstday).format('D'));
+        var last_time = Number(moment( ltime).format('D'))-Number(moment(lastdata).format('D'));
+        //判断是否第一个天是否为星期日
+        if(first_time != 0) {
+            var nextdata1 = moment(firstMonday).subtract(1,"day").format('YYYY-MM-DD');
+            momtdate.unshift({first:monthFirstday,last:nextdata1});
+        }
+        //判断是否最后一个天是否为星期日
+        if(last_time != 0) {
+            var monthLastData = moment(ltime).subtract(last_time-1,"day").format('YYYY-MM-DD');
+            momtdate.push({first:monthLastData,last:ltime});
+        }
+    }
 
         export default {
         data() {
@@ -277,39 +321,51 @@
                 value: '',
                 value2:'',
                 click:'',
+                thismonth:'',//当前月份
+                monthZU:'',//当月以后的月份数组
                 willShow:true,
                 willFalse:false,
+                momentDate:'', //时间
                 addFormVisible:false,
             }
         },
         created:function(){
-            var data  = moment();
-            alert(data);
-            //周任务
-            let _self=this;
-            getwtask({uid:111}).then(response => {
-                _self.task_week=response.data;
-
-            }).catch(err => {
-                _self.$message.error(err);
-            });
-            //sem
             let $this=this;
+            //查看当前月份
+            var month_num = Number(moment().format('M'));
+            $this.thismonth = month_num;
+            var monthAllNum = [];
+            for(var i=month_num;i<=12;i++){
+                monthAllNum.push(i);
+            }
+            Data(moment().subtract(1,"M").format("MM"));
+            $this.momentDate = momtdate;
+            $this.monthZU = monthAllNum;
+            //sem
             let semAll = [];
             let k = 0;
-            getzuanduser({uid:111}).then(response => {
+            getZuAndUser().then(response => {
+                console.log(response);
                 for(let i = 0;i <response.data.length;i++){
-                   for(let n = 0;n<response.data[i].length;n++){
-                       k++
-                       semAll.push({name: response.data[i][n].name,value:k})
-                   }
+                    for(let n = 0;n<response.data[i].length;n++){
+                        k++;
+                        semAll.push({name: response.data[i][n].name,value:k})
+                    }
                 }
                 $this.Allzu=semAll;
-
             }).catch(err => {
                 $this.$message.error(err);
             });
-
+            //周任务
+            getwtask({
+                userid:"3102",
+                month:moment().format('YYYY-MM'),
+            }).then(response => {
+                console.log(response);
+                $this.task_week=response.data;
+            }).catch(err => {
+                $this.$message.error(err);
+            });
         },
         methods:{
             fn:function(event){
@@ -321,11 +377,16 @@
                 } else {
                     //月任务
                     let this_month=this;
-                    getmtask({uid:111}).then(response => {
-                        this_month.getmtask=response.data.data;
-                        for(let n in response.data.data) {
-                            monthTask.push(response.data.data[n].monthTask);
-                            monthOffTask.push(response.data.data[n].monthOffTask);
+                    getmtask({
+                        userid:"3102",
+                        smonth:moment().month("0").format('YYYY-MM'),
+                        emonth:moment().month("11").format("YYYY-MM"),
+                    }).then(response => {
+                        this_month.getmtask=response.data;
+                        console.log(response.data);
+                        for(let n in response.data) {
+                            monthTask.push(response.data[n].monthTask);
+                            monthOffTask.push(response.data[n].monthOffTask);
                         }
                         rendebar(monthTask,monthOffTask)
                     }).catch(err => {
@@ -338,6 +399,12 @@
             handleAdd: function () {
                 this.addFormVisible = true;
             },
+            monthfn:function (e) {
+                momtdate = [];
+                let newData =Number(e.substr(0,e.length-1))-1;
+                Data(newData);
+                this.momentDate = momtdate;
+            }
         }
     }
 </script>
@@ -398,7 +465,7 @@
     #btn_1 {
         background: #ffffff;
         border: 1px solid #28acff;
-        color: #a3ddf7;
+        color: #20a0ff;
     }
 
     .btn_h {
@@ -521,8 +588,8 @@
     }
     .month_table {
         width:100%;
-        height: 25px;
-        line-height: 25px;
+        height: 40px;
+        line-height: 40px;
         text-indent: 30px;
         font-size: 14px;
         border:1px solid #dfe1e4;
@@ -584,11 +651,10 @@
         color: red;
     }
 
-    .delete a, .to_lead a,.content_btn a {
+    .delete a, .to_lead a,.content_btn button {
         display: inline-block;
         width: 110px;
-        height: 30px;
-        line-height: 30px;
+        height: 37px;
         text-align: center;
         border-radius: 5px;
         outline: none;
@@ -615,7 +681,7 @@
     .ok {
         margin: 40px 10px 0 0;
         float: right;
-        background: #28acff;
+        background: #20a0ff;
         color: white;
     }
 
@@ -668,13 +734,13 @@
     }
     .content_btn {
         text-align: center;
-        margin-top: 40px
+        margin-top: 24px
     }
     .content_btn .sever {
         margin:0 50px;
     }
     .ok_send,.xiugai_send {
-        background: #28acff;
+        background: #20a0ff;
     }
 
     #table1.tablesorter thead tr .tablesorter-header-inner{
@@ -696,6 +762,10 @@
             right: 0;
             width: 1000px;
         }
+    }
+    /*设置日期*/
+    .data {
+        margin-bottom: 10px;
     }
     /*button*/
     .el-radio-button__inner {
@@ -731,6 +801,10 @@
     }
     .startDate input{
         width:100%;
+    }
+    /*月任务*/
+    .btn_month {
+        float: right;
     }
 </style>
 

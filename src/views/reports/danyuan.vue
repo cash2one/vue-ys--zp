@@ -46,7 +46,6 @@
                             <!-- <div class="nav-li" style="display: inline-block">
                                  <span class="li1 clink">下载</span><span class="li2">激活</span>
                              </div>-->
-
                             <div class="searchs" style="display: inline-block;margin-left: 0;">
                                 <input type="text" placeholder="Search" class="search"/>
                                 <span class="glyphicon glyphicon-search" style="color:#666;"></span>

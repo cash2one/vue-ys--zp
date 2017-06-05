@@ -175,7 +175,7 @@
         }
     }
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
     @import "src/styles/mixin.scss";
     @import "src/styles/element-ui.scss";
     @import "src/styles/rest.scss";
@@ -517,6 +517,11 @@
         text-indent: 30px;
         margin-bottom: 30px;
         background: #fbfbfb;
+    }
+    /*按钮*/
+    .el-button[data-v-14ce4c4a] {
+        width: 100px;
+        height: 40px;
     }
     /*ipnput*/
     .el-input {
