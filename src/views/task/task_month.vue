@@ -150,7 +150,7 @@
                                 label="完成占比">
                             <template scope="scope">
                                 <span style="margin-left: 10px">{{ (scope.row.rate).toFixed(2) }}%</span>
-                                <el-button  type="primary" class="btn_month" >任务设置</el-button>
+                                <el-button  type="primary" class="btn_month" v-if="">任务设置</el-button>
                             </template>
                         </el-table-column>
                     </el-table>
@@ -184,7 +184,6 @@
 
         function rendebar(monthTask,monthOffTask) {
             let myChart = echarts.init(document.getElementById('main'));
-            console.log(myChart);
             const option = {
                 tooltip: {
                     trigger: 'axis',
@@ -345,7 +344,6 @@
             let semAll = [];
             let k = 0;
             getZuAndUser().then(response => {
-                console.log(response);
                 for(let i = 0;i <response.data.length;i++){
                     for(let n = 0;n<response.data[i].length;n++){
                         k++;
@@ -361,7 +359,6 @@
                 userid:"3102",
                 month:moment().format('YYYY-MM'),
             }).then(response => {
-                console.log(response);
                 $this.task_week=response.data;
             }).catch(err => {
                 $this.$message.error(err);
@@ -383,11 +380,13 @@
                         emonth:moment().month("11").format("YYYY-MM"),
                     }).then(response => {
                         this_month.getmtask=response.data;
-                        console.log(response.data);
                         for(let n in response.data) {
                             monthTask.push(response.data[n].monthTask);
                             monthOffTask.push(response.data[n].monthOffTask);
                         }
+                        console.log(moment().format("M"));
+                        console.log(this_month.getmtask.length);
+
                         rendebar(monthTask,monthOffTask)
                     }).catch(err => {
                         this_month.$message.error(err);

@@ -38,7 +38,7 @@
                                         </P>
                                         <p>
                                             <a href="javascript:;">
-                                                <i class="iconfont delete_infor" data-toggle="modal"></i>
+                                                <i class="el-icon-delete"  @click="open2" style="font-size: 20px;color: #e69b9f;"></i>
                                             </a>
                                         </p>
                                     </div>
@@ -50,7 +50,7 @@
                             </li>
                         </ul>
                     </div>
-                    <!--新增界面-->
+                    <!--新增界面添加账户-->
                     <el-dialog title="账户" v-model="addFormVisible" :close-on-click-modal="false">
                         <el-input
                                 placeholder="Search"
@@ -96,7 +96,7 @@
 <script>
 
     import { mapGetters } from 'vuex';
-    import { Allkehu ,getHu} from 'api/account';
+    import { Allkehu } from 'api/manager';
 
     export default {
         data() {
@@ -107,6 +107,7 @@
                 input2:'',
                 click:'',
                 addFormVisible: false,
+                addremove:false,
             }
         },
         created:function(){
@@ -114,7 +115,10 @@
             var _self=this;
             let zu = [];
             let zh = [];
-            Allkehu({uid:111}).then(response => {
+            Allkehu({
+                type:100002,
+            }).then(response => {
+                console.log(response);
                 for(var i in response.data) {
 
                     zu.push(response.data[i].xinxi);
@@ -123,24 +127,18 @@
 
                     zh.push(response.data[n].zhanghus);
                 }
-                console.log(zh);
-                console.log(zu);
                 _self.grtallkehu = zu;
                 _self.grtallzhanghus = zh;
-
-                /*   _self.loading = false;
-                 ;*/
             }).catch(err => {
                 _self.$message.error(err);
-//                  _self.loading = false;
             });
             //获取全部账户
-            var _this=this;
-            getHu({uid:111}).then(response => {
-                _this.hun=response.data;
-            }).catch(err => {
-                _this.$message.error(err);
-            });
+//            var _this=this;
+//            getHu({uid:111}).then(response => {
+//                _this.hun=response.data;
+//            }).catch(err => {
+//                _this.$message.error(err);
+//            });
         },
         methods:{
             handleAdd: function () {

@@ -139,14 +139,6 @@ export function changeSemByAccount(id) {
   });
 }
 
-export function getAllCustomer(id) {
-  return fetch({
-    url: '/sem/allkehu',
-    method: 'get',
-    params: { id }
-  });
-}
-
 export function userDTAccount(id) {
   return fetch({
     url: '/sem/userdthu',

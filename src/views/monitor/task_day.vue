@@ -39,7 +39,9 @@
                                 width="200"
                         >
                             <template scope="scope">
-                                <span style="margin-left: 10px"></span>
+                                <span style="margin-left: 10px">
+
+                                </span>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -127,18 +129,18 @@
             fn: function () {
                 if (this.willShow == true) {
                     this.willShow = false;
-                } else {
                     //历史记录
                     var $this=this;
                     checkhistory({
-                        userid:store.getUser().data.id,
-                        appid:currentAccount.appid,
+                        userid:'3114',
+                        appid:'adkrayxe4kz5dkqhz2unjnhfr5a137d6',
                     }).then(response => {
-                        console.log(response.data.data  );
-                        $this.history=response.data.data.checkStatuses;
+                        console.log(response.data);
+                        $this.history=response.data.checkStatuses;
                     }).catch(err => {
                         $this.$message.error(err);
                     });
+                } else {
                     this.willShow = true
                 }
             }

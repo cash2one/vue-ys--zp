@@ -52,3 +52,11 @@ export function getmtask(userId) {
     params:  userId
   });
 }
+//客户管理 Allkehu
+export function Allkehu(id) {
+    return fetch({
+        url: '/sem/allkehu',
+        method: 'get',
+        params:  id,
+    });
+}
